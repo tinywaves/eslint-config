@@ -27,7 +27,7 @@
   // "window.nativeTabs": true, // this is great, macOS only
   // "window.titleBarStyle": "custom",
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "One Dark Pro Flat",
+  "workbench.colorTheme": "Eva Dark Bold",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.tabCloseButton": "left",
