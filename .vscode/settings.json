@@ -166,10 +166,7 @@
   // "prettier.enable": false, // I only use Prettier for manually formatting
   "prettier.printWidth": 200,
   "prettier.semi": true,
-  "prettier.singleQuote": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  "prettier.singleQuote": true
 
   // File Nesting
   // this might not be up to date with the repo, please check yourself
