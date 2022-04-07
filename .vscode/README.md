@@ -2,4 +2,4 @@
 
 ## ORIGIN
 
-Modify from https://github.com/antfu/vscode-settings
+Modify from https://github.com/antfu/vscode-settings.
