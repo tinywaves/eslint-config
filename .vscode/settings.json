@@ -1,5 +1,10 @@
-// Modify from https://github.com/antfu/vscode-settings
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on",
+  "editor.formatOnType": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.find.autoFindInSelection": "always",
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.accessibilitySupport": "off",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.find.addExtraSpaceOnTop": false,
@@ -9,7 +14,7 @@
   "editor.glyphMargin": true,
   "editor.guides.bracketPairs": "active",
   "editor.inlineSuggest.enabled": true,
-  "editor.lineNumbers": "interval",
+  "editor.lineNumbers": "on",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "boundary",
   "editor.suggestSelection": "first",
@@ -36,7 +41,6 @@
   "workbench.list.smoothScrolling": true,
   // "workbench.preferredDarkColorTheme": "",
   // "workbench.preferredLightColorTheme": "",
-  "workbench.productIconTheme": "material-product-icons",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.tree.expandMode": "singleClick",
