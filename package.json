@@ -1,0 +1,18 @@
+{
+  "name": "@denverzh/eslint-config-monorepo",
+  "version": "0.0.1",
+  "description": "tinyRipple's personal eslint config preset.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "author": "Denver Zheng <isdhzh@outlook.com> (https://bento.me/dzh)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tinyRipple/eslint-config.git"
+  }
+}

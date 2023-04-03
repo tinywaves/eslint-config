@@ -1,0 +1,38 @@
+{
+  "name": "@denverzh/eslint-config-typescript",
+  "version": "0.0.1",
+  "description": "tinyRipple's personal eslint config preset for typescript.",
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "scripts": {
+    "lint": "eslint . --config=index.js"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "author": "Denver Zheng <isdhzh@outlook.com> (https://bento.me/dzh)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tinyRipple/eslint-config.git"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0",
+    "typescript": ">=3.9"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0"
+  },
+  "dependencies": {
+    "@denverzh/eslint-config-base": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint-plugin-jest": "^27.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
