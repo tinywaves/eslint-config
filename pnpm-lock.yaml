@@ -44,12 +44,10 @@ importers:
       '@typescript-eslint/eslint-plugin': ^5.57.0
       '@typescript-eslint/parser': ^5.57.0
       eslint: ^8.37.0
-      eslint-plugin-jest: ^27.2.1
     dependencies:
       '@denverzh/eslint-config-base': link:../base
       '@typescript-eslint/eslint-plugin': 5.57.0_2niwd2uqke2jpnohndnwvllrkm
       '@typescript-eslint/parser': 5.57.0_eslint@8.37.0
-      eslint-plugin-jest: 27.2.1_tcpbyjk6zcdyxrbru46r4bg3yy
     devDependencies:
       eslint: 8.37.0
 
@@ -752,27 +750,6 @@ packages:
       - eslint-import-resolver-typescript
       - eslint-import-resolver-webpack
       - supports-color
-    dev: false
-
-  /eslint-plugin-jest/27.2.1_tcpbyjk6zcdyxrbru46r4bg3yy:
-    resolution: {integrity: sha512-l067Uxx7ZT8cO9NJuf+eJHvt6bqJyz2Z29wykyEdz/OtmcELQl2MQGQLX8J94O1cSJWAwUSEvCjwjA7KEK3Hmg==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^5.0.0
-      eslint: ^7.0.0 || ^8.0.0
-      jest: '*'
-    peerDependenciesMeta:
-      '@typescript-eslint/eslint-plugin':
-        optional: true
-      jest:
-        optional: true
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 5.57.0_2niwd2uqke2jpnohndnwvllrkm
-      '@typescript-eslint/utils': 5.57.0_eslint@8.37.0
-      eslint: 8.37.0
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
     dev: false
 
   /eslint-plugin-jsonc/2.7.0_eslint@8.37.0:
