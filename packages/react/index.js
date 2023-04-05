@@ -192,14 +192,6 @@ module.exports = {
     'react/iframe-missing-sandbox': 'warn',
     'react/jsx-no-leaked-render': 'off',
     'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
-    'react/jsx-props-no-spreading': [
-      'warn',
-      {
-        html: 'ignore',
-        custom: 'ignore',
-        explicitSpread: 'ignore'
-      }
-    ],
     'react/require-default-props': 'off',
 
     'class-methods-use-this': [
