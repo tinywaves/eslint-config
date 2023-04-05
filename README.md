@@ -1,5 +1,7 @@
 <samp><b>tinyRipple's eslint config preset</b></samp>
 
+[![npm](https://img.shields.io/npm/v/@denverzh/eslint-config?color=a1b858&label=)](https://www.npmjs.com/package/@denverzh/eslint-config)
+
 ## USAGE
 
 ### Install
