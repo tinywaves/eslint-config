@@ -135,9 +135,9 @@ module.exports = {
         assignment: 'parens-new-line',
         return: 'parens-new-line',
         arrow: 'parens-new-line',
-        condition: 'parens-new-line',
-        logical: 'parens-new-line',
-        prop: 'parens-new-line'
+        condition: 'ignore',
+        logical: 'ignore',
+        prop: 'ignore'
       }
     ],
     'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
