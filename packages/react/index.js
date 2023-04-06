@@ -188,7 +188,7 @@ module.exports = {
     'react/jsx-no-constructed-context-values': 'error',
     'react/no-unstable-nested-components': 'error',
     'react/no-unused-class-component-methods': 'error',
-    'react/hook-use-state': ['warn', { allowDestructuredState: true }],
+    'react/hook-use-state': 'off',
     'react/iframe-missing-sandbox': 'warn',
     'react/jsx-no-leaked-render': 'off',
     'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
