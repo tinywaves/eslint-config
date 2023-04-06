@@ -193,6 +193,7 @@ module.exports = {
     'react/jsx-no-leaked-render': 'off',
     'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
     'react/require-default-props': 'off',
+    'react/jsx-closing-bracket-location': ['error', 'tag-aligned'],
 
     'class-methods-use-this': [
       'error',

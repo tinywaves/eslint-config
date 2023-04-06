@@ -10,5 +10,8 @@
     "stroustrup",
     "Sukka",
     "vitepress"
-  ]
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
