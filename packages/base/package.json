@@ -1,6 +1,6 @@
 {
   "name": "@denverzh/eslint-config-base",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "tinyRipple's personal eslint config preset for base.",
   "main": "index.js",
   "files": [
