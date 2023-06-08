@@ -1,6 +1,6 @@
 {
   "name": "@denverzh/eslint-config-typescript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tinyRipple's personal eslint config preset for typescript.",
   "main": "index.js",
   "files": [
@@ -24,7 +24,8 @@
     "typescript": ">=3.9"
   },
   "devDependencies": {
-    "eslint": "^8.37.0"
+    "eslint": "^8.37.0",
+    "typescript": "^5.1.3"
   },
   "dependencies": {
     "@denverzh/eslint-config-base": "workspace:*",

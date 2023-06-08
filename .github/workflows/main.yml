@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
+      - run: cd packages
       - run: npm publish
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_FOR_CI }}
