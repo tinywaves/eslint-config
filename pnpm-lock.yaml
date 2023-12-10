@@ -56,7 +56,7 @@ importers:
 
   packages/eslint-config:
     dependencies:
-      '@denverzh/eslint-config-react':
+      '@isdhzh/eslint-config-react':
         specifier: workspace:*
         version: link:../react
       '@typescript-eslint/eslint-plugin':
@@ -111,7 +111,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@denverzh/eslint-config-typescript':
+      '@isdhzh/eslint-config-typescript':
         specifier: workspace:*
         version: link:../typescript
       '@typescript-eslint/parser':
@@ -139,7 +139,7 @@ importers:
 
   packages/typescript:
     dependencies:
-      '@denverzh/eslint-config-base':
+      '@isdhzh/eslint-config-base':
         specifier: workspace:*
         version: link:../base
       '@typescript-eslint/eslint-plugin':
