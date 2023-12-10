@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    '@denverzh/eslint-config-typescript',
+    '@isdhzh/eslint-config-typescript',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:jsx-a11y/recommended',

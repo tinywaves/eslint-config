@@ -1,6 +1,6 @@
-<samp><b>tinyRipple's eslint config preset</b></samp>
+<samp><b>weilanzh's eslint config preset</b></samp>
 
-[![npm](https://img.shields.io/npm/v/@denverzh/eslint-config?color=a1b858&label=)](https://www.npmjs.com/package/@denverzh/eslint-config)
+[![npm](https://img.shields.io/npm/v/@isdhzh/eslint-config?color=a1b858&label=)](https://www.npmjs.com/package/@isdhzh/eslint-config)
 
 ## USAGE
 
@@ -8,20 +8,20 @@
 
 ```bash
 # npm
-npm install -D eslint @denverzh/eslint-config
+npm install -D eslint @isdhzh/eslint-config
 
 # yarn
-yarn add -D eslint @denverzh/eslint-config
+yarn add -D eslint @isdhzh/eslint-config
 
 #pnpm
-pnpm add -D eslint @denverzh/eslint-config
+pnpm add -D eslint @isdhzh/eslint-config
 ```
 
 ### Config `.eslintrc`
 
 ```json
 {
-  "extends": "@denverzh"
+  "extends": "@isdhzh"
 }
 ```
 

@@ -1,7 +1,7 @@
 {
-  "name": "@denverzh/eslint-config-react",
-  "version": "0.1.1",
-  "description": "tinyRipple's personal eslint config preset for react.",
+  "name": "@isdhzh/eslint-config-react",
+  "version": "0.2.0",
+  "description": "weilanzh's personal eslint config preset for react.",
   "main": "index.js",
   "files": [
     "*.js"
@@ -13,11 +13,11 @@
     "eslint",
     "eslint-config"
   ],
-  "author": "Denver Zheng <isdhzh@outlook.com> (https://bento.me/dzh)",
+  "author": "Dwight Zheng <dhzhme@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tinyRipple/eslint-config.git"
+    "url": "git@github.com:weilanzh/eslint-config.git"
   },
   "devDependencies": {
     "eslint": "^8.37.0",
@@ -25,7 +25,7 @@
     "typescript": "^5.0.3"
   },
   "dependencies": {
-    "@denverzh/eslint-config-typescript": "workspace:*",
+    "@isdhzh/eslint-config-typescript": "workspace:*",
     "@typescript-eslint/parser": "^5.57.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",

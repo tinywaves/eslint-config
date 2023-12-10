@@ -1,8 +1,8 @@
-const base = require('@denverzh/eslint-config-base');
+const base = require('@isdhzh/eslint-config-base');
 
 module.exports = {
   extends: [
-    '@denverzh/eslint-config-base',
+    '@isdhzh/eslint-config-base',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended'
   ],

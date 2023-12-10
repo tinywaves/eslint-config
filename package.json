@@ -1,7 +1,7 @@
 {
-  "name": "@denverzh/eslint-config-monorepo",
-  "version": "0.0.1",
-  "description": "tinyRipple's personal eslint config preset.",
+  "name": "@isdhzh/eslint-config-monorepo",
+  "version": "0.2.0",
+  "description": "weilanzh's personal eslint config preset.",
   "scripts": {
     "p": "pnpm publish -r"
   },
@@ -9,10 +9,10 @@
     "eslint",
     "eslint-config"
   ],
-  "author": "Denver Zheng <isdhzh@outlook.com> (https://bento.me/dzh)",
+  "author": "Dwight Zheng <dhzhme@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tinyRipple/eslint-config.git"
+    "url": "git@github.com:weilanzh/eslint-config.git"
   }
 }
