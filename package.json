@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "weilanzh's personal eslint config preset.",
   "scripts": {
-    "p": "pnpm publish -r"
+    "p": "pnpm publish -r --access=public"
   },
   "keywords": [
     "eslint",
