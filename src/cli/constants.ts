@@ -14,7 +14,7 @@ export const vscodeSettingsString = `
   "eslint.experimental.useFlatConfig": true,
 
   // Disable the default formatter, use eslint instead
-  "prettier.enable": true, // for css and others...
+  "prettier.enable": false,
   "editor.formatOnSave": false,
 
   // Auto fix
@@ -51,6 +51,9 @@ export const vscodeSettingsString = `
     "yaml",
     "toml",
     "astro",
+    "css",
+    "less",
+    "scss"
   ],
 
   // Enable eslint as the default formatter
@@ -75,19 +78,28 @@ export const vscodeSettingsString = `
   "[html]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[css]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[vue]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[astro]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "[toml]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[yaml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[astro]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }
 `;
