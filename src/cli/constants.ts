@@ -5,11 +5,16 @@ import type { ExtraLibrariesOption, FrameworkOption, PromItem } from './types';
 export { pkgJson };
 
 export const vscodeSettingsString = `
+  // Entry
+  "eslint.format.enable": true,
+  "eslint.ignoreUntitled": true,
+  "eslint.enable": true,
+
   // Enable the ESlint flat config support
   "eslint.experimental.useFlatConfig": true,
 
   // Disable the default formatter, use eslint instead
-  "prettier.enable": false,
+  "prettier.enable": true, // for css and others...
   "editor.formatOnSave": false,
 
   // Auto fix
@@ -46,7 +51,45 @@ export const vscodeSettingsString = `
     "yaml",
     "toml",
     "astro",
-  ]
+  ],
+
+  // Enable eslint as the default formatter
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
 `;
 
 export const frameworkOptions: PromItem<FrameworkOption>[] = [
