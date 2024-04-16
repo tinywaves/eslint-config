@@ -19,9 +19,16 @@ export async function updatePackageJson(result: PromtResult) {
 
   pkg.devDependencies ??= {};
   pkg.devDependencies['@dhzh/eslint-config'] = `^${pkgJson.version}`;
-  pkg.devDependencies.eslint ??= pkgJson.devDependencies.eslint
-    .replace('npm:eslint-ts-patch@', '')
-    .replace(/-\d+$/, '');
+
+  // eslint-plugin-react currently does not support eslint9.
+  // reference: https://github.com/jsx-eslint/eslint-plugin-react/issues/3699
+  if (result.frameworks.includes('react')) {
+    pkg.devDependencies.eslint ??= '^8.57.0';
+  } else {
+    pkg.devDependencies.eslint ??= pkgJson.devDependencies.eslint
+      .replace('npm:eslint-ts-patch@', '')
+      .replace(/-\d+$/, '');
+  }
 
   const addedPackages: string[] = [];
 
