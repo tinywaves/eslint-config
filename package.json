@@ -2,7 +2,7 @@
   "name": "@dhzh/eslint-config",
   "type": "module",
   "version": "0.3.0",
-  "packageManager": "pnpm@9.0.2",
+  "packageManager": "pnpm@9.0.5",
   "description": "Easton's ESLint config",
   "author": "Easton Zheng <dhzhme@gmail.com>",
   "license": "MIT",
