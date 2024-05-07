@@ -11,6 +11,7 @@ export const vscodeSettingsString = `
   "eslint.enable": true,
 
   // Enable the ESlint flat config support
+  // (remove this if your ESLint extension above v3.0.5)
   "eslint.experimental.useFlatConfig": true,
 
   // Disable the default formatter, use eslint instead
@@ -50,10 +51,12 @@ export const vscodeSettingsString = `
     "jsonc",
     "yaml",
     "toml",
-    "astro",
     "css",
     "less",
-    "scss"
+    "scss",
+    "gql",
+    "graphql",
+    "astro"
   ],
 
   // Enable eslint as the default formatter
