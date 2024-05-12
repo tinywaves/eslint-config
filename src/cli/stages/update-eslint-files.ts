@@ -54,18 +54,13 @@ export async function updateEslintFiles(result: PromtResult) {
   for (const framework of result.frameworks) {
     if (framework !== 'nest') {
       configLines.push(`${framework}: true,`);
+    } else {
+      configLines.push(`rules: { 'ts/consistent-type-imports': 'off' }`);
     }
   }
 
   const mainConfig = configLines.map((i) => `  ${i}`).join('\n');
   const additionalConfig: string[] = [];
-
-  // rules config.
-  if (result.frameworks.includes('nest')) {
-    additionalConfig.push(`  rules: {
-    'ts/consistent-type-imports': 'off'
-  }\n`);
-  }
 
   const eslintConfigContent: string = getEslintConfigContent(mainConfig, additionalConfig);
 
