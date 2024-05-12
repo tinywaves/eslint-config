@@ -117,6 +117,10 @@ export const frameworkOptions: PromItem<FrameworkOption>[] = [
     value: 'vue',
   },
   {
+    label: c.red('Nest'),
+    value: 'nest',
+  },
+  {
     label: c.red('Svelte'),
     value: 'svelte',
   },

@@ -11,6 +11,7 @@ Differences from [@antfu/eslint-config](./README-antfu.md):
 3. Explicitly use `1tbs` as brace style: `braceStyle: '1tbs'`.
 4. Disabled antfu's top level function rule: `'antfu/top-level-function': 'off'`.
 5. Always curly: `'curly': ['error', 'all']`.
+6. This eslint-config will enable `ts/consistent-type-imports` rule. But it will cause [compile issue](https://github.com/typescript-eslint/typescript-eslint/issues/2559) in [nest](https://nestjs.com/) projects. So I [disabled it](https://github.com/typescript-eslint/typescript-eslint/issues/2559#issuecomment-692780580) in this config in nest framework.
 
 ## Usage
 

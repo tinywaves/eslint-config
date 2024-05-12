@@ -4,7 +4,7 @@ export interface PromItem<T> {
   hint?: string;
 }
 
-export type FrameworkOption = 'react' | 'vue' | 'svelte' | 'astro' | 'solid' | 'slidev';
+export type FrameworkOption = 'react' | 'vue' | 'nest' | 'svelte' | 'astro' | 'solid' | 'slidev';
 
 export type ExtraLibrariesOption = 'formatter' | 'unocss';
 
