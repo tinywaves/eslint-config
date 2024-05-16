@@ -66,6 +66,13 @@ export interface OptionsFormatters {
   html?: 'prettier' | boolean;
 
   /**
+   * Enable formatting support for XML.
+   *
+   * Currently only support Prettier.
+   */
+  xml?: 'prettier' | boolean;
+
+  /**
    * Enable formatting support for Markdown.
    *
    * Support both Prettier and dprint.
@@ -154,6 +161,13 @@ export interface StylisticConfig extends Pick<StylisticCustomizeOptions, 'indent
 
 export interface OptionsOverrides {
   overrides?: TypedFlatConfigItem['rules'];
+}
+
+export interface OptionsRegExp {
+  /**
+   * Override rulelevels
+   */
+  level?: 'error' | 'warn';
 }
 
 export interface OptionsIsInEditor {
@@ -278,9 +292,18 @@ export interface OptionsConfig extends OptionsComponentExts {
   /**
    * Enable stylistic rules.
    *
+   * @see https://eslint.style/
    * @default true
    */
   stylistic?: boolean | (StylisticConfig & OptionsOverrides);
+
+  /**
+   * Enable regexp rules.
+   *
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/
+   * @default true
+   */
+  regexp?: boolean | (OptionsRegExp & OptionsOverrides);
 
   /**
    * Enable react rules.
