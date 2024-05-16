@@ -17,6 +17,8 @@
     "source.organizeImports": "never"
   },
 
+  "eslint.runtime": "node",
+
   // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
     { "rule": "style/*", "severity": "off" },
@@ -44,6 +46,7 @@
     "jsonc",
     "yaml",
     "toml",
+    "xml",
     "astro",
     "css",
     "less",
@@ -54,13 +57,22 @@
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "[javascriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[markdown]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
@@ -69,7 +81,16 @@
   "[jsonc]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[html]": {
+  "[yaml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[astro]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[css]": {
@@ -81,24 +102,10 @@
   "[scss]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[markdown]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[toml]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[astro]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "cSpell.words": [
     "attributify",
     "bumpp",
+    "dbaeumer",
     "dprint",
     "ependencies",
     "esno",

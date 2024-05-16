@@ -24,6 +24,8 @@ export const vscodeSettingsString = `
     "source.organizeImports": "never"
   },
 
+  "eslint.runtime": "node",
+
   // Silent the stylistic rules in you IDE, but still auto fix them
   // "eslint.rules.customizations": [
   //   { "rule": "style/*", "severity": "off" },
@@ -51,6 +53,7 @@ export const vscodeSettingsString = `
     "jsonc",
     "yaml",
     "toml",
+    "xml",
     "css",
     "less",
     "scss",
@@ -63,13 +66,22 @@ export const vscodeSettingsString = `
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "[javascriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[markdown]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
@@ -78,7 +90,13 @@ export const vscodeSettingsString = `
   "[jsonc]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[html]": {
+  "[yaml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[xml]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[css]": {
@@ -90,16 +108,10 @@ export const vscodeSettingsString = `
   "[scss]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[markdown]": {
+  "[gql]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[toml]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[yaml]": {
+  "[graphql]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[astro]": {
