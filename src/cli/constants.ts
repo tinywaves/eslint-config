@@ -24,8 +24,6 @@ export const vscodeSettingsString = `
     "source.organizeImports": "never"
   },
 
-  "eslint.runtime": "node",
-
   // Silent the stylistic rules in you IDE, but still auto fix them
   // "eslint.rules.customizations": [
   //   { "rule": "style/*", "severity": "off" },
