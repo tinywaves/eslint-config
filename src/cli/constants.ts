@@ -57,7 +57,12 @@ export const vscodeSettingsString = `
     "scss",
     "gql",
     "graphql",
-    "astro"
+    "astro",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
   ],
 
   // Enable eslint as the default formatter
