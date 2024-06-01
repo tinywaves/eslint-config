@@ -58,6 +58,7 @@ export async function stylistic(
               curly: ['error', 'all'],
             }
           : {
+              'antfu/curly': 'off',
               'antfu/if-newline': 'error',
               'antfu/top-level-function': 'off',
               'curly': ['error', 'all'],
