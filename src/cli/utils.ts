@@ -14,10 +14,10 @@ export function getEslintConfigContent(
   additionalConfigs?: string[],
 ) {
   return `
-import dhzh from '@dhzh/eslint-config'
+import dhzh from '@dhzh/eslint-config';
 
 export default dhzh({
 ${mainConfig}
-}${additionalConfigs?.map((config) => `,{\n${config}\n}`)})
+}${additionalConfigs?.map((config) => `,{\n${config}\n}`)});
 `.trimStart();
 }
