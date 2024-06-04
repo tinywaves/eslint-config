@@ -8,7 +8,7 @@ export type FrameworkOption = 'react' | 'vue' | 'nest' | 'svelte' | 'astro' | 's
 
 export type ExtraLibrariesOption = 'formatter' | 'unocss';
 
-export interface PromtResult {
+export interface PromptResult {
   uncommittedConfirmed: boolean;
   frameworks: FrameworkOption[];
   extra: ExtraLibrariesOption[];
