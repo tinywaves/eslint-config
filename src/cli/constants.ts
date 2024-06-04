@@ -177,6 +177,7 @@ export const dependenciesMap = {
     'eslint-plugin-astro',
     'astro-eslint-parser',
   ],
+  nest: [],
   react: [],
   slidev: [
     'prettier-plugin-slidev',
