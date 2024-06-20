@@ -6,7 +6,7 @@
   "description": "Easton's ESLint config",
   "author": "Easton Zheng <dhzhme@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/tinywaves/eslint-config",
+  "homepage": "https://github.com/dhzhme/eslint-config",
   "keywords": [
     "eslint",
     "eslint-config"
