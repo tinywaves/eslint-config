@@ -162,6 +162,9 @@ importers:
       bumpp:
         specifier: ^9.4.1
         version: 9.4.1
+      bundle-require:
+        specifier: ^5.0.0
+        version: 5.0.0(esbuild@0.21.5)
       eslint:
         specifier: npm:eslint-ts-patch@9.4.0-0
         version: eslint-ts-patch@9.4.0-0
@@ -4021,6 +4024,11 @@ snapshots:
   bundle-require@5.0.0(esbuild@0.20.2):
     dependencies:
       esbuild: 0.20.2
+      load-tsconfig: 0.2.5
+
+  bundle-require@5.0.0(esbuild@0.21.5):
+    dependencies:
+      esbuild: 0.21.5
       load-tsconfig: 0.2.5
 
   c12@1.11.0:
