@@ -98,6 +98,7 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "cSpell.words": [
+    "Antfu",
     "attributify",
     "bumpp",
     "dbaeumer",
