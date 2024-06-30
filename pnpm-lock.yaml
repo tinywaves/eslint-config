@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  tsx: ~4.14
+
 importers:
 
   .:
@@ -130,7 +133,7 @@ importers:
         specifier: workspace:*
         version: 'link:'
       '@eslint/config-inspector':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: 0.5.1(eslint-ts-patch@9.5.0-0)
       '@prettier/plugin-xml':
         specifier: ^3.4.1
@@ -223,8 +226,8 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0(postcss@8.4.38)(typescript@5.5.2)
       tsx:
-        specifier: ^4.15.7
-        version: 4.16.0
+        specifier: ~4.14
+        version: 4.14.1
       typescript:
         specifier: ^5.5.2
         version: 5.5.2
@@ -2918,8 +2921,8 @@ packages:
       typescript:
         optional: true
 
-  tsx@4.16.0:
-    resolution: {integrity: sha512-MPgN+CuY+4iKxGoJNPv+1pyo5YWZAQ5XfsyobUG+zoKG7IkvCPLZDEyoIb8yLS2FcWci1nlxAqmvPlFWD5AFiQ==}
+  tsx@4.14.1:
+    resolution: {integrity: sha512-GU8pPJq8DdxcJDSK6Bc64c2jW8zBK2hb0jzwHZDfjapbwu6AqvFnAElnzZ17Xb9TH5a/j6/sicTCVYF+eO/cmA==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -4861,7 +4864,7 @@ snapshots:
 
   esno@4.7.0:
     dependencies:
-      tsx: 4.16.0
+      tsx: 4.14.1
 
   espree@10.0.1:
     dependencies:
@@ -5132,7 +5135,7 @@ snapshots:
       jiti: 1.21.6
       pathe: 1.1.2
       pkg-types: 1.1.1
-      tsx: 4.16.0
+      tsx: 4.14.1
     transitivePeerDependencies:
       - supports-color
 
@@ -6042,9 +6045,9 @@ snapshots:
       - supports-color
       - ts-node
 
-  tsx@4.16.0:
+  tsx@4.14.1:
     dependencies:
-      esbuild: 0.21.5
+      esbuild: 0.20.2
       get-tsconfig: 4.7.5
     optionalDependencies:
       fsevents: 2.3.3
