@@ -4,7 +4,7 @@ export function isGitClean() {
   try {
     execSync('git diff-index --quiet HEAD --');
     return true;
-  } catch (error) {
+  } catch {
     return false;
   }
 }
