@@ -17,7 +17,7 @@ export async function markdown(
 
   return [
     {
-      name: 'antfu/markdown/setup',
+      name: 'dhzh/markdown/setup',
       plugins: {
         markdown,
       },
@@ -25,7 +25,7 @@ export async function markdown(
     {
       files,
       ignores: [GLOB_MARKDOWN_IN_MARKDOWN],
-      name: 'antfu/markdown/processor',
+      name: 'dhzh/markdown/processor',
       // `eslint-plugin-markdown` only creates virtual files for code blocks,
       // but not the markdown file itself. We use `eslint-merge-processors` to
       // add a pass-through processor for the markdown file itself.
@@ -39,7 +39,7 @@ export async function markdown(
       languageOptions: {
         parser: parserPlain,
       },
-      name: 'antfu/markdown/parser',
+      name: 'dhzh/markdown/parser',
     },
     {
       files: [
@@ -53,7 +53,7 @@ export async function markdown(
           },
         },
       },
-      name: 'antfu/markdown/disables',
+      name: 'dhzh/markdown/disables',
       rules: {
         'import/newline-after-import': 'off',
 
@@ -75,6 +75,7 @@ export async function markdown(
         'ts/no-namespace': 'off',
         'ts/no-redeclare': 'off',
         'ts/no-require-imports': 'off',
+        'ts/no-unused-expressions': 'off',
         'ts/no-unused-vars': 'off',
         'ts/no-use-before-define': 'off',
         'ts/no-var-requires': 'off',
