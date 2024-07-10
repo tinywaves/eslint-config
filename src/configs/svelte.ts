@@ -30,7 +30,7 @@ export async function svelte(
 
   return [
     {
-      name: 'antfu/svelte/setup',
+      name: 'dhzh/svelte/setup',
       plugins: {
         svelte: pluginSvelte,
       },
@@ -46,7 +46,7 @@ export async function svelte(
             : null,
         },
       },
-      name: 'antfu/svelte/rules',
+      name: 'dhzh/svelte/rules',
       processor: pluginSvelte.processors['.svelte'],
       rules: {
         'import/no-mutable-exports': 'off',
@@ -83,7 +83,12 @@ export async function svelte(
 
         'unused-imports/no-unused-vars': [
           'error',
-          { args: 'after-used', argsIgnorePattern: '^_', vars: 'all', varsIgnorePattern: '^(_|\\$\\$Props$|\\$\\$Events$|\\$\\$Slots$)' },
+          {
+            args: 'after-used',
+            argsIgnorePattern: '^_',
+            vars: 'all',
+            varsIgnorePattern: '^(_|\\$\\$Props$|\\$\\$Events$|\\$\\$Slots$)',
+          },
         ],
 
         ...stylistic
