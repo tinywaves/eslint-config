@@ -307,6 +307,7 @@ type foo = { bar: 2 }
 Since v2.9.0, this preset will automatically rename the plugins also for your custom configs. You can use the original prefix to override the rules directly.
 
 <details>
+
 <summary>Change back to original prefix</summary>
 
 If you really want to use the original prefix, you can revert the plugin renaming by:
@@ -322,6 +323,8 @@ export default antfu()
     // ...
   });
 ```
+
+</details>
 
 ### Rules Overrides
 
