@@ -18,7 +18,7 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0
       '@eslint-react/eslint-plugin':
-        specifier: ^1.5.25
+        specifier: ^1.5.26
         version: 1.5.27(eslint-ts-patch@9.5.0-0)(typescript@5.5.3)
       '@stylistic/eslint-plugin':
         specifier: ^2.6.0-beta.0
@@ -232,7 +232,7 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
       vitest:
-        specifier: ^2.0.2
+        specifier: ^2.0.3
         version: 2.0.3(@types/node@20.14.10)
       vue:
         specifier: ^3.4.31
@@ -6499,7 +6499,7 @@ snapshots:
   vite@5.2.13(@types/node@20.14.10):
     dependencies:
       esbuild: 0.20.2
-      postcss: 8.4.38
+      postcss: 8.4.39
       rollup: 4.18.0
     optionalDependencies:
       '@types/node': 20.14.10
