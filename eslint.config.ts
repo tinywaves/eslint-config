@@ -11,6 +11,7 @@ export default dhzh(
     astro: true,
     typescript: true,
     formatters: true,
+    type: 'lib',
   },
   {
     ignores: [],
