@@ -125,3 +125,7 @@ export async function ensurePackages(packages: (string | undefined)[]): Promise<
     await import('@antfu/install-pkg').then((i) => i.installPackage(nonExistingPackages, { dev: true }));
   }
 }
+
+export function isInEditorEnv(): boolean {
+  return !!((process.env.VSCODE_PID || process.env.VSCODE_CWD || process.env.JETBRAINS_IDE || process.env.VIM || process.env.NVIM) && !process.env.CI);
+}
