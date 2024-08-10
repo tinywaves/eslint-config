@@ -4,7 +4,7 @@
 
 > `Special Statement`: This project comes from [`@antfu/eslint-config`](https://github.com/antfu/eslint-config). The two are almost the same, with only some differences to meet personal needs. In order to seek convenience and prevent some conflicts between the upstream branch and my own changes after forking, I chose to copy instead of fork.
 
-Differences from [@antfu/eslint-config](./README-antfu.md):
+Differences from [@antfu/eslint-config](https://github.com/antfu/eslint-config/blob/main/README.md):
 
 1. With semi: `semi: true`.
 2. Always arrow parens: `arrowParens: true`.
