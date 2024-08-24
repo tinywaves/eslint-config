@@ -1,5 +1,17 @@
 import { isPackageExists } from 'local-pkg';
-import { GLOB_ASTRO, GLOB_ASTRO_TS, GLOB_CSS, GLOB_GRAPHQL, GLOB_HTML, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS, GLOB_XML } from '../globs';
+import {
+  GLOB_ASTRO,
+  GLOB_ASTRO_TS,
+  GLOB_CSS,
+  GLOB_GRAPHQL,
+  GLOB_HTML,
+  GLOB_LESS,
+  GLOB_MARKDOWN,
+  GLOB_POSTCSS,
+  GLOB_SCSS,
+  GLOB_SVG,
+  GLOB_XML,
+} from '../globs';
 import type { VendoredPrettierOptions } from '../vender/prettier-types';
 import { ensurePackages, interopDefault, isPackageInScope, parserPlain } from '../utils';
 import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from '../types';
@@ -10,6 +22,7 @@ export async function formatters(
   stylistic: StylisticConfig = {},
 ): Promise<TypedFlatConfigItem[]> {
   if (options === true) {
+    const isPrettierPluginXmlInScope = isPackageInScope('@prettier/plugin-xml');
     options = {
       astro: isPackageInScope('prettier-plugin-astro'),
       css: true,
@@ -17,7 +30,8 @@ export async function formatters(
       html: true,
       markdown: true,
       slidev: isPackageExists('@slidev/cli'),
-      xml: isPackageInScope('@prettier/plugin-xml'),
+      svg: isPrettierPluginXmlInScope,
+      xml: isPrettierPluginXmlInScope,
     };
   }
 
@@ -25,7 +39,7 @@ export async function formatters(
     'eslint-plugin-format',
     options.markdown && options.slidev ? 'prettier-plugin-slidev' : undefined,
     options.astro ? 'prettier-plugin-astro' : undefined,
-    options.xml ? '@prettier/plugin-xml' : undefined,
+    (options.xml || options.svg) ? '@prettier/plugin-xml' : undefined,
   ]);
 
   if (options.slidev && options.markdown !== true && options.markdown !== 'prettier') {
@@ -74,7 +88,7 @@ export async function formatters(
 
   const configs: TypedFlatConfigItem[] = [
     {
-      name: 'antfu/formatter/setup',
+      name: 'dhzh/formatter/setup',
       plugins: {
         format: pluginFormat,
       },
@@ -88,7 +102,7 @@ export async function formatters(
         languageOptions: {
           parser: parserPlain,
         },
-        name: 'antfu/formatter/css',
+        name: 'dhzh/formatter/css',
         rules: {
           'format/prettier': [
             'error',
@@ -104,7 +118,7 @@ export async function formatters(
         languageOptions: {
           parser: parserPlain,
         },
-        name: 'antfu/formatter/scss',
+        name: 'dhzh/formatter/scss',
         rules: {
           'format/prettier': [
             'error',
@@ -120,7 +134,7 @@ export async function formatters(
         languageOptions: {
           parser: parserPlain,
         },
-        name: 'antfu/formatter/less',
+        name: 'dhzh/formatter/less',
         rules: {
           'format/prettier': [
             'error',
@@ -140,7 +154,7 @@ export async function formatters(
       languageOptions: {
         parser: parserPlain,
       },
-      name: 'antfu/formatter/html',
+      name: 'dhzh/formatter/html',
       rules: {
         'format/prettier': [
           'error',
@@ -159,7 +173,30 @@ export async function formatters(
       languageOptions: {
         parser: parserPlain,
       },
-      name: 'antfu/formatter/xml',
+      name: 'dhzh/formatter/xml',
+      rules: {
+        'format/prettier': [
+          'error',
+          {
+            ...prettierXmlOptions,
+            ...prettierOptions,
+            parser: 'xml',
+            plugins: [
+              '@prettier/plugin-xml',
+            ],
+          },
+        ],
+      },
+    });
+  }
+
+  if (options.svg) {
+    configs.push({
+      files: [GLOB_SVG],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      name: 'dhzh/formatter/svg',
       rules: {
         'format/prettier': [
           'error',
@@ -193,7 +230,7 @@ export async function formatters(
       languageOptions: {
         parser: parserPlain,
       },
-      name: 'antfu/formatter/markdown',
+      name: 'dhzh/formatter/markdown',
       rules: {
         [`format/${formater}`]: [
           'error',
@@ -217,7 +254,7 @@ export async function formatters(
         languageOptions: {
           parser: parserPlain,
         },
-        name: 'antfu/formatter/slidev',
+        name: 'dhzh/formatter/slidev',
         rules: {
           'format/prettier': [
             'error',
@@ -241,7 +278,7 @@ export async function formatters(
       languageOptions: {
         parser: parserPlain,
       },
-      name: 'antfu/formatter/astro',
+      name: 'dhzh/formatter/astro',
       rules: {
         'format/prettier': [
           'error',
@@ -258,7 +295,7 @@ export async function formatters(
 
     configs.push({
       files: [GLOB_ASTRO, GLOB_ASTRO_TS],
-      name: 'antfu/formatter/astro/disables',
+      name: 'dhzh/formatter/astro/disables',
       rules: {
         'style/arrow-parens': 'off',
         'style/block-spacing': 'off',
@@ -277,7 +314,7 @@ export async function formatters(
       languageOptions: {
         parser: parserPlain,
       },
-      name: 'antfu/formatter/graphql',
+      name: 'dhzh/formatter/graphql',
       rules: {
         'format/prettier': [
           'error',
