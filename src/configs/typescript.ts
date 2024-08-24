@@ -8,6 +8,7 @@ export async function typescript(options: OptionsFiles & OptionsComponentExts & 
   const {
     componentExts = [],
     overrides = {},
+    overridesTypeAware = {},
     parserOptions = {},
     type = 'app',
   } = options;
@@ -158,7 +159,10 @@ export async function typescript(options: OptionsFiles & OptionsComponentExts & 
           files: filesTypeAware,
           ignores: ignoresTypeAware,
           name: 'antfu/typescript/rules-type-aware',
-          rules: typeAwareRules,
+          rules: {
+            ...typeAwareRules,
+            ...overridesTypeAware,
+          },
         }]
       : [],
     {
