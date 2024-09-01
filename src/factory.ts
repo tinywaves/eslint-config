@@ -118,9 +118,15 @@ export function dhzh(
 
   if (enableGitignore) {
     if (typeof enableGitignore !== 'boolean') {
-      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then((r) => [r(enableGitignore)]));
+      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then((r) => [r({
+        name: 'dhzh/gitignore',
+        ...enableGitignore,
+      })]));
     } else {
-      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then((r) => [r({ strict: false })]));
+      configs.push(interopDefault(import('eslint-config-flat-gitignore')).then((r) => [r({
+        name: 'dhzh/gitignore',
+        strict: false,
+      })]));
     }
   }
 
