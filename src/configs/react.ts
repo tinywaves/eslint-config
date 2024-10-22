@@ -1,7 +1,9 @@
 import { isPackageExists } from 'local-pkg';
+
+import { GLOB_SRC } from '../globs';
 import { ensurePackages, interopDefault, toArray } from '../utils';
+
 import type { OptionsFiles, OptionsOverrides, OptionsTypeScriptWithTypes, TypedFlatConfigItem } from '../types';
-import { GLOB_SCSS } from '../globs';
 
 // react refresh
 const ReactRefreshAllowConstantExportPackages = [
@@ -21,7 +23,7 @@ export async function react(
   options: OptionsTypeScriptWithTypes & OptionsOverrides & OptionsFiles = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
-    files = [GLOB_SCSS],
+    files = [GLOB_SRC],
     overrides = {},
   } = options;
 
@@ -56,7 +58,7 @@ export async function react(
 
   return [
     {
-      name: 'antfu/react/setup',
+      name: 'dhzh/react/setup',
       plugins: {
         'react': plugins['@eslint-react'],
         'react-dom': plugins['@eslint-react/dom'],
@@ -78,7 +80,7 @@ export async function react(
         },
         sourceType: 'module',
       },
-      name: 'antfu/react/rules',
+      name: 'dhzh/react/rules',
       rules: {
         // recommended rules from @eslint-react/dom
         'react-dom/no-children-in-void-dom-elements': 'warn',

@@ -1,4 +1,5 @@
 import { interopDefault } from '../utils';
+
 import type { OptionsStylistic, TypedFlatConfigItem } from '../types';
 
 export async function jsdoc(options: OptionsStylistic = {}): Promise<TypedFlatConfigItem[]> {
@@ -8,7 +9,7 @@ export async function jsdoc(options: OptionsStylistic = {}): Promise<TypedFlatCo
 
   return [
     {
-      name: 'antfu/jsdoc/rules',
+      name: 'dhzh/jsdoc/rules',
       plugins: {
         jsdoc: await interopDefault(import('eslint-plugin-jsdoc')),
       },

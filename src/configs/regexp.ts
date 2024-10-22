@@ -1,4 +1,5 @@
 import { configs } from 'eslint-plugin-regexp';
+
 import type { OptionsOverrides, OptionsRegExp, TypedFlatConfigItem } from '../types';
 
 export async function regexp(
@@ -21,7 +22,7 @@ export async function regexp(
   return [
     {
       ...config,
-      name: 'antfu/regexp/rules',
+      name: 'dhzh/regexp/rules',
       rules: {
         ...rules,
         ...options.overrides,

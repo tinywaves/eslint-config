@@ -1,7 +1,8 @@
-import { isPackageExists } from 'local-pkg';
 import { FlatConfigComposer } from 'eslint-flat-config-utils';
+import { isPackageExists } from 'local-pkg';
+
 import type { Linter } from 'eslint';
-import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from './types';
+
 import {
   astro,
   command,
@@ -30,10 +31,12 @@ import {
   vue,
   yaml,
 } from './configs';
-import { interopDefault, isInEditorEnv } from './utils';
 import { formatters } from './configs/formatters';
 import { regexp } from './configs/regexp';
+import { interopDefault, isInEditorEnv } from './utils';
+
 import type { RuleOptions } from './typegen';
+import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from './types';
 
 const flatConfigProps = [
   'name',
@@ -101,7 +104,7 @@ export function dhzh(
     isInEditor = isInEditorEnv();
     if (isInEditor) {
       // eslint-disable-next-line no-console
-      console.log('[@antfu/eslint-config] Detected running in editor, some rules are disabled.');
+      console.log('[@dhzh/eslint-config] Detected running in editor, some rules are disabled.');
     }
   }
 

@@ -1,6 +1,7 @@
-import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types';
 import { GLOB_YAML } from '../globs';
 import { interopDefault } from '../utils';
+
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types';
 
 export async function yaml(
   options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
@@ -26,7 +27,7 @@ export async function yaml(
 
   return [
     {
-      name: 'antfu/yaml/setup',
+      name: 'dhzh/yaml/setup',
       plugins: {
         yaml: pluginYaml,
       },
@@ -36,7 +37,7 @@ export async function yaml(
       languageOptions: {
         parser: parserYaml,
       },
-      name: 'antfu/yaml/rules',
+      name: 'dhzh/yaml/rules',
       rules: {
         'style/spaced-comment': 'off',
 

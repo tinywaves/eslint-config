@@ -1,6 +1,7 @@
-import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types';
 import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from '../globs';
 import { interopDefault } from '../utils';
+
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types';
 
 export async function jsonc(
   options: OptionsFiles & OptionsStylistic & OptionsOverrides = {},
@@ -25,7 +26,7 @@ export async function jsonc(
 
   return [
     {
-      name: 'antfu/jsonc/setup',
+      name: 'dhzh/jsonc/setup',
       plugins: {
         jsonc: pluginJsonc as any,
       },
@@ -35,7 +36,7 @@ export async function jsonc(
       languageOptions: {
         parser: parserJsonc,
       },
-      name: 'antfu/jsonc/rules',
+      name: 'dhzh/jsonc/rules',
       rules: {
         'jsonc/no-bigint-literals': 'error',
         'jsonc/no-binary-expression': 'error',

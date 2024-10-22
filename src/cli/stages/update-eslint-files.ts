@@ -1,13 +1,16 @@
 import fs from 'node:fs';
 import fsp from 'node:fs/promises';
-import process from 'node:process';
 import path from 'node:path';
-import c from 'picocolors';
+import process from 'node:process';
+
 import * as p from '@clack/prompts';
+import c from 'picocolors';
 
 // @ts-expect-error missing types
 import parse from 'parse-gitignore';
+
 import { getEslintConfigContent } from '../utils';
+
 import type { PromptResult } from '../types';
 
 export async function updateEslintFiles(result: PromptResult): Promise<void> {

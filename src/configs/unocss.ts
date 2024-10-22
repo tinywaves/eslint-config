@@ -1,4 +1,5 @@
 import { ensurePackages, interopDefault } from '../utils';
+
 import type { OptionsUnoCSS, TypedFlatConfigItem } from '../types';
 
 export async function unocss(
@@ -21,7 +22,7 @@ export async function unocss(
 
   return [
     {
-      name: 'antfu/unocss',
+      name: 'dhzh/unocss',
       plugins: {
         unocss: pluginUnoCSS,
       },

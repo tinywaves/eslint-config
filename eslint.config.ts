@@ -1,5 +1,6 @@
 // @ts-expect-error missing types
 import styleMigrate from '@stylistic/eslint-plugin-migrate';
+
 import { dhzh } from './src';
 
 export default dhzh(

@@ -1,4 +1,5 @@
 import { isPackageExists } from 'local-pkg';
+
 import {
   GLOB_ASTRO,
   GLOB_ASTRO_TS,
@@ -12,10 +13,11 @@ import {
   GLOB_SVG,
   GLOB_XML,
 } from '../globs';
-import type { VendoredPrettierOptions } from '../vender/prettier-types';
 import { ensurePackages, interopDefault, isPackageInScope, parserPlain } from '../utils';
-import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from '../types';
 import { StylisticConfigDefaults } from './stylistic';
+
+import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from '../types';
+import type { VendoredPrettierOptions } from '../vender/prettier-types';
 
 export async function formatters(
   options: OptionsFormatters | true = {},
