@@ -17,6 +17,29 @@ Differences from [@antfu/eslint-config](https://github.com/antfu/eslint-config/b
 
 6. This eslint-config will enable `ts/consistent-type-imports` rule. But it will cause [compile issue](https://github.com/typescript-eslint/typescript-eslint/issues/2559) in [nest](https://nestjs.com/) projects. So I [disabled it](https://github.com/typescript-eslint/typescript-eslint/issues/2559#issuecomment-692780580) in this config in nest framework.
 7. Support `'**/*.?([cm])js` and `'**/*.?([cm])jsx` files in react projects.
+8. Perfectionist plugin for imports sorting:
+
+```js
+[
+  'builtin',
+  'external',
+  'internal',
+  'parent',
+  'sibling',
+  'index',
+  'style',
+  'side-effect',
+  'side-effect-style',
+  'object',
+  'builtin-type',
+  'external-type',
+  'internal-type',
+  'parent-type',
+  'sibling-type',
+  'index-type',
+  'unknown',
+];
+```
 
 ## Usage
 
