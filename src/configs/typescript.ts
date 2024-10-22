@@ -82,14 +82,14 @@ export async function typescript(options: OptionsFiles & OptionsComponentExts & 
           ...parserOptions as any,
         },
       },
-      name: `antfu/typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
+      name: `dhzh/typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
     };
   }
 
   return [
     {
       // Install the plugins without globs, so they can be configured separately.
-      name: 'antfu/typescript/setup',
+      name: 'dhzh/typescript/setup',
       plugins: {
         antfu: pluginAntfu,
         ts: pluginTs as any,
@@ -104,7 +104,7 @@ export async function typescript(options: OptionsFiles & OptionsComponentExts & 
       : [makeParser(false, files)],
     {
       files,
-      name: 'antfu/typescript/rules',
+      name: 'dhzh/typescript/rules',
       rules: {
         ...renameRules(
           pluginTs.configs['eslint-recommended'].overrides![0].rules!,
@@ -115,7 +115,6 @@ export async function typescript(options: OptionsFiles & OptionsComponentExts & 
           { '@typescript-eslint': 'ts' },
         ),
         'no-dupe-class-members': 'off',
-        'no-loss-of-precision': 'off',
         'no-redeclare': 'off',
         'no-use-before-define': 'off',
         'no-useless-constructor': 'off',
@@ -130,7 +129,6 @@ export async function typescript(options: OptionsFiles & OptionsComponentExts & 
         'ts/no-extraneous-class': 'off',
         'ts/no-import-type-side-effects': 'error',
         'ts/no-invalid-void-type': 'off',
-        'ts/no-loss-of-precision': 'error',
         'ts/no-non-null-assertion': 'off',
         'ts/no-redeclare': 'error',
         'ts/no-require-imports': 'error',
@@ -158,37 +156,12 @@ export async function typescript(options: OptionsFiles & OptionsComponentExts & 
       ? [{
           files: filesTypeAware,
           ignores: ignoresTypeAware,
-          name: 'antfu/typescript/rules-type-aware',
+          name: 'dhzh/typescript/rules-type-aware',
           rules: {
             ...typeAwareRules,
             ...overridesTypeAware,
           },
         }]
       : [],
-    {
-      files: ['**/*.d.?([cm])ts'],
-      name: 'antfu/typescript/disables/dts',
-      rules: {
-        'eslint-comments/no-unlimited-disable': 'off',
-        'import/no-duplicates': 'off',
-        'no-restricted-syntax': 'off',
-        'unused-imports/no-unused-vars': 'off',
-      },
-    },
-    {
-      files: ['**/*.{test,spec}.ts?(x)'],
-      name: 'antfu/typescript/disables/test',
-      rules: {
-        'no-unused-expressions': 'off',
-      },
-    },
-    {
-      files: ['**/*.js', '**/*.cjs'],
-      name: 'antfu/typescript/disables/cjs',
-      rules: {
-        'ts/no-require-imports': 'off',
-        'ts/no-var-requires': 'off',
-      },
-    },
   ];
 }

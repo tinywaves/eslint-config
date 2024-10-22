@@ -1,7 +1,6 @@
 import globals from 'globals';
 import type { OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from '../types';
 import { pluginAntfu, pluginUnusedImports } from '../plugins';
-import { GLOB_SRC, GLOB_SRC_EXT } from '../globs';
 
 export async function javascript(
   options: OptionsIsInEditor & OptionsOverrides = {},
@@ -35,10 +34,10 @@ export async function javascript(
       linterOptions: {
         reportUnusedDisableDirectives: true,
       },
-      name: 'antfu/javascript/setup',
+      name: 'dhzh/javascript/setup',
     },
     {
-      name: 'antfu/javascript/rules',
+      name: 'dhzh/javascript/rules',
       plugins: {
         'antfu': pluginAntfu,
         'unused-imports': pluginUnusedImports,
@@ -217,13 +216,6 @@ export async function javascript(
         'yoda': ['error', 'never'],
 
         ...overrides,
-      },
-    },
-    {
-      files: [`scripts/${GLOB_SRC}`, `cli.${GLOB_SRC_EXT}`],
-      name: 'antfu/javascript/disables/cli',
-      rules: {
-        'no-console': 'off',
       },
     },
   ];

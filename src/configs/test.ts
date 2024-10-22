@@ -34,14 +34,14 @@ export async function test(
 
   return [
     {
-      name: 'antfu/test/setup',
+      name: 'dhzh/test/setup',
       plugins: {
         test: _pluginTest,
       },
     },
     {
       files,
-      name: 'antfu/test/rules',
+      name: 'dhzh/test/rules',
       rules: {
         'node/prefer-global/process': 'off',
 
@@ -53,6 +53,7 @@ export async function test(
         'test/prefer-lowercase-title': 'error',
 
         'ts/explicit-function-return-type': 'off',
+        'unicorn/consistent-function-scoping': 'off',
 
         ...overrides,
       },

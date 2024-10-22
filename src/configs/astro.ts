@@ -23,7 +23,7 @@ export async function astro(
 
   return [
     {
-      name: 'antfu/astro/setup',
+      name: 'dhzh/astro/setup',
       plugins: {
         astro: pluginAstro,
       },
@@ -39,7 +39,7 @@ export async function astro(
         },
         sourceType: 'module',
       },
-      name: 'antfu/astro/rules',
+      name: 'dhzh/astro/rules',
       processor: 'astro/client-side-ts',
       rules: {
         // use recommended rules
@@ -58,7 +58,6 @@ export async function astro(
           ? {
               'style/indent': 'off',
               'style/jsx-closing-tag-location': 'off',
-              'style/jsx-indent': 'off',
               'style/jsx-one-expression-per-line': 'off',
               'style/no-multiple-empty-lines': 'off',
             }
