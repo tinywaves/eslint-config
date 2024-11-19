@@ -15,8 +15,8 @@ export async function perfectionist(): Promise<TypedFlatConfigItem[]> {
         perfectionist: pluginPerfectionist,
       },
       rules: {
-        'perfectionist/sort-exports': ['error', { order: 'asc', type: 'natural' }],
-        'perfectionist/sort-imports': ['error', {
+        'perfectionist/sort-exports': ['off', { order: 'asc', type: 'natural' }],
+        'perfectionist/sort-imports': ['off', {
           groups: [
             'builtin',
             'external',
@@ -40,8 +40,8 @@ export async function perfectionist(): Promise<TypedFlatConfigItem[]> {
           order: 'asc',
           type: 'natural',
         }],
-        'perfectionist/sort-named-exports': ['error', { order: 'asc', type: 'natural' }],
-        'perfectionist/sort-named-imports': ['error', { order: 'asc', type: 'natural' }],
+        'perfectionist/sort-named-exports': ['off', { order: 'asc', type: 'natural' }],
+        'perfectionist/sort-named-imports': ['off', { order: 'asc', type: 'natural' }],
       },
     },
   ];
