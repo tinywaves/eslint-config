@@ -43,6 +43,10 @@ Differences from [@antfu/eslint-config](https://github.com/antfu/eslint-config/b
 
 > Note: Temporarily close the rules of the [`Perfectionist`](https://perfectionist.dev/) plugin from version `v0.15.0`, because I haven't found a way to achieve the best balance between actual development needs and personal habits.
 
+9. react related:
+
+- `'react/no-useless-fragment': 'warn'`
+
 ## Usage
 
 > Requires ESLint v9.5.0+
