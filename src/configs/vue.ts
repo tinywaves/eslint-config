@@ -78,16 +78,18 @@ export async function vue(
       name: 'dhzh/vue/rules',
       processor: sfcBlocks === false
         ? pluginVue.processors['.vue']
-        : mergeProcessors([
-          pluginVue.processors['.vue'],
-          processorVueBlocks({
-            ...sfcBlocks,
-            blocks: {
-              styles: true,
-              ...sfcBlocks.blocks,
-            },
-          }),
-        ]),
+        : mergeProcessors(
+            [
+              pluginVue.processors['.vue'],
+              processorVueBlocks({
+                ...sfcBlocks,
+                blocks: {
+                  styles: true,
+                  ...sfcBlocks.blocks,
+                },
+              }),
+            ],
+          ),
       rules: {
         ...pluginVue.configs.base.rules as any,
 

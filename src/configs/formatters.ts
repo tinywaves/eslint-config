@@ -243,10 +243,13 @@ export async function formatters(
         [`format/${formater}`]: [
           'error',
           formater === 'prettier'
-            ? mergePrettierOptions(prettierOptions, {
-              embeddedLanguageFormatting: 'off',
-              parser: 'markdown',
-            })
+            ? mergePrettierOptions(
+                prettierOptions,
+                {
+                  embeddedLanguageFormatting: 'off',
+                  parser: 'markdown',
+                },
+              )
             : {
                 ...dprintOptions,
                 language: 'markdown',
