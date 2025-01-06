@@ -55,6 +55,12 @@ export async function stylistic(
         'antfu/consistent-chaining': 'error',
         'antfu/consistent-list-newline': 'error',
 
+        ...jsx
+          ? {
+              'style/jsx-curly-spacing': ['error', { children: true, when: 'never' }],
+            }
+          : {},
+
         ...(lessOpinionated
           ? {
               curly: ['error', 'all'],

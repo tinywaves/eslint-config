@@ -47,6 +47,10 @@ Differences from [@antfu/eslint-config](https://github.com/antfu/eslint-config/b
 
 - `'react/no-useless-fragment': 'warn'`
 
+10. remove spacing when useing jsx curly braces:
+
+- `'style/jsx-curly-spacing': ['error', { children: true, when: 'never' }]`
+
 ## Usage
 
 > Requires ESLint v9.5.0+
