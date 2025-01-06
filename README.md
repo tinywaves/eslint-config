@@ -82,4 +82,4 @@ export default dhzh();
 
 ## License
 
-[MIT](./LICENSE) License &copy; 2022-PRESENT [Easton Zheng](https://github.com/eastonzh)
+[MIT](./LICENSE) License &copy; 2022-PRESENT [Lyle Zheng](https://github.com/tinywaves)

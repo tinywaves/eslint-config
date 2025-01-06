@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.16.1",
   "packageManager": "pnpm@9.15.3",
-  "description": "Easton's ESLint config",
-  "author": "Easton Zheng <dhzhme@gmail.com>",
+  "description": "Lyle's ESLint config",
+  "author": "Lyle Zheng <dhzhme@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/dhzhme/eslint-config",
   "keywords": [
