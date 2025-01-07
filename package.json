@@ -6,7 +6,7 @@
   "description": "Lyle's ESLint config",
   "author": "Lyle Zheng <dhzhme@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/dhzhme/eslint-config",
+  "homepage": "https://github.com/tinywaves/eslint-config",
   "keywords": [
     "eslint",
     "eslint-config"
