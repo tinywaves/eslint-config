@@ -58,7 +58,8 @@ export const vscodeSettingsString = `
     "postcss",
     "gql",
     "graphql",
-    "astro"
+    "astro",
+    "svelte"
   ],
 
   // Enable eslint as the default formatter
