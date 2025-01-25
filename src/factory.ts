@@ -319,6 +319,18 @@ export function dhzh(
       .renamePlugins(defaultPluginRenaming);
   }
 
+  if (isInEditor) {
+    composer = composer
+      .disableRulesFix(
+        [
+          'test/no-only-tests',
+        ],
+        {
+          builtinRules: () => import(['eslint', 'use-at-your-own-risk'].join('/')).then((r) => r.builtinRules),
+        },
+      );
+  }
+
   return composer;
 }
 

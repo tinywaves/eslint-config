@@ -43,13 +43,15 @@ Differences from [@antfu/eslint-config](https://github.com/antfu/eslint-config/b
 
 > Note: Temporarily close the rules of the [`Perfectionist`](https://perfectionist.dev/) plugin from version `v0.15.0`, because I haven't found a way to achieve the best balance between actual development needs and personal habits.
 
-9. react related:
+9. React related:
 
 - `'react/no-useless-fragment': 'warn'`
 
-10. remove spacing when useing jsx curly braces:
+10. Remove spacing when useing jsx curly braces:
 
 - `'style/jsx-curly-spacing': ['error', { children: true, when: 'never' }]`
+
+11. Keep auto fix with code editors for rules: [`prefer-const`](https://eslint.org/docs/rules/prefer-const), [`unused-imports/no-unused-imports`](https://www.npmjs.com/package/eslint-plugin-unused-imports).
 
 ## Usage
 
