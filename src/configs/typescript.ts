@@ -122,7 +122,11 @@ export async function typescript(options: OptionsFiles & OptionsComponentExts & 
         'no-useless-constructor': 'off',
         'ts/ban-ts-comment': ['error', { 'ts-expect-error': 'allow-with-description' }],
         'ts/consistent-type-definitions': ['error', 'interface'],
-        'ts/consistent-type-imports': ['error', { disallowTypeAnnotations: false, prefer: 'type-imports' }],
+        'ts/consistent-type-imports': ['error', {
+          disallowTypeAnnotations: false,
+          fixStyle: 'separate-type-imports',
+          prefer: 'type-imports',
+        }],
         'ts/method-signature-style': ['error', 'property'], // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
         'ts/no-dupe-class-members': 'error',
         'ts/no-dynamic-delete': 'off',
