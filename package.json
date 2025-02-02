@@ -1,7 +1,7 @@
 {
   "name": "@dhzh/eslint-config",
   "type": "module",
-  "version": "0.19.0",
+  "version": "0.19.1",
   "packageManager": "pnpm@9.15.3",
   "description": "Lyle's ESLint config",
   "author": "Lyle Zheng <dhzhme@gmail.com>",
