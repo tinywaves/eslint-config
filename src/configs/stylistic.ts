@@ -34,7 +34,6 @@ export async function stylistic(
   const config = pluginStylistic.configs.customize({
     arrowParens: true,
     braceStyle: '1tbs',
-    flat: true,
     indent,
     jsx,
     pluginName: 'style',
