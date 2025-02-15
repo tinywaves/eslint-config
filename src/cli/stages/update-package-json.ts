@@ -1,12 +1,9 @@
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-
 import * as p from '@clack/prompts';
-import c from 'picocolors';
-
+import c from 'ansis';
 import { dependenciesMap, pkgJson } from '../constants';
-
 import type { ExtraLibrariesOption, PromptResult } from '../types';
 
 export async function updatePackageJson(result: PromptResult): Promise<void> {
@@ -14,7 +11,7 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
 
   const pathPackageJSON = path.join(cwd, 'package.json');
 
-  p.log.step(c.cyan(`Bumping @dhzh/eslint-config to v${pkgJson.version}`));
+  p.log.step(c.cyan`Bumping @dhzh/eslint-config to v${pkgJson.version}`);
 
   const pkgContent = await fsp.readFile(pathPackageJSON, 'utf-8');
   const pkg: Record<string, any> = JSON.parse(pkgContent);
@@ -65,9 +62,9 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
   }
 
   if (addedPackages.length) {
-    p.note(`${c.dim(addedPackages.join(', '))}`, 'Added packages');
+    p.note(c.dim(addedPackages.join(', ')), 'Added packages');
   }
 
   await fsp.writeFile(pathPackageJSON, JSON.stringify(pkg, null, 2));
-  p.log.success(c.green(`Changes wrote to package.json`));
+  p.log.success(c.green`Changes wrote to package.json`);
 }

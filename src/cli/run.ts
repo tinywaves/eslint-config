@@ -1,17 +1,13 @@
-/* eslint-disable perfectionist/sort-objects */
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-
 import * as p from '@clack/prompts';
-import c from 'picocolors';
-
+import c from 'ansis';
 import { extra, extraOptions, frameworkOptions, frameworks } from './constants';
 import { updateEslintFiles } from './stages/update-eslint-files';
 import { updatePackageJson } from './stages/update-package-json';
 import { updateVscodeSettings } from './stages/update-vscode-settings';
 import { isGitClean } from './utils';
-
 import type { ExtraLibrariesOption, FrameworkOption, PromptResult } from './types';
 
 export interface CliRunOptions {
@@ -35,7 +31,7 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
   const argExtra = <ExtraLibrariesOption[]>options.extra?.map((m) => m.trim());
 
   if (fs.existsSync(path.join(process.cwd(), 'eslint.config.js'))) {
-    p.log.warn(c.yellow(`eslint.config.js already exists, migration wizard exited.`));
+    p.log.warn(c.yellow`eslint.config.js already exists, migration wizard exited.`);
     return process.exit(1);
   }
 
@@ -49,18 +45,27 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
 
   if (!argSkipPrompt) {
     result = await p.group({
-      uncommittedConfirmed: () => {
-        if (argSkipPrompt || isGitClean()) {
-          return Promise.resolve(true);
+      extra: ({ results }) => {
+        const isArgExtraValid = argExtra?.length
+          && !argExtra.filter((element) => !extra.includes(<ExtraLibrariesOption>element)).length;
+
+        if (!results.uncommittedConfirmed || isArgExtraValid) {
+          return;
         }
 
-        return p.confirm({
-          initialValue: false,
-          message: 'There are uncommitted changes in the current repository, are you sure to continue?',
+        const message = !isArgExtraValid && argExtra
+          ? `"${argExtra}" isn't a valid extra util. Please choose from below: `
+          : 'Select a extra utils:';
+
+        return p.multiselect<ExtraLibrariesOption>({
+          message: c.reset(message),
+          options: extraOptions,
+          required: false,
         });
       },
       frameworks: ({ results }) => {
-        const isArgTemplateValid = typeof argTemplate === 'string' && !!frameworks.includes(<FrameworkOption>argTemplate);
+        const isArgTemplateValid = typeof argTemplate === 'string'
+          && !!frameworks.includes(<FrameworkOption>argTemplate);
 
         if (!results.uncommittedConfirmed || isArgTemplateValid) {
           return;
@@ -76,21 +81,14 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
           required: false,
         });
       },
-      extra: ({ results }) => {
-        const isArgExtraValid = argExtra?.length && !argExtra.filter((element) => !extra.includes(<ExtraLibrariesOption>element)).length;
-
-        if (!results.uncommittedConfirmed || isArgExtraValid) {
-          return;
+      uncommittedConfirmed: () => {
+        if (argSkipPrompt || isGitClean()) {
+          return Promise.resolve(true);
         }
 
-        const message = !isArgExtraValid && argExtra
-          ? `"${argExtra}" isn't a valid extra util. Please choose from below: `
-          : 'Select a extra utils:';
-
-        return p.multiselect<ExtraLibrariesOption>({
-          message: c.reset(message),
-          options: extraOptions,
-          required: false,
+        return p.confirm({
+          initialValue: false,
+          message: 'There are uncommitted changes in the current repository, are you sure to continue?',
         });
       },
 
@@ -120,6 +118,6 @@ export async function run(options: CliRunOptions = {}): Promise<void> {
   await updateEslintFiles(result);
   await updateVscodeSettings(result);
 
-  p.log.success(c.green(`Setup completed`));
+  p.log.success(c.green`Setup completed`);
   p.outro(`Now you can update the dependencies by run ${c.blue('pnpm i')} and run ${c.blue('eslint . --fix')}\n`);
 }

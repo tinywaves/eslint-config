@@ -1,7 +1,5 @@
-import c from 'picocolors';
-
+import c from 'ansis';
 import pkgJson from '../../package.json';
-
 import type { ExtraLibrariesOption, FrameworkOption, PromItem } from './types';
 
 export { pkgJson };
