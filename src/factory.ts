@@ -27,6 +27,7 @@ import {
   unocss,
   vue,
   yaml,
+  pnpmCatalogs,
 } from './configs';
 import { formatters } from './configs/formatters';
 import { regexp } from './configs/regexp';
@@ -87,6 +88,7 @@ export function dhzh(
     componentExts = [],
     gitignore: enableGitignore = true,
     jsx: enableJsx = true,
+    pnpmCatalogs: enablePnpmCatalogs = false,
     react: enableReact = false,
     regexp: enableRegexp = true,
     solid: enableSolid = false,
@@ -252,6 +254,10 @@ export function dhzh(
       sortPackageJson(),
       sortTsconfig(),
     );
+  }
+
+  if (enablePnpmCatalogs) {
+    configs.push(pnpmCatalogs());
   }
 
   if (options.yaml ?? true) {
