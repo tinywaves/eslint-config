@@ -15,6 +15,7 @@ export async function perfectionist(): Promise<TypedFlatConfigItem[]> {
         perfectionist: pluginPerfectionist,
       },
       rules: {
+        'perfectionist/sort-objects': ['off'],
         'perfectionist/sort-exports': ['off', { order: 'asc', type: 'natural' }],
         'perfectionist/sort-imports': ['off', {
           groups: [

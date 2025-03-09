@@ -17,12 +17,6 @@ export default dhzh(
     ignores: [],
   },
   {
-    files: ['src/**/*.ts'],
-    rules: {
-      'perfectionist/sort-objects': 'error',
-    },
-  },
-  {
     files: ['src/configs/*.ts'],
     plugins: {
       'style-migrate': styleMigrate,

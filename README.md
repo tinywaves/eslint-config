@@ -53,6 +53,8 @@ Differences from [@antfu/eslint-config](https://github.com/antfu/eslint-config/b
 
 11. Keep auto fix with code editors for rules: [`prefer-const`](https://eslint.org/docs/rules/prefer-const), [`unused-imports/no-unused-imports`](https://www.npmjs.com/package/eslint-plugin-unused-imports).
 
+12. Disable [`perfectionist/sort-objects`](https://perfectionist.dev/rules/sort-objects) rule.
+
 ## Usage
 
 > Requires ESLint v9.5.0+
