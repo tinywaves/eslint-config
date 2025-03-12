@@ -55,6 +55,8 @@ Differences from [@antfu/eslint-config](https://github.com/antfu/eslint-config/b
 
 12. Disable [`perfectionist/sort-objects`](https://perfectionist.dev/rules/sort-objects) rule.
 
+13. Disable [`jsonc/sort-keys`](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/sort-keys.html) rule.
+
 ## Usage
 
 > Requires ESLint v9.5.0+
