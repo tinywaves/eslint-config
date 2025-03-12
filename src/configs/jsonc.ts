@@ -64,7 +64,6 @@ export async function jsonc(
         'jsonc/space-unary-ops': 'error',
         'jsonc/valid-json-number': 'error',
         'jsonc/vue-custom-block/no-parsing-error': 'error',
-        'jsonc/sort-keys': 'off',
 
         ...stylistic
           ? {
