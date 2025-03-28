@@ -1,7 +1,7 @@
 import { interopDefault } from '../utils';
 import type { TypedFlatConfigItem } from '../types';
 
-export async function pnpmCatalogs(): Promise<TypedFlatConfigItem[]> {
+export async function pnpm(): Promise<TypedFlatConfigItem[]> {
   return [
     {
       files: [
@@ -11,13 +11,14 @@ export async function pnpmCatalogs(): Promise<TypedFlatConfigItem[]> {
       languageOptions: {
         parser: await interopDefault(import('jsonc-eslint-parser')),
       },
-      name: 'antfu/pnpm-catalogs/rules',
+      name: 'dhzh/pnpm/rules',
       plugins: {
-        'pnpm-catalogs': await interopDefault(import('eslint-plugin-pnpm-catalogs')),
+        pnpm: await interopDefault(import('eslint-plugin-pnpm')),
       },
       rules: {
-        'pnpm-catalogs/enforce-catalog': 'error',
-        'pnpm-catalogs/valid-catalog': 'error',
+        'pnpm/enforce-catalog': 'error',
+        'pnpm/prefer-workspace-settings': 'error',
+        'pnpm/valid-catalog': 'error',
       },
     },
   ];

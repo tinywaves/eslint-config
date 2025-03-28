@@ -27,7 +27,7 @@ import {
   unocss,
   vue,
   yaml,
-  pnpmCatalogs,
+  pnpm,
 } from './configs';
 import { formatters } from './configs/formatters';
 import { regexp } from './configs/regexp';
@@ -88,7 +88,7 @@ export function dhzh(
     componentExts = [],
     gitignore: enableGitignore = true,
     jsx: enableJsx = true,
-    pnpmCatalogs: enablePnpmCatalogs = false,
+    pnpm: enableCatalogs = false,
     react: enableReact = false,
     regexp: enableRegexp = true,
     solid: enableSolid = false,
@@ -256,8 +256,8 @@ export function dhzh(
     );
   }
 
-  if (enablePnpmCatalogs) {
-    configs.push(pnpmCatalogs());
+  if (enableCatalogs) {
+    configs.push(pnpm());
   }
 
   if (options.yaml ?? true) {
