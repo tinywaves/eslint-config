@@ -2,12 +2,12 @@ import process from 'node:process';
 import * as p from '@clack/prompts';
 import c from 'ansis';
 import { cac } from 'cac';
-import { pkgJson } from './constants';
+import { version } from '../../package.json';
 import { run } from './run';
 
 function header(): void {
   console.log('\n');
-  p.intro(`${c.green`@dhzh/eslint-config `}${c.dim`v${pkgJson.version}`}`);
+  p.intro(`${c.green`@dhzh/eslint-config `}${c.dim`v${version}`}`);
 }
 
 const cli = cac('@dhzh/eslint-config');
@@ -28,5 +28,5 @@ cli
     }
   });
 cli.help();
-cli.version(pkgJson.version);
+cli.version(version);
 cli.parse();

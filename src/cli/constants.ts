@@ -1,8 +1,5 @@
 import c from 'ansis';
-import pkgJson from '../../package.json';
 import type { ExtraLibrariesOption, FrameworkOption, PromItem } from './types';
-
-export { pkgJson };
 
 export const vscodeSettingsString = `
   // Entry
@@ -175,6 +172,12 @@ export const dependenciesMap = {
     'eslint-plugin-astro',
     'astro-eslint-parser',
   ],
+  formatter: [
+    'eslint-plugin-format',
+  ],
+  formatterAstro: [
+    'prettier-plugin-astro',
+  ],
   nest: [],
   react: [],
   slidev: [
@@ -186,6 +189,9 @@ export const dependenciesMap = {
   svelte: [
     'eslint-plugin-svelte',
     'svelte-eslint-parser',
+  ],
+  unocss: [
+    '@unocss/eslint-plugin',
   ],
   vue: [],
 } as const;
