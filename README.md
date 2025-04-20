@@ -87,3 +87,69 @@ export default dhzh();
 ## License
 
 [MIT](./LICENSE) License &copy; 2022-PRESENT [Lyle Zheng](https://github.com/tinywaves)
+
+.
+├── bin
+│ └── index.js
+├── eslint.config.js
+├── eslint.config.ts
+├── package.json
+├── pnpm-lock.yaml
+├── README.md
+├── scripts
+│ ├── typegen.ts
+│ └── versiongen.ts
+├── src
+│ ├── cli
+│ │ ├── constants-generated.ts
+│ │ ├── constants.ts
+│ │ ├── index.ts
+│ │ ├── run.ts
+│ │ ├── stages
+│ │ │ ├── update-eslint-files.ts
+│ │ │ ├── update-package-json.ts
+│ │ │ └── update-vscode-settings.ts
+│ │ ├── types.ts
+│ │ └── utils.ts
+│ ├── cli.ts
+│ ├── configs
+│ │ ├── astro.ts
+│ │ ├── command.ts
+│ │ ├── comments.ts
+│ │ ├── disables.ts
+│ │ ├── formatters.ts
+│ │ ├── ignores.ts
+│ │ ├── imports.ts
+│ │ ├── index.ts
+│ │ ├── javascript.ts
+│ │ ├── jsdoc.ts
+│ │ ├── jsonc.ts
+│ │ ├── jsx.ts
+│ │ ├── markdown.ts
+│ │ ├── node.ts
+│ │ ├── perfectionist.ts
+│ │ ├── pnpm.ts
+│ │ ├── react.ts
+│ │ ├── regexp.ts
+│ │ ├── solid.ts
+│ │ ├── sort.ts
+│ │ ├── stylistic.ts
+│ │ ├── svelte.ts
+│ │ ├── test.ts
+│ │ ├── toml.ts
+│ │ ├── typescript.ts
+│ │ ├── unicorn.ts
+│ │ ├── unocss.ts
+│ │ ├── vue.ts
+│ │ └── yaml.ts
+│ ├── factory.ts
+│ ├── globs.ts
+│ ├── index.ts
+│ ├── plugins.ts
+│ ├── stub.d.ts
+│ ├── types.ts
+│ ├── utils.ts
+│ └── vender
+│ └── prettier-types.ts
+├── tsconfig.json
+└── tsup.config.ts
