@@ -1,9 +1,5 @@
-import { dhzh } from './factory';
+import { Linter } from "eslint";
 
-export * from './configs';
-export * from './factory';
-export * from './globs';
-export * from './types';
-export * from './utils';
-
-export default dhzh;
+export function defineConfig(): Linter.Config[] {
+  return [];
+}
