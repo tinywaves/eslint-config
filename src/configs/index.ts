@@ -1,4 +1,5 @@
-export * from './astro';
+export * from './stylistic';
+
 export * from './command';
 export * from './comments';
 export * from './disables';
@@ -16,8 +17,6 @@ export * from './react';
 export * from './regexp';
 export * from './solid';
 export * from './sort';
-export * from './stylistic';
-export * from './svelte';
 export * from './test';
 export * from './toml';
 export * from './typescript';
