@@ -1,79 +1,57 @@
-import { GLOB_YAML } from '../globs';
-import { interopDefault } from '../utils';
+import pluginYml from 'eslint-plugin-yml';
+import parserYml from 'yaml-eslint-parser';
+import { RULE_PREFIX, GLOB_YML } from '../consts';
+import type { Linter } from 'eslint';
+import type { IYmlConfigsOptions } from '../types';
 
-import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types';
-
-export async function yaml(
-  options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
-): Promise<TypedFlatConfigItem[]> {
-  const {
-    files = [GLOB_YAML],
-    overrides = {},
-    stylistic = true,
-  } = options;
-
-  const {
-    indent = 2,
-    quotes = 'single',
-  } = typeof stylistic === 'boolean' ? {} : stylistic;
-
-  const [
-    pluginYaml,
-    parserYaml,
-  ] = await Promise.all([
-    interopDefault(import('eslint-plugin-yml')),
-    interopDefault(import('yaml-eslint-parser')),
-  ] as const);
+export function yml(options: IYmlConfigsOptions = {}): Linter.Config[] {
+  const { override = {}, indent = 2, quotes = 'single' } = options;
 
   return [
+    ...pluginYml.configs['flat/recommended'].map((item) => ({
+      ...item,
+      name: `${RULE_PREFIX}/yml/shared`,
+      files: [GLOB_YML],
+    })),
     {
-      name: 'dhzh/yaml/setup',
-      plugins: {
-        yaml: pluginYaml,
-      },
-    },
-    {
-      files,
+      name: `${RULE_PREFIX}/yml/customize`,
+      files: [GLOB_YML],
       languageOptions: {
-        parser: parserYaml,
+        parser: parserYml,
       },
-      name: 'dhzh/yaml/rules',
       rules: {
-        'style/spaced-comment': 'off',
-
-        'yaml/block-mapping': 'error',
-        'yaml/block-sequence': 'error',
-        'yaml/no-empty-key': 'error',
-        'yaml/no-empty-sequence-entry': 'error',
-        'yaml/no-irregular-whitespace': 'error',
-        'yaml/plain-scalar': 'error',
-
-        'yaml/vue-custom-block/no-parsing-error': 'error',
-
-        ...stylistic
-          ? {
-              'yaml/block-mapping-question-indicator-newline': 'error',
-              'yaml/block-sequence-hyphen-indicator-newline': 'error',
-              'yaml/flow-mapping-curly-newline': 'error',
-              'yaml/flow-mapping-curly-spacing': 'error',
-              'yaml/flow-sequence-bracket-newline': 'error',
-              'yaml/flow-sequence-bracket-spacing': 'error',
-              'yaml/indent': ['error', indent === 'tab' ? 2 : indent],
-              'yaml/key-spacing': 'error',
-              'yaml/no-tab-indent': 'error',
-              'yaml/quotes': ['error', { avoidEscape: true, prefer: quotes === 'backtick' ? 'single' : quotes }],
-              'yaml/spaced-comment': 'error',
-            }
-          : {},
-
-        ...overrides,
+        'yml/block-mapping': 'error',
+        'yml/block-sequence': 'error',
+        'yml/no-empty-key': 'error',
+        'yml/no-empty-sequence-entry': 'error',
+        'yml/no-irregular-whitespace': 'error',
+        'yml/plain-scalar': 'error',
+        'yml/vue-custom-block/no-parsing-error': 'error',
+        'yml/block-mapping-question-indicator-newline': 'error',
+        'yml/block-sequence-hyphen-indicator-newline': 'error',
+        'yml/flow-mapping-curly-newline': 'error',
+        'yml/flow-mapping-curly-spacing': 'error',
+        'yml/flow-sequence-bracket-newline': 'error',
+        'yml/flow-sequence-bracket-spacing': 'error',
+        'yml/indent': ['error', indent],
+        'yml/key-spacing': 'error',
+        'yml/no-tab-indent': 'error',
+        'yml/quotes': [
+          'error',
+          {
+            avoidEscape: true,
+            prefer: quotes,
+          },
+        ],
+        'yml/spaced-comment': 'error',
+        ...override,
       },
     },
     {
+      name: `${RULE_PREFIX}/yml/customize/pnpm-workspace.yaml`,
       files: ['pnpm-workspace.yaml'],
-      name: 'dhzh/yaml/pnpm-workspace',
       rules: {
-        'yaml/sort-keys': [
+        'yml/sort-keys': [
           'error',
           {
             order: [
@@ -83,7 +61,6 @@ export async function yaml(
               'hoistPattern',
               'catalog',
               'catalogs',
-
               'allowedDeprecatedVersions',
               'allowNonAppliedPatches',
               'configDependencies',
@@ -99,7 +76,9 @@ export async function yaml(
             pathPattern: '^$',
           },
           {
-            order: { type: 'asc' },
+            order: {
+              type: 'asc',
+            },
             pathPattern: '.*',
           },
         ],
