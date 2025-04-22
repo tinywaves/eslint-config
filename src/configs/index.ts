@@ -1,9 +1,11 @@
+export * from './yml';
+
 export * from './stylistic';
 export * from './javascript';
 export * from './typescript';
 export * from './eslint-comments';
-
 export * from './disables';
+
 export * from './formatters';
 export * from './ignores';
 export * from './imports';
@@ -22,5 +24,4 @@ export * from './toml';
 export * from './unicorn';
 export * from './unocss';
 export * from './vue';
-export * from './yaml';
 export * from './pnpm';
