@@ -26,7 +26,6 @@ export function yml(options: IYmlConfigsOptions = {}): Linter.Config[] {
         'yml/no-empty-sequence-entry': 'error',
         'yml/no-irregular-whitespace': 'error',
         'yml/plain-scalar': 'error',
-        'yml/vue-custom-block/no-parsing-error': 'error',
         'yml/block-mapping-question-indicator-newline': 'error',
         'yml/block-sequence-hyphen-indicator-newline': 'error',
         'yml/flow-mapping-curly-newline': 'error',
