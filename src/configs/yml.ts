@@ -5,7 +5,7 @@ import type { Linter } from 'eslint';
 import type { IYmlConfigsOptions } from '../types';
 
 export function yml(options: IYmlConfigsOptions = {}): Linter.Config[] {
-  const { override = {}, indent = 2, quotes = 'single' } = options;
+  const { overrides = {}, indent = 2, quotes = 'single' } = options;
 
   return [
     ...pluginYml.configs['flat/recommended'].map((item) => ({
@@ -44,7 +44,7 @@ export function yml(options: IYmlConfigsOptions = {}): Linter.Config[] {
           },
         ],
         'yml/spaced-comment': 'error',
-        ...override,
+        ...overrides,
       },
     },
     {
