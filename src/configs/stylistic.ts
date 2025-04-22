@@ -1,8 +1,9 @@
-import { Linter } from 'eslint';
+import type { Linter } from 'eslint';
 import pluginStylistic from '@stylistic/eslint-plugin';
 import pluginAntfu from 'eslint-plugin-antfu';
 import pluginHyoban from 'eslint-plugin-hyoban';
-import { RULE_PREFIX, GLOB_JSX_SRC, GLOB_SRC } from '../consts';
+import tseslint from 'typescript-eslint';
+import { RULE_PREFIX, GLOB_JSX_SRC, GLOB_SRC, GLOB_TS_SRC } from '../consts';
 
 export function stylisticConfigs(): Linter.Config[] {
   const jsxIgnoreNodes = [
@@ -146,7 +147,6 @@ export function stylisticConfigs(): Linter.Config[] {
             afterHashbangComment: false,
           },
         ],
-        'stylistic/multiline-comment-style': ['error', 'starred-block'],
         'stylistic/new-parens': ['error', 'always'],
         'stylistic/no-confusing-arrow': [
           'error',
@@ -188,12 +188,13 @@ export function stylisticConfigs(): Linter.Config[] {
         'stylistic/no-tabs': 'off',
         'antfu/consistent-chaining': 'error',
         'antfu/consistent-list-newline': 'error',
-        'antfu/top-level-function': 'error',
+        'antfu/top-level-function': 'off',
+        'antfu/curly': 'off',
         'hyoban/prefer-early-return': 'error',
       },
     },
     {
-      name: `${RULE_PREFIX}/stylistic/jsx`,
+      name: `${RULE_PREFIX}/stylistic/customize-jsx`,
       plugins: {
         stylistic: pluginStylistic,
         hyoban: pluginHyoban,
@@ -270,6 +271,22 @@ export function stylisticConfigs(): Linter.Config[] {
         'stylistic/jsx-sort-props': 'off',
         'stylistic/jsx-indent-props': 'off',
         'hyoban/jsx-attribute-spacing': 'error',
+      },
+    },
+    ...tseslint.config(tseslint.configs.stylisticTypeChecked) as Linter.Config[],
+    {
+      name: `${RULE_PREFIX}/stylistic/typescript-eslint/customize`,
+      files: GLOB_TS_SRC,
+      rules: {
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        '@typescript-eslint/array-type': [
+          'error',
+          {
+            default: 'array-simple',
+          },
+        ],
+        '@typescript-eslint/prefer-nullish-coalescing': 'off',
       },
     },
   ];
