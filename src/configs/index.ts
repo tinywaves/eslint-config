@@ -1,9 +1,8 @@
 export * from './stylistic';
 export * from './javascript';
 export * from './typescript';
-
-export * from './command';
 export * from './comments';
+
 export * from './disables';
 export * from './formatters';
 export * from './ignores';

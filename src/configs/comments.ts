@@ -1,13 +1,21 @@
-import { pluginComments } from '../plugins';
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+// @ts-nocheck
+import pluginEslintComment from '@eslint-community/eslint-plugin-eslint-comments';
+import type { Linter } from 'eslint';
+import { RULE_PREFIX } from '../consts';
 
-import type { TypedFlatConfigItem } from '../types';
-
-export async function comments(): Promise<TypedFlatConfigItem[]> {
+export function eslintCommentsConfigs(): Linter.Config[] {
   return [
     {
-      name: 'dhzh/eslint-comments/rules',
+      name: `${RULE_PREFIX}/eslint-comments/shared`,
+      ...pluginEslintComment.recommended,
+    },
+    {
+      name: `${RULE_PREFIX}/eslint-comments/customize`,
       plugins: {
-        'eslint-comments': pluginComments,
+        'eslint-comments': pluginEslintComment,
       },
       rules: {
         'eslint-comments/no-aggregating-enable': 'error',
