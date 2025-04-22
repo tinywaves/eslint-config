@@ -1,7 +1,7 @@
 export * from './stylistic';
 export * from './javascript';
 export * from './typescript';
-export * from './comments';
+export * from './eslint-comments';
 
 export * from './disables';
 export * from './formatters';
