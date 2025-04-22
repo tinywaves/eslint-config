@@ -1,44 +1,13 @@
-import { ensurePackages, interopDefault } from '../utils';
+import configUnocss from '@unocss/eslint-config/flat';
+import { GLOB_SRC, RULE_PREFIX } from '../consts';
+import type { Linter } from 'eslint';
 
-import type { OptionsUnoCSS, TypedFlatConfigItem } from '../types';
-
-export async function unocss(
-  options: OptionsUnoCSS = {},
-): Promise<TypedFlatConfigItem[]> {
-  const {
-    attributify = true,
-    strict = false,
-  } = options;
-
-  await ensurePackages([
-    '@unocss/eslint-plugin',
-  ]);
-
-  const [
-    pluginUnoCSS,
-  ] = await Promise.all([
-    interopDefault(import('@unocss/eslint-plugin')),
-  ] as const);
-
+export function unocss(): Linter.Config[] {
   return [
     {
-      name: 'dhzh/unocss',
-      plugins: {
-        unocss: pluginUnoCSS,
-      },
-      rules: {
-        'unocss/order': 'warn',
-        ...attributify
-          ? {
-              'unocss/order-attributify': 'warn',
-            }
-          : {},
-        ...strict
-          ? {
-              'unocss/blocklist': 'error',
-            }
-          : {},
-      },
+      name: `${RULE_PREFIX}/unocss/shared`,
+      files: GLOB_SRC,
+      ...configUnocss as unknown as Linter.Config,
     },
   ];
 }
