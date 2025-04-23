@@ -1,6 +1,7 @@
 export * from './stylistic';
 export * from './typescript';
 export * from './unicorn';
+export * from './tailwindcss';
 export * from './unocss';
 export * from './yml';
 export * from './toml';

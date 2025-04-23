@@ -6,7 +6,7 @@ import type { Linter } from 'eslint';
 import type { IStylisticConfigsOptions } from '../types';
 
 export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config[] {
-  const { overrides } = options;
+  const { overrides = {} } = options;
 
   const jsxIgnoreNodes = [
     'TemplateLiteral *',
