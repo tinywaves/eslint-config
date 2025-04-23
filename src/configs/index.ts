@@ -4,6 +4,7 @@ export * from './unicorn';
 export * from './unocss';
 export * from './yml';
 export * from './toml';
+export * from './regexp';
 
 export * from './javascript';
 export * from './eslint-comments';
@@ -19,7 +20,4 @@ export * from './markdown';
 export * from './node';
 export * from './perfectionist';
 export * from './react';
-export * from './regexp';
-export * from './solid';
-export * from './sort';
 export * from './pnpm';
