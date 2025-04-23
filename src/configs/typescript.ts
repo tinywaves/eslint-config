@@ -12,6 +12,7 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
       tseslint.configs.base,
       tseslint.configs.recommendedTypeChecked,
       tseslint.configs.strictTypeChecked,
+      tseslint.configs.stylisticTypeChecked,
     ).map((item) => ({
       ...item,
       name: `${RULE_PREFIX}/typescript/shared/${item.name?.replace('typescript-eslint/', '')}`,
@@ -70,6 +71,15 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
         ],
         '@typescript-eslint/restrict-template-expressions': ['error', {}],
         '@typescript-eslint/no-deprecated': 'warn',
+        '@typescript-eslint/no-empty-function': 'off',
+        '@typescript-eslint/consistent-type-definitions': 'off',
+        '@typescript-eslint/array-type': [
+          'error',
+          {
+            default: 'array-simple',
+          },
+        ],
+        '@typescript-eslint/prefer-nullish-coalescing': 'off',
         ...overrides,
       },
     },

@@ -1,11 +1,13 @@
-import type { Linter } from 'eslint';
 import pluginStylistic from '@stylistic/eslint-plugin';
 import pluginAntfu from 'eslint-plugin-antfu';
 import pluginHyoban from 'eslint-plugin-hyoban';
-import tseslint from 'typescript-eslint';
-import { RULE_PREFIX, GLOB_JSX_SRC, GLOB_SRC, GLOB_TS_SRC } from '../consts';
+import { RULE_PREFIX, GLOB_JSX_SRC, GLOB_SRC } from '../consts';
+import type { Linter } from 'eslint';
+import type { IStylisticConfigsOptions } from '../types';
 
-export function stylisticConfigs(): Linter.Config[] {
+export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config[] {
+  const { overrides } = options;
+
   const jsxIgnoreNodes = [
     'TemplateLiteral *',
     'TSUnionType',
@@ -46,15 +48,16 @@ export function stylisticConfigs(): Linter.Config[] {
 
   return [
     {
-      name: `${RULE_PREFIX}/stylistic/shared`,
-      files: GLOB_SRC,
       ...pluginStylistic.configs.customize({
         arrowParens: true,
         semi: true,
       }),
+      name: `${RULE_PREFIX}/stylistic/shared`,
+      files: GLOB_SRC,
     },
     {
-      name: `${RULE_PREFIX}/stylistic/customize-js/ts`,
+      name: `${RULE_PREFIX}/stylistic/customize`,
+      files: [GLOB_SRC],
       plugins: {
         stylistic: pluginStylistic,
         antfu: pluginAntfu,
@@ -129,24 +132,7 @@ export function stylisticConfigs(): Linter.Config[] {
           },
         ],
         'stylistic/linebreak-style': ['error', 'unix'],
-        'stylistic/lines-around-comment': [
-          'error',
-          {
-            beforeBlockComment: true,
-            afterBlockComment: false,
-            beforeLineComment: true,
-            afterLineComment: false,
-            allowBlockStart: true,
-            allowBlockEnd: true,
-            allowClassStart: true,
-            allowClassEnd: true,
-            allowObjectStart: true,
-            allowObjectEnd: true,
-            allowArrayStart: true,
-            allowArrayEnd: true,
-            afterHashbangComment: false,
-          },
-        ],
+        'stylistic/lines-around-comment': 'off',
         'stylistic/new-parens': ['error', 'always'],
         'stylistic/no-confusing-arrow': [
           'error',
@@ -191,15 +177,16 @@ export function stylisticConfigs(): Linter.Config[] {
         'antfu/top-level-function': 'off',
         'antfu/curly': 'off',
         'hyoban/prefer-early-return': 'error',
+        ...overrides,
       },
     },
     {
-      name: `${RULE_PREFIX}/stylistic/customize-jsx`,
+      name: `${RULE_PREFIX}/stylistic/customize/jsx`,
+      files: GLOB_JSX_SRC,
       plugins: {
         stylistic: pluginStylistic,
         hyoban: pluginHyoban,
       },
-      files: GLOB_JSX_SRC,
       rules: {
         'stylistic/indent': [
           'error',
@@ -271,22 +258,7 @@ export function stylisticConfigs(): Linter.Config[] {
         'stylistic/jsx-sort-props': 'off',
         'stylistic/jsx-indent-props': 'off',
         'hyoban/jsx-attribute-spacing': 'error',
-      },
-    },
-    ...tseslint.config(tseslint.configs.stylisticTypeChecked) as Linter.Config[],
-    {
-      name: `${RULE_PREFIX}/stylistic/typescript-eslint/customize`,
-      files: GLOB_TS_SRC,
-      rules: {
-        '@typescript-eslint/no-empty-function': 'off',
-        '@typescript-eslint/consistent-type-definitions': 'off',
-        '@typescript-eslint/array-type': [
-          'error',
-          {
-            default: 'array-simple',
-          },
-        ],
-        '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        ...overrides,
       },
     },
   ];
