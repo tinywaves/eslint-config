@@ -1,3 +1,4 @@
+export * from './unicorn';
 export * from './unocss';
 export * from './yml';
 
@@ -22,5 +23,4 @@ export * from './solid';
 export * from './sort';
 export * from './test';
 export * from './toml';
-export * from './unicorn';
 export * from './pnpm';

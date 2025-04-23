@@ -1,4 +1,5 @@
 import {
+  unicorn,
   unocss,
   yml,
   stylisticConfigs,
@@ -12,7 +13,8 @@ import type { Options } from './types';
 
 export function defineConfig(options: Options = {}): Linter.Config[] {
   return [
-    ...unocss(),
+    ...unicorn(options.unicorn),
+    ...unocss(options.unocss),
     ...yml(options.yml),
     ...stylisticConfigs(),
     ...javascriptConfigs(),
