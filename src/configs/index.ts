@@ -2,6 +2,7 @@ export * from './typescript';
 export * from './unicorn';
 export * from './unocss';
 export * from './yml';
+export * from './toml';
 
 export * from './stylistic';
 export * from './javascript';
@@ -22,5 +23,4 @@ export * from './regexp';
 export * from './solid';
 export * from './sort';
 export * from './test';
-export * from './toml';
 export * from './pnpm';
