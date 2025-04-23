@@ -1,26 +1,31 @@
-import process from 'process';
-import type { Linter } from 'eslint';
+import process from 'node:process';
 import tseslint from 'typescript-eslint';
 import { RULE_PREFIX, GLOB_TS_SRC } from '../consts';
+import type { Linter } from 'eslint';
+import type { ITypescriptConfigsOptions } from '../types';
 
-export function typescriptConfigs(): Linter.Config[] {
+export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Config[] {
+  const { overrides = {} } = options;
+
   return [
     ...tseslint.config(
       tseslint.configs.base,
       tseslint.configs.recommendedTypeChecked,
       tseslint.configs.strictTypeChecked,
-    ),
+    ).map((item) => ({
+      ...item,
+      name: `${RULE_PREFIX}/typescript/shared/${item.name?.replace('typescript-eslint/', '')}`,
+      files: GLOB_TS_SRC,
+    })),
     {
+      name: `${RULE_PREFIX}/typescript/customize`,
+      files: GLOB_TS_SRC,
       languageOptions: {
         parserOptions: {
           projectService: true,
           tsconfigRootDir: process.cwd(),
         },
       },
-    },
-    {
-      name: `${RULE_PREFIX}/typescript/customize`,
-      files: GLOB_TS_SRC,
       rules: {
         '@typescript-eslint/consistent-type-imports': [
           'error',
@@ -65,6 +70,7 @@ export function typescriptConfigs(): Linter.Config[] {
         ],
         '@typescript-eslint/restrict-template-expressions': ['error', {}],
         '@typescript-eslint/no-deprecated': 'warn',
+        ...overrides,
       },
     },
   ] as Linter.Config[];

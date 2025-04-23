@@ -2,18 +2,23 @@
 
 [![npm](https://img.shields.io/npm/v/@dhzh/eslint-config?color=444&label=)](https://npmjs.com/package/@antfu/eslint-config)
 
-> `Special Statement`: This project comes from [`@antfu/eslint-config`](https://github.com/antfu/eslint-config). The two are almost the same, with only some differences to meet personal needs. In order to seek convenience and prevent some conflicts between the upstream branch and my own changes after forking, I chose to copy instead of fork.
+I use ESLint to format and lint:
 
-Differences from [@antfu/eslint-config](https://github.com/antfu/eslint-config/blob/main/README.md):
+|  |  |
+|---|---|
+| typescript | [`typescript-eslint`](https://typescript-eslint.io/) |
+| unicorn | [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn) |
+| unocss | [`@unocss/eslint-config`](https://unocss.dev/integrations/eslint) |
+| yml | [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/) [`yaml-eslint-parser`](https://ota-meshi.github.io/yaml-eslint-parser/) |
 
-1. With semi: `semi: true`.
-2. Always arrow parens: `arrowParens: true`.
-3. Explicitly use `1tbs` as brace style: `braceStyle: '1tbs'`.
-4. Disabled antfu's top level function rule: `'antfu/top-level-function': 'off'`.
-5. Always curly:
 
-- `'antfu/curly': 'off'`
-- `'curly': ['error', 'all']`
+- [x] [`ESLint Stylistic`](https://eslint.style/)
+- [x] [`eslint-plugin-antfu`](https://github.com/antfu/eslint-plugin-antfu)
+- [x] [`eslint-plugin-hyoban`](https://github.com/hyoban/eslint-plugin-hyoban)
+- [x] [`@eslint/js`](https://eslint.org/docs/latest/rules)
+- [x] [`eslint-plugin-eslint-comments`](https://eslint-community.github.io/eslint-plugin-eslint-comments/)
+
+
 
 6. This eslint-config will enable `ts/consistent-type-imports` rule. But it will cause [compile issue](https://github.com/typescript-eslint/typescript-eslint/issues/2559) in [nest](https://nestjs.com/) projects. So I [disabled it](https://github.com/typescript-eslint/typescript-eslint/issues/2559#issuecomment-692780580) in this config in nest framework.
 7. Support `'**/*.?([cm])js` and `'**/*.?([cm])jsx` files in react projects.
@@ -88,68 +93,4 @@ export default dhzh();
 
 [MIT](./LICENSE) License &copy; 2022-PRESENT [Lyle Zheng](https://github.com/tinywaves)
 
-.
-├── bin
-│ └── index.js
-├── eslint.config.js
-├── eslint.config.ts
-├── package.json
-├── pnpm-lock.yaml
-├── README.md
-├── scripts
-│ ├── typegen.ts
-│ └── versiongen.ts
-├── src
-│ ├── cli
-│ │ ├── constants-generated.ts
-│ │ ├── constants.ts
-│ │ ├── index.ts
-│ │ ├── run.ts
-│ │ ├── stages
-│ │ │ ├── update-eslint-files.ts
-│ │ │ ├── update-package-json.ts
-│ │ │ └── update-vscode-settings.ts
-│ │ ├── types.ts
-│ │ └── utils.ts
-│ ├── cli.ts
-│ ├── configs
-│ │ ├── astro.ts
-│ │ ├── command.ts
-│ │ ├── comments.ts
-│ │ ├── disables.ts
-│ │ ├── formatters.ts
-│ │ ├── ignores.ts
-│ │ ├── imports.ts
-│ │ ├── index.ts
-│ │ ├── javascript.ts
-│ │ ├── jsdoc.ts
-│ │ ├── jsonc.ts
-│ │ ├── jsx.ts
-│ │ ├── markdown.ts
-│ │ ├── node.ts
-│ │ ├── perfectionist.ts
-│ │ ├── pnpm.ts
-│ │ ├── react.ts
-│ │ ├── regexp.ts
-│ │ ├── solid.ts
-│ │ ├── sort.ts
-│ │ ├── stylistic.ts
-│ │ ├── svelte.ts
-│ │ ├── test.ts
-│ │ ├── toml.ts
-│ │ ├── typescript.ts
-│ │ ├── unicorn.ts
-│ │ ├── unocss.ts
-│ │ ├── vue.ts
-│ │ └── yaml.ts
-│ ├── factory.ts
-│ ├── globs.ts
-│ ├── index.ts
-│ ├── plugins.ts
-│ ├── stub.d.ts
-│ ├── types.ts
-│ ├── utils.ts
-│ └── vender
-│ └── prettier-types.ts
-├── tsconfig.json
-└── tsup.config.ts
+

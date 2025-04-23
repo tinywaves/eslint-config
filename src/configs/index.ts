@@ -1,10 +1,10 @@
+export * from './typescript';
 export * from './unicorn';
 export * from './unocss';
 export * from './yml';
 
 export * from './stylistic';
 export * from './javascript';
-export * from './typescript';
 export * from './eslint-comments';
 export * from './disables';
 
