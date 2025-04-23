@@ -14,4 +14,7 @@ const plugins = await flatConfigsToPlugins([
   ...(defineConfig()),
 ]);
 const dts = await pluginsToRulesDTS(plugins);
-await fs.writeFile('eslint-typegen.d.ts', dts);
+await fs.writeFile(
+  'eslint-typegen.d.ts',
+  `/* eslint-disable unicorn/no-abusive-eslint-disable */\n${dts}`,
+);
