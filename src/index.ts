@@ -1,4 +1,5 @@
 import {
+  react,
   stylistic,
   typescript,
   unicorn,
@@ -16,6 +17,7 @@ import type { Options } from './types';
 
 export function defineConfig(options: Options = {}): Linter.Config[] {
   return [
+    ...react(options.react),
     ...stylistic(options.stylistic),
     ...typescript(options.typescript),
     ...unicorn(options.unicorn),
