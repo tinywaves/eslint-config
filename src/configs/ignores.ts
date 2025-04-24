@@ -1,15 +1,14 @@
-import { GLOB_EXCLUDE } from '../globs';
+import { GLOB_EXCLUDE, RULE_PREFIX } from '../consts';
+import type { Linter } from 'eslint';
 
-import type { TypedFlatConfigItem } from '../types';
-
-export async function ignores(userIgnores: string[] = []): Promise<TypedFlatConfigItem[]> {
+export function ignores(ignorePatterns: string[]): Linter.Config[] {
   return [
     {
+      name: `${RULE_PREFIX}/ignores`,
       ignores: [
         ...GLOB_EXCLUDE,
-        ...userIgnores,
+        ...ignorePatterns,
       ],
-      name: 'dhzh/ignores',
     },
   ];
 }
