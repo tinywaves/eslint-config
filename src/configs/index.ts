@@ -17,5 +17,3 @@ export * from './ignores';
 export * from './imports';
 export * from './jsdoc';
 export * from './jsonc';
-export * from './jsx';
-export * from './markdown';
