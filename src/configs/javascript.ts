@@ -1,10 +1,13 @@
-import type { Linter } from 'eslint';
 import js from '@eslint/js';
 import pluginAntfu from 'eslint-plugin-antfu';
 import globals from 'globals';
 import { GLOB_SRC, RULE_PREFIX } from '../consts';
+import type { Linter } from 'eslint';
+import type { IJavascriptConfigsOptions } from '../types';
 
-export function javascriptConfigs(): Linter.Config[] {
+export function javascript(options: IJavascriptConfigsOptions = {}): Linter.Config[] {
+  const { overrides = {} } = options;
+
   return [
     {
       name: `${RULE_PREFIX}/javascript/shared`,
@@ -60,7 +63,6 @@ export function javascriptConfigs(): Linter.Config[] {
           },
         ],
         'antfu/no-top-level-await': 'error',
-
         // https://x.com/karlhorky/status/1773632485055680875
         'array-callback-return': 'error',
         'block-scoped-var': 'error',
@@ -142,7 +144,6 @@ export function javascriptConfigs(): Linter.Config[] {
         'no-obj-calls': 'error',
         'no-octal': 'error',
         'no-octal-escape': 'error',
-
         // https://twitter.com/ryanflorence/status/1786394911895683512
         'no-param-reassign': 'warn',
         'no-proto': 'error',
@@ -310,6 +311,7 @@ export function javascriptConfigs(): Linter.Config[] {
         ],
         'vars-on-top': 'error',
         'yoda': ['error', 'never'],
+        ...overrides,
       },
     },
   ];

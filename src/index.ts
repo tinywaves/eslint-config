@@ -2,6 +2,7 @@ import {
   react,
   stylistic,
   typescript,
+  javascript,
   node,
   json,
   unicorn,
@@ -10,7 +11,6 @@ import {
   yml,
   toml,
   regexp,
-  javascriptConfigs,
   eslintCommentsConfigs,
   disablesConfigs,
 } from './configs';
@@ -22,6 +22,7 @@ export function defineConfig(options: Options = {}): Linter.Config[] {
     ...react(options.react),
     ...stylistic(options.stylistic),
     ...typescript(options.typescript),
+    ...javascript(options.javascript),
     ...node(options.node),
     ...json(options.json),
     ...unicorn(options.unicorn),
@@ -30,7 +31,6 @@ export function defineConfig(options: Options = {}): Linter.Config[] {
     ...yml(options.yml),
     ...toml(options.toml),
     ...regexp(options.regexp),
-    ...javascriptConfigs(),
     ...eslintCommentsConfigs(),
     ...disablesConfigs(),
   ];

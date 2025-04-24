@@ -1,6 +1,7 @@
 export * from './react';
 export * from './stylistic';
 export * from './typescript';
+export * from './javascript';
 export * from './node';
 export * from './json';
 export * from './unicorn';
@@ -10,10 +11,8 @@ export * from './yml';
 export * from './toml';
 export * from './regexp';
 
-export * from './javascript';
 export * from './eslint-comments';
 export * from './disables';
 export * from './formatters';
 export * from './ignores';
 export * from './imports';
-export * from './jsdoc';
