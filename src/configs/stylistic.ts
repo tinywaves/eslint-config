@@ -57,7 +57,7 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
     },
     {
       name: `${RULE_PREFIX}/stylistic/customize`,
-      files: [GLOB_SRC],
+      files: GLOB_SRC,
       plugins: {
         stylistic: pluginStylistic,
         antfu: pluginAntfu,

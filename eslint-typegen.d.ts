@@ -11,6 +11,526 @@ declare module 'eslint' {
 
 export interface RuleOptions {
   /**
+   * Enforces explicit boolean values for boolean attributes.
+   * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean
+   */
+  '@eslint-react/avoid-shorthand-boolean'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces explicit `<Fragment>` components instead of the shorthand `<>` or `</>` syntax.
+   * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-fragment
+   */
+  '@eslint-react/avoid-shorthand-fragment'?: Linter.RuleEntry<[]>
+  /**
+   * Reports all class components.
+   * @see https://eslint-react.xyz/docs/rules/debug-class-component
+   */
+  '@eslint-react/debug/class-component'?: Linter.RuleEntry<[]>
+  /**
+   * Reports all function components.
+   * @see https://eslint-react.xyz/docs/rules/debug-function-component
+   */
+  '@eslint-react/debug/function-component'?: Linter.RuleEntry<[]>
+  /**
+   * Reports all React Hooks.
+   * @see https://eslint-react.xyz/docs/rules/debug-hook
+   */
+  '@eslint-react/debug/hook'?: Linter.RuleEntry<[]>
+  /**
+   * Reports all identifiers that are initialized from React.
+   * @see https://eslint-react.xyz/docs/rules/debug-is-from-react
+   */
+  '@eslint-react/debug/is-from-react'?: Linter.RuleEntry<[]>
+  /**
+   * Reports all JSX elements and fragments.
+   * @see https://eslint-react.xyz/docs/rules/debug-jsx
+   */
+  '@eslint-react/debug/jsx'?: Linter.RuleEntry<[]>
+  /**
+   * Reports all React Hooks.
+   * @see https://eslint-react.xyz/docs/rules/debug-hook
+   */
+  '@eslint-react/debug/react-hooks'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `children` in void DOM elements.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-void-elements-with-children
+   */
+  '@eslint-react/dom/no-children-in-void-dom-elements'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `dangerouslySetInnerHTML`.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-dangerously-set-innerhtml
+   */
+  '@eslint-react/dom/no-dangerously-set-innerhtml'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `dangerouslySetInnerHTML` and `children` at the same time.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-dangerously-set-innerhtml-with-children
+   */
+  '@eslint-react/dom/no-dangerously-set-innerhtml-with-children'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `findDOMNode`.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-find-dom-node
+   */
+  '@eslint-react/dom/no-find-dom-node'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `flushSync`.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-flush-sync
+   */
+  '@eslint-react/dom/no-flush-sync'?: Linter.RuleEntry<[]>
+  /**
+   * Replaces usages of `ReactDom.hydrate()` with `hydrateRoot()`.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-hydrate
+   */
+  '@eslint-react/dom/no-hydrate'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces explicit `type` attribute for `button` elements.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-missing-button-type
+   */
+  '@eslint-react/dom/no-missing-button-type'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces explicit `sandbox` attribute for `iframe` elements.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-missing-iframe-sandbox
+   */
+  '@eslint-react/dom/no-missing-iframe-sandbox'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces the absence of a `namespace` in React elements.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-namespace
+   */
+  '@eslint-react/dom/no-namespace'?: Linter.RuleEntry<[]>
+  /**
+   * Replaces usages of `ReactDom.render()` with `createRoot(node).render()`.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-render
+   */
+  '@eslint-react/dom/no-render'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow the return value of `ReactDOM.render`.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-render-return-value
+   */
+  '@eslint-react/dom/no-render-return-value'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `javascript:` URLs as attribute values.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-script-url
+   */
+  '@eslint-react/dom/no-script-url'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow unknown `DOM` property.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-unknown-property
+   */
+  '@eslint-react/dom/no-unknown-property'?: Linter.RuleEntry<EslintReactDomNoUnknownProperty>
+  /**
+   * Enforces `sandbox` attribute for `iframe` elements is not set to unsafe combinations.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-unsafe-iframe-sandbox
+   */
+  '@eslint-react/dom/no-unsafe-iframe-sandbox'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `target="_blank"` without `rel="noreferrer noopener"`.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-unsafe-target-blank
+   */
+  '@eslint-react/dom/no-unsafe-target-blank'?: Linter.RuleEntry<[]>
+  /**
+   * Replaces usages of `useFormState` with `useActionState`.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-use-form-state
+   */
+  '@eslint-react/dom/no-use-form-state'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `children` in void DOM elements.
+   * @see https://eslint-react.xyz/docs/rules/dom-no-void-elements-with-children
+   */
+  '@eslint-react/dom/no-void-elements-with-children'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow useless `forwardRef` calls on components that don't use `ref`s.
+   * @see https://eslint-react.xyz/docs/rules/no-useless-forward-ref
+   */
+  '@eslint-react/ensure-forward-ref-using-ref'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces that a function with the `use` prefix should use at least one Hook inside of it.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-prefix
+   */
+  '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow unnecessary usage of `useCallback`.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-callback
+   */
+  '@eslint-react/hooks-extra/ensure-use-callback-has-non-empty-deps'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow unnecessary usage of `useMemo`.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo
+   */
+  '@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow direct calls to the `set` function of `useState` in `useEffect`.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect
+   */
+  '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow direct calls to the `set` function of `useState` in `useLayoutEffect`.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect
+   */
+  '@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces that a function with the `use` prefix should use at least one Hook inside of it.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-prefix
+   */
+  '@eslint-react/hooks-extra/no-redundant-custom-hook'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow unnecessary usage of `useCallback`.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-callback
+   */
+  '@eslint-react/hooks-extra/no-unnecessary-use-callback'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow unnecessary usage of `useMemo`.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo
+   */
+  '@eslint-react/hooks-extra/no-unnecessary-use-memo'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces that a function with the `use` prefix should use at least one Hook inside of it.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-prefix
+   */
+  '@eslint-react/hooks-extra/no-unnecessary-use-prefix'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces that a function with the `use` prefix should use at least one Hook inside of it.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-prefix
+   */
+  '@eslint-react/hooks-extra/no-useless-custom-hooks'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces function calls made inside `useState` to be wrapped in an `initializer function`.
+   * @see https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization
+   */
+  '@eslint-react/hooks-extra/prefer-use-state-lazy-initialization'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow duplicate props in JSX elements.
+   * @see https://eslint-react.xyz/docs/rules/jsx-no-duplicate-props
+   */
+  '@eslint-react/jsx-no-duplicate-props'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow undefined variables in JSX.
+   * @see https://eslint-react.xyz/docs/rules/jsx-no-undef
+   */
+  '@eslint-react/jsx-no-undef'?: Linter.RuleEntry<[]>
+  /**
+   * Marks React variables as used when JSX is used.
+   * @see https://eslint-react.xyz/docs/rules/jsx-uses-react
+   */
+  '@eslint-react/jsx-uses-react'?: Linter.RuleEntry<[]>
+  /**
+   * Marks variables used in JSX elements as used.
+   * @see https://eslint-react.xyz/docs/rules/jsx-uses-vars
+   */
+  '@eslint-react/jsx-uses-vars'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces naming conventions for components.
+   * @see https://eslint-react.xyz/docs/rules/naming-convention-component-name
+   */
+  '@eslint-react/naming-convention/component-name'?: Linter.RuleEntry<EslintReactNamingConventionComponentName>
+  /**
+   * Enforces context name to be a valid component name with the suffix `Context`.
+   * @see https://eslint-react.xyz/docs/rules/naming-convention-context-name
+   */
+  '@eslint-react/naming-convention/context-name'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces consistent file naming conventions.
+   * @see https://eslint-react.xyz/docs/rules/naming-convention-filename
+   */
+  '@eslint-react/naming-convention/filename'?: Linter.RuleEntry<EslintReactNamingConventionFilename>
+  /**
+   * Enforces consistent file naming conventions.
+   * @see https://eslint-react.xyz/docs/rules/naming-convention-filename-extension
+   */
+  '@eslint-react/naming-convention/filename-extension'?: Linter.RuleEntry<EslintReactNamingConventionFilenameExtension>
+  /**
+   * Enforces destructuring and symmetric naming of `useState` hook value and setter.
+   * @see https://eslint-react.xyz/docs/rules/naming-convention-use-state
+   */
+  '@eslint-react/naming-convention/use-state'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow accessing `this.state` inside `setState` calls.
+   * @see https://eslint-react.xyz/docs/rules/no-access-state-in-setstate
+   */
+  '@eslint-react/no-access-state-in-setstate'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow an item's index in the array as its key.
+   * @see https://eslint-react.xyz/docs/rules/no-array-index-key
+   */
+  '@eslint-react/no-array-index-key'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `Children.count`.
+   * @see https://eslint-react.xyz/docs/rules/no-children-count
+   */
+  '@eslint-react/no-children-count'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow 'Children.forEach'.
+   * @see https://eslint-react.xyz/docs/rules/no-children-for-each
+   */
+  '@eslint-react/no-children-for-each'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `Children.map`.
+   * @see https://eslint-react.xyz/docs/rules/no-children-map
+   */
+  '@eslint-react/no-children-map'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `Children.only`.
+   * @see https://eslint-react.xyz/docs/rules/no-children-only
+   */
+  '@eslint-react/no-children-only'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow passing `children` as a prop.
+   * @see https://eslint-react.xyz/docs/rules/no-children-prop
+   */
+  '@eslint-react/no-children-prop'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `Children.toArray`.
+   * @see https://eslint-react.xyz/docs/rules/no-children-to-array
+   */
+  '@eslint-react/no-children-to-array'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow class components except for error boundaries.
+   * @see https://eslint-react.xyz/docs/rules/no-class-component
+   */
+  '@eslint-react/no-class-component'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `cloneElement`.
+   * @see https://eslint-react.xyz/docs/rules/no-clone-element
+   */
+  '@eslint-react/no-clone-element'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents comments from being inserted as text nodes.
+   * @see https://eslint-react.xyz/docs/rules/no-comment-textnodes
+   */
+  '@eslint-react/no-comment-textnodes'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow complex conditional rendering in JSX expressions.
+   * @see https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering
+   */
+  '@eslint-react/no-complex-conditional-rendering'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow complex conditional rendering in JSX expressions.
+   * @see https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering
+   */
+  '@eslint-react/no-complicated-conditional-rendering'?: Linter.RuleEntry<[]>
+  /**
+   * Replace usages of `componentWillMount` with `UNSAFE_componentWillMount`.
+   * @see https://eslint-react.xyz/docs/rules/no-component-will-mount
+   */
+  '@eslint-react/no-component-will-mount'?: Linter.RuleEntry<[]>
+  /**
+   * Replace usages of `componentWillReceiveProps` with `UNSAFE_componentWillReceiveProps`.
+   * @see https://eslint-react.xyz/docs/rules/no-component-will-receive-props
+   */
+  '@eslint-react/no-component-will-receive-props'?: Linter.RuleEntry<[]>
+  /**
+   * Replace usages of `componentWillUpdate` with `UNSAFE_componentWillUpdate`.
+   * @see https://eslint-react.xyz/docs/rules/no-component-will-update
+   */
+  '@eslint-react/no-component-will-update'?: Linter.RuleEntry<[]>
+  /**
+   * Replace usages of `<Context.Provider>` with `<Context>`.
+   * @see https://eslint-react.xyz/docs/rules/no-context-provider
+   */
+  '@eslint-react/no-context-provider'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `createRef` in function components.
+   * @see https://eslint-react.xyz/docs/rules/no-create-ref
+   */
+  '@eslint-react/no-create-ref'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `defaultProps` property in favor of ES6 default parameters.
+   * @see https://eslint-react.xyz/docs/rules/no-default-props
+   */
+  '@eslint-react/no-default-props'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow direct mutation of `this.state`.
+   * @see https://eslint-react.xyz/docs/rules/no-direct-mutation-state
+   */
+  '@eslint-react/no-direct-mutation-state'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow duplicate props in JSX elements.
+   * @see https://eslint-react.xyz/docs/rules/jsx-no-duplicate-props
+   */
+  '@eslint-react/no-duplicate-jsx-props'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow duplicate `key` on elements in the same array or a list of `children`.
+   * @see https://eslint-react.xyz/docs/rules/no-duplicate-key
+   */
+  '@eslint-react/no-duplicate-key'?: Linter.RuleEntry<[]>
+  /**
+   * Replaces usages of `forwardRef` with passing `ref` as a prop.
+   * @see https://eslint-react.xyz/docs/rules/no-forward-ref
+   */
+  '@eslint-react/no-forward-ref'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents `key` from not being explicitly specified (e.g. spreading `key` from objects).
+   * @see https://eslint-react.xyz/docs/rules/no-implicit-key
+   */
+  '@eslint-react/no-implicit-key'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents problematic leaked values from being rendered.
+   * @see https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering
+   */
+  '@eslint-react/no-leaked-conditional-rendering'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces that all components have a `displayName` which can be used in devtools.
+   * @see https://eslint-react.xyz/docs/rules/no-missing-component-display-name
+   */
+  '@eslint-react/no-missing-component-display-name'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces that all contexts have a `displayName` which can be used in devtools.
+   * @see https://eslint-react.xyz/docs/rules/no-missing-context-display-name
+   */
+  '@eslint-react/no-missing-context-display-name'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow missing `key` on items in list rendering.
+   * @see https://eslint-react.xyz/docs/rules/no-missing-key
+   */
+  '@eslint-react/no-missing-key'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents incorrect usage of `captureOwnerStack`.
+   * @see https://eslint-react.xyz/docs/rules/no-misused-capture-owner-stack
+   */
+  '@eslint-react/no-misused-capture-owner-stack'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow nesting component definitions inside other components.
+   * @see https://eslint-react.xyz/docs/rules/no-nested-component-definitions
+   */
+  '@eslint-react/no-nested-component-definitions'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow nesting component definitions inside other components.
+   * @see https://eslint-react.xyz/docs/rules/no-nested-component-definitions
+   */
+  '@eslint-react/no-nested-components'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow nesting lazy component declarations inside other components.
+   * @see https://eslint-react.xyz/docs/rules/no-nested-component-definitions
+   */
+  '@eslint-react/no-nested-lazy-component-declarations'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `propTypes` in favor of TypeScript or another type-checking solution.
+   * @see https://eslint-react.xyz/docs/rules/no-prop-types
+   */
+  '@eslint-react/no-prop-types'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow `shouldComponentUpdate` when extending `React.PureComponent`.
+   * @see https://eslint-react.xyz/docs/rules/no-redundant-should-component-update
+   */
+  '@eslint-react/no-redundant-should-component-update'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow calling `this.setState` in `componentDidMount` outside of functions, such as callbacks.
+   * @see https://eslint-react.xyz/docs/rules/no-set-state-in-component-did-mount
+   */
+  '@eslint-react/no-set-state-in-component-did-mount'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow calling `this.setState` in `componentDidUpdate` outside of functions, such as callbacks.
+   * @see https://eslint-react.xyz/docs/rules/no-set-state-in-component-did-update
+   */
+  '@eslint-react/no-set-state-in-component-did-update'?: Linter.RuleEntry<[]>
+  /**
+   * Disallows calling `this.setState` in `componentWillUpdate` outside of functions, such as callbacks.
+   * @see https://eslint-react.xyz/docs/rules/no-set-state-in-component-will-update
+   */
+  '@eslint-react/no-set-state-in-component-will-update'?: Linter.RuleEntry<[]>
+  /**
+   * Replaces string refs with callback refs.
+   * @see https://eslint-react.xyz/docs/rules/no-string-refs
+   */
+  '@eslint-react/no-string-refs'?: Linter.RuleEntry<[]>
+  /**
+   * Warns the usage of `UNSAFE_componentWillMount` in class components.
+   * @see https://eslint-react.xyz/docs/rules/no-unsafe-component-will-mount
+   */
+  '@eslint-react/no-unsafe-component-will-mount'?: Linter.RuleEntry<[]>
+  /**
+   * Warns the usage of `UNSAFE_componentWillReceiveProps` in class components.
+   * @see https://eslint-react.xyz/docs/rules/no-unsafe-component-will-receive-props
+   */
+  '@eslint-react/no-unsafe-component-will-receive-props'?: Linter.RuleEntry<[]>
+  /**
+   * Warns the usage of `UNSAFE_componentWillUpdate` in class components.
+   * @see https://eslint-react.xyz/docs/rules/no-unsafe-component-will-update
+   */
+  '@eslint-react/no-unsafe-component-will-update'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents non-stable values (i.e. object literals) from being used as a value for `Context.Provider`.
+   * @see https://eslint-react.xyz/docs/rules/no-unstable-context-value
+   */
+  '@eslint-react/no-unstable-context-value'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents using referential-type values as default props in object destructuring.
+   * @see https://eslint-react.xyz/docs/rules/no-unstable-default-props
+   */
+  '@eslint-react/no-unstable-default-props'?: Linter.RuleEntry<[]>
+  /**
+   * Warns unused class component methods and properties.
+   * @see https://eslint-react.xyz/docs/rules/no-unused-class-component-members
+   */
+  '@eslint-react/no-unused-class-component-members'?: Linter.RuleEntry<[]>
+  /**
+   * Warns unused class component state.
+   * @see https://eslint-react.xyz/docs/rules/no-unused-state
+   */
+  '@eslint-react/no-unused-state'?: Linter.RuleEntry<[]>
+  /**
+   * Replaces usages of `useContext` with `use`.
+   * @see https://eslint-react.xyz/docs/rules/no-use-context
+   */
+  '@eslint-react/no-use-context'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow useless `forwardRef` calls on components that don't use `ref`s.
+   * @see https://eslint-react.xyz/docs/rules/no-useless-forward-ref
+   */
+  '@eslint-react/no-useless-forward-ref'?: Linter.RuleEntry<[]>
+  /**
+   * Disallow useless fragment elements.
+   * @see https://eslint-react.xyz/docs/rules/no-useless-fragment
+   */
+  '@eslint-react/no-useless-fragment'?: Linter.RuleEntry<EslintReactNoUselessFragment>
+  /**
+   * Enforces destructuring assignment for component props and context.
+   * @see https://eslint-react.xyz/docs/rules/prefer-destructuring-assignment
+   */
+  '@eslint-react/prefer-destructuring-assignment'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces React is imported via a namespace import.
+   * @see https://eslint-react.xyz/docs/rules/prefer-react-namespace-import
+   */
+  '@eslint-react/prefer-react-namespace-import'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces read-only props in components.
+   * @see https://eslint-react.xyz/docs/rules/prefer-read-only-props
+   */
+  '@eslint-react/prefer-read-only-props'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces shorthand syntax for boolean attributes.
+   * @see https://eslint-react.xyz/docs/rules/prefer-shorthand-boolean
+   */
+  '@eslint-react/prefer-shorthand-boolean'?: Linter.RuleEntry<[]>
+  /**
+   * Enforces shorthand syntax for fragments.
+   * @see https://eslint-react.xyz/docs/rules/prefer-shorthand-fragment
+   */
+  '@eslint-react/prefer-shorthand-fragment'?: Linter.RuleEntry<[]>
+  /**
+   * Marks variables used in JSX elements as used.
+   * @see https://eslint-react.xyz/docs/rules/jsx-uses-vars
+   */
+  '@eslint-react/use-jsx-vars'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents leaked `addEventListener` in a component or custom Hook.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-event-listener
+   */
+  '@eslint-react/web-api/no-leaked-event-listener'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents leaked `setInterval` in a component or custom Hook.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-interval
+   */
+  '@eslint-react/web-api/no-leaked-interval'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents leaked `ResizeObserver` in a component or custom Hook.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-resize-observer
+   */
+  '@eslint-react/web-api/no-leaked-resize-observer'?: Linter.RuleEntry<[]>
+  /**
+   * Prevents leaked `setTimeout` in a component or custom Hook.
+   * @see https://eslint-react.xyz/docs/rules/web-api-no-leaked-timeout
+   */
+  '@eslint-react/web-api/no-leaked-timeout'?: Linter.RuleEntry<[]>
+  /**
    * Enforce linebreaks after opening and before closing array brackets
    * @see https://eslint.style/rules/js/array-bracket-newline
    */
@@ -2640,6 +3160,439 @@ export interface RuleOptions {
    */
   'radix'?: Linter.RuleEntry<Radix>
   /**
+   * Surfaces diagnostics from React Forget
+   */
+  'react-compiler/react-compiler'?: Linter.RuleEntry<ReactCompilerReactCompiler>
+  /**
+   * Conditionally rendered text nodes should be wrapped in an element (for example, a <span>), otherwise Google Translate can cause a browser error.
+   */
+  'react-google-translate/no-conditional-text-nodes-with-siblings'?: Linter.RuleEntry<[]>
+  /**
+   * React components should avoid returning text nodes directly (or numerical values which will be rendered as text). When a React component returns values other than JSX / null, Google Translate can continue to display stale values after state changes, without any error being thrown. Since this is very hard to debug it is better to avoid it altogether.
+   */
+  'react-google-translate/no-return-text-nodes'?: Linter.RuleEntry<[]>
+  /**
+   * verifies the list of dependencies for Hooks like useEffect and similar
+   * @see https://github.com/facebook/react/issues/14920
+   */
+  'react-hooks/exhaustive-deps'?: Linter.RuleEntry<ReactHooksExhaustiveDeps>
+  /**
+   * enforces the Rules of Hooks
+   * @see https://reactjs.org/docs/hooks-rules.html
+   */
+  'react-hooks/rules-of-hooks'?: Linter.RuleEntry<[]>
+  'react-refresh/only-export-components'?: Linter.RuleEntry<ReactRefreshOnlyExportComponents>
+  /**
+   * disallow confusing quantifiers
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/confusing-quantifier.html
+   */
+  'regexp/confusing-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * enforce consistent escaping of control characters
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/control-character-escape.html
+   */
+  'regexp/control-character-escape'?: Linter.RuleEntry<[]>
+  /**
+   * enforce single grapheme in string literal
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/grapheme-string-literal.html
+   */
+  'regexp/grapheme-string-literal'?: Linter.RuleEntry<[]>
+  /**
+   * enforce consistent usage of hexadecimal escape
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/hexadecimal-escape.html
+   */
+  'regexp/hexadecimal-escape'?: Linter.RuleEntry<RegexpHexadecimalEscape>
+  /**
+   * enforce into your favorite case
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/letter-case.html
+   */
+  'regexp/letter-case'?: Linter.RuleEntry<RegexpLetterCase>
+  /**
+   * enforce match any character style
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/match-any.html
+   */
+  'regexp/match-any'?: Linter.RuleEntry<RegexpMatchAny>
+  /**
+   * enforce use of escapes on negation
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/negation.html
+   */
+  'regexp/negation'?: Linter.RuleEntry<[]>
+  /**
+   * disallow elements that contradict assertions
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-contradiction-with-assertion.html
+   */
+  'regexp/no-contradiction-with-assertion'?: Linter.RuleEntry<[]>
+  /**
+   * disallow control characters
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-control-character.html
+   */
+  'regexp/no-control-character'?: Linter.RuleEntry<[]>
+  /**
+   * disallow duplicate characters in the RegExp character class
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-dupe-characters-character-class.html
+   */
+  'regexp/no-dupe-characters-character-class'?: Linter.RuleEntry<[]>
+  /**
+   * disallow duplicate disjunctions
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-dupe-disjunctions.html
+   */
+  'regexp/no-dupe-disjunctions'?: Linter.RuleEntry<RegexpNoDupeDisjunctions>
+  /**
+   * disallow alternatives without elements
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-empty-alternative.html
+   */
+  'regexp/no-empty-alternative'?: Linter.RuleEntry<[]>
+  /**
+   * disallow capturing group that captures empty.
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-empty-capturing-group.html
+   */
+  'regexp/no-empty-capturing-group'?: Linter.RuleEntry<[]>
+  /**
+   * disallow character classes that match no characters
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-empty-character-class.html
+   */
+  'regexp/no-empty-character-class'?: Linter.RuleEntry<[]>
+  /**
+   * disallow empty group
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-empty-group.html
+   */
+  'regexp/no-empty-group'?: Linter.RuleEntry<[]>
+  /**
+   * disallow empty lookahead assertion or empty lookbehind assertion
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-empty-lookarounds-assertion.html
+   */
+  'regexp/no-empty-lookarounds-assertion'?: Linter.RuleEntry<[]>
+  /**
+   * disallow empty string literals in character classes
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-empty-string-literal.html
+   */
+  'regexp/no-empty-string-literal'?: Linter.RuleEntry<[]>
+  /**
+   * disallow escape backspace (`[\b]`)
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-escape-backspace.html
+   */
+  'regexp/no-escape-backspace'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary nested lookaround assertions
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-extra-lookaround-assertions.html
+   */
+  'regexp/no-extra-lookaround-assertions'?: Linter.RuleEntry<[]>
+  /**
+   * disallow invalid regular expression strings in `RegExp` constructors
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-invalid-regexp.html
+   */
+  'regexp/no-invalid-regexp'?: Linter.RuleEntry<[]>
+  /**
+   * disallow invisible raw character
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-invisible-character.html
+   */
+  'regexp/no-invisible-character'?: Linter.RuleEntry<[]>
+  /**
+   * disallow lazy quantifiers at the end of an expression
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-lazy-ends.html
+   */
+  'regexp/no-lazy-ends'?: Linter.RuleEntry<RegexpNoLazyEnds>
+  /**
+   * disallow legacy RegExp features
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-legacy-features.html
+   */
+  'regexp/no-legacy-features'?: Linter.RuleEntry<RegexpNoLegacyFeatures>
+  /**
+   * disallow capturing groups that do not behave as one would expect
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-misleading-capturing-group.html
+   */
+  'regexp/no-misleading-capturing-group'?: Linter.RuleEntry<RegexpNoMisleadingCapturingGroup>
+  /**
+   * disallow multi-code-point characters in character classes and quantifiers
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-misleading-unicode-character.html
+   */
+  'regexp/no-misleading-unicode-character'?: Linter.RuleEntry<RegexpNoMisleadingUnicodeCharacter>
+  /**
+   * disallow missing `g` flag in patterns used in `String#matchAll` and `String#replaceAll`
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-missing-g-flag.html
+   */
+  'regexp/no-missing-g-flag'?: Linter.RuleEntry<RegexpNoMissingGFlag>
+  /**
+   * disallow non-standard flags
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-non-standard-flag.html
+   */
+  'regexp/no-non-standard-flag'?: Linter.RuleEntry<[]>
+  /**
+   * disallow obscure character ranges
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-obscure-range.html
+   */
+  'regexp/no-obscure-range'?: Linter.RuleEntry<RegexpNoObscureRange>
+  /**
+   * disallow octal escape sequence
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-octal.html
+   */
+  'regexp/no-octal'?: Linter.RuleEntry<[]>
+  /**
+   * disallow optional assertions
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-optional-assertion.html
+   */
+  'regexp/no-optional-assertion'?: Linter.RuleEntry<[]>
+  /**
+   * disallow backreferences that reference a group that might not be matched
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-potentially-useless-backreference.html
+   */
+  'regexp/no-potentially-useless-backreference'?: Linter.RuleEntry<[]>
+  /**
+   * disallow standalone backslashes (`\`)
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-standalone-backslash.html
+   */
+  'regexp/no-standalone-backslash'?: Linter.RuleEntry<[]>
+  /**
+   * disallow exponential and polynomial backtracking
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-super-linear-backtracking.html
+   */
+  'regexp/no-super-linear-backtracking'?: Linter.RuleEntry<RegexpNoSuperLinearBacktracking>
+  /**
+   * disallow quantifiers that cause quadratic moves
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-super-linear-move.html
+   */
+  'regexp/no-super-linear-move'?: Linter.RuleEntry<RegexpNoSuperLinearMove>
+  /**
+   * disallow trivially nested assertions
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-trivially-nested-assertion.html
+   */
+  'regexp/no-trivially-nested-assertion'?: Linter.RuleEntry<[]>
+  /**
+   * disallow nested quantifiers that can be rewritten as one quantifier
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-trivially-nested-quantifier.html
+   */
+  'regexp/no-trivially-nested-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unused capturing group
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-unused-capturing-group.html
+   */
+  'regexp/no-unused-capturing-group'?: Linter.RuleEntry<RegexpNoUnusedCapturingGroup>
+  /**
+   * disallow assertions that are known to always accept (or reject)
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-assertions.html
+   */
+  'regexp/no-useless-assertions'?: Linter.RuleEntry<[]>
+  /**
+   * disallow useless backreferences in regular expressions
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-backreference.html
+   */
+  'regexp/no-useless-backreference'?: Linter.RuleEntry<[]>
+  /**
+   * disallow character class with one character
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-character-class.html
+   */
+  'regexp/no-useless-character-class'?: Linter.RuleEntry<RegexpNoUselessCharacterClass>
+  /**
+   * disallow useless `$` replacements in replacement string
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-dollar-replacements.html
+   */
+  'regexp/no-useless-dollar-replacements'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary escape characters in RegExp
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-escape.html
+   */
+  'regexp/no-useless-escape'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary regex flags
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-flag.html
+   */
+  'regexp/no-useless-flag'?: Linter.RuleEntry<RegexpNoUselessFlag>
+  /**
+   * disallow unnecessarily non-greedy quantifiers
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-lazy.html
+   */
+  'regexp/no-useless-lazy'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary non-capturing group
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-non-capturing-group.html
+   */
+  'regexp/no-useless-non-capturing-group'?: Linter.RuleEntry<RegexpNoUselessNonCapturingGroup>
+  /**
+   * disallow quantifiers that can be removed
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-quantifier.html
+   */
+  'regexp/no-useless-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary character ranges
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-range.html
+   */
+  'regexp/no-useless-range'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary elements in expression character classes
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-set-operand.html
+   */
+  'regexp/no-useless-set-operand'?: Linter.RuleEntry<[]>
+  /**
+   * disallow string disjunction of single characters in `\q{...}`
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-string-literal.html
+   */
+  'regexp/no-useless-string-literal'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unnecessary `{n,m}` quantifier
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-useless-two-nums-quantifier.html
+   */
+  'regexp/no-useless-two-nums-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * disallow quantifiers with a maximum of zero
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/no-zero-quantifier.html
+   */
+  'regexp/no-zero-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * disallow the alternatives of lookarounds that end with a non-constant quantifier
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/optimal-lookaround-quantifier.html
+   */
+  'regexp/optimal-lookaround-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * require optimal quantifiers for concatenated quantifiers
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/optimal-quantifier-concatenation.html
+   */
+  'regexp/optimal-quantifier-concatenation'?: Linter.RuleEntry<RegexpOptimalQuantifierConcatenation>
+  /**
+   * enforce using character class
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-character-class.html
+   */
+  'regexp/prefer-character-class'?: Linter.RuleEntry<RegexpPreferCharacterClass>
+  /**
+   * enforce using `\d`
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-d.html
+   */
+  'regexp/prefer-d'?: Linter.RuleEntry<RegexpPreferD>
+  /**
+   * enforces escape of replacement `$` character (`$$`).
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-escape-replacement-dollar-char.html
+   */
+  'regexp/prefer-escape-replacement-dollar-char'?: Linter.RuleEntry<[]>
+  /**
+   * prefer lookarounds over capturing group that do not replace
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-lookaround.html
+   */
+  'regexp/prefer-lookaround'?: Linter.RuleEntry<RegexpPreferLookaround>
+  /**
+   * enforce using named backreferences
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-named-backreference.html
+   */
+  'regexp/prefer-named-backreference'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using named capture groups
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-named-capture-group.html
+   */
+  'regexp/prefer-named-capture-group'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using named replacement
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-named-replacement.html
+   */
+  'regexp/prefer-named-replacement'?: Linter.RuleEntry<RegexpPreferNamedReplacement>
+  /**
+   * enforce using `+` quantifier
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-plus-quantifier.html
+   */
+  'regexp/prefer-plus-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * prefer predefined assertion over equivalent lookarounds
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-predefined-assertion.html
+   */
+  'regexp/prefer-predefined-assertion'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using quantifier
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-quantifier.html
+   */
+  'regexp/prefer-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using `?` quantifier
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-question-quantifier.html
+   */
+  'regexp/prefer-question-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using character class range
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-range.html
+   */
+  'regexp/prefer-range'?: Linter.RuleEntry<RegexpPreferRange>
+  /**
+   * enforce that `RegExp#exec` is used instead of `String#match` if no global flag is provided
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-regexp-exec.html
+   */
+  'regexp/prefer-regexp-exec'?: Linter.RuleEntry<[]>
+  /**
+   * enforce that `RegExp#test` is used instead of `String#match` and `RegExp#exec`
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-regexp-test.html
+   */
+  'regexp/prefer-regexp-test'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using result array `groups`
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-result-array-groups.html
+   */
+  'regexp/prefer-result-array-groups'?: Linter.RuleEntry<RegexpPreferResultArrayGroups>
+  /**
+   * prefer character class set operations instead of lookarounds
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-set-operation.html
+   */
+  'regexp/prefer-set-operation'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using `*` quantifier
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-star-quantifier.html
+   */
+  'regexp/prefer-star-quantifier'?: Linter.RuleEntry<[]>
+  /**
+   * enforce use of unicode codepoint escapes
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-unicode-codepoint-escapes.html
+   */
+  'regexp/prefer-unicode-codepoint-escapes'?: Linter.RuleEntry<[]>
+  /**
+   * enforce using `\w`
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/prefer-w.html
+   */
+  'regexp/prefer-w'?: Linter.RuleEntry<[]>
+  /**
+   * enforce the use of the `u` flag
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/require-unicode-regexp.html
+   */
+  'regexp/require-unicode-regexp'?: Linter.RuleEntry<[]>
+  /**
+   * enforce the use of the `v` flag
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/require-unicode-sets-regexp.html
+   */
+  'regexp/require-unicode-sets-regexp'?: Linter.RuleEntry<[]>
+  /**
+   * require simplify set operations
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/simplify-set-operations.html
+   */
+  'regexp/simplify-set-operations'?: Linter.RuleEntry<[]>
+  /**
+   * sort alternatives if order doesn't matter
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/sort-alternatives.html
+   */
+  'regexp/sort-alternatives'?: Linter.RuleEntry<[]>
+  /**
+   * enforces elements order in character class
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/sort-character-class-elements.html
+   */
+  'regexp/sort-character-class-elements'?: Linter.RuleEntry<RegexpSortCharacterClassElements>
+  /**
+   * require regex flags to be sorted
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/sort-flags.html
+   */
+  'regexp/sort-flags'?: Linter.RuleEntry<[]>
+  /**
+   * disallow not strictly valid regular expressions
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/strict.html
+   */
+  'regexp/strict'?: Linter.RuleEntry<[]>
+  /**
+   * enforce consistent usage of unicode escape or unicode codepoint escape
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/unicode-escape.html
+   */
+  'regexp/unicode-escape'?: Linter.RuleEntry<RegexpUnicodeEscape>
+  /**
+   * enforce consistent naming of unicode properties
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/unicode-property.html
+   */
+  'regexp/unicode-property'?: Linter.RuleEntry<RegexpUnicodeProperty>
+  /**
+   * use the `i` flag if it simplifies the pattern
+   * @see https://ota-meshi.github.io/eslint-plugin-regexp/rules/use-ignore-case.html
+   */
+  'regexp/use-ignore-case'?: Linter.RuleEntry<[]>
+  /**
    * Disallow assignments that can lead to race conditions due to usage of `await` or `yield`
    * @see https://eslint.org/docs/latest/rules/require-atomic-updates
    */
@@ -3231,6 +4184,46 @@ export interface RuleOptions {
    * @see https://eslint.org/docs/latest/rules/symbol-description
    */
   'symbol-description'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce a consistent and logical order of the Tailwind CSS classnames
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/classnames-order.md
+   */
+  'tailwindcss/classnames-order'?: Linter.RuleEntry<TailwindcssClassnamesOrder>
+  /**
+   * Warns about dash prefixed classnames using arbitrary values
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/enforces-negative-arbitrary-values.md
+   */
+  'tailwindcss/enforces-negative-arbitrary-values'?: Linter.RuleEntry<TailwindcssEnforcesNegativeArbitraryValues>
+  /**
+   * Enforces the usage of shorthand Tailwind CSS classnames
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/enforces-shorthand.md
+   */
+  'tailwindcss/enforces-shorthand'?: Linter.RuleEntry<TailwindcssEnforcesShorthand>
+  /**
+   * Detect obsolete classnames when upgrading to Tailwind CSS v3
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/migration-from-tailwind-2.md
+   */
+  'tailwindcss/migration-from-tailwind-2'?: Linter.RuleEntry<TailwindcssMigrationFromTailwind2>
+  /**
+   * Forbid using arbitrary values in classnames
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-arbitrary-value.md
+   */
+  'tailwindcss/no-arbitrary-value'?: Linter.RuleEntry<TailwindcssNoArbitraryValue>
+  /**
+   * Avoid contradicting Tailwind CSS classnames (e.g. "w-3 w-5")
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-contradicting-classname.md
+   */
+  'tailwindcss/no-contradicting-classname'?: Linter.RuleEntry<TailwindcssNoContradictingClassname>
+  /**
+   * Detect classnames which do not belong to Tailwind CSS
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-custom-classname.md
+   */
+  'tailwindcss/no-custom-classname'?: Linter.RuleEntry<TailwindcssNoCustomClassname>
+  /**
+   * Forbid using arbitrary values in classnames when an equivalent preset exists
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-unnecessary-arbitrary-value.md
+   */
+  'tailwindcss/no-unnecessary-arbitrary-value'?: Linter.RuleEntry<TailwindcssNoUnnecessaryArbitraryValue>
   /**
    * Require or disallow spacing around embedded expressions of template strings
    * @see https://eslint.org/docs/latest/rules/template-curly-spacing
@@ -4200,6 +5193,36 @@ export interface RuleOptions {
 }
 
 /* ======= Declarations ======= */
+// ----- @eslint-react/dom/no-unknown-property -----
+type EslintReactDomNoUnknownProperty = []|[{
+  ignore?: string[]
+  requireDataLowercase?: boolean
+}]
+// ----- @eslint-react/naming-convention/component-name -----
+type EslintReactNamingConventionComponentName = []|[(("PascalCase" | "CONSTANT_CASE") | {
+  allowAllCaps?: boolean
+  allowLeadingUnderscore?: boolean
+  allowNamespace?: boolean
+  excepts?: string[]
+  rule?: ("PascalCase" | "CONSTANT_CASE")
+})]
+// ----- @eslint-react/naming-convention/filename -----
+type EslintReactNamingConventionFilename = []|[(("PascalCase" | "camelCase" | "kebab-case" | "snake_case") | {
+  excepts?: string[]
+  extensions?: string[]
+  rule?: ("PascalCase" | "camelCase" | "kebab-case" | "snake_case")
+})]
+// ----- @eslint-react/naming-convention/filename-extension -----
+type EslintReactNamingConventionFilenameExtension = []|[(("always" | "as-needed") | {
+  allow?: ("always" | "as-needed")
+  extensions?: string[]
+  ignoreFilesWithoutCode?: boolean
+})]
+// ----- @eslint-react/no-useless-fragment -----
+type EslintReactNoUselessFragment = []|[{
+  
+  allowExpressions?: boolean
+}]
 // ----- @stylistic/array-bracket-newline -----
 type StylisticArrayBracketNewline = []|[(("always" | "never" | "consistent") | {
   multiline?: boolean
@@ -7885,6 +8908,140 @@ type Quotes = []|[("single" | "double" | "backtick")]|[("single" | "double" | "b
 })]
 // ----- radix -----
 type Radix = []|[("always" | "as-needed")]
+// ----- react-compiler/react-compiler -----
+type ReactCompilerReactCompiler = []|[{
+  [k: string]: unknown | undefined
+}]
+// ----- react-hooks/exhaustive-deps -----
+type ReactHooksExhaustiveDeps = []|[{
+  additionalHooks?: string
+  enableDangerousAutofixThisMayCauseInfiniteLoops?: boolean
+}]
+// ----- react-refresh/only-export-components -----
+type ReactRefreshOnlyExportComponents = []|[{
+  allowExportNames?: string[]
+  allowConstantExport?: boolean
+  customHOCs?: string[]
+  checkJS?: boolean
+}]
+// ----- regexp/hexadecimal-escape -----
+type RegexpHexadecimalEscape = []|[("always" | "never")]
+// ----- regexp/letter-case -----
+type RegexpLetterCase = []|[{
+  caseInsensitive?: ("lowercase" | "uppercase" | "ignore")
+  unicodeEscape?: ("lowercase" | "uppercase" | "ignore")
+  hexadecimalEscape?: ("lowercase" | "uppercase" | "ignore")
+  controlEscape?: ("lowercase" | "uppercase" | "ignore")
+}]
+// ----- regexp/match-any -----
+type RegexpMatchAny = []|[{
+  
+  allows?: [("[\\s\\S]" | "[\\S\\s]" | "[^]" | "dotAll"), ...(("[\\s\\S]" | "[\\S\\s]" | "[^]" | "dotAll"))[]]
+}]
+// ----- regexp/no-dupe-disjunctions -----
+type RegexpNoDupeDisjunctions = []|[{
+  report?: ("all" | "trivial" | "interesting")
+  reportExponentialBacktracking?: ("none" | "certain" | "potential")
+  reportUnreachable?: ("certain" | "potential")
+}]
+// ----- regexp/no-lazy-ends -----
+type RegexpNoLazyEnds = []|[{
+  ignorePartial?: boolean
+}]
+// ----- regexp/no-legacy-features -----
+type RegexpNoLegacyFeatures = []|[{
+  staticProperties?: ("input" | "$_" | "lastMatch" | "$&" | "lastParen" | "$+" | "leftContext" | "$`" | "rightContext" | "$'" | "$1" | "$2" | "$3" | "$4" | "$5" | "$6" | "$7" | "$8" | "$9")[]
+  prototypeMethods?: ("compile")[]
+}]
+// ----- regexp/no-misleading-capturing-group -----
+type RegexpNoMisleadingCapturingGroup = []|[{
+  reportBacktrackingEnds?: boolean
+}]
+// ----- regexp/no-misleading-unicode-character -----
+type RegexpNoMisleadingUnicodeCharacter = []|[{
+  fixable?: boolean
+}]
+// ----- regexp/no-missing-g-flag -----
+type RegexpNoMissingGFlag = []|[{
+  strictTypes?: boolean
+}]
+// ----- regexp/no-obscure-range -----
+type RegexpNoObscureRange = []|[{
+  allowed?: (("all" | "alphanumeric") | [("all" | "alphanumeric")] | [("alphanumeric" | string), ...(("alphanumeric" | string))[]])
+}]
+// ----- regexp/no-super-linear-backtracking -----
+type RegexpNoSuperLinearBacktracking = []|[{
+  report?: ("certain" | "potential")
+}]
+// ----- regexp/no-super-linear-move -----
+type RegexpNoSuperLinearMove = []|[{
+  report?: ("certain" | "potential")
+  ignoreSticky?: boolean
+  ignorePartial?: boolean
+}]
+// ----- regexp/no-unused-capturing-group -----
+type RegexpNoUnusedCapturingGroup = []|[{
+  fixable?: boolean
+  allowNamed?: boolean
+}]
+// ----- regexp/no-useless-character-class -----
+type RegexpNoUselessCharacterClass = []|[{
+  ignores?: string[]
+}]
+// ----- regexp/no-useless-flag -----
+type RegexpNoUselessFlag = []|[{
+  ignore?: ("i" | "m" | "s" | "g" | "y")[]
+  strictTypes?: boolean
+}]
+// ----- regexp/no-useless-non-capturing-group -----
+type RegexpNoUselessNonCapturingGroup = []|[{
+  allowTop?: (boolean | ("always" | "never" | "partial"))
+}]
+// ----- regexp/optimal-quantifier-concatenation -----
+type RegexpOptimalQuantifierConcatenation = []|[{
+  capturingGroups?: ("ignore" | "report")
+}]
+// ----- regexp/prefer-character-class -----
+type RegexpPreferCharacterClass = []|[{
+  minAlternatives?: number
+}]
+// ----- regexp/prefer-d -----
+type RegexpPreferD = []|[{
+  insideCharacterClass?: ("ignore" | "range" | "d")
+}]
+// ----- regexp/prefer-lookaround -----
+type RegexpPreferLookaround = []|[{
+  lookbehind?: boolean
+  strictTypes?: boolean
+}]
+// ----- regexp/prefer-named-replacement -----
+type RegexpPreferNamedReplacement = []|[{
+  strictTypes?: boolean
+}]
+// ----- regexp/prefer-range -----
+type RegexpPreferRange = []|[{
+  target?: (("all" | "alphanumeric") | [("all" | "alphanumeric")] | [("alphanumeric" | string), ...(("alphanumeric" | string))[]])
+}]
+// ----- regexp/prefer-result-array-groups -----
+type RegexpPreferResultArrayGroups = []|[{
+  strictTypes?: boolean
+}]
+// ----- regexp/sort-character-class-elements -----
+type RegexpSortCharacterClassElements = []|[{
+  order?: ("\\s" | "\\w" | "\\d" | "\\p" | "*" | "\\q" | "[]")[]
+}]
+// ----- regexp/unicode-escape -----
+type RegexpUnicodeEscape = []|[("unicodeCodePointEscape" | "unicodeEscape")]
+// ----- regexp/unicode-property -----
+type RegexpUnicodeProperty = []|[{
+  generalCategory?: ("always" | "never" | "ignore")
+  key?: ("short" | "long" | "ignore")
+  property?: (("short" | "long" | "ignore") | {
+    binary?: ("short" | "long" | "ignore")
+    generalCategory?: ("short" | "long" | "ignore")
+    script?: ("short" | "long" | "ignore")
+  })
+}]
 // ----- require-atomic-updates -----
 type RequireAtomicUpdates = []|[{
   allowProperties?: boolean
@@ -9122,6 +10279,90 @@ type StylisticYieldStarSpacing = []|[(("before" | "after" | "both" | "neither") 
 type SwitchColonSpacing = []|[{
   before?: boolean
   after?: boolean
+}]
+// ----- tailwindcss/classnames-order -----
+type TailwindcssClassnamesOrder = []|[{
+  callees?: string[]
+  ignoredKeys?: string[]
+  config?: (string | {
+    [k: string]: unknown | undefined
+  })
+  removeDuplicates?: boolean
+  tags?: string[]
+  [k: string]: unknown | undefined
+}]
+// ----- tailwindcss/enforces-negative-arbitrary-values -----
+type TailwindcssEnforcesNegativeArbitraryValues = []|[{
+  callees?: string[]
+  ignoredKeys?: string[]
+  config?: (string | {
+    [k: string]: unknown | undefined
+  })
+  tags?: string[]
+  [k: string]: unknown | undefined
+}]
+// ----- tailwindcss/enforces-shorthand -----
+type TailwindcssEnforcesShorthand = []|[{
+  callees?: string[]
+  ignoredKeys?: string[]
+  config?: (string | {
+    [k: string]: unknown | undefined
+  })
+  tags?: string[]
+  [k: string]: unknown | undefined
+}]
+// ----- tailwindcss/migration-from-tailwind-2 -----
+type TailwindcssMigrationFromTailwind2 = []|[{
+  callees?: string[]
+  ignoredKeys?: string[]
+  config?: (string | {
+    [k: string]: unknown | undefined
+  })
+  tags?: string[]
+  [k: string]: unknown | undefined
+}]
+// ----- tailwindcss/no-arbitrary-value -----
+type TailwindcssNoArbitraryValue = []|[{
+  callees?: string[]
+  ignoredKeys?: string[]
+  config?: (string | {
+    [k: string]: unknown | undefined
+  })
+  tags?: string[]
+  [k: string]: unknown | undefined
+}]
+// ----- tailwindcss/no-contradicting-classname -----
+type TailwindcssNoContradictingClassname = []|[{
+  callees?: string[]
+  ignoredKeys?: string[]
+  config?: (string | {
+    [k: string]: unknown | undefined
+  })
+  tags?: string[]
+  [k: string]: unknown | undefined
+}]
+// ----- tailwindcss/no-custom-classname -----
+type TailwindcssNoCustomClassname = []|[{
+  callees?: string[]
+  ignoredKeys?: string[]
+  config?: (string | {
+    [k: string]: unknown | undefined
+  })
+  cssFiles?: string[]
+  cssFilesRefreshRate?: number
+  tags?: string[]
+  whitelist?: string[]
+  [k: string]: unknown | undefined
+}]
+// ----- tailwindcss/no-unnecessary-arbitrary-value -----
+type TailwindcssNoUnnecessaryArbitraryValue = []|[{
+  callees?: string[]
+  ignoredKeys?: string[]
+  config?: (string | {
+    [k: string]: unknown | undefined
+  })
+  tags?: string[]
+  [k: string]: unknown | undefined
 }]
 // ----- template-curly-spacing -----
 type TemplateCurlySpacing = []|[("always" | "never")]
