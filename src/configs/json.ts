@@ -3,9 +3,7 @@ import { interopDefault } from '../utils';
 
 import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from '../types';
 
-export async function jsonc(
-  options: OptionsFiles & OptionsStylistic & OptionsOverrides = {},
-): Promise<TypedFlatConfigItem[]> {
+export async function jsonc(options: OptionsFiles & OptionsStylistic & OptionsOverrides = {}): Promise<TypedFlatConfigItem[]> {
   const {
     files = [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
     overrides = {},
@@ -17,7 +15,7 @@ export async function jsonc(
   } = typeof stylistic === 'boolean' ? {} : stylistic;
 
   const [
-    pluginJsonc,
+    // pluginJsonc,
     parserJsonc,
   ] = await Promise.all([
     interopDefault(import('eslint-plugin-jsonc')),
@@ -28,7 +26,7 @@ export async function jsonc(
     {
       name: 'dhzh/jsonc/setup',
       plugins: {
-        jsonc: pluginJsonc as any,
+        // jsonc: pluginJsonc as any,
       },
     },
     {
