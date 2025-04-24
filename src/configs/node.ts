@@ -1,23 +1,30 @@
-import { pluginNode } from '../plugins';
+import pluginNode from 'eslint-plugin-n';
+import { GLOB_SRC, RULE_PREFIX } from '../consts';
+import type { Linter } from 'eslint';
+import type { INodeConfigsOptions } from '../types';
 
-import type { TypedFlatConfigItem } from '../types';
+export function node(options: INodeConfigsOptions = {}): Linter.Config[] {
+  const { overrides = {} } = options;
 
-export async function node(): Promise<TypedFlatConfigItem[]> {
+  const config = pluginNode.configs['flat/recommended'];
+
   return [
     {
-      name: 'dhzh/node/rules',
-      plugins: {
-        node: pluginNode,
-      },
+      ...config,
+      name: `${RULE_PREFIX}/node/shared`,
+      files: GLOB_SRC,
+    },
+    {
+      name: `${RULE_PREFIX}/node/customize`,
+      files: GLOB_SRC,
       rules: {
-        'node/handle-callback-err': ['error', '^(err|error)$'],
-        'node/no-deprecated-api': 'error',
-        'node/no-exports-assign': 'error',
-        'node/no-new-require': 'error',
-        'node/no-path-concat': 'error',
-        'node/prefer-global/buffer': ['error', 'never'],
-        'node/prefer-global/process': ['error', 'never'],
-        'node/process-exit-as-throw': 'error',
+        'n/handle-callback-err': ['error', '^(err|error)$'],
+        'n/no-new-require': 'error',
+        'n/no-path-concat': 'error',
+        'n/prefer-global/buffer': ['error', 'never'],
+        'n/prefer-global/process': ['error', 'never'],
+        'n/no-missing-import': 'off',
+        ...overrides,
       },
     },
   ];

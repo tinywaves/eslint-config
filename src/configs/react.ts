@@ -27,7 +27,7 @@ const ExpoPackages = ['expo'];
 export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
   const {
     language = 'typescript',
-    overrides = { compiler: {}, core: {}, hooks: {}, refresh: {} },
+    overrides = { compiler: {}, core: {}, hooks: {}, refresh: {}, googleTranslate: {} },
   } = options;
 
   const config = language === 'typescript'
@@ -79,7 +79,6 @@ export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
       },
     },
     {
-
       ...pluginReactHooks.configs['recommended-latest'] as Linter.Config,
       name: `${RULE_PREFIX}/react/hooks/shared`,
       files: GLOB_SRC,
@@ -90,7 +89,6 @@ export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
       rules: overrides.hooks,
     },
     {
-
       ...(isAllowConstantExport ? pluginReactRefresh.configs.vite : pluginReactRefresh.configs.recommended) as Linter.Config,
       name: `${RULE_PREFIX}/react/refresh/shared/${isAllowConstantExport ? 'vite' : 'recommended'}`,
       files: GLOB_JSX_SRC,
@@ -164,6 +162,7 @@ export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
       rules: {
         'react-google-translate/no-conditional-text-nodes-with-siblings': 'warn',
         'react-google-translate/no-return-text-nodes': 'warn',
+        ...overrides.googleTranslate,
       },
     },
   ];

@@ -1,5 +1,7 @@
+export * from './react';
 export * from './stylistic';
 export * from './typescript';
+export * from './node';
 export * from './unicorn';
 export * from './tailwindcss';
 export * from './unocss';
@@ -10,7 +12,6 @@ export * from './regexp';
 export * from './javascript';
 export * from './eslint-comments';
 export * from './disables';
-
 export * from './formatters';
 export * from './ignores';
 export * from './imports';
@@ -18,7 +19,3 @@ export * from './jsdoc';
 export * from './jsonc';
 export * from './jsx';
 export * from './markdown';
-export * from './node';
-export * from './perfectionist';
-export * from './react';
-export * from './pnpm';
