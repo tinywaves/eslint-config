@@ -6,6 +6,7 @@ export * from './node';
 export * from './json';
 export * from './unicorn';
 export * from './imports';
+export * from './formatters';
 export * from './tailwindcss';
 export * from './unocss';
 export * from './yml';
@@ -15,4 +16,3 @@ export * from './ignores';
 
 export * from './eslint-comments';
 export * from './disables';
-export * from './formatters';

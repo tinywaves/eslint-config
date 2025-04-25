@@ -1,6 +1,7 @@
 import pluginJsonc from 'eslint-plugin-jsonc';
 import pluginPackageJson from 'eslint-plugin-package-json';
 import parserJsonc from 'jsonc-eslint-parser';
+import pluginHyoban from 'eslint-plugin-hyoban';
 import { RULE_PREFIX, GLOB_JSON, GLOB_JSONC, GLOB_JSON5, GLOB_PACKAGE_JSON } from '../consts';
 import type { Linter } from 'eslint';
 import type { IJsonConfigsOptions } from '../types';
@@ -34,6 +35,9 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
     {
       name: `${RULE_PREFIX}/json/customize`,
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
+      plugins: {
+        hyoban: pluginHyoban,
+      },
       rules: {
         'jsonc/array-bracket-spacing': ['error', 'never'],
         'jsonc/comma-dangle': ['error', 'never'],

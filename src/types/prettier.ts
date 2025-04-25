@@ -1,14 +1,3 @@
-/**
- * Vendor types from Prettier so we don't rely on the dependency.
- */
-
-export type VendoredPrettierOptions = Partial<VendoredPrettierOptionsRequired>;
-
-export type VendoredPrettierRuleOptions = VendoredPrettierOptions & {
-  parser?: BuiltInParserName | ExternalParserName;
-  [k: string]: unknown | undefined;
-};
-
 export interface VendoredPrettierOptionsRequired {
   /**
    * Specify the line length that the printer will wrap on.
@@ -76,7 +65,7 @@ export interface VendoredPrettierOptionsRequired {
   /**
    * Provide ability to support new languages to prettier.
    */
-  plugins: Array<string | any>;
+  plugins: string[];
   /**
    * How to handle whitespaces in HTML.
    * @default "css"
@@ -102,7 +91,6 @@ export interface VendoredPrettierOptionsRequired {
    * @default false
    */
   singleAttributePerLine: boolean;
-
   /**
    * How to handle whitespaces in XML.
    * @default "preserve"
@@ -153,13 +141,9 @@ export type BuiltInParserName =
 
 export type ExternalParserName = 'slidev' | 'astro';
 
-// This utility is here to handle the case where you have an explicit union
-// between string literals and the generic string type. It would normally
-// resolve out to just the string type, but this generic LiteralUnion maintains
-// the intellisense of the original union.
-//
-// It comes from this issue: microsoft/TypeScript#29729:
-//   https://github.com/microsoft/TypeScript/issues/29729#issuecomment-700527227
-export type LiteralUnion<T extends U, U = string> =
-  | T
-  | (Pick<U, never> & { _?: never | undefined });
+export type VendoredPrettierOptions = Partial<VendoredPrettierOptionsRequired>;
+
+export type VendoredPrettierRuleOptions = VendoredPrettierOptions & {
+  parser?: BuiltInParserName | ExternalParserName;
+  [k: string]: any;
+};

@@ -1,87 +1,64 @@
-import { isPackageExists } from 'local-pkg';
-
+import pluginFormat from 'eslint-plugin-format';
 import {
-  GLOB_ASTRO,
-  GLOB_ASTRO_TS,
-  GLOB_CSS,
-  GLOB_GRAPHQL,
+  RULE_PREFIX,
   GLOB_HTML,
-  GLOB_LESS,
-  GLOB_MARKDOWN,
+  GLOB_CSS,
   GLOB_POSTCSS,
+  GLOB_LESS,
   GLOB_SCSS,
-  GLOB_SVG,
+  GLOB_GRAPHQL,
   GLOB_XML,
-} from '../globs';
-import { ensurePackages, interopDefault, isPackageInScope, parserPlain } from '../utils';
-import { StylisticConfigDefaults } from './stylistic';
+  GLOB_SVG,
+} from '../consts';
+import { parserPlain } from '../utils';
+import type { Linter } from 'eslint';
+import type { IFormattersConfigsOptions } from '../types';
+import type { VendoredPrettierOptions, VendoredPrettierRuleOptions } from '../types/prettier';
 
-import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from '../types';
-import type { VendoredPrettierOptions, VendoredPrettierRuleOptions } from '../vender/prettier-types';
-
-function mergePrettierOptions(
+const mergePrettierOptions = (
   options: VendoredPrettierOptions,
-  overrides: VendoredPrettierRuleOptions = {},
-): VendoredPrettierRuleOptions {
-  return {
-    ...options,
-    ...overrides,
-    plugins: [
-      ...(overrides.plugins || []),
-      ...(options.plugins || []),
-    ],
-  };
-}
+  overrides: VendoredPrettierRuleOptions,
+): VendoredPrettierRuleOptions => ({
+  ...options,
+  ...overrides,
+  plugins: [...(overrides.plugins || [])],
+});
 
-export async function formatters(
-  options: OptionsFormatters | true = {},
-  stylistic: StylisticConfig = {},
-): Promise<TypedFlatConfigItem[]> {
-  if (options === true) {
-    const isPrettierPluginXmlInScope = isPackageInScope('@prettier/plugin-xml');
-    options = {
-      astro: isPackageInScope('prettier-plugin-astro'),
+export function formatters(options: IFormattersConfigsOptions = {}): Linter.Config[] {
+  const {
+    enable = {
+      html: true,
       css: true,
       graphql: true,
-      html: true,
-      markdown: true,
-      slidev: isPackageExists('@slidev/cli'),
-      svg: isPrettierPluginXmlInScope,
-      xml: isPrettierPluginXmlInScope,
-    };
+      xml: true,
+      svg: true,
+    },
+    customPrettierOptions = {},
+  } = options;
+
+  const configs: Linter.Config[] = [];
+
+  if (!enable) {
+    return configs;
   }
-
-  await ensurePackages([
-    'eslint-plugin-format',
-    options.markdown && options.slidev ? 'prettier-plugin-slidev' : undefined,
-    options.astro ? 'prettier-plugin-astro' : undefined,
-    (options.xml || options.svg) ? '@prettier/plugin-xml' : undefined,
-  ]);
-
-  if (options.slidev && options.markdown !== true && options.markdown !== 'prettier') {
-    throw new Error('`slidev` option only works when `markdown` is enabled with `prettier`');
-  }
-
-  const {
-    indent,
-    quotes,
-    semi,
-  } = {
-    ...StylisticConfigDefaults,
-    ...stylistic,
-  };
 
   const prettierOptions: VendoredPrettierOptions = Object.assign(
     {
-      endOfLine: 'auto',
       printWidth: 120,
-      semi,
-      singleQuote: quotes === 'single',
-      tabWidth: typeof indent === 'number' ? indent : 2,
+      tabWidth: 2,
+      semi: true,
+      singleQuote: true,
+      quoteProps: 'consistent',
+      jsxSingleQuote: false,
       trailingComma: 'all',
-      useTabs: indent === 'tab',
+      bracketSpacing: true,
+      bracketSameLine: false,
+      arrowParens: 'always',
+      useTabs: false,
+      endOfLine: 'lf',
+      singleAttributePerLine: false,
     } satisfies VendoredPrettierOptions,
-    options.prettierOptions || {},
+    customPrettierOptions,
   );
 
   const prettierXmlOptions: VendoredPrettierOptions = {
@@ -91,34 +68,39 @@ export async function formatters(
     xmlWhitespaceSensitivity: 'ignore',
   };
 
-  const dprintOptions = Object.assign(
-    {
-      indentWidth: typeof indent === 'number' ? indent : 2,
-      quoteStyle: quotes === 'single' ? 'preferSingle' : 'preferDouble',
-      useTabs: indent === 'tab',
+  configs.push({
+    name: `${RULE_PREFIX}/formatters`,
+    plugins: {
+      formatter: pluginFormat,
     },
-    options.dprintOptions || {},
-  );
+  });
 
-  const pluginFormat = await interopDefault(import('eslint-plugin-format'));
-
-  const configs: TypedFlatConfigItem[] = [
-    {
-      name: 'dhzh/formatter/setup',
-      plugins: {
-        format: pluginFormat,
+  if (enable.html) {
+    configs.push({
+      name: `${RULE_PREFIX}/formatters/html`,
+      files: [GLOB_HTML],
+      languageOptions: {
+        parser: parserPlain,
       },
-    },
-  ];
+      rules: {
+        'formatter/prettier': [
+          'error',
+          mergePrettierOptions(prettierOptions, {
+            parser: 'html',
+          }),
+        ],
+      },
+    });
+  }
 
-  if (options.css) {
+  if (enable.css) {
     configs.push(
       {
+        name: `${RULE_PREFIX}/formatters/css`,
         files: [GLOB_CSS, GLOB_POSTCSS],
         languageOptions: {
           parser: parserPlain,
         },
-        name: 'dhzh/formatter/css',
         rules: {
           'format/prettier': [
             'error',
@@ -129,11 +111,11 @@ export async function formatters(
         },
       },
       {
+        name: `${RULE_PREFIX}/formatters/scss`,
         files: [GLOB_SCSS],
         languageOptions: {
           parser: parserPlain,
         },
-        name: 'dhzh/formatter/scss',
         rules: {
           'format/prettier': [
             'error',
@@ -144,11 +126,11 @@ export async function formatters(
         },
       },
       {
+        name: `${RULE_PREFIX}/formatters/less`,
         files: [GLOB_LESS],
         languageOptions: {
           parser: parserPlain,
         },
-        name: 'dhzh/formatter/less',
         rules: {
           'format/prettier': [
             'error',
@@ -161,174 +143,69 @@ export async function formatters(
     );
   }
 
-  if (options.html) {
+  if (enable.graphql) {
     configs.push({
-      files: [GLOB_HTML],
-      languageOptions: {
-        parser: parserPlain,
-      },
-      name: 'dhzh/formatter/html',
-      rules: {
-        'format/prettier': [
-          'error',
-          mergePrettierOptions(prettierOptions, {
-            parser: 'html',
-          }),
-        ],
-      },
-    });
-  }
-
-  if (options.xml) {
-    configs.push({
-      files: [GLOB_XML],
-      languageOptions: {
-        parser: parserPlain,
-      },
-      name: 'dhzh/formatter/xml',
-      rules: {
-        'format/prettier': [
-          'error',
-          mergePrettierOptions({ ...prettierXmlOptions, ...prettierOptions }, {
-            parser: 'xml',
-            plugins: [
-              '@prettier/plugin-xml',
-            ],
-          }),
-        ],
-      },
-    });
-  }
-
-  if (options.svg) {
-    configs.push({
-      files: [GLOB_SVG],
-      languageOptions: {
-        parser: parserPlain,
-      },
-      name: 'dhzh/formatter/svg',
-      rules: {
-        'format/prettier': [
-          'error',
-          mergePrettierOptions({ ...prettierXmlOptions, ...prettierOptions }, {
-            parser: 'xml',
-            plugins: [
-              '@prettier/plugin-xml',
-            ],
-          }),
-        ],
-      },
-    });
-  }
-
-  if (options.markdown) {
-    const formater = options.markdown === true
-      ? 'prettier'
-      : options.markdown;
-
-    const GLOB_SLIDEV = !options.slidev
-      ? []
-      : options.slidev === true
-        ? ['**/slides.md']
-        : options.slidev.files;
-
-    configs.push({
-      files: [GLOB_MARKDOWN],
-      ignores: GLOB_SLIDEV,
-      languageOptions: {
-        parser: parserPlain,
-      },
-      name: 'dhzh/formatter/markdown',
-      rules: {
-        [`format/${formater}`]: [
-          'error',
-          formater === 'prettier'
-            ? mergePrettierOptions(
-                prettierOptions,
-                {
-                  embeddedLanguageFormatting: 'off',
-                  parser: 'markdown',
-                },
-              )
-            : {
-                ...dprintOptions,
-                language: 'markdown',
-              },
-        ],
-      },
-    });
-
-    if (options.slidev) {
-      configs.push({
-        files: GLOB_SLIDEV,
-        languageOptions: {
-          parser: parserPlain,
-        },
-        name: 'dhzh/formatter/slidev',
-        rules: {
-          'format/prettier': [
-            'error',
-            mergePrettierOptions(prettierOptions, {
-              embeddedLanguageFormatting: 'off',
-              parser: 'slidev',
-              plugins: [
-                'prettier-plugin-slidev',
-              ],
-            }),
-          ],
-        },
-      });
-    }
-  }
-
-  if (options.astro) {
-    configs.push({
-      files: [GLOB_ASTRO],
-      languageOptions: {
-        parser: parserPlain,
-      },
-      name: 'dhzh/formatter/astro',
-      rules: {
-        'format/prettier': [
-          'error',
-          mergePrettierOptions(prettierOptions, {
-            parser: 'astro',
-            plugins: [
-              'prettier-plugin-astro',
-            ],
-          }),
-        ],
-      },
-    });
-
-    configs.push({
-      files: [GLOB_ASTRO, GLOB_ASTRO_TS],
-      name: 'dhzh/formatter/astro/disables',
-      rules: {
-        'style/arrow-parens': 'off',
-        'style/block-spacing': 'off',
-        'style/comma-dangle': 'off',
-        'style/indent': 'off',
-        'style/no-multi-spaces': 'off',
-        'style/quotes': 'off',
-        'style/semi': 'off',
-      },
-    });
-  }
-
-  if (options.graphql) {
-    configs.push({
+      name: `${RULE_PREFIX}/formatters/graphql`,
       files: [GLOB_GRAPHQL],
       languageOptions: {
         parser: parserPlain,
       },
-      name: 'dhzh/formatter/graphql',
       rules: {
         'format/prettier': [
           'error',
           mergePrettierOptions(prettierOptions, {
             parser: 'graphql',
           }),
+        ],
+      },
+    });
+  }
+
+  if (enable.xml) {
+    configs.push({
+      name: `${RULE_PREFIX}/formatters/xml`,
+      files: [GLOB_XML],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      rules: {
+        'format/prettier': [
+          'error',
+          mergePrettierOptions(
+            {
+              ...prettierXmlOptions,
+              ...prettierOptions,
+            },
+            {
+              parser: 'xml',
+              plugins: ['@prettier/plugin-xml'],
+            },
+          ),
+        ],
+      },
+    });
+  }
+
+  if (enable.svg) {
+    configs.push({
+      name: `${RULE_PREFIX}/formatters/svg`,
+      files: [GLOB_SVG],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      rules: {
+        'format/prettier': [
+          'error',
+          mergePrettierOptions(
+            {
+              ...prettierXmlOptions,
+              ...prettierOptions,
+            },
+            {
+              parser: 'xml',
+              plugins: ['@prettier/plugin-xml'],
+            },
+          ),
         ],
       },
     });
