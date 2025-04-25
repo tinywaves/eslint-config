@@ -38,7 +38,7 @@ export interface IImportsConfigsOptions extends IConfigsOptions {
   closeOrder?: boolean;
 }
 
-export interface IFormattersConfigsOptions {
+export interface IFormatConfigsOptions {
   enable?: false | {
     html?: boolean;
     css?: boolean;
@@ -87,7 +87,7 @@ export interface Options {
     json?: IJsonConfigsOptions;
     unicorn?: IUnicornConfigsOptions;
     imports?: IImportsConfigsOptions;
-    formatters?: IFormattersConfigsOptions;
+    format?: IFormatConfigsOptions;
     tailwindcss?: ITailwindcssConfigsOptions;
     unocss?: IUnocssConfigsOptions;
     yml?: IYmlConfigsOptions;

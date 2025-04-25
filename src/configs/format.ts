@@ -12,7 +12,7 @@ import {
 } from '../consts';
 import { parserPlain } from '../utils';
 import type { Linter } from 'eslint';
-import type { IFormattersConfigsOptions } from '../types';
+import type { IFormatConfigsOptions } from '../types';
 import type { VendoredPrettierOptions, VendoredPrettierRuleOptions } from '../types/prettier';
 
 const mergePrettierOptions = (
@@ -24,7 +24,7 @@ const mergePrettierOptions = (
   plugins: [...(overrides.plugins || [])],
 });
 
-export function formatters(options: IFormattersConfigsOptions = {}): Linter.Config[] {
+export function format(options: IFormatConfigsOptions = {}): Linter.Config[] {
   const {
     enable = {
       html: true,
@@ -69,21 +69,21 @@ export function formatters(options: IFormattersConfigsOptions = {}): Linter.Conf
   };
 
   configs.push({
-    name: `${RULE_PREFIX}/formatters`,
+    name: `${RULE_PREFIX}/format`,
     plugins: {
-      formatter: pluginFormat,
+      format: pluginFormat,
     },
   });
 
   if (enable.html) {
     configs.push({
-      name: `${RULE_PREFIX}/formatters/html`,
+      name: `${RULE_PREFIX}/format/html`,
       files: [GLOB_HTML],
       languageOptions: {
         parser: parserPlain,
       },
       rules: {
-        'formatter/prettier': [
+        'format/prettier': [
           'error',
           mergePrettierOptions(prettierOptions, {
             parser: 'html',
@@ -96,7 +96,7 @@ export function formatters(options: IFormattersConfigsOptions = {}): Linter.Conf
   if (enable.css) {
     configs.push(
       {
-        name: `${RULE_PREFIX}/formatters/css`,
+        name: `${RULE_PREFIX}/format/css`,
         files: [GLOB_CSS, GLOB_POSTCSS],
         languageOptions: {
           parser: parserPlain,
@@ -111,7 +111,7 @@ export function formatters(options: IFormattersConfigsOptions = {}): Linter.Conf
         },
       },
       {
-        name: `${RULE_PREFIX}/formatters/scss`,
+        name: `${RULE_PREFIX}/format/scss`,
         files: [GLOB_SCSS],
         languageOptions: {
           parser: parserPlain,
@@ -126,7 +126,7 @@ export function formatters(options: IFormattersConfigsOptions = {}): Linter.Conf
         },
       },
       {
-        name: `${RULE_PREFIX}/formatters/less`,
+        name: `${RULE_PREFIX}/format/less`,
         files: [GLOB_LESS],
         languageOptions: {
           parser: parserPlain,
@@ -145,7 +145,7 @@ export function formatters(options: IFormattersConfigsOptions = {}): Linter.Conf
 
   if (enable.graphql) {
     configs.push({
-      name: `${RULE_PREFIX}/formatters/graphql`,
+      name: `${RULE_PREFIX}/format/graphql`,
       files: [GLOB_GRAPHQL],
       languageOptions: {
         parser: parserPlain,
@@ -163,7 +163,7 @@ export function formatters(options: IFormattersConfigsOptions = {}): Linter.Conf
 
   if (enable.xml) {
     configs.push({
-      name: `${RULE_PREFIX}/formatters/xml`,
+      name: `${RULE_PREFIX}/format/xml`,
       files: [GLOB_XML],
       languageOptions: {
         parser: parserPlain,
@@ -188,7 +188,7 @@ export function formatters(options: IFormattersConfigsOptions = {}): Linter.Conf
 
   if (enable.svg) {
     configs.push({
-      name: `${RULE_PREFIX}/formatters/svg`,
+      name: `${RULE_PREFIX}/format/svg`,
       files: [GLOB_SVG],
       languageOptions: {
         parser: parserPlain,

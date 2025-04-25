@@ -6,7 +6,7 @@ export * from './node';
 export * from './json';
 export * from './unicorn';
 export * from './imports';
-export * from './formatters';
+export * from './format';
 export * from './tailwindcss';
 export * from './unocss';
 export * from './yml';

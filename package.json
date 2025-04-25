@@ -39,7 +39,7 @@
     "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "scripts": {
-    "build": "tsup --clean --dts",
+    "build": "pnpm run typegen && tsup --clean --dts",
     "build:inspector": "pnpm run build && npx @eslint/config-inspector build",
     "dev": "pnpm run typegen && npx @eslint/config-inspector --config eslint.config.ts",
     "lint": "eslint",
