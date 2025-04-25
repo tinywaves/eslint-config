@@ -15,6 +15,13 @@ export const GLOB_GRAPHQL = '**/*.{g,graph}ql';
 export const GLOB_XML = '**/*.xml';
 export const GLOB_SVG = '**/*.svg';
 
+export const GLOB_JSON_SRC = [
+  GLOB_JSON,
+  GLOB_JSON5,
+  GLOB_JSONC,
+  GLOB_PACKAGE_JSON,
+];
+
 export const GLOB_TS_SRC = [
   '**/*.cts',
   '**/*.mts',

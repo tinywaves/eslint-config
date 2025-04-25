@@ -1,7 +1,7 @@
 import pluginStylistic from '@stylistic/eslint-plugin';
 import pluginAntfu from 'eslint-plugin-antfu';
 import pluginHyoban from 'eslint-plugin-hyoban';
-import { RULE_PREFIX, GLOB_JSX_SRC, GLOB_SRC } from '../consts';
+import { RULE_PREFIX, GLOB_JSX_SRC, GLOB_SRC, GLOB_JSON_SRC } from '../consts';
 import type { Linter } from 'eslint';
 import type { IStylisticConfigsOptions } from '../types';
 
@@ -54,11 +54,11 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
         braceStyle: '1tbs',
       }),
       name: `${RULE_PREFIX}/stylistic/shared`,
-      files: GLOB_SRC,
+      files: [...GLOB_SRC, ...GLOB_JSON_SRC],
     },
     {
       name: `${RULE_PREFIX}/stylistic/customize`,
-      files: GLOB_SRC,
+      files: [...GLOB_SRC, ...GLOB_JSON_SRC],
       plugins: {
         stylistic: pluginStylistic,
         antfu: pluginAntfu,
