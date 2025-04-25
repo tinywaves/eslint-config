@@ -1,6 +1,3 @@
-import c from 'ansis';
-import type { ExtraLibrariesOption, FrameworkOption, PromItem } from './types';
-
 export const vscodeSettingsString = `
   // Entry
   "eslint.format.enable": true,
@@ -120,78 +117,8 @@ export const vscodeSettingsString = `
   }
 `;
 
-export const frameworkOptions: PromItem<FrameworkOption>[] = [
-  {
-    label: c.cyan('React'),
-    value: 'react',
-  },
-  {
-    label: c.green('Vue'),
-    value: 'vue',
-  },
-  {
-    label: c.red('Nest'),
-    value: 'nest',
-  },
-  {
-    label: c.red('Svelte'),
-    value: 'svelte',
-  },
-  {
-    label: c.magenta('Astro'),
-    value: 'astro',
-  },
-  {
-    label: c.cyan('Solid'),
-    value: 'solid',
-  },
-  {
-    label: c.blue('Slidev'),
-    value: 'slidev',
-  },
-];
+export const eslintConfigContent = `
+import { defineConfig } from '@dhzh/eslint-config';
 
-export const frameworks: FrameworkOption[] = frameworkOptions.map(({ value }) => (value));
-
-export const extraOptions: PromItem<ExtraLibrariesOption>[] = [
-  {
-    hint: 'Use external formatters (Prettier and/or dprint) to format files that ESLint cannot handle yet (.css, .html, etc)',
-    label: c.red('Formatter'),
-    value: 'formatter',
-  },
-  {
-    label: c.cyan('UnoCSS'),
-    value: 'unocss',
-  },
-];
-
-export const extra: ExtraLibrariesOption[] = extraOptions.map(({ value }) => (value));
-
-export const dependenciesMap = {
-  astro: [
-    'eslint-plugin-astro',
-    'astro-eslint-parser',
-  ],
-  formatter: [
-    'eslint-plugin-format',
-  ],
-  formatterAstro: [
-    'prettier-plugin-astro',
-  ],
-  nest: [],
-  react: [],
-  slidev: [
-    'prettier-plugin-slidev',
-  ],
-  solid: [
-    'eslint-plugin-solid',
-  ],
-  svelte: [
-    'eslint-plugin-svelte',
-    'svelte-eslint-parser',
-  ],
-  unocss: [
-    '@unocss/eslint-plugin',
-  ],
-  vue: [],
-} as const;
+export default defineConfig();
+`;

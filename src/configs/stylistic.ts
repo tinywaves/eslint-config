@@ -51,6 +51,7 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
       ...pluginStylistic.configs.customize({
         arrowParens: true,
         semi: true,
+        braceStyle: '1tbs',
       }),
       name: `${RULE_PREFIX}/stylistic/shared`,
       files: GLOB_SRC,
