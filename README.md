@@ -56,4 +56,4 @@ export default defineConfig();
 
 ## License
 
-[MIT](./LICENSE) License &copy; 2022-PRESENT [Lyle Zheng](https://github.com/tinywaves)
+[MIT](./LICENSE) License &copy; 2022 [Lyle Zheng](https://github.com/tinywaves)
