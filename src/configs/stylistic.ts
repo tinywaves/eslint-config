@@ -99,7 +99,7 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
           },
         ],
         'stylistic/function-call-spacing': ['error', 'never'],
-        'stylistic/function-paren-newline': ['error', 'multiline'],
+        'stylistic/function-paren-newline': 'off',
         'stylistic/indent': [
           'error',
           2,
