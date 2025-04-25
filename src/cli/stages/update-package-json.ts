@@ -11,7 +11,6 @@ export async function updatePackageJson() {
   p.log.step(c.cyan`Bumping @dhzh/eslint-config to v${version}`);
   const pkgContent = await fsp.readFile(pathPackageJSON, 'utf8');
   const pkg: Record<string, any> = JSON.parse(pkgContent);
-
   pkg.devDependencies ??= {};
   pkg.devDependencies['@dhzh/eslint-config'] = `^${version}`;
   pkg.devDependencies.eslint ??= pkgJson.devDependencies.eslint;
