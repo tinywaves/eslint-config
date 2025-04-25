@@ -57,6 +57,7 @@ export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
       },
       rules: {
         '@eslint-react/dom/no-hydrate': 'error',
+        '@eslint-react/no-useless-fragment': 'warn',
         '@eslint-react/hooks-extra/no-unnecessary-use-prefix': 'warn',
         '@eslint-react/naming-convention/use-state': 'warn',
         '@eslint-react/naming-convention/filename-extension': [

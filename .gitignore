@@ -82,7 +82,6 @@ dist
 .temp
 .history
 
-src/typegen.d.ts
 .eslint-config-inspector
 
 #Mac

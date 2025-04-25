@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-abusive-eslint-disable */
 /* eslint-disable */
 /* prettier-ignore */
 import type { Linter } from 'eslint'
@@ -10,6 +9,51 @@ declare module 'eslint' {
 }
 
 export interface RuleOptions {
+  /**
+   * require a `eslint-enable` comment for every `eslint-disable` comment
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/disable-enable-pair.html
+   */
+  '@eslint-community/eslint-comments/disable-enable-pair'?: Linter.RuleEntry<EslintCommunityEslintCommentsDisableEnablePair>
+  /**
+   * disallow a `eslint-enable` comment for multiple `eslint-disable` comments
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-aggregating-enable.html
+   */
+  '@eslint-community/eslint-comments/no-aggregating-enable'?: Linter.RuleEntry<[]>
+  /**
+   * disallow duplicate `eslint-disable` comments
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-duplicate-disable.html
+   */
+  '@eslint-community/eslint-comments/no-duplicate-disable'?: Linter.RuleEntry<[]>
+  /**
+   * disallow `eslint-disable` comments about specific rules
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-restricted-disable.html
+   */
+  '@eslint-community/eslint-comments/no-restricted-disable'?: Linter.RuleEntry<EslintCommunityEslintCommentsNoRestrictedDisable>
+  /**
+   * disallow `eslint-disable` comments without rule names
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unlimited-disable.html
+   */
+  '@eslint-community/eslint-comments/no-unlimited-disable'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unused `eslint-disable` comments
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unused-disable.html
+   */
+  '@eslint-community/eslint-comments/no-unused-disable'?: Linter.RuleEntry<[]>
+  /**
+   * disallow unused `eslint-enable` comments
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unused-enable.html
+   */
+  '@eslint-community/eslint-comments/no-unused-enable'?: Linter.RuleEntry<[]>
+  /**
+   * disallow ESLint directive-comments
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-use.html
+   */
+  '@eslint-community/eslint-comments/no-use'?: Linter.RuleEntry<EslintCommunityEslintCommentsNoUse>
+  /**
+   * require include descriptions in ESLint directive-comments
+   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/require-description.html
+   */
+  '@eslint-community/eslint-comments/require-description'?: Linter.RuleEntry<EslintCommunityEslintCommentsRequireDescription>
   /**
    * Enforces explicit boolean values for boolean attributes.
    * @see https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean
@@ -1892,55 +1936,18 @@ export interface RuleOptions {
    */
   'eqeqeq'?: Linter.RuleEntry<Eqeqeq>
   /**
-   * require a `eslint-enable` comment for every `eslint-disable` comment
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/disable-enable-pair.html
-   */
-  'eslint-comments/disable-enable-pair'?: Linter.RuleEntry<EslintCommentsDisableEnablePair>
-  /**
-   * disallow a `eslint-enable` comment for multiple `eslint-disable` comments
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-aggregating-enable.html
-   */
-  'eslint-comments/no-aggregating-enable'?: Linter.RuleEntry<[]>
-  /**
-   * disallow duplicate `eslint-disable` comments
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-duplicate-disable.html
-   */
-  'eslint-comments/no-duplicate-disable'?: Linter.RuleEntry<[]>
-  /**
-   * disallow `eslint-disable` comments about specific rules
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-restricted-disable.html
-   */
-  'eslint-comments/no-restricted-disable'?: Linter.RuleEntry<EslintCommentsNoRestrictedDisable>
-  /**
-   * disallow `eslint-disable` comments without rule names
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unlimited-disable.html
-   */
-  'eslint-comments/no-unlimited-disable'?: Linter.RuleEntry<[]>
-  /**
-   * disallow unused `eslint-disable` comments
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unused-disable.html
-   */
-  'eslint-comments/no-unused-disable'?: Linter.RuleEntry<[]>
-  /**
-   * disallow unused `eslint-enable` comments
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-unused-enable.html
-   */
-  'eslint-comments/no-unused-enable'?: Linter.RuleEntry<[]>
-  /**
-   * disallow ESLint directive-comments
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/no-use.html
-   */
-  'eslint-comments/no-use'?: Linter.RuleEntry<EslintCommentsNoUse>
-  /**
-   * require include descriptions in ESLint directive-comments
-   * @see https://eslint-community.github.io/eslint-plugin-eslint-comments/rules/require-description.html
-   */
-  'eslint-comments/require-description'?: Linter.RuleEntry<EslintCommentsRequireDescription>
-  /**
    * Enforce `for` loop update clause moving the counter in the right direction
    * @see https://eslint.org/docs/latest/rules/for-direction
    */
   'for-direction'?: Linter.RuleEntry<[]>
+  /**
+   * Use dprint to format code
+   */
+  'formatter/dprint'?: Linter.RuleEntry<FormatterDprint>
+  /**
+   * Use Prettier to format code
+   */
+  'formatter/prettier'?: Linter.RuleEntry<FormatterPrettier>
   /**
    * Require or disallow spacing between function identifiers and their invocations
    * @see https://eslint.org/docs/latest/rules/func-call-spacing
@@ -5947,6 +5954,20 @@ export interface RuleOptions {
 }
 
 /* ======= Declarations ======= */
+// ----- @eslint-community/eslint-comments/disable-enable-pair -----
+type EslintCommunityEslintCommentsDisableEnablePair = []|[{
+  allowWholeFile?: boolean
+}]
+// ----- @eslint-community/eslint-comments/no-restricted-disable -----
+type EslintCommunityEslintCommentsNoRestrictedDisable = string[]
+// ----- @eslint-community/eslint-comments/no-use -----
+type EslintCommunityEslintCommentsNoUse = []|[{
+  allow?: ("eslint" | "eslint-disable" | "eslint-disable-line" | "eslint-disable-next-line" | "eslint-enable" | "eslint-env" | "exported" | "global" | "globals")[]
+}]
+// ----- @eslint-community/eslint-comments/require-description -----
+type EslintCommunityEslintCommentsRequireDescription = []|[{
+  ignore?: ("eslint" | "eslint-disable" | "eslint-disable-line" | "eslint-disable-next-line" | "eslint-enable" | "eslint-env" | "exported" | "global" | "globals")[]
+}]
 // ----- @eslint-react/dom/no-unknown-property -----
 type EslintReactDomNoUnknownProperty = []|[{
   ignore?: string[]
@@ -8465,19 +8486,18 @@ type EolLast = []|[("always" | "never" | "unix" | "windows")]
 type Eqeqeq = ([]|["always"]|["always", {
   null?: ("always" | "never" | "ignore")
 }] | []|[("smart" | "allow-null")])
-// ----- eslint-comments/disable-enable-pair -----
-type EslintCommentsDisableEnablePair = []|[{
-  allowWholeFile?: boolean
+// ----- formatter/dprint -----
+type FormatterDprint = []|[{
+  language?: string
+  languageOptions?: {
+    [k: string]: unknown | undefined
+  }
+  [k: string]: unknown | undefined
 }]
-// ----- eslint-comments/no-restricted-disable -----
-type EslintCommentsNoRestrictedDisable = string[]
-// ----- eslint-comments/no-use -----
-type EslintCommentsNoUse = []|[{
-  allow?: ("eslint" | "eslint-disable" | "eslint-disable-line" | "eslint-disable-next-line" | "eslint-enable" | "eslint-env" | "exported" | "global" | "globals")[]
-}]
-// ----- eslint-comments/require-description -----
-type EslintCommentsRequireDescription = []|[{
-  ignore?: ("eslint" | "eslint-disable" | "eslint-disable-line" | "eslint-disable-next-line" | "eslint-enable" | "eslint-env" | "exported" | "global" | "globals")[]
+// ----- formatter/prettier -----
+type FormatterPrettier = []|[{
+  parser?: string
+  [k: string]: unknown | undefined
 }]
 // ----- func-call-spacing -----
 type FuncCallSpacing = ([]|["never"] | []|["always"]|["always", {

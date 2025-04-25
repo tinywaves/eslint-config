@@ -2,63 +2,28 @@
 
 [![npm](https://img.shields.io/npm/v/@dhzh/eslint-config?color=444&label=)](https://npmjs.com/package/@antfu/eslint-config)
 
-I use ESLint to format and lint:
+I use ESLint to format and lint my code:
 
-|  |  |
-|---|---|
-| typescript | [`typescript-eslint`](https://typescript-eslint.io/) |
-| unicorn | [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn) |
-| unocss | [`@unocss/eslint-config`](https://unocss.dev/integrations/eslint) |
-| yml | [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/) [`yaml-eslint-parser`](https://ota-meshi.github.io/yaml-eslint-parser/) |
-
-
-- [x] [`ESLint Stylistic`](https://eslint.style/)
-- [x] [`eslint-plugin-antfu`](https://github.com/antfu/eslint-plugin-antfu)
-- [x] [`eslint-plugin-hyoban`](https://github.com/hyoban/eslint-plugin-hyoban)
-- [x] [`@eslint/js`](https://eslint.org/docs/latest/rules)
-- [x] [`eslint-plugin-eslint-comments`](https://eslint-community.github.io/eslint-plugin-eslint-comments/)
-
-
-
-6. This eslint-config will enable `ts/consistent-type-imports` rule. But it will cause [compile issue](https://github.com/typescript-eslint/typescript-eslint/issues/2559) in [nest](https://nestjs.com/) projects. So I [disabled it](https://github.com/typescript-eslint/typescript-eslint/issues/2559#issuecomment-692780580) in this config in nest framework.
-7. Support `'**/*.?([cm])js` and `'**/*.?([cm])jsx` files in react projects.
-8. Perfectionist plugin for imports sorting:
-
-```js
-[
-  'builtin',
-  'external',
-  'internal',
-  'parent',
-  'sibling',
-  'index',
-  'style',
-  'side-effect',
-  'side-effect-style',
-  'object',
-  'builtin-type',
-  'external-type',
-  'internal-type',
-  'parent-type',
-  'sibling-type',
-  'index-type',
-  'unknown',
-];
-```
-
-> Note: Temporarily close the rules of the [`Perfectionist`](https://perfectionist.dev/) plugin from version `v0.15.0`, because I haven't found a way to achieve the best balance between actual development needs and personal habits.
-
-9. React related:
-
-- `'react/no-useless-fragment': 'warn'`
-
-10. Remove spacing when useing jsx curly braces:
-
-- `'style/jsx-curly-spacing': ['error', { children: true, when: 'never' }]`
-
-11. Keep auto fix with code editors for rules: [`prefer-const`](https://eslint.org/docs/rules/prefer-const), [`unused-imports/no-unused-imports`](https://www.npmjs.com/package/eslint-plugin-unused-imports).
-
-12. Disable [`perfectionist/sort-objects`](https://perfectionist.dev/rules/sort-objects) rule.
+|  |  |  |
+|---|---|---|
+| [react](./src/configs/react.ts) | [`ESLint React`](https://eslint-react.xyz/) [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) [`eslint-plugin-react-refresh`](https://github.com/ArnaudBarre/eslint-plugin-react-refresh) [`eslint-plugin-react-compiler`](https://www.npmjs.com/package/eslint-plugin-react-compiler) [`eslint-plugin-react-google-translate`](https://www.npmjs.com/package/eslint-plugin-react-google-translate) |
+| [stylistic](./src/configs/stylistic.ts) | [`ESLint Stylistic`](https://eslint.style/) [`eslint-plugin-antfu`](https://github.com/antfu/eslint-plugin-antfu) [`eslint-plugin-hyoban`](https://github.com/hyoban/eslint-plugin-hyoban) |
+| [typescript](./src/configs/typescript.ts) | [`typescript-eslint`](https://typescript-eslint.io/) |
+| [javascript](./src/configs/javascript.ts) | [`@eslint/js`](https://eslint.org/docs/latest/rules) |
+| [node](./src/configs/node.ts) | [`eslint-plugin-n`](https://github.com/eslint-community/eslint-plugin-n) |
+| [json](./src/configs/json.ts) | [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/) [`eslint-plugin-package-json`](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json) [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser) |
+| [unicorn](./src/configs/unicorn.ts) | [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn) |
+| [imports](./src/configs/imports.ts) | [`eslint-plugin-import-x`](https://www.npmjs.com/package/eslint-plugin-import-x) [`eslint-plugin-unused-imports`](https://github.com/sweepline/eslint-plugin-unused-imports) [`eslint-plugin-simple-import-sort`](https://github.com/lydell/eslint-plugin-simple-import-sort) |
+| [formatters](./src/configs/formatters.ts) | [`eslint-plugin-format`](https://github.com/antfu/eslint-plugin-format) [`@prettier/plugin-xml`](https://github.com/prettier/plugin-xml) | html/css/graphql/xml/svg |
+| [tailwindcss](./src/configs/tailwindcss.ts) | [`eslint-plugin-tailwindcss`](https://github.com/francoismassart/eslint-plugin-tailwindcss) |
+| [unocss](./src/configs/unocss.ts) | [`@unocss/eslint-config`](https://unocss.dev/integrations/eslint) |
+| [yml](./src/configs/yml.ts) | [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/) [`yaml-eslint-parser`](https://ota-meshi.github.io/yaml-eslint-parser/) |
+| [toml](./src/configs/toml.ts) | [`eslint-plugin-toml`](https://ota-meshi.github.io/eslint-plugin-toml/) [`toml-eslint-parser`](https://ota-meshi.github.io/toml-eslint-parser/) |
+| testing | [`eslint-plugin-vitest`](https://github.com/vitest-dev/eslint-plugin-vitest) [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest) [`eslint-plugin-no-only-tests`](https://github.com/levibuzolic/eslint-plugin-no-only-tests) |
+| [regexp](./src/configs/regexp.ts) | [`eslint-plugin-regexp`](https://ota-meshi.github.io/eslint-plugin-regexp/) |
+| [eslint-comments](./src/configs/eslint-comments.ts) | [`eslint-plugin-eslint-comments`](https://eslint-community.github.io/eslint-plugin-eslint-comments/) |
+| markdown | [`@eslint/markdown`](https://github.com/eslint/markdown) |
+| jsdoc | [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc) |
 
 ## Usage
 
@@ -84,13 +49,11 @@ And create `eslint.config.mjs` in your project root:
 
 ```js
 // eslint.config.mjs
-import dhzh from '@dhzh/eslint-config';
+import { defineConfig } from '@dhzh/eslint-config';
 
-export default dhzh();
+export default defineConfig();
 ```
 
 ## License
 
 [MIT](./LICENSE) License &copy; 2022-PRESENT [Lyle Zheng](https://github.com/tinywaves)
-
-
