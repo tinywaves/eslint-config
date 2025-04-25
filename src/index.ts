@@ -14,8 +14,8 @@ import {
   toml,
   regexp,
   ignores,
-  eslintCommentsConfigs,
-  disablesConfigs,
+  eslintComments,
+  disables,
 } from './configs';
 import type { Linter } from 'eslint';
 import type { Options } from './types';
@@ -39,7 +39,7 @@ export function defineConfig(options: Options = {}): Linter.Config[] {
     ...toml(configs.toml),
     ...regexp(configs.regexp),
     ...ignores(ignorePatterns),
-    ...eslintCommentsConfigs(),
-    ...disablesConfigs(),
+    ...eslintComments(configs.eslintComments),
+    ...disables(configs.disables),
   ];
 }

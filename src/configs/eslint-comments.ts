@@ -1,28 +1,21 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-// @ts-nocheck
-import pluginEslintComments from '@eslint-community/eslint-plugin-eslint-comments';
-import type { Linter } from 'eslint';
+import pluginEslintComments from '@eslint-community/eslint-plugin-eslint-comments/configs';
 import { RULE_PREFIX } from '../consts';
+import type { Linter } from 'eslint';
+import type { IEslintCommentsConfigsOptions } from '../types';
 
-export function eslintCommentsConfigs(): Linter.Config[] {
+export function eslintComments(options: IEslintCommentsConfigsOptions = {}): Linter.Config[] {
+  const { overrides = {} } = options;
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return [
     {
-      name: `${RULE_PREFIX}/eslint-comments/shared`,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       ...pluginEslintComments.recommended,
+      name: `${RULE_PREFIX}/eslint-comments/shared`,
     },
     {
       name: `${RULE_PREFIX}/eslint-comments/customize`,
-      plugins: {
-        'eslint-comments': pluginEslintComments,
-      },
-      rules: {
-        'eslint-comments/no-aggregating-enable': 'error',
-        'eslint-comments/no-duplicate-disable': 'error',
-        'eslint-comments/no-unlimited-disable': 'error',
-        'eslint-comments/no-unused-enable': 'error',
-      },
+      rules: overrides,
     },
   ];
 }
