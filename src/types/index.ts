@@ -1,5 +1,5 @@
 import type { Linter } from 'eslint';
-import type { VendoredPrettierOptions } from './types/prettier';
+import type { VendoredPrettierOptions } from './prettier';
 
 export interface IConfigsOptions {
   overrides?: Record<string, Linter.RuleEntry>;
