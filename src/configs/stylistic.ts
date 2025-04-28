@@ -156,13 +156,7 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
             before: false,
           },
         ],
-        'stylistic/type-annotation-spacing': [
-          'error',
-          {
-            before: false,
-            after: true,
-          },
-        ],
+        'stylistic/type-annotation-spacing': 'error',
         'stylistic/wrap-regex': 'error',
         'stylistic/quotes': [
           'error',
