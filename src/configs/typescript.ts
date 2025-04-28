@@ -5,7 +5,7 @@ import type { Linter } from 'eslint';
 import type { ITypescriptConfigsOptions } from '../types';
 
 export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Config[] {
-  const { overrides = {} } = options;
+  const { overrides = {}, typeSafe = false } = options;
 
   return [
     ...tseslint.config(
@@ -55,9 +55,6 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
         ],
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-        '@typescript-eslint/no-unsafe-member-access': 'off',
-        '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
         '@typescript-eslint/await-thenable': 'error',
@@ -83,6 +80,14 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
           },
         ],
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        ...(typeSafe
+          ? {}
+          : {
+              '@typescript-eslint/no-unsafe-assignment': 'off',
+              '@typescript-eslint/no-unsafe-member-access': 'off',
+              '@typescript-eslint/no-unsafe-call': 'off',
+              '@typescript-eslint/no-unsafe-return': 'off',
+            }),
         ...overrides,
       },
     },

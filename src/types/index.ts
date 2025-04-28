@@ -18,7 +18,9 @@ export interface IReactConfigsOptions {
 
 export interface IStylisticConfigsOptions extends IConfigsOptions {}
 
-export interface ITypescriptConfigsOptions extends IConfigsOptions {}
+export interface ITypescriptConfigsOptions extends IConfigsOptions {
+  typeSafe?: boolean;
+}
 
 export interface IJavascriptConfigsOptions extends IConfigsOptions {}
 
