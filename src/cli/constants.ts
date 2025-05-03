@@ -117,8 +117,7 @@ export const vscodeSettingsString = `
   }
 `;
 
-export const eslintConfigContent = `
-import { defineConfig } from '@dhzh/eslint-config';
+export const eslintConfigContent = `import { defineConfig } from '@dhzh/eslint-config';
 
 export default defineConfig();
 `;
