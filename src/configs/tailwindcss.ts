@@ -15,7 +15,10 @@ export function tailwindcss(options: ITailwindcssConfigsOptions = {}): Linter.Co
     {
       name: `${RULE_PREFIX}/tailwindcss/customize`,
       files: GLOB_SRC,
-      rules: overrides,
+      rules: {
+        'tailwindcss/no-custom-classname': 'off',
+        ...overrides,
+      },
     },
   ];
 }
