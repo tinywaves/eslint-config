@@ -36,6 +36,7 @@ export function unicorn(options: IUnicornConfigsOptions = {}): Linter.Config[] {
         'unicorn/prefer-dom-node-text-content': 'error',
         'unicorn/prefer-includes': 'error',
         'unicorn/prefer-node-protocol': 'error',
+        'unicorn/prefer-query-selector': 'off',
         'unicorn/prefer-number-properties': 'error',
         'unicorn/prefer-string-starts-ends-with': 'error',
         'unicorn/prefer-type-error': 'error',

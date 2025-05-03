@@ -43,6 +43,7 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
         'jsonc/comma-dangle': ['error', 'never'],
         'jsonc/comma-style': ['error', 'last'],
         'jsonc/indent': ['error', indent],
+        'jsonc/no-comments': 'off',
         'jsonc/key-spacing': [
           'error',
           {
