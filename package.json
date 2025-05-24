@@ -46,7 +46,7 @@
     "lint-fix": "eslint --fix .",
     "prepack": "pnpm run build",
     "prepare": "simple-git-hooks",
-    "release": "bumpp && pnpm publish --access=public",
+    "release": "bumpp",
     "typecheck": "tsc --noEmit",
     "typegen": "tsx scripts/eslint-typegen.ts"
   },
