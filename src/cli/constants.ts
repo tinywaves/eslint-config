@@ -47,7 +47,7 @@ export const vscodeSettingsString = `
     "pcss",
     "postcss",
     "gql",
-    "graphql",
+    "graphql"
   ],
 
   // Enable eslint as the default formatter
