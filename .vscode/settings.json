@@ -87,8 +87,10 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "cSpell.words": [
+    "bumpp",
     "dbaeumer",
     "esbuild",
+    "hyoban",
     "pcss",
     "unrs"
   ]
