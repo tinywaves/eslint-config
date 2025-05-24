@@ -34,9 +34,7 @@ export const vscodeSettingsString = `
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue",
     "html",
-    "markdown",
     "json",
     "json5",
     "jsonc",
@@ -50,8 +48,6 @@ export const vscodeSettingsString = `
     "postcss",
     "gql",
     "graphql",
-    "astro",
-    "svelte"
   ],
 
   // Enable eslint as the default formatter
@@ -67,13 +63,7 @@ export const vscodeSettingsString = `
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "[html]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[markdown]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
@@ -110,9 +100,6 @@ export const vscodeSettingsString = `
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[graphql]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[astro]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }
 `;

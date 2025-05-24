@@ -34,16 +34,13 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue",
     "html",
-    "markdown",
     "json",
     "json5",
     "jsonc",
     "yaml",
-    "toml",
     "xml",
-    "astro",
+    "toml",
     "css",
     "less",
     "scss"
@@ -62,13 +59,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "[html]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[markdown]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
@@ -86,9 +77,6 @@
   "[toml]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "[astro]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "[css]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -99,41 +87,9 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "cSpell.words": [
-    "Antfu",
-    "attributify",
-    "autoetected",
-    "bumpp",
     "dbaeumer",
-    "dprint",
-    "Easton",
-    "ependencies",
-    "esno",
-    "espree",
-    "execa",
-    "getentrybyslug",
-    "Hyoban",
-    "IIFEs",
-    "jiti",
-    "jsdelivr",
-    "lockb",
-    "meriyah",
-    "nocheck",
-    "NVIM",
-    "outro",
+    "esbuild",
     "pcss",
-    "picocolors",
-    "prettierc",
-    "Slidev",
-    "stroustrup",
-    "sxzz",
-    "tsup",
-    "unignore",
-    "vitepress",
-    "vitesse",
-    "vuejs",
-    "Zheng"
-  ],
-  "conventionalCommits.scopes": [
-    "jsonc"
+    "unrs"
   ]
 }
