@@ -1,5 +1,6 @@
 import {
   react,
+  vue,
   stylistic,
   typescript,
   javascript,
@@ -25,6 +26,7 @@ export function defineConfig(options: Options = {}): Linter.Config[] {
 
   return [
     ...react(configs.react),
+    ...vue(configs.vue),
     ...stylistic(configs.stylistic),
     ...typescript(configs.typescript),
     ...javascript(configs.javascript),

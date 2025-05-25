@@ -1,4 +1,5 @@
 export * from './react';
+export * from './vue';
 export * from './stylistic';
 export * from './typescript';
 export * from './javascript';

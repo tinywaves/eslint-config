@@ -47,7 +47,8 @@ export const vscodeSettingsString = `
     "pcss",
     "postcss",
     "gql",
-    "graphql"
+    "graphql",
+    "vue"
   ],
 
   // Enable eslint as the default formatter
@@ -100,6 +101,9 @@ export const vscodeSettingsString = `
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[graphql]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }
 `;

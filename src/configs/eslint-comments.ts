@@ -6,10 +6,8 @@ import type { IEslintCommentsConfigsOptions } from '../types';
 export function eslintComments(options: IEslintCommentsConfigsOptions = {}): Linter.Config[] {
   const { overrides = {} } = options;
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return [
     {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       ...pluginEslintComments.recommended,
       name: `${RULE_PREFIX}/eslint-comments/shared`,
     },

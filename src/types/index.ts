@@ -16,6 +16,8 @@ export interface IReactConfigsOptions {
   };
 }
 
+export interface IVueConfigsOptions extends IConfigsOptions {}
+
 export interface IStylisticConfigsOptions extends IConfigsOptions {}
 
 export interface ITypescriptConfigsOptions extends IConfigsOptions {
@@ -82,6 +84,7 @@ export interface IDisablesConfigsOptions {
 export interface Options {
   configs?: {
     react?: IReactConfigsOptions;
+    vue?: IVueConfigsOptions;
     stylistic?: IStylisticConfigsOptions;
     typescript?: ITypescriptConfigsOptions;
     javascript?: IJavascriptConfigsOptions;

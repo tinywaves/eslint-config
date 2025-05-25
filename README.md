@@ -7,6 +7,7 @@ I use ESLint to format and lint my code:
 |  |  |  |
 |---|---|---|
 | [react](./src/configs/react.ts) | [`ESLint React`](https://eslint-react.xyz/) [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) [`eslint-plugin-react-refresh`](https://github.com/ArnaudBarre/eslint-plugin-react-refresh) [`eslint-plugin-react-compiler`](https://www.npmjs.com/package/eslint-plugin-react-compiler) [`eslint-plugin-react-google-translate`](https://www.npmjs.com/package/eslint-plugin-react-google-translate) |
+| [vue](./src/configs/vue.ts) | [`eslint-plugin-vue`](https://eslint.vuejs.org/) [`vue-eslint-parser`](https://www.npmjs.com/package/vue-eslint-parser) [`eslint-processor-vue-blocks`](https://github.com/antfu/eslint-processor-vue-blocks) |
 | [stylistic](./src/configs/stylistic.ts) | [`ESLint Stylistic`](https://eslint.style/) [`eslint-plugin-antfu`](https://github.com/antfu/eslint-plugin-antfu) [`eslint-plugin-hyoban`](https://github.com/hyoban/eslint-plugin-hyoban) |
 | [typescript](./src/configs/typescript.ts) | [`typescript-eslint`](https://typescript-eslint.io/) |
 | [javascript](./src/configs/javascript.ts) | [`@eslint/js`](https://eslint.org/docs/latest/rules) |

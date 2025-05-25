@@ -14,6 +14,7 @@ export const GLOB_SCSS = '**/*.scss';
 export const GLOB_GRAPHQL = '**/*.{g,graph}ql';
 export const GLOB_XML = '**/*.xml';
 export const GLOB_SVG = '**/*.svg';
+export const GLOB_VUE = '**/*.vue';
 
 export const GLOB_JSON_SRC = [
   GLOB_JSON,
