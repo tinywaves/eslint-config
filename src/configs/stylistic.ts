@@ -146,7 +146,16 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
         'stylistic/object-property-newline': [
           'error',
           {
-            allowMultiplePropertiesPerLine: true,
+            allowAllPropertiesOnSameLine: true,
+          },
+        ],
+        'stylistic/space-before-function-paren': [
+          'error',
+          {
+            named: 'never',
+            anonymous: 'always',
+            asyncArrow: 'always',
+            catch: 'always',
           },
         ],
         'stylistic/switch-colon-spacing': [

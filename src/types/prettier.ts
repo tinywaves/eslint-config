@@ -113,31 +113,31 @@ export interface VendoredPrettierOptionsRequired {
   xmlWhitespaceSensitivity: 'ignore' | 'strict' | 'preserve';
 }
 
-export type BuiltInParserName =
-  | 'acorn'
-  | 'angular'
-  | 'babel-flow'
-  | 'babel-ts'
-  | 'babel'
-  | 'css'
-  | 'espree'
-  | 'flow'
-  | 'glimmer'
-  | 'graphql'
-  | 'html'
-  | 'json-stringify'
-  | 'json'
-  | 'json5'
-  | 'less'
-  | 'lwc'
-  | 'markdown'
-  | 'mdx'
-  | 'meriyah'
-  | 'scss'
-  | 'typescript'
-  | 'vue'
-  | 'xml'
-  | 'yaml';
+export type BuiltInParserName
+  = | 'acorn'
+    | 'angular'
+    | 'babel-flow'
+    | 'babel-ts'
+    | 'babel'
+    | 'css'
+    | 'espree'
+    | 'flow'
+    | 'glimmer'
+    | 'graphql'
+    | 'html'
+    | 'json-stringify'
+    | 'json'
+    | 'json5'
+    | 'less'
+    | 'lwc'
+    | 'markdown'
+    | 'mdx'
+    | 'meriyah'
+    | 'scss'
+    | 'typescript'
+    | 'vue'
+    | 'xml'
+    | 'yaml';
 
 export type ExternalParserName = 'slidev' | 'astro';
 
