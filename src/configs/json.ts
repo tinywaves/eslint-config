@@ -98,7 +98,7 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
       },
     },
     {
-      ...pluginPackageJson.configs.recommended,
+      ...(pluginPackageJson.configs.recommended as unknown as Linter.Config),
       name: `${RULE_PREFIX}/json/shared/package.json`,
       files: [GLOB_PACKAGE_JSON],
     },

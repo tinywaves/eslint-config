@@ -87,6 +87,7 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
               '@typescript-eslint/no-unsafe-member-access': 'off',
               '@typescript-eslint/no-unsafe-call': 'off',
               '@typescript-eslint/no-unsafe-return': 'off',
+              '@typescript-eslint/no-unsafe-argument': 'off',
             }),
         ...overrides,
       },
