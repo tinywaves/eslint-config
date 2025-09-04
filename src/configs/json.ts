@@ -2,6 +2,7 @@ import pluginJsonc from 'eslint-plugin-jsonc';
 import pluginPackageJson from 'eslint-plugin-package-json';
 import parserJsonc from 'jsonc-eslint-parser';
 import pluginHyoban from 'eslint-plugin-hyoban';
+import { isPackageExists } from 'local-pkg';
 import { RULE_PREFIX, GLOB_JSON, GLOB_JSONC, GLOB_JSON5, GLOB_PACKAGE_JSON } from '../consts';
 import type { Linter } from 'eslint';
 import type { IJsonConfigsOptions } from '../types';
@@ -158,6 +159,7 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
             ],
           },
         ],
+        'package-json/require-types': isPackageExists('@nestjs/core') ? 'off' : 'error',
         ...overrides.packageJson,
       },
     },
