@@ -8,7 +8,10 @@ import type { ICliOptions } from '../../types';
 
 export async function updateEslintConfig(options: ICliOptions) {
   const cwd = process.cwd();
-  const configFileName = 'eslint.config.js';
+  const pathPackageJSON = path.join(cwd, 'package.json');
+  const pkgContent = await fsp.readFile(pathPackageJSON, 'utf8');
+  const pkg: Record<string, any> = JSON.parse(pkgContent);
+  const configFileName = pkg.type === 'module' ? 'eslint.config.js' : 'eslint.config.mjs';
   const pathFlatConfig = path.join(cwd, configFileName);
   await fsp.writeFile(pathFlatConfig, eslintConfigContent(options));
   p.log.success(c.green`Created ${configFileName}`);

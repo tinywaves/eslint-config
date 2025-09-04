@@ -98,6 +98,7 @@
     "typescript",
     "json",
     "vue",
-    "javascript"
+    "javascript",
+    "cli"
   ]
 }
