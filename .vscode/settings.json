@@ -96,6 +96,7 @@
   ],
   "conventionalCommits.scopes": [
     "typescript",
-    "json"
+    "json",
+    "vue"
   ]
 }

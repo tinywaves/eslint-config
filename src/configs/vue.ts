@@ -1,3 +1,4 @@
+import { defineConfig } from 'eslint/config';
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
@@ -11,7 +12,7 @@ import type { IVueConfigsOptions } from '../types';
 export function vue(options: IVueConfigsOptions = {}): Linter.Config[] {
   const { overrides = {} } = options;
 
-  return tseslint.config(
+  return defineConfig(
     {
       ...js.configs.recommended,
       name: `${RULE_PREFIX}/vue/shared/javascript`,
@@ -51,5 +52,5 @@ export function vue(options: IVueConfigsOptions = {}): Linter.Config[] {
       ]),
       rules: overrides,
     },
-  ) as Linter.Config[];
+  );
 }
