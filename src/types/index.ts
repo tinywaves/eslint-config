@@ -26,7 +26,9 @@ export interface ITypescriptConfigsOptions extends IConfigsOptions {
   sourceType?: 'module' | 'commonjs';
 }
 
-export interface IJavascriptConfigsOptions extends IConfigsOptions {}
+export interface IJavascriptConfigsOptions extends IConfigsOptions {
+  sourceType?: 'module' | 'commonjs';
+}
 
 export interface INodeConfigsOptions extends IConfigsOptions {}
 

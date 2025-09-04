@@ -121,6 +121,11 @@ export default defineConfig({
     typescript: {
       sourceType: 'commonjs',
     },`
+      : ''}${options.hasNest
+      ? `
+    javascript: {
+      sourceType: 'commonjs',
+    },`
       : ''}
   },
 });
