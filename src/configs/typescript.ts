@@ -5,7 +5,7 @@ import type { Linter } from 'eslint';
 import type { ITypescriptConfigsOptions } from '../types';
 
 export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Config[] {
-  const { overrides = {}, typeSafe = false } = options;
+  const { overrides = {}, typeSafe = false, strict = false } = options;
 
   return [
     ...tseslint.config(
@@ -88,6 +88,11 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
               '@typescript-eslint/no-unsafe-call': 'off',
               '@typescript-eslint/no-unsafe-return': 'off',
               '@typescript-eslint/no-unsafe-argument': 'off',
+            }),
+        ...(strict
+          ? {}
+          : {
+              '@typescript-eslint/no-extraneous-class': 'off',
             }),
         ...overrides,
       },

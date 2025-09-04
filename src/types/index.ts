@@ -22,6 +22,7 @@ export interface IStylisticConfigsOptions extends IConfigsOptions {}
 
 export interface ITypescriptConfigsOptions extends IConfigsOptions {
   typeSafe?: boolean;
+  strict?: boolean;
 }
 
 export interface IJavascriptConfigsOptions extends IConfigsOptions {}
