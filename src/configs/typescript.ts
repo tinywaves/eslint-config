@@ -80,6 +80,12 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
           },
         ],
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        '@typescript-eslint/no-confusing-void-expression': [
+          'error',
+          {
+            ignoreArrowShorthand: true,
+          },
+        ],
         ...(typeSafe
           ? {}
           : {

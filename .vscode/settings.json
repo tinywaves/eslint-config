@@ -93,5 +93,8 @@
     "hyoban",
     "pcss",
     "unrs"
+  ],
+  "conventionalCommits.scopes": [
+    "typescript"
   ]
 }
