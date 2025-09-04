@@ -1,3 +1,5 @@
+import type { ICliOptions } from '../types';
+
 export const vscodeSettingsString = `
   // Entry
   "eslint.format.enable": true,
@@ -108,7 +110,13 @@ export const vscodeSettingsString = `
   }
 `;
 
-export const eslintConfigContent = `import { defineConfig } from '@dhzh/eslint-config';
+export const eslintConfigContent = (options: ICliOptions) => `import { defineConfig } from '@dhzh/eslint-config';
 
-export default defineConfig();
+export default defineConfig({
+  configs: {
+    json: {
+      packageJsonRequireTypes: ${!options.hasNest},
+    },
+  },
+});
 `;
