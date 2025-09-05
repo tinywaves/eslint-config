@@ -17,12 +17,13 @@ import {
   ignores,
   eslintComments,
   disables,
+  languageOptions,
 } from './configs';
 import type { Linter } from 'eslint';
 import type { Options } from './types';
 
 export function defineConfig(options: Options = {}): Linter.Config[] {
-  const { configs = {}, ignorePatterns = [] } = options;
+  const { configs = {}, ignorePatterns = [], sourceType = 'module' } = options;
 
   return [
     ...react(configs.react),
@@ -43,5 +44,6 @@ export function defineConfig(options: Options = {}): Linter.Config[] {
     ...ignores(ignorePatterns),
     ...eslintComments(configs.eslintComments),
     ...disables(configs.disables),
+    ...languageOptions({ sourceType }),
   ];
 }

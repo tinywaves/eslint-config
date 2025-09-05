@@ -6,7 +6,7 @@ import type { Linter } from 'eslint';
 import type { ITypescriptConfigsOptions } from '../types';
 
 export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Config[] {
-  const { overrides = {}, typeSafe = false, strict = false, sourceType = 'module' } = options;
+  const { overrides = {}, typeSafe = false, strict = false } = options;
 
   return [
     ...defineConfig(
@@ -27,7 +27,7 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
           projectService: true,
           tsconfigRootDir: process.cwd(),
         },
-        sourceType,
+        sourceType: 'module',
       },
       rules: {
         '@typescript-eslint/consistent-type-imports': [

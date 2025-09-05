@@ -6,7 +6,7 @@ import type { Linter } from 'eslint';
 import type { IJavascriptConfigsOptions } from '../types';
 
 export function javascript(options: IJavascriptConfigsOptions = {}): Linter.Config[] {
-  const { overrides = {}, sourceType = 'module' } = options;
+  const { overrides = {} } = options;
 
   return [
     {
@@ -27,9 +27,9 @@ export function javascript(options: IJavascriptConfigsOptions = {}): Linter.Conf
             jsx: true,
           },
           ecmaVersion: 2022,
-          sourceType,
+          sourceType: 'module',
         },
-        sourceType,
+        sourceType: 'module',
       },
       linterOptions: {
         reportUnusedDisableDirectives: true,

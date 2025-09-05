@@ -23,12 +23,9 @@ export interface IStylisticConfigsOptions extends IConfigsOptions {}
 export interface ITypescriptConfigsOptions extends IConfigsOptions {
   typeSafe?: boolean;
   strict?: boolean;
-  sourceType?: 'module' | 'commonjs';
 }
 
-export interface IJavascriptConfigsOptions extends IConfigsOptions {
-  sourceType?: 'module' | 'commonjs';
-}
+export interface IJavascriptConfigsOptions extends IConfigsOptions {}
 
 export interface INodeConfigsOptions extends IConfigsOptions {}
 
@@ -86,6 +83,10 @@ export interface IDisablesConfigsOptions {
   };
 }
 
+export interface ILanguageOptionsConfigsOptions {
+  sourceType?: 'module' | 'commonjs';
+}
+
 export interface Options {
   configs?: {
     react?: IReactConfigsOptions;
@@ -107,6 +108,7 @@ export interface Options {
     disables?: IDisablesConfigsOptions;
   };
   ignorePatterns?: string[];
+  sourceType?: 'module' | 'commonjs';
 }
 
 export interface ICliOptions {

@@ -99,6 +99,7 @@
     "json",
     "vue",
     "javascript",
-    "cli"
+    "cli",
+    "language-options"
   ]
 }

@@ -116,17 +116,7 @@ export default defineConfig({
   configs: {
     json: {
       packageJsonRequireTypes: ${!options.hasNest},
-    },${options.hasNest
-      ? `
-    typescript: {
-      sourceType: 'commonjs',
-    },`
-      : ''}${options.hasNest
-      ? `
-    javascript: {
-      sourceType: 'commonjs',
-    },`
-      : ''}
+    },
   },
 });
 `;
