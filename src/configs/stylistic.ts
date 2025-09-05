@@ -126,12 +126,7 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
             after: true,
           },
         ],
-        'stylistic/line-comment-position': [
-          'error',
-          {
-            position: 'above',
-          },
-        ],
+        'stylistic/line-comment-position': 'off',
         'stylistic/linebreak-style': ['error', 'unix'],
         'stylistic/lines-around-comment': 'off',
         'stylistic/new-parens': ['error', 'always'],
