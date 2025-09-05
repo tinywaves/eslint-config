@@ -35,7 +35,7 @@ export interface IJsonConfigsOptions {
     core?: Record<string, Linter.RuleEntry>;
     packageJson?: Record<string, Linter.RuleEntry>;
   };
-  packageJsonRequireTypes?: boolean;
+  packageJsonRequireType?: boolean;
 }
 
 export interface IUnicornConfigsOptions extends IConfigsOptions {}

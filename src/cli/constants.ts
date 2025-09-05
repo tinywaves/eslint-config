@@ -115,7 +115,7 @@ export const eslintConfigContent = (options: ICliOptions) => `import { defineCon
 export default defineConfig({
   configs: {
     json: {
-      packageJsonRequireTypes: ${!options.hasNest},
+      packageJsonRequireType: ${!options.hasNest},
     },
   },
 });

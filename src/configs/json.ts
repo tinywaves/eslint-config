@@ -10,7 +10,7 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
   const {
     overrides = { core: {}, packageJson: {} },
     indent = 2,
-    packageJsonRequireTypes = true,
+    packageJsonRequireType = true,
   } = options;
 
   return [
@@ -162,7 +162,7 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
             ],
           },
         ],
-        'package-json/require-types': packageJsonRequireTypes ? 'error' : 'off',
+        'package-json/require-type': packageJsonRequireType ? 'error' : 'off',
         ...overrides.packageJson,
       },
     },
