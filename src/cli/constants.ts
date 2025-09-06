@@ -112,11 +112,13 @@ export const vscodeSettingsString = `
 
 export const eslintConfigContent = (options: ICliOptions) => `import { defineConfig } from '@dhzh/eslint-config';
 
-export default defineConfig({
+export default defineConfig(${options.hasNest
+  ? `{
   configs: {
     json: {
-      packageJsonRequireType: ${!options.hasNest},
+      packageJsonRequireType: false,
     },
   },
-});
+}`
+  : ''});
 `;
