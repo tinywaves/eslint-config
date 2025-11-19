@@ -87,7 +87,7 @@ export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
     {
       name: `${RULE_PREFIX}/react/hooks/customize`,
       files: GLOB_SRC,
-      rules: overrides.hooks,
+      rules: overrides.hooks || {},
     },
     {
       ...(isAllowConstantExport ? pluginReactRefresh.configs.vite : pluginReactRefresh.configs.recommended) as Linter.Config,
@@ -152,7 +152,7 @@ export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
     {
       name: `${RULE_PREFIX}/react/compiler/customize`,
       files: GLOB_SRC,
-      rules: overrides.compiler,
+      rules: overrides.compiler || {},
     },
     {
       name: `${RULE_PREFIX}/react/google-translate`,
