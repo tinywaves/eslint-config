@@ -8,7 +8,6 @@ export const vscodeSettingsString = `
 
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
-  "editor.formatOnSave": false,
 
   // Auto fix
   "editor.codeActionsOnSave": {
