@@ -1,3 +1,5 @@
+import type { RuleConfig, RuleLevel } from './types';
+
 export const parserPlain = {
   meta: {
     name: 'parser-plain',
@@ -22,4 +24,35 @@ export const parserPlain = {
       Program: [],
     },
   }),
+};
+
+export const mergeRule = (...rules: RuleConfig[]): RuleConfig => {
+  let finalLevel: RuleLevel | undefined;
+  let finalOptions: Record<string, any> = {};
+
+  for (const rule of rules) {
+    if (!rule) {
+      continue;
+    }
+
+    if (!Array.isArray(rule)) {
+      finalLevel = rule;
+      continue;
+    }
+
+    const [level, options] = rule;
+    finalLevel = level;
+    if (options && typeof options === 'object') {
+      finalOptions = {
+        ...finalOptions,
+        ...options,
+      };
+    }
+  }
+
+  if (Object.keys(finalOptions).length === 0) {
+    return finalLevel!;
+  }
+
+  return [finalLevel!, finalOptions];
 };

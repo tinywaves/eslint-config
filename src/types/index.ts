@@ -1,5 +1,6 @@
 import type { Linter } from 'eslint';
 import type { VendoredPrettierOptions } from './prettier';
+import type { RuleOptions } from '../../eslint-typegen';
 
 export interface IConfigsOptions {
   overrides?: Record<string, Linter.RuleEntry>;
@@ -114,3 +115,11 @@ export interface Options {
 export interface ICliOptions {
   hasNest: boolean;
 }
+
+export type RuleLevel = 'off' | 'warn' | 'error' | 0 | 1 | 2;
+
+export type RuleConfig
+  = | RuleLevel
+    | [RuleLevel, Record<string, any>?];
+
+export type LinterConfig = Linter.Config<RuleOptions & Linter.RulesRecord>;

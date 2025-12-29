@@ -5,8 +5,9 @@ import pluginReactCompiler from 'eslint-plugin-react-compiler';
 import pluginReactGoogleTranslate from 'eslint-plugin-react-google-translate';
 import { isPackageExists } from 'local-pkg';
 import { GLOB_SRC, RULE_PREFIX, GLOB_JSX_SRC } from '../consts';
-import type { ESLint, Linter } from 'eslint';
-import type { IReactConfigsOptions } from '../types';
+import { mergeRule } from '../utils';
+import type { ESLint } from 'eslint';
+import type { IReactConfigsOptions, LinterConfig } from '../types';
 
 const ReactRefreshAllowConstantExportPackages = ['vite'];
 const RemixPackages = [
@@ -24,7 +25,7 @@ const ReactRouterPackages = [
 const NextJsPackages = ['next'];
 const ExpoPackages = ['expo'];
 
-export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
+export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
   const {
     language = 'typescript',
     overrides = { compiler: {}, core: {}, hooks: {}, refresh: {}, googleTranslate: {} },
@@ -80,7 +81,7 @@ export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
       },
     },
     {
-      ...pluginReactHooks.configs['recommended-latest'] as Linter.Config,
+      ...pluginReactHooks.configs['recommended-latest'] as LinterConfig,
       name: `${RULE_PREFIX}/react/hooks/shared`,
       files: GLOB_SRC,
     },
@@ -90,57 +91,68 @@ export function react(options: IReactConfigsOptions = {}): Linter.Config[] {
       rules: overrides.hooks || {},
     },
     {
-      ...(isAllowConstantExport ? pluginReactRefresh.configs.vite : pluginReactRefresh.configs.recommended) as Linter.Config,
-      name: `${RULE_PREFIX}/react/refresh/shared/${isAllowConstantExport ? 'vite' : 'recommended'}`,
+      ...pluginReactRefresh.configs.recommended,
+      name: `${RULE_PREFIX}/react/refresh/shared`,
       files: GLOB_JSX_SRC,
     },
     {
       name: `${RULE_PREFIX}/react/refresh/customize`,
       files: GLOB_JSX_SRC,
       rules: {
-        'react-refresh/only-export-components': [
-          'warn',
-          {
-            allowConstantExport: isAllowConstantExport,
-            allowExportNames: [
-              ...(
-                isUsingNext
-                  ? [
-                      'dynamic',
-                      'dynamicParams',
-                      'revalidate',
-                      'fetchCache',
-                      'runtime',
-                      'preferredRegion',
-                      'maxDuration',
-                      'config',
-                      'generateStaticParams',
-                      'metadata',
-                      'generateMetadata',
-                      'viewport',
-                      'generateViewport',
-                    ]
-                  : []
-              ),
-              ...(
-                isUsingRemix || isUsingReactRouter
-                  ? [
-                      'meta',
-                      'links',
-                      'headers',
-                      'loader',
-                      'action',
-                    ]
-                  : []
-              ),
-              ...(
-                isUsingExpo
-                  ? ['unstable_settings']
-                  : []
-              ),
-            ],
-          },
-        ],
+        'react-refresh/only-export-components': mergeRule(
+          ['warn', { allowConstantExport: isAllowConstantExport }],
+          [
+            'warn',
+            {
+              allowExportNames: [
+                ...(
+                  isUsingNext
+                    ? [
+                        'dynamic',
+                        'dynamicParams',
+                        'revalidate',
+                        'fetchCache',
+                        'runtime',
+                        'preferredRegion',
+                        'maxDuration',
+                        'config',
+                        'generateMetadata',
+                        'generateViewport',
+                        // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+                        'experimental_ppr',
+                        // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+                        'metadata',
+                        // https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+                        'viewport',
+                        // https://nextjs.org/docs/app/api-reference/functions/generate-image-metadata
+                        'generateImageMetadata',
+                        // https://nextjs.org/docs/app/api-reference/functions/generate-sitemaps
+                        'generateSitemaps',
+                        // https://nextjs.org/docs/app/api-reference/functions/generate-static-params
+                        'generateStaticParams',
+                      ]
+                    : []
+                ),
+                ...(
+                  isUsingRemix || isUsingReactRouter
+                    ? [
+                        'meta',
+                        'links',
+                        'headers',
+                        'loader',
+                        'action',
+                      ]
+                    : []
+                ),
+                ...(
+                  isUsingExpo
+                    ? ['unstable_settings']
+                    : []
+                ),
+              ],
+            },
+          ],
+        ),
         ...overrides.refresh,
       },
     },
