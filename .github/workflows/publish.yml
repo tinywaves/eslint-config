@@ -30,5 +30,3 @@ jobs:
 
       - name: Publish to NPM via OIDC
         run: pnpm publish --provenance --access=public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ steps.npm-oidc-token.outputs.token }}
