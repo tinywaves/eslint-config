@@ -18,7 +18,7 @@ export async function updatePackageJson() {
   pkg.devDependencies.eslint ??= pkgJson.devDependencies.eslint;
   // scripts
   pkg.scripts ??= {};
-  pkg.scripts.lint = 'eslint';
+  pkg.scripts.lint = 'eslint .';
   pkg.scripts['lint-fix'] = 'eslint --fix .';
 
   await fsp.writeFile(pathPackageJSON, JSON.stringify(pkg, null, 2));
