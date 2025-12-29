@@ -4,6 +4,7 @@ import pluginReactRefresh from 'eslint-plugin-react-refresh';
 import pluginReactCompiler from 'eslint-plugin-react-compiler';
 import pluginReactGoogleTranslate from 'eslint-plugin-react-google-translate';
 import { isPackageExists } from 'local-pkg';
+import { defineConfig } from 'eslint/config';
 import { GLOB_SRC, RULE_PREFIX, GLOB_JSX_SRC } from '../consts';
 import { mergeRule } from '../utils';
 import type { ESLint } from 'eslint';
@@ -80,11 +81,11 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
         ...overrides.core,
       },
     },
-    {
-      ...pluginReactHooks.configs['recommended-latest'] as LinterConfig,
+    ...defineConfig([pluginReactHooks.configs.flat['recommended-latest']]).map((item) => ({
+      ...item,
       name: `${RULE_PREFIX}/react/hooks/shared`,
       files: GLOB_SRC,
-    },
+    })),
     {
       name: `${RULE_PREFIX}/react/hooks/customize`,
       files: GLOB_SRC,
