@@ -44,24 +44,33 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
 
   return [
     {
+      ...config,
       name: `${RULE_PREFIX}/react/core/shared`,
       files: GLOB_SRC,
-      plugins: {
-        ...config.plugins as unknown as Record<string, ESLint.Plugin>,
-      },
-      rules: config.rules,
     },
     {
       name: `${RULE_PREFIX}/react/core/customize`,
       files: GLOB_SRC,
-      plugins: {
-        ...config.plugins as unknown as Record<string, ESLint.Plugin>,
-      },
       rules: {
+        '@eslint-react/jsx-dollar': 'warn',
+        '@eslint-react/no-missing-context-display-name': 'warn',
+        '@eslint-react/no-missing-component-display-name': 'off',
         '@eslint-react/dom/no-hydrate': 'error',
-        '@eslint-react/no-useless-fragment': 'warn',
-        '@eslint-react/hooks-extra/no-unnecessary-use-prefix': 'warn',
-        '@eslint-react/naming-convention/use-state': 'warn',
+        '@eslint-react/no-useless-fragment': [
+          'warn',
+          {
+            allowEmptyFragment: true,
+            allowExpressions: true,
+          },
+        ],
+        '@eslint-react/no-unnecessary-use-prefix': 'warn',
+        '@eslint-react/naming-convention/use-state': [
+          'warn',
+          {
+            enforceAssignment: true,
+            enforceSetterName: true,
+          },
+        ],
         '@eslint-react/naming-convention/filename-extension': [
           'warn',
           {
