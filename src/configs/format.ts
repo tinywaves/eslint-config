@@ -1,4 +1,5 @@
-import * as pluginFormat from 'eslint-plugin-format';
+// @ts-ignore
+import pluginFormat from 'eslint-plugin-format';
 import {
   RULE_PREFIX,
   GLOB_HTML,
