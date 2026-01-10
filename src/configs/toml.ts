@@ -1,5 +1,5 @@
 import pluginToml from 'eslint-plugin-toml';
-import parserToml from 'toml-eslint-parser';
+import * as parserToml from 'toml-eslint-parser';
 import { RULE_PREFIX, GLOB_TOML } from '../consts';
 import type { Linter } from 'eslint';
 import type { ITomlConfigsOptions } from '../types';
