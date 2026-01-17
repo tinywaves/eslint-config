@@ -3,21 +3,23 @@ import type { VendoredPrettierOptions } from './prettier';
 import type { RuleOptions } from '../../eslint-typegen';
 
 type RuleOption = RuleOptions & Linter.RulesRecord;
-export type RuleKey = keyof RuleOption;
 export type LinterConfig = Linter.Config<RuleOption>;
+type Rule = {
+  [key in keyof RuleOption]: Linter.RuleEntry<[]>
+};
 
 export interface IConfigsOptions {
-  overrides?: Record<RuleKey, Linter.RuleEntry>;
+  overrides?: Rule;
 }
 
 export interface IReactConfigsOptions {
   language?: 'typescript' | 'javascript';
   overrides?: {
-    core?: Record<RuleKey, Linter.RuleEntry>;
-    hooks?: Record<RuleKey, Linter.RuleEntry>;
-    refresh?: Record<RuleKey, Linter.RuleEntry>;
-    compiler?: Record<RuleKey, Linter.RuleEntry>;
-    googleTranslate?: Record<RuleKey, Linter.RuleEntry>;
+    core?: Rule;
+    hooks?: Rule;
+    refresh?: Rule;
+    compiler?: Rule;
+    googleTranslate?: Rule;
   };
 }
 
@@ -37,8 +39,8 @@ export interface INodeConfigsOptions extends IConfigsOptions {}
 export interface IJsonConfigsOptions {
   indent?: number;
   overrides?: {
-    core?: Record<RuleKey, Linter.RuleEntry>;
-    packageJson?: Record<RuleKey, Linter.RuleEntry>;
+    core?: Rule;
+    packageJson?: Rule;
   };
   packageJsonRequireType?: boolean;
 }
@@ -79,12 +81,12 @@ export interface IEslintCommentsConfigsOptions extends IConfigsOptions {}
 
 export interface IDisablesConfigsOptions {
   overrides?: {
-    scripts?: Record<RuleKey, Linter.RuleEntry>;
-    cli?: Record<RuleKey, Linter.RuleEntry>;
-    bin?: Record<RuleKey, Linter.RuleEntry>;
-    dts?: Record<RuleKey, Linter.RuleEntry>;
-    cjs?: Record<RuleKey, Linter.RuleEntry>;
-    config?: Record<RuleKey, Linter.RuleEntry>;
+    scripts?: Rule;
+    cli?: Rule;
+    bin?: Rule;
+    dts?: Rule;
+    cjs?: Rule;
+    config?: Rule;
   };
 }
 
