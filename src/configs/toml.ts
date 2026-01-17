@@ -8,7 +8,7 @@ export function toml(options: ITomlConfigsOptions = {}): Linter.Config[] {
   const { overrides = {}, indent = 2 } = options;
 
   return [
-    ...pluginToml.configs['flat/recommended'].map((item) => ({
+    ...pluginToml.configs.recommended.map((item) => ({
       ...item,
       name: `${RULE_PREFIX}/toml/shared`,
       files: [GLOB_TOML],

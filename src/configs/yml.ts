@@ -1,5 +1,5 @@
 import pluginYml from 'eslint-plugin-yml';
-import parserYml from 'yaml-eslint-parser';
+import * as parserYml from 'yaml-eslint-parser';
 import { RULE_PREFIX, GLOB_YML } from '../consts';
 import type { Linter } from 'eslint';
 import type { IYmlConfigsOptions } from '../types';
