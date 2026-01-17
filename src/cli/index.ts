@@ -19,6 +19,7 @@ cli
 
     const hasNest = await p.confirm({
       message: 'Is NestJS a part of the current project?',
+      initialValue: false,
     });
     if (p.isCancel(hasNest)) {
       p.cancel('Operation cancelled');
