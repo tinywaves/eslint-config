@@ -1,14 +1,12 @@
 import pluginYml from 'eslint-plugin-yml';
-import * as parserYml from 'yaml-eslint-parser';
 import { RULE_PREFIX, GLOB_YML } from '../consts';
-import type { Linter } from 'eslint';
-import type { IYmlConfigsOptions } from '../types';
+import type { IYmlConfigsOptions, LinterConfig } from '../types';
 
-export function yml(options: IYmlConfigsOptions = {}): Linter.Config[] {
+export function yml(options: IYmlConfigsOptions = {}): LinterConfig[] {
   const { overrides = {}, indent = 2, quotes = 'single' } = options;
 
   return [
-    ...pluginYml.configs['flat/recommended'].map((item) => ({
+    ...pluginYml.configs.recommended.map((item) => ({
       ...item,
       name: `${RULE_PREFIX}/yml/shared`,
       files: [GLOB_YML],
@@ -16,9 +14,6 @@ export function yml(options: IYmlConfigsOptions = {}): Linter.Config[] {
     {
       name: `${RULE_PREFIX}/yml/customize`,
       files: [GLOB_YML],
-      languageOptions: {
-        parser: parserYml,
-      },
       rules: {
         'yml/block-mapping': 'error',
         'yml/block-sequence': 'error',

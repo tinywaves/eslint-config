@@ -1,14 +1,13 @@
 import * as pluginRegexp from 'eslint-plugin-regexp';
 import { RULE_PREFIX, GLOB_SRC } from '../consts';
-import type { Linter } from 'eslint';
-import type { IRegexpConfigsOptions } from '../types';
+import type { IRegexpConfigsOptions, LinterConfig } from '../types';
 
-export function regexp(options: IRegexpConfigsOptions = {}): Linter.Config[] {
+export function regexp(options: IRegexpConfigsOptions = {}): LinterConfig[] {
   const { overrides = {} } = options;
 
   return [
     {
-      ...pluginRegexp.configs['flat/recommended'],
+      ...pluginRegexp.configs.recommended,
       name: `${RULE_PREFIX}/regexp/shared`,
       files: GLOB_SRC,
     },

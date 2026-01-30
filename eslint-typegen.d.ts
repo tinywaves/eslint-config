@@ -114,7 +114,7 @@ export interface RuleOptions {
    */
   '@eslint-react/dom/no-unknown-property'?: Linter.RuleEntry<EslintReactDomNoUnknownProperty>
   /**
-   * Enforces 'sandbox' attribute for 'iframe' elements is not set to unsafe combinations.
+   * Enforces that the 'sandbox' attribute for 'iframe' elements is not set to unsafe combinations.
    * @see https://eslint-react.xyz/docs/rules/dom-no-unsafe-iframe-sandbox
    */
   '@eslint-react/dom/no-unsafe-iframe-sandbox'?: Linter.RuleEntry<[]>
@@ -144,12 +144,12 @@ export interface RuleOptions {
    */
   '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect'?: Linter.RuleEntry<[]>
   /**
-   * Prevents unnecessary dollar signs ('$') from being inserted before an expression in JSX.
+   * Prevents unnecessary '$' symbols before JSX expressions.
    * @see https://eslint-react.xyz/docs/rules/jsx-dollar
    */
   '@eslint-react/jsx-dollar'?: Linter.RuleEntry<[]>
   /**
-   * Enforces that the 'key' prop is placed before the spread prop in JSX elements when using the new JSX transform.
+   * Enforces 'key' prop placement before spread props.
    * @see https://eslint-react.xyz/docs/rules/jsx-key-before-spread
    */
   '@eslint-react/jsx-key-before-spread'?: Linter.RuleEntry<[]>
@@ -164,7 +164,7 @@ export interface RuleOptions {
    */
   '@eslint-react/jsx-no-duplicate-props'?: Linter.RuleEntry<[]>
   /**
-   * Disallows 'IIFE' in JSX.
+   * Disallows immediately-invoked function expressions in JSX.
    * @see https://eslint-react.xyz/docs/rules/jsx-no-iife
    */
   '@eslint-react/jsx-no-iife'?: Linter.RuleEntry<[]>
@@ -174,12 +174,12 @@ export interface RuleOptions {
    */
   '@eslint-react/jsx-no-undef'?: Linter.RuleEntry<[]>
   /**
-   * Enforces the use of shorthand syntax for boolean attributes.
+   * Enforces shorthand syntax for boolean props.
    * @see https://eslint-react.xyz/docs/rules/jsx-shorthand-boolean
    */
   '@eslint-react/jsx-shorthand-boolean'?: Linter.RuleEntry<EslintReactJsxShorthandBoolean>
   /**
-   * Enforces the use of shorthand syntax for fragments.
+   * Enforces shorthand syntax for fragment elements.
    * @see https://eslint-react.xyz/docs/rules/jsx-shorthand-fragment
    */
   '@eslint-react/jsx-shorthand-fragment'?: Linter.RuleEntry<EslintReactJsxShorthandFragment>
@@ -189,7 +189,7 @@ export interface RuleOptions {
    */
   '@eslint-react/jsx-uses-react'?: Linter.RuleEntry<[]>
   /**
-   * Marks variables used in JSX elements as used.
+   * Marks JSX element variables as used.
    * @see https://eslint-react.xyz/docs/rules/jsx-uses-vars
    */
   '@eslint-react/jsx-uses-vars'?: Linter.RuleEntry<[]>
@@ -309,7 +309,7 @@ export interface RuleOptions {
    */
   '@eslint-react/no-direct-mutation-state'?: Linter.RuleEntry<[]>
   /**
-   * Disallows duplicate 'key' on elements in the same array or a list of 'children'.
+   * Prevents duplicate 'key' props on sibling elements when rendering lists.
    * @see https://eslint-react.xyz/docs/rules/no-duplicate-key
    */
   '@eslint-react/no-duplicate-key'?: Linter.RuleEntry<[]>
@@ -335,12 +335,12 @@ export interface RuleOptions {
    */
   '@eslint-react/no-leaked-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
-   * Enforces that all components have a 'displayName' that can be used in devtools.
+   * Enforces that all components have a 'displayName' that can be used in DevTools.
    * @see https://eslint-react.xyz/docs/rules/no-missing-component-display-name
    */
   '@eslint-react/no-missing-component-display-name'?: Linter.RuleEntry<[]>
   /**
-   * Enforces that all contexts have a 'displayName' that can be used in devtools.
+   * Enforces that all contexts have a 'displayName' that can be used in DevTools.
    * @see https://eslint-react.xyz/docs/rules/no-missing-context-display-name
    */
   '@eslint-react/no-missing-context-display-name'?: Linter.RuleEntry<[]>
@@ -395,7 +395,7 @@ export interface RuleOptions {
    */
   '@eslint-react/no-string-refs'?: Linter.RuleEntry<[]>
   /**
-   * Disallows unnecessary 'key' props on elements.
+   * Disallows unnecessary 'key' props on nested child elements when rendering lists.
    * @see https://eslint-react.xyz/docs/rules/no-unnecessary-key
    */
   '@eslint-react/no-unnecessary-key'?: Linter.RuleEntry<[]>
