@@ -1,6 +1,6 @@
 # @dhzh/eslint-config
 
-[![npm](https://img.shields.io/npm/v/@dhzh/eslint-config?color=444&label=)](https://npmjs.com/package/@antfu/eslint-config)
+[![npm](https://img.shields.io/npm/v/@dhzh/eslint-config?color=444&label=)](https://www.npmjs.com/package/@dhzh/eslint-config)
 
 I use ESLint to format and lint my code:
 
