@@ -105,7 +105,7 @@
     "bundle-require": "^5.1.0",
     "eslint": "^9.39.2",
     "eslint-typegen": "^2.3.0",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^16.3.2",
     "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4.1.18",
     "tsup": "^8.5.1",
