@@ -60,7 +60,7 @@
     }
   },
   "dependencies": {
-    "@clack/prompts": "^1.0.0",
+    "@clack/prompts": "^1.1.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.6.0",
     "@eslint-react/eslint-plugin": "^2.8.1",
     "@eslint/js": "^9.39.2",
