@@ -64,7 +64,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.6.0",
     "@eslint-react/eslint-plugin": "^2.8.1",
     "@eslint/js": "^9.39.2",
-    "@stylistic/eslint-plugin": "^5.7.1",
+    "@stylistic/eslint-plugin": "^5.9.0",
     "@unocss/eslint-config": "66.6.0",
     "ansis": "^4.2.0",
     "cac": "^6.7.14",
