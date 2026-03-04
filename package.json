@@ -94,7 +94,7 @@
     "local-pkg": "^1.1.2",
     "toml-eslint-parser": "^1.0.3",
     "typescript-eslint": "^8.54.0",
-    "vue-eslint-parser": "^10.2.0"
+    "vue-eslint-parser": "^10.4.0"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.4.2",
