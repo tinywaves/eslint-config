@@ -101,7 +101,7 @@
     "@prettier/plugin-xml": "^3.4.2",
     "@types/eslint-plugin-tailwindcss": "^3.17.0",
     "@types/node": "^22.19.7",
-    "bumpp": "^10.4.0",
+    "bumpp": "^10.4.1",
     "bundle-require": "^5.1.0",
     "eslint": "^9.39.2",
     "eslint-typegen": "^2.3.0",
