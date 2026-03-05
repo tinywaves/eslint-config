@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "config:recommended"
+  ],
+  "rangeStrategy": "bump",
+  "prHourlyLimit": 10,
+  "prConcurrentLimit": 20,
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["patch"],
+      "groupName": "all patch updates"
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "groupName": "all minor updates"
+    }
+  ]
+}
