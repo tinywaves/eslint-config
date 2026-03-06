@@ -65,7 +65,7 @@
     "@eslint-react/eslint-plugin": "^2.8.1",
     "@eslint/js": "^9.39.3",
     "@stylistic/eslint-plugin": "^5.7.1",
-    "@unocss/eslint-config": "66.6.5",
+    "@unocss/eslint-config": "66.6.6",
     "ansis": "^4.2.0",
     "cac": "^6.7.14",
     "eslint-merge-processors": "^2.0.0",
