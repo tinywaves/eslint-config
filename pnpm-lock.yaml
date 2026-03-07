@@ -30,8 +30,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       cac:
-        specifier: ^6.7.14
-        version: 6.7.14
+        specifier: ^7.0.0
+        version: 7.0.0
       eslint-merge-processors:
         specifier: ^2.0.0
         version: 2.0.0(eslint@9.39.4(jiti@2.6.1))

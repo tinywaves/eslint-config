@@ -67,7 +67,7 @@
     "@stylistic/eslint-plugin": "^5.10.0",
     "@unocss/eslint-config": "66.6.6",
     "ansis": "^4.2.0",
-    "cac": "^6.7.14",
+    "cac": "^7.0.0",
     "eslint-merge-processors": "^2.0.0",
     "eslint-plugin-antfu": "^3.2.2",
     "eslint-plugin-format": "^1.5.0",
