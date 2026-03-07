@@ -1,11 +1,10 @@
 import pluginJsonc from 'eslint-plugin-jsonc';
 import pluginPackageJson from 'eslint-plugin-package-json';
-import pluginHyoban from 'eslint-plugin-hyoban';
 import { RULE_PREFIX, GLOB_JSON, GLOB_JSONC, GLOB_JSON5, GLOB_PACKAGE_JSON } from '../consts';
 import type { Linter } from 'eslint';
-import type { IJsonConfigsOptions } from '../types';
+import type { IJsonConfigsOptions, LinterConfig } from '../types';
 
-export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
+export function json(options: IJsonConfigsOptions = {}): LinterConfig[] {
   const {
     overrides = { core: {}, packageJson: {} },
     indent = 2,
@@ -31,9 +30,6 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
     {
       name: `${RULE_PREFIX}/json/customize`,
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
-      plugins: {
-        hyoban: pluginHyoban,
-      },
       rules: {
         'jsonc/array-bracket-spacing': ['error', 'never'],
         'jsonc/comma-dangle': ['error', 'never'],
@@ -89,7 +85,6 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
         'jsonc/space-unary-ops': 'error',
         'jsonc/valid-json-number': 'error',
         'jsonc/vue-custom-block/no-parsing-error': 'error',
-        'hyoban/jsonc-inline-spacing': 'error',
         ...overrides.core,
       },
     },

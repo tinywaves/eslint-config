@@ -1,11 +1,9 @@
 import pluginStylistic from '@stylistic/eslint-plugin';
 import pluginAntfu from 'eslint-plugin-antfu';
-import pluginHyoban from 'eslint-plugin-hyoban';
 import { RULE_PREFIX, GLOB_JSX_SRC, GLOB_SRC, GLOB_JSON_SRC, GLOB_VUE } from '../consts';
-import type { Linter } from 'eslint';
-import type { IStylisticConfigsOptions } from '../types';
+import type { IStylisticConfigsOptions, LinterConfig } from '../types';
 
-export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config[] {
+export function stylistic(options: IStylisticConfigsOptions = {}): LinterConfig[] {
   const { overrides = {} } = options;
 
   const jsxIgnoreNodes = [
@@ -62,7 +60,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
       plugins: {
         stylistic: pluginStylistic,
         antfu: pluginAntfu,
-        hyoban: pluginHyoban,
       },
       rules: {
         'curly': ['error', 'all'],
@@ -175,7 +172,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
         'antfu/consistent-list-newline': 'error',
         'antfu/top-level-function': 'off',
         'antfu/curly': 'off',
-        'hyoban/prefer-early-return': 'error',
         ...overrides,
       },
     },
@@ -184,7 +180,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
       files: [...GLOB_JSX_SRC, GLOB_VUE],
       plugins: {
         stylistic: pluginStylistic,
-        hyoban: pluginHyoban,
       },
       rules: {
         'stylistic/indent': [
@@ -256,7 +251,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): Linter.Config
         ],
         'stylistic/jsx-sort-props': 'off',
         'stylistic/jsx-indent-props': 'off',
-        'hyoban/jsx-attribute-spacing': 'error',
         ...overrides,
       },
     },

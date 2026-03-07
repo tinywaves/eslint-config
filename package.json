@@ -36,7 +36,7 @@
     "dist"
   ],
   "engines": {
-    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+    "node": "^22.13.0 || >=24"
   },
   "scripts": {
     "build": "pnpm run typegen && tsup --clean --dts",
@@ -71,7 +71,6 @@
     "eslint-merge-processors": "^2.0.0",
     "eslint-plugin-antfu": "^3.2.2",
     "eslint-plugin-format": "^2.0.1",
-    "eslint-plugin-hyoban": "^0.13.3",
     "eslint-plugin-import-x": "^4.16.1",
     "eslint-plugin-jsonc": "^3.1.1",
     "eslint-plugin-n": "^17.24.0",
