@@ -71,14 +71,6 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
             enforceSetterName: true,
           },
         ],
-        '@eslint-react/naming-convention/filename-extension': [
-          'warn',
-          {
-            allow: 'as-needed',
-            extensions: ['.jsx', '.tsx'],
-            ignoreFilesWithoutCode: true,
-          },
-        ],
         '@eslint-react/naming-convention/context-name': 'warn',
         ...(
           language === 'typescript'
