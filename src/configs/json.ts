@@ -1,6 +1,5 @@
 import pluginJsonc from 'eslint-plugin-jsonc';
 import pluginPackageJson from 'eslint-plugin-package-json';
-import parserJsonc from 'jsonc-eslint-parser';
 import pluginHyoban from 'eslint-plugin-hyoban';
 import { RULE_PREFIX, GLOB_JSON, GLOB_JSONC, GLOB_JSON5, GLOB_PACKAGE_JSON } from '../consts';
 import type { Linter } from 'eslint';
@@ -14,28 +13,21 @@ export function json(options: IJsonConfigsOptions = {}): Linter.Config[] {
   } = options;
 
   return [
-    ...pluginJsonc.configs['flat/recommended-with-json'].map((item) => ({
+    ...pluginJsonc.configs['recommended-with-json'].map((item) => ({
       ...item,
       name: `${RULE_PREFIX}/json/shared/json`,
       files: [GLOB_JSON],
     })),
-    ...pluginJsonc.configs['flat/recommended-with-jsonc'].map((item) => ({
+    ...pluginJsonc.configs['recommended-with-jsonc'].map((item) => ({
       ...item,
       name: `${RULE_PREFIX}/json/shared/jsonc`,
       files: [GLOB_JSONC],
     })),
-    ...pluginJsonc.configs['flat/recommended-with-json5'].map((item) => ({
+    ...pluginJsonc.configs['recommended-with-json5'].map((item) => ({
       ...item,
       name: `${RULE_PREFIX}/json/shared/json5`,
       files: [GLOB_JSON5],
     })),
-    {
-      name: `${RULE_PREFIX}/json/shared`,
-      files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
-      languageOptions: {
-        parser: parserJsonc,
-      },
-    },
     {
       name: `${RULE_PREFIX}/json/customize`,
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],

@@ -12,7 +12,7 @@ I use ESLint to format and lint my code:
 | [typescript](./src/configs/typescript.ts) | [`typescript-eslint`](https://typescript-eslint.io/) |
 | [javascript](./src/configs/javascript.ts) | [`@eslint/js`](https://eslint.org/docs/latest/rules) |
 | [node](./src/configs/node.ts) | [`eslint-plugin-n`](https://github.com/eslint-community/eslint-plugin-n) |
-| [json](./src/configs/json.ts) | [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/) [`eslint-plugin-package-json`](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json) [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser) |
+| [json](./src/configs/json.ts) | [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/) [`eslint-plugin-package-json`](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json) |
 | [unicorn](./src/configs/unicorn.ts) | [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn) |
 | [imports](./src/configs/imports.ts) | [`eslint-plugin-import-x`](https://www.npmjs.com/package/eslint-plugin-import-x) [`eslint-plugin-unused-imports`](https://github.com/sweepline/eslint-plugin-unused-imports) [`eslint-plugin-simple-import-sort`](https://github.com/lydell/eslint-plugin-simple-import-sort) |
 | [formatters](./src/configs/formatters.ts) | [`eslint-plugin-format`](https://github.com/antfu/eslint-plugin-format) [`@prettier/plugin-xml`](https://github.com/prettier/plugin-xml) | html/css/graphql/xml/svg |
