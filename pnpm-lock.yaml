@@ -42,8 +42,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-hyoban:
-        specifier: ^0.13.3
-        version: 0.13.3(eslint@9.39.4(jiti@2.6.1))
+        specifier: ^0.14.0
+        version: 0.14.0(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-import-x:
         specifier: ^4.16.1
         version: 4.16.1(@typescript-eslint/utils@8.56.1(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.4(jiti@2.6.1))
@@ -1638,8 +1638,8 @@ packages:
     peerDependencies:
       eslint: ^8.40.0 || ^9.0.0 || ^10.0.0
 
-  eslint-plugin-hyoban@0.13.3:
-    resolution: {integrity: sha512-M3gae1C14RTwmy/kJDzLrz9oA1VppkPs+vu8dU4NHwgIuru7X+QxVmi7jJPI/picSEwE7Isd3PfMpv8KmJtUnw==}
+  eslint-plugin-hyoban@0.14.0:
+    resolution: {integrity: sha512-E/HfLDCAJDusbAXN29+DVEk7sR6MxIAyC0dkZ+0lQwnU85mseEzJ2g7stc9JmzxibUB+q6m4eJbC+WvvRtNddA==}
     peerDependencies:
       eslint: '*'
 
@@ -1879,12 +1879,6 @@ packages:
 
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
-
-  fast-string-truncated-width@3.0.3:
-    resolution: {integrity: sha512-0jjjIEL6+0jag3l2XWWizO64/aZVtpiGE3t0Zgqxv0DPuxiMjvB3M24fCyhZUO4KomJQPj3LTSUnDP3GpdwC0g==}
-
-  fast-string-width@3.0.2:
-    resolution: {integrity: sha512-gX8LrtNEI5hq8DVUfRQMbr5lpaS4nMIWV+7XEbXk2b8kiQIizgnlr12B4dA3ZEx3308ze0O4Q1R+cHts8kyUJg==}
 
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
@@ -4176,10 +4170,9 @@ snapshots:
       prettier: 3.8.1
       synckit: 0.11.12
 
-  eslint-plugin-hyoban@0.13.3(eslint@9.39.4(jiti@2.6.1)):
+  eslint-plugin-hyoban@0.14.0(eslint@9.39.4(jiti@2.6.1)):
     dependencies:
       eslint: 9.39.4(jiti@2.6.1)
-      fast-string-width: 3.0.2
 
   eslint-plugin-import-x@4.16.1(@typescript-eslint/utils@8.56.1(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.4(jiti@2.6.1)):
     dependencies:
@@ -4571,12 +4564,6 @@ snapshots:
   fast-json-stable-stringify@2.1.0: {}
 
   fast-levenshtein@2.0.6: {}
-
-  fast-string-truncated-width@3.0.3: {}
-
-  fast-string-width@3.0.2:
-    dependencies:
-      fast-string-truncated-width: 3.0.3
 
   fastq@1.17.1:
     dependencies:
