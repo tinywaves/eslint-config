@@ -52,11 +52,10 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
       name: `${RULE_PREFIX}/react/core/customize`,
       files: GLOB_SRC,
       rules: {
-        '@eslint-react/jsx-dollar': 'warn',
         '@eslint-react/no-missing-context-display-name': 'warn',
         '@eslint-react/no-missing-component-display-name': 'off',
-        '@eslint-react/dom/no-hydrate': 'error',
-        '@eslint-react/no-useless-fragment': [
+        '@eslint-react/dom-no-hydrate': 'error',
+        '@eslint-react/jsx-no-useless-fragment': [
           'warn',
           {
             allowEmptyFragment: true,
@@ -64,14 +63,7 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
           },
         ],
         '@eslint-react/no-unnecessary-use-prefix': 'warn',
-        '@eslint-react/naming-convention/use-state': [
-          'warn',
-          {
-            enforceAssignment: true,
-            enforceSetterName: true,
-          },
-        ],
-        '@eslint-react/naming-convention/context-name': 'warn',
+        '@eslint-react/naming-convention-context-name': 'warn',
         ...(
           language === 'typescript'
             ? {
