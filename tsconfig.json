@@ -5,6 +5,7 @@
     "moduleResolution": "Bundler",
     "strict": true,
     "esModuleInterop": true,
+    "types": ["node"],
     "skipLibCheck": true
   },
   "include": ["**/*.ts"]

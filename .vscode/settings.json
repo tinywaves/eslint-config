@@ -101,5 +101,6 @@
     "cli",
     "language-options",
     "react"
-  ]
+  ],
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }
