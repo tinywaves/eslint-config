@@ -95,7 +95,7 @@
     "vue-eslint-parser": "^10.4.0"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^1.5.0",
+    "@eslint/config-inspector": "^2.0.0",
     "@prettier/plugin-xml": "^3.4.2",
     "@types/eslint-plugin-tailwindcss": "^3.17.0",
     "@types/node": "^24.12.0",
