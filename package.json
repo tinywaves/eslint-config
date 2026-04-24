@@ -1,7 +1,7 @@
 {
   "name": "@dhzh/eslint-config",
   "type": "module",
-  "version": "1.27.0",
+  "version": "1.27.1",
   "packageManager": "pnpm@10.33.2",
   "description": "tinywaves's ESLint config",
   "author": {
