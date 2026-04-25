@@ -2,52 +2,65 @@
 
 [![npm](https://img.shields.io/npm/v/@dhzh/eslint-config?color=444&label=)](https://www.npmjs.com/package/@dhzh/eslint-config)
 
-I use ESLint to format and lint my code:
+An ESLint flat config preset for TypeScript-first projects with built-in support for React, Vue, JSON, YAML, TOML, Tailwind CSS, UnoCSS, and formatting rules.
 
-|  |  |  |
+## Included Configs
+
+| Config | Source | Powered by |
 |---|---|---|
-| [react](./src/configs/react.ts) | [`ESLint React`](https://eslint-react.xyz/) [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) [`eslint-plugin-react-refresh`](https://github.com/ArnaudBarre/eslint-plugin-react-refresh) [`eslint-plugin-react-compiler`](https://www.npmjs.com/package/eslint-plugin-react-compiler) [`eslint-plugin-react-google-translate`](https://www.npmjs.com/package/eslint-plugin-react-google-translate) |
-| [vue](./src/configs/vue.ts) | [`eslint-plugin-vue`](https://eslint.vuejs.org/) [`vue-eslint-parser`](https://www.npmjs.com/package/vue-eslint-parser) [`eslint-processor-vue-blocks`](https://github.com/antfu/eslint-processor-vue-blocks) |
-| [stylistic](./src/configs/stylistic.ts) | [`ESLint Stylistic`](https://eslint.style/) [`eslint-plugin-antfu`](https://github.com/antfu/eslint-plugin-antfu) |
-| [typescript](./src/configs/typescript.ts) | [`typescript-eslint`](https://typescript-eslint.io/) |
-| [javascript](./src/configs/javascript.ts) | [`@eslint/js`](https://eslint.org/docs/latest/rules) |
-| [node](./src/configs/node.ts) | [`eslint-plugin-n`](https://github.com/eslint-community/eslint-plugin-n) |
-| [json](./src/configs/json.ts) | [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/) [`eslint-plugin-package-json`](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json) |
-| [unicorn](./src/configs/unicorn.ts) | [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn) |
-| [imports](./src/configs/imports.ts) | [`eslint-plugin-import-x`](https://www.npmjs.com/package/eslint-plugin-import-x) [`eslint-plugin-unused-imports`](https://github.com/sweepline/eslint-plugin-unused-imports) [`eslint-plugin-simple-import-sort`](https://github.com/lydell/eslint-plugin-simple-import-sort) |
-| [formatters](./src/configs/formatters.ts) | [`eslint-plugin-format`](https://github.com/antfu/eslint-plugin-format) [`@prettier/plugin-xml`](https://github.com/prettier/plugin-xml) | html/css/graphql/xml/svg |
-| [tailwindcss](./src/configs/tailwindcss.ts) | [`eslint-plugin-tailwindcss`](https://github.com/francoismassart/eslint-plugin-tailwindcss) |
-| [unocss](./src/configs/unocss.ts) | [`@unocss/eslint-config`](https://unocss.dev/integrations/eslint) |
-| [yml](./src/configs/yml.ts) | [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/) [`yaml-eslint-parser`](https://ota-meshi.github.io/yaml-eslint-parser/) |
-| [toml](./src/configs/toml.ts) | [`eslint-plugin-toml`](https://ota-meshi.github.io/eslint-plugin-toml/) [`toml-eslint-parser`](https://ota-meshi.github.io/toml-eslint-parser/) |
-| testing | [`eslint-plugin-vitest`](https://github.com/vitest-dev/eslint-plugin-vitest) [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest) [`eslint-plugin-no-only-tests`](https://github.com/levibuzolic/eslint-plugin-no-only-tests) |
-| [regexp](./src/configs/regexp.ts) | [`eslint-plugin-regexp`](https://ota-meshi.github.io/eslint-plugin-regexp/) |
-| [eslint-comments](./src/configs/eslint-comments.ts) | [`eslint-plugin-eslint-comments`](https://eslint-community.github.io/eslint-plugin-eslint-comments/) |
-| markdown | [`@eslint/markdown`](https://github.com/eslint/markdown) |
-| jsdoc | [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc) |
+| React | [src/configs/react.ts](./src/configs/react.ts) | [`@eslint-react/eslint-plugin`](https://www.npmjs.com/package/@eslint-react/eslint-plugin) [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) [`eslint-plugin-react-refresh`](https://www.npmjs.com/package/eslint-plugin-react-refresh) [`eslint-plugin-react-compiler`](https://www.npmjs.com/package/eslint-plugin-react-compiler) [`eslint-plugin-react-google-translate`](https://www.npmjs.com/package/eslint-plugin-react-google-translate) |
+| Vue | [src/configs/vue.ts](./src/configs/vue.ts) | [`@eslint/js`](https://www.npmjs.com/package/@eslint/js) [`typescript-eslint`](https://www.npmjs.com/package/typescript-eslint) [`eslint-plugin-vue`](https://www.npmjs.com/package/eslint-plugin-vue) [`eslint-merge-processors`](https://www.npmjs.com/package/eslint-merge-processors) [`eslint-processor-vue-blocks`](https://www.npmjs.com/package/eslint-processor-vue-blocks) |
+| Stylistic | [src/configs/stylistic.ts](./src/configs/stylistic.ts) | [`@stylistic/eslint-plugin`](https://www.npmjs.com/package/@stylistic/eslint-plugin) [`eslint-plugin-antfu`](https://www.npmjs.com/package/eslint-plugin-antfu) |
+| TypeScript | [src/configs/typescript.ts](./src/configs/typescript.ts) | [`typescript-eslint`](https://typescript-eslint.io/) |
+| JavaScript | [src/configs/javascript.ts](./src/configs/javascript.ts) | [`@eslint/js`](https://www.npmjs.com/package/@eslint/js) [`eslint-plugin-antfu`](https://www.npmjs.com/package/eslint-plugin-antfu) |
+| Node.js | [src/configs/node.ts](./src/configs/node.ts) | [`eslint-plugin-n`](https://github.com/eslint-community/eslint-plugin-n) |
+| JSON and package.json | [src/configs/json.ts](./src/configs/json.ts) | [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/) [`eslint-plugin-package-json`](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json) |
+| Unicorn | [src/configs/unicorn.ts](./src/configs/unicorn.ts) | [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn) |
+| Imports | [src/configs/imports.ts](./src/configs/imports.ts) | [`eslint-plugin-import-x`](https://www.npmjs.com/package/eslint-plugin-import-x) [`eslint-plugin-unused-imports`](https://github.com/sweepline/eslint-plugin-unused-imports) [`eslint-plugin-simple-import-sort`](https://github.com/lydell/eslint-plugin-simple-import-sort) [`eslint-plugin-antfu`](https://github.com/antfu/eslint-plugin-antfu) |
+| Format | [src/configs/format.ts](./src/configs/format.ts) | [`eslint-plugin-format`](https://www.npmjs.com/package/eslint-plugin-format) [`@prettier/plugin-xml`](https://www.npmjs.com/package/@prettier/plugin-xml) |
+| Tailwind CSS | [src/configs/tailwindcss.ts](./src/configs/tailwindcss.ts) | [`eslint-plugin-tailwindcss`](https://github.com/francoismassart/eslint-plugin-tailwindcss) |
+| UnoCSS | [src/configs/unocss.ts](./src/configs/unocss.ts) | [`@unocss/eslint-config`](https://unocss.dev/integrations/eslint) |
+| YAML | [src/configs/yml.ts](./src/configs/yml.ts) | [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/) |
+| TOML | [src/configs/toml.ts](./src/configs/toml.ts) | [`eslint-plugin-toml`](https://www.npmjs.com/package/eslint-plugin-toml) [`toml-eslint-parser`](https://www.npmjs.com/package/toml-eslint-parser) |
+| RegExp | [src/configs/regexp.ts](./src/configs/regexp.ts) | [`eslint-plugin-regexp`](https://ota-meshi.github.io/eslint-plugin-regexp/) |
+| ESLint comments | [src/configs/eslint-comments.ts](./src/configs/eslint-comments.ts) | [`@eslint-community/eslint-plugin-eslint-comments`](https://eslint-community.github.io/eslint-plugin-eslint-comments/) |
+| Testing | Planned | [`eslint-plugin-vitest`](https://github.com/vitest-dev/eslint-plugin-vitest) [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest) [`eslint-plugin-no-only-tests`](https://github.com/levibuzolic/eslint-plugin-no-only-tests) |
+| Markdown | Planned | [`@eslint/markdown`](https://github.com/eslint/markdown) |
+| JSDoc | Planned | [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc) |
+| Ignores and language options | [src/configs/ignores.ts](./src/configs/ignores.ts), [src/configs/language-options.ts](./src/configs/language-options.ts) | Built-in config composition |
 
-## Usage
+## Requirements
 
-> Requires ESLint v9.5.0+
-> This package is ESM-only.
+- Node.js `^22.13.0 || >=24`
+- ESLint `^10.2.1`
+- ESM-only package consumption
 
-### Starter Wizard
+## Quick Start
 
-We provided a CLI tool to help you set up your project, or migrate from the legacy config to the new flat config with one command.
+### CLI Wizard
+
+Use the CLI to create or migrate your flat config setup:
 
 ```shell
 pnpm dlx @dhzh/eslint-config@latest
 ```
 
-### Manual Install
+The wizard updates:
 
-If you prefer to set up manually:
+- `package.json`
+- `eslint.config.*`
+- `.vscode/settings.json`
+- `.npmignore`
+
+### Manual Setup
+
+Install the package and ESLint:
 
 ```bash
 pnpm i -D eslint @dhzh/eslint-config
 ```
 
-And create `eslint.config.mjs` in your project root:
+Then create `eslint.config.mjs`:
 
 ```js
 // eslint.config.mjs
@@ -55,6 +68,34 @@ import { defineConfig } from '@dhzh/eslint-config';
 
 export default defineConfig();
 ```
+
+## Customization
+
+`defineConfig()` accepts `configs`, `ignorePatterns`, and `sourceType`.
+
+```js
+// eslint.config.mjs
+import { defineConfig } from '@dhzh/eslint-config';
+
+export default defineConfig({
+  ignorePatterns: ['dist', 'coverage'],
+  configs: {
+    json: {
+      packageJsonRequireType: false,
+    },
+    yml: {
+      quotes: 'double',
+    },
+    imports: {
+      closeOrder: false,
+    },
+  },
+});
+```
+
+For the full option surface, check [src/types/index.ts](./src/types/index.ts) and the config implementations under [src/configs](./src/configs).
+
+Rows marked as `Planned` are not wired into the current published config yet.
 
 ## License
 
