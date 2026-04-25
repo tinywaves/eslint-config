@@ -6,5 +6,4 @@ export default defineConfig({
     'src/cli/index.ts',
   ],
   shims: true,
-  format: ['esm', 'cjs'],
 });

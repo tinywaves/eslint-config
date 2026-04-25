@@ -29,6 +29,7 @@ I use ESLint to format and lint my code:
 ## Usage
 
 > Requires ESLint v9.5.0+
+> This package is ESM-only.
 
 ### Starter Wizard
 
