@@ -1,3 +1,6 @@
+import process from 'node:process';
+import { getPackagesSync } from '@manypkg/get-packages';
+import { isPackageExists } from 'local-pkg';
 import type { RuleConfig, RuleLevel } from './types';
 
 export const parserPlain = {
@@ -56,3 +59,20 @@ export const mergeRule = (...rules: RuleConfig[]): RuleConfig => {
 
   return [finalLevel!, finalOptions];
 };
+
+export function isPackageAvailable(name: string, cwd: string = process.cwd()): boolean {
+  if (isPackageExists(name, { paths: [cwd] })) {
+    return true;
+  }
+
+  try {
+    return getPackagesSync(cwd).packages.some((pkg) => (
+      name in (pkg.packageJson.dependencies || {})
+      || name in (pkg.packageJson.devDependencies || {})
+      || name in (pkg.packageJson.peerDependencies || {})
+      || name in (pkg.packageJson.optionalDependencies || {})
+    ));
+  } catch {
+    return false;
+  }
+}

@@ -3,10 +3,9 @@ import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginReactRefresh from 'eslint-plugin-react-refresh';
 import pluginReactCompiler from 'eslint-plugin-react-compiler';
 import pluginReactGoogleTranslate from 'eslint-plugin-react-google-translate';
-import { isPackageExists } from 'local-pkg';
 import { defineConfig } from 'eslint/config';
 import { GLOB_SRC, RULE_PREFIX, GLOB_JSX_SRC } from '../consts';
-import { mergeRule } from '../utils';
+import { isPackageAvailable, mergeRule } from '../utils';
 import type { ESLint } from 'eslint';
 import type { IReactConfigsOptions, LinterConfig } from '../types';
 
@@ -36,11 +35,11 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
     ? pluginReact.configs['recommended-type-checked']
     : pluginReact.configs.recommended;
 
-  const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some((i) => isPackageExists(i));
-  const isUsingRemix = RemixPackages.some((i) => isPackageExists(i));
-  const isUsingReactRouter = ReactRouterPackages.some((i) => isPackageExists(i));
-  const isUsingNext = NextJsPackages.some((i) => isPackageExists(i));
-  const isUsingExpo = ExpoPackages.some((i) => isPackageExists(i));
+  const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some((i) => isPackageAvailable(i));
+  const isUsingRemix = RemixPackages.some((i) => isPackageAvailable(i));
+  const isUsingReactRouter = ReactRouterPackages.some((i) => isPackageAvailable(i));
+  const isUsingNext = NextJsPackages.some((i) => isPackageAvailable(i));
+  const isUsingExpo = ExpoPackages.some((i) => isPackageAvailable(i));
 
   return [
     {
