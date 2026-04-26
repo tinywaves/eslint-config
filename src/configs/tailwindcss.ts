@@ -1,5 +1,5 @@
 import pluginTailwindcss from 'eslint-plugin-tailwindcss';
-import { isPackageExists } from 'local-pkg';
+import { isPackageAvailable } from '../utils';
 import { RULE_PREFIX, GLOB_SRC } from '../consts';
 import type { Linter } from 'eslint';
 import type { ITailwindcssConfigsOptions } from '../types';
@@ -7,7 +7,7 @@ import type { ITailwindcssConfigsOptions } from '../types';
 export function tailwindcss(options: ITailwindcssConfigsOptions = {}): Linter.Config[] {
   const { overrides = {} } = options;
 
-  return isPackageExists('tailwindcss')
+  return isPackageAvailable('tailwindcss')
     ? [
         ...pluginTailwindcss.configs['flat/recommended'].map((item) => ({
           ...item,

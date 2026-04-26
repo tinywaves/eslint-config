@@ -1,5 +1,5 @@
 import configUnocss from '@unocss/eslint-config/flat';
-import { isPackageExists } from 'local-pkg';
+import { isPackageAvailable } from '../utils';
 import { GLOB_SRC, RULE_PREFIX } from '../consts';
 import type { Linter } from 'eslint';
 import type { IUnocssConfigsOptions } from '../types';
@@ -7,7 +7,7 @@ import type { IUnocssConfigsOptions } from '../types';
 export function unocss(options: IUnocssConfigsOptions = {}): Linter.Config[] {
   const { overrides = {} } = options;
 
-  const isUnocssEnabled = isPackageExists('unocss');
+  const isUnocssEnabled = isPackageAvailable('unocss');
 
   if (!isUnocssEnabled) {
     return [];
