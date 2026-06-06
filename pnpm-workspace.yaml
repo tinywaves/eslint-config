@@ -2,3 +2,5 @@ allowBuilds:
   esbuild: true
   simple-git-hooks: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@types/node@24.13.1'
