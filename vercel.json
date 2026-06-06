@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nuxtjs",
+  "buildCommand": "pnpm run build:inspector",
+  "outputDirectory": "dist/__eslint-config-inspector",
+  "installCommand": "pnpm i"
+}
