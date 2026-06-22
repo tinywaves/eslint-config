@@ -19,6 +19,6 @@ jobs:
         with:
           node-version: lts/*
 
-      - run: npx changelogithub
+      - run: pnpm exec changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

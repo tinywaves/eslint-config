@@ -52,8 +52,8 @@
   },
   "scripts": {
     "build": "pnpm run typegen && tsdown --clean --dts",
-    "build:inspector": "pnpm run build && npx @eslint/config-inspector build",
-    "dev": "pnpm run typegen && npx @eslint/config-inspector --config eslint.config.ts",
+    "build:inspector": "pnpm run build && pnpm exec @eslint/config-inspector build",
+    "dev": "pnpm run typegen && pnpm exec @eslint/config-inspector --config eslint.config.ts",
     "lint": "eslint",
     "lint-fix": "eslint --fix .",
     "prepack": "pnpm run build",
@@ -114,6 +114,7 @@
     "@typescript-eslint/types": "^8.61.1",
     "bumpp": "^11.1.0",
     "bundle-require": "^5.1.0",
+    "changelogithub": "^14.0.0",
     "eslint": "^10.5.0",
     "eslint-typegen": "^2.3.1",
     "lint-staged": "^17.0.8",
