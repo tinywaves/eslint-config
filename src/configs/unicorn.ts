@@ -1,9 +1,8 @@
 import pluginUnicorn from 'eslint-plugin-unicorn';
 import { GLOB_SRC, RULE_PREFIX } from '../consts';
-import type { Linter } from 'eslint';
-import type { IUnicornConfigsOptions } from '../types';
+import type { IUnicornConfigsOptions, LinterConfig } from '../types';
 
-export function unicorn(options: IUnicornConfigsOptions = {}): Linter.Config[] {
+export function unicorn(options: IUnicornConfigsOptions = {}): LinterConfig[] {
   const { overrides = {} } = options;
 
   return [
@@ -18,7 +17,7 @@ export function unicorn(options: IUnicornConfigsOptions = {}): Linter.Config[] {
       rules: {
         // https://github.com/sindresorhus/eslint-plugin-unicorn/issues/1109#issuecomment-782689255
         'unicorn/consistent-destructuring': 'off',
-        'unicorn/prevent-abbreviations': 'off',
+        'unicorn/name-replacements': 'off',
         // https://github.com/orgs/web-infra-dev/discussions/10
         'unicorn/prefer-top-level-await': 'off',
         'unicorn/no-unreadable-array-destructuring': 'off',
