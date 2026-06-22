@@ -18,7 +18,7 @@ An ESLint flat config preset for TypeScript-first projects with built-in support
 | Unicorn | [src/configs/unicorn.ts](./src/configs/unicorn.ts) | [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn) |
 | Imports | [src/configs/imports.ts](./src/configs/imports.ts) | [`eslint-plugin-import-x`](https://www.npmjs.com/package/eslint-plugin-import-x) [`eslint-plugin-unused-imports`](https://github.com/sweepline/eslint-plugin-unused-imports) [`eslint-plugin-simple-import-sort`](https://github.com/lydell/eslint-plugin-simple-import-sort) [`eslint-plugin-antfu`](https://github.com/antfu/eslint-plugin-antfu) |
 | Format | [src/configs/format.ts](./src/configs/format.ts) | [`eslint-plugin-format`](https://www.npmjs.com/package/eslint-plugin-format) [`@prettier/plugin-xml`](https://www.npmjs.com/package/@prettier/plugin-xml) |
-| Tailwind CSS | [src/configs/tailwindcss.ts](./src/configs/tailwindcss.ts) | [`eslint-plugin-tailwindcss`](https://github.com/francoismassart/eslint-plugin-tailwindcss) |
+| Tailwind CSS | [src/configs/tailwindcss.ts](./src/configs/tailwindcss.ts) | [`eslint-plugin-better-tailwindcss`](https://github.com/schoero/eslint-plugin-better-tailwindcss) |
 | UnoCSS | [src/configs/unocss.ts](./src/configs/unocss.ts) | [`@unocss/eslint-config`](https://unocss.dev/integrations/eslint) |
 | YAML | [src/configs/yml.ts](./src/configs/yml.ts) | [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/) |
 | TOML | [src/configs/toml.ts](./src/configs/toml.ts) | [`eslint-plugin-toml`](https://www.npmjs.com/package/eslint-plugin-toml) [`toml-eslint-parser`](https://www.npmjs.com/package/toml-eslint-parser) |

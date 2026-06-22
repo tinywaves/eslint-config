@@ -2,7 +2,6 @@
   "name": "@dhzh/eslint-config",
   "type": "module",
   "version": "2.1.1",
-  "packageManager": "pnpm@11.8.0",
   "description": "tinywaves's ESLint config",
   "author": {
     "name": "Lyle Zheng",
@@ -26,6 +25,18 @@
     ".": {
       "types": "./dist/index.d.mts",
       "import": "./dist/index.mjs"
+    }
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.8.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "^26.3.1",
+      "onFail": "download"
     }
   },
   "main": "./dist/index.mjs",
@@ -72,6 +83,7 @@
     "cac": "^7.0.0",
     "eslint-merge-processors": "^2.0.0",
     "eslint-plugin-antfu": "^3.2.3",
+    "eslint-plugin-better-tailwindcss": "^4.6.0",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-import-x": "^4.16.2",
     "eslint-plugin-jsonc": "^3.2.0",
@@ -83,7 +95,6 @@
     "eslint-plugin-react-refresh": "^0.5.3",
     "eslint-plugin-regexp": "^3.1.0",
     "eslint-plugin-simple-import-sort": "^13.0.0",
-    "eslint-plugin-tailwindcss": "4.0.3",
     "eslint-plugin-toml": "^1.4.0",
     "eslint-plugin-unicorn": "^68.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
@@ -99,7 +110,6 @@
   "devDependencies": {
     "@eslint/config-inspector": "^3.0.4",
     "@prettier/plugin-xml": "^3.4.2",
-    "@types/eslint-plugin-tailwindcss": "^3.17.0",
     "@types/node": "^24.13.2",
     "@typescript-eslint/types": "^8.61.1",
     "bumpp": "^11.1.0",

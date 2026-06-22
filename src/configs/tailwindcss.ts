@@ -1,26 +1,22 @@
-import pluginTailwindcss from 'eslint-plugin-tailwindcss';
+import pluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import { isPackageAvailable } from '../utils';
 import { RULE_PREFIX, GLOB_SRC } from '../consts';
-import type { Linter } from 'eslint';
-import type { ITailwindcssConfigsOptions } from '../types';
+import type { ITailwindcssConfigsOptions, LinterConfig } from '../types';
 
-export function tailwindcss(options: ITailwindcssConfigsOptions = {}): Linter.Config[] {
+export function tailwindcss(options: ITailwindcssConfigsOptions = {}): LinterConfig[] {
   const { overrides = {} } = options;
 
   return isPackageAvailable('tailwindcss')
     ? [
-        ...pluginTailwindcss.configs['flat/recommended'].map((item) => ({
-          ...item,
-          name: `${RULE_PREFIX}/tailwindcss/shared/${item.name?.replace('tailwindcss:', '')}`,
+        {
+          ...pluginBetterTailwindcss.configs.recommended,
+          name: `${RULE_PREFIX}/tailwindcss/shared`,
           files: GLOB_SRC,
-        })) as Linter.Config[],
+        },
         {
           name: `${RULE_PREFIX}/tailwindcss/customize`,
           files: GLOB_SRC,
-          rules: {
-            'tailwindcss/no-custom-classname': 'off',
-            ...overrides,
-          },
+          rules: overrides,
         },
       ]
     : [];
