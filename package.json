@@ -35,7 +35,7 @@
     },
     "runtime": {
       "name": "node",
-      "version": "^26.3.1",
+      "version": "^24.17.0",
       "onFail": "download"
     }
   },
@@ -110,7 +110,7 @@
   "devDependencies": {
     "@eslint/config-inspector": "^3.0.4",
     "@prettier/plugin-xml": "^3.4.2",
-    "@types/node": "^26.0.0",
+    "@types/node": "^24.13.2",
     "@typescript-eslint/types": "^8.61.1",
     "bumpp": "^11.1.0",
     "bundle-require": "^5.1.0",
