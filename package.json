@@ -53,8 +53,8 @@
   },
   "scripts": {
     "build": "pnpm run typegen && tsdown --clean --dts",
-    "build:inspector": "pnpm run build && pnpm exec @eslint/config-inspector build",
-    "dev": "pnpm run typegen && pnpm exec @eslint/config-inspector --config eslint.config.ts",
+    "build:inspector": "pnpm run build && pnpm exec eslint-config-inspector build",
+    "dev": "pnpm run typegen && pnpm exec eslint-config-inspector --config eslint.config.ts",
     "lint": "eslint",
     "lint-fix": "eslint --fix .",
     "prepack": "pnpm run build",
