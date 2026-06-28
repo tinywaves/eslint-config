@@ -65,7 +65,7 @@
   },
   "peerDependencies": {
     "@prettier/plugin-xml": "^3.4.2",
-    "eslint": "^10.5.0"
+    "eslint": "^10.6.0"
   },
   "peerDependenciesMeta": {
     "@prettier/plugin-xml": {
@@ -75,7 +75,7 @@
   "dependencies": {
     "@clack/prompts": "^1.6.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
-    "@eslint-react/eslint-plugin": "^5.9.3",
+    "@eslint-react/eslint-plugin": "^5.10.0",
     "@eslint/js": "^10.0.1",
     "@manypkg/get-packages": "^3.1.0",
     "@stylistic/eslint-plugin": "^5.10.0",
@@ -116,7 +116,7 @@
     "bumpp": "^11.1.0",
     "bundle-require": "^5.1.0",
     "changelogithub": "^14.0.0",
-    "eslint": "^10.5.0",
+    "eslint": "^10.6.0",
     "eslint-typegen": "^2.3.1",
     "lint-staged": "^17.0.8",
     "simple-git-hooks": "^2.13.1",
