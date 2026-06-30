@@ -1,7 +1,7 @@
 {
   "name": "@dhzh/eslint-config",
   "type": "module",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "tinywaves's ESLint config",
   "author": {
     "name": "Lyle Zheng",
