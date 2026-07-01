@@ -79,7 +79,7 @@
     "@eslint/js": "^10.0.1",
     "@manypkg/get-packages": "^3.1.0",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@unocss/eslint-config": "66.7.2",
+    "@unocss/eslint-config": "66.7.4",
     "ansis": "^4.3.1",
     "cac": "^7.0.0",
     "eslint-merge-processors": "^2.0.0",
