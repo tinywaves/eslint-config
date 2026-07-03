@@ -45,5 +45,12 @@ export function defineConfig(options: Options = {}): Linter.Config[] {
     ...eslintComments(configs.eslintComments),
     ...disables(configs.disables),
     ...languageOptions({ sourceType }),
+    {
+      settings: {
+        node: {
+          version: '^22.13.0 || >=24',
+        },
+      },
+    },
   ];
 }
