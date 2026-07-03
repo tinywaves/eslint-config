@@ -48,7 +48,7 @@ export function defineConfig(options: Options = {}): Linter.Config[] {
     {
       settings: {
         node: {
-          version: '^22.13.0 || >=24',
+          version: '^22.23.1 || >=24',
         },
       },
     },
