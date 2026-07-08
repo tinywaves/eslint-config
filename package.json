@@ -27,11 +27,11 @@
       "import": "./dist/index.mjs"
     }
   },
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@11.10.0",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.9.0",
+      "version": "^11.10.0",
       "onFail": "download"
     },
     "runtime": {
@@ -73,9 +73,9 @@
     }
   },
   "dependencies": {
-    "@clack/prompts": "^1.6.0",
+    "@clack/prompts": "^1.7.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
-    "@eslint-react/eslint-plugin": "^5.10.0",
+    "@eslint-react/eslint-plugin": "^5.11.3",
     "@eslint/js": "^10.0.1",
     "@manypkg/get-packages": "^3.1.0",
     "@stylistic/eslint-plugin": "^5.10.0",
@@ -84,10 +84,10 @@
     "cac": "^7.0.0",
     "eslint-merge-processors": "^2.0.0",
     "eslint-plugin-antfu": "^3.2.3",
-    "eslint-plugin-better-tailwindcss": "^4.6.0",
+    "eslint-plugin-better-tailwindcss": "^4.6.1",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-import-x": "^4.17.1",
-    "eslint-plugin-jsonc": "^3.2.0",
+    "eslint-plugin-jsonc": "^3.3.0",
     "eslint-plugin-n": "^18.2.1",
     "eslint-plugin-package-json": "^1.5.0",
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
@@ -97,22 +97,22 @@
     "eslint-plugin-regexp": "^3.1.1",
     "eslint-plugin-simple-import-sort": "^13.0.0",
     "eslint-plugin-toml": "^1.4.0",
-    "eslint-plugin-unicorn": "^69.0.0",
+    "eslint-plugin-unicorn": "^71.1.0",
     "eslint-plugin-unused-imports": "^4.4.1",
     "eslint-plugin-vue": "^10.9.2",
-    "eslint-plugin-yml": "^3.5.0",
+    "eslint-plugin-yml": "^3.6.0",
     "eslint-processor-vue-blocks": "^2.0.0",
     "globals": "^17.7.0",
     "local-pkg": "^1.2.1",
     "toml-eslint-parser": "^1.0.3",
-    "typescript-eslint": "^8.62.1",
+    "typescript-eslint": "^8.63.0",
     "vue-eslint-parser": "^10.4.1"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^3.0.4",
     "@prettier/plugin-xml": "^3.4.2",
-    "@types/node": "^26.0.1",
-    "@typescript-eslint/types": "^8.62.1",
+    "@types/node": "^26.1.0",
+    "@typescript-eslint/types": "^8.63.0",
     "bumpp": "^11.1.0",
     "bundle-require": "^5.1.0",
     "changelogithub": "^14.0.0",
@@ -122,7 +122,7 @@
     "simple-git-hooks": "^2.13.1",
     "tailwindcss": "^4.3.2",
     "tsdown": "^0.22.3",
-    "tsx": "^4.22.4",
+    "tsx": "^4.23.0",
     "typescript": "^6.0.3"
   },
   "simple-git-hooks": {
