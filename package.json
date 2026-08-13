@@ -113,7 +113,7 @@
     "@prettier/plugin-xml": "^3.4.2",
     "@types/node": "^26.1.0",
     "@typescript-eslint/types": "^8.63.0",
-    "bumpp": "^11.1.0",
+    "bumpp": "^12.2.1",
     "bundle-require": "^5.1.0",
     "changelogithub": "^14.0.0",
     "eslint": "^10.6.0",
