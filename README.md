@@ -1,8 +1,18 @@
 # @dhzh/eslint-config
 
 [![npm](https://img.shields.io/npm/v/@dhzh/eslint-config?color=444&label=)](https://www.npmjs.com/package/@dhzh/eslint-config)
+[![license](https://img.shields.io/npm/l/@dhzh/eslint-config?color=444&label=license)](./LICENSE)
 
-An ESLint flat config preset for TypeScript-first projects with built-in support for React, Vue, JSON, YAML, TOML, Tailwind CSS, UnoCSS, and formatting rules.
+An opinionated ESLint flat config for TypeScript-first projects, with built-in support for React, Vue, Node.js, JSON, YAML, TOML, Tailwind CSS, UnoCSS, and formatting rules.
+
+## Highlights
+
+- Type-aware TypeScript rules powered by `typescript-eslint`.
+- React, Vue, Node.js, import, stylistic, and RegExp rules out of the box.
+- Linting for JSON, JSONC, JSON5, `package.json`, YAML, and TOML files.
+- Prettier-powered formatting for HTML, CSS, SCSS, Less, GraphQL, XML, and SVG.
+- Automatic Tailwind CSS and UnoCSS integration when detected in the project.
+- Interactive CLI for creating or migrating an ESLint setup.
 
 ## Included Configs
 
@@ -29,41 +39,53 @@ An ESLint flat config preset for TypeScript-first projects with built-in support
 | JSDoc | Planned | [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc) |
 | Ignores and language options | [src/configs/ignores.ts](./src/configs/ignores.ts), [src/configs/language-options.ts](./src/configs/language-options.ts) | Built-in config composition |
 
+Rows marked as `Planned` are not wired into the current published config yet.
+
 ## Requirements
 
-- Node.js `^22.13.0 || >=24`
-- ESLint `^10.2.1`
-- ESM-only package consumption
+- Node.js `^22.23.1 || >=24`
+- ESLint `^10.5.0`
+- ESM package consumption
 
-## Quick Start
+## Setup
 
 ### CLI Wizard
 
-Use the CLI to create or migrate your flat config setup:
+Run the wizard from the project root:
 
 ```shell
 pnpm dlx @dhzh/eslint-config@latest
 ```
 
-The wizard updates:
+The wizard:
 
-- `package.json`
-- `eslint.config.*`
-- `.vscode/settings.json`
-- `.npmignore`
+- Adds the required development dependencies and lint scripts to `package.json`.
+- Creates `eslint.config.js` for ESM packages or `eslint.config.mjs` otherwise.
+- Configures ESLint as the formatter in `.vscode/settings.json`.
+- Adds flat config files to `.npmignore`.
+- Applies the appropriate `package.json` rule when NestJS is selected.
+
+Then install the updated dependencies and lint the project:
+
+```shell
+pnpm install
+pnpm lint-fix
+```
+
+> [!IMPORTANT]
+> The wizard overwrites the target ESLint config file. Back up an existing config before running it.
 
 ### Manual Setup
 
-Install the package and ESLint:
+Install the package with ESLint:
 
-```bash
-pnpm i -D eslint @dhzh/eslint-config
+```shell
+pnpm add -D eslint @dhzh/eslint-config
 ```
 
-Then create `eslint.config.mjs`:
+Create `eslint.config.mjs`:
 
 ```js
-// eslint.config.mjs
 import { defineConfig } from '@dhzh/eslint-config';
 
 export default defineConfig();
@@ -71,16 +93,32 @@ export default defineConfig();
 
 ## Customization
 
-`defineConfig()` accepts `configs`, `ignorePatterns`, and `sourceType`.
+`defineConfig()` accepts additional ignore patterns, a source type, and options for each included config:
 
 ```js
-// eslint.config.mjs
 import { defineConfig } from '@dhzh/eslint-config';
 
 export default defineConfig({
-  ignorePatterns: ['dist', 'coverage'],
+  ignorePatterns: ['**/generated/**'],
+  sourceType: 'module',
   configs: {
+    typescript: {
+      typeSafe: true,
+      strict: true,
+      overrides: {
+        '@typescript-eslint/no-explicit-any': 'warn',
+      },
+    },
+    react: {
+      language: 'typescript',
+      overrides: {
+        hooks: {
+          'react-hooks/exhaustive-deps': 'warn',
+        },
+      },
+    },
     json: {
+      indent: 2,
       packageJsonRequireType: false,
     },
     yml: {
@@ -89,13 +127,47 @@ export default defineConfig({
     imports: {
       closeOrder: false,
     },
+    format: {
+      enable: {
+        html: true,
+        css: true,
+        graphql: false,
+        xml: false,
+        svg: false,
+      },
+      customPrettierOptions: {
+        printWidth: 100,
+      },
+    },
   },
 });
 ```
 
-For the full option surface, check [src/types/index.ts](./src/types/index.ts) and the config implementations under [src/configs](./src/configs).
+### Options
 
-Rows marked as `Planned` are not wired into the current published config yet.
+| Option | Default | Description |
+|---|---|---|
+| `ignorePatterns` | `[]` | Additional patterns appended to the built-in ignores. |
+| `sourceType` | `'module'` | Use `'module'` or `'commonjs'` for source files. |
+| `react.language` | `'typescript'` | Selects the TypeScript or JavaScript React preset. |
+| `typescript.typeSafe` | `false` | Keeps unsafe TypeScript rules disabled unless enabled. |
+| `typescript.strict` | `false` | Keeps selected strict rules disabled unless enabled. |
+| `json.indent` | `2` | Sets JSON, JSONC, and JSON5 indentation. |
+| `json.packageJsonRequireType` | `true` | Requires a `type` field in `package.json`. |
+| `imports.closeOrder` | `true` | Set to `false` to enable `simple-import-sort`. |
+| `format.enable` | All formats enabled | Accepts `false` to disable formatting. When passing an object, explicitly enable each desired format. |
+| `format.customPrettierOptions` | `{}` | Overrides the shared Prettier options. |
+| `yml.indent` / `toml.indent` | `2` | Sets YAML or TOML indentation. |
+| `yml.quotes` | `'single'` | Selects single or double quotes for YAML. |
+| `overrides` | `{}` | Overrides rules after the corresponding preset is applied. |
+
+React, JSON, and disable configs expose grouped overrides for their individual rule sets. See [`src/types/index.ts`](./src/types/index.ts) for the complete option types.
+
+## Integrations
+
+Tailwind CSS and UnoCSS rules are enabled automatically when `tailwindcss` or `unocss` is installed in the project.
+
+XML and SVG formatting works out of the box because `@prettier/plugin-xml` is included as a dependency.
 
 ## License
 

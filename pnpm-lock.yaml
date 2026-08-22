@@ -222,6 +222,9 @@ importers:
       '@manypkg/get-packages':
         specifier: ^3.1.0
         version: 3.1.0
+      '@prettier/plugin-xml':
+        specifier: ^3.4.2
+        version: 3.4.2(prettier@3.8.4)
       '@stylistic/eslint-plugin':
         specifier: ^5.10.0
         version: 5.10.0(eslint@10.9.0(jiti@2.7.0)(supports-color@7.2.0))
@@ -313,9 +316,6 @@ importers:
       '@eslint/config-inspector':
         specifier: ^3.3.0
         version: 3.3.0(eslint@10.9.0(jiti@2.7.0)(supports-color@7.2.0))(srvx@0.12.7)
-      '@prettier/plugin-xml':
-        specifier: ^3.4.2
-        version: 3.4.2(prettier@3.8.4)
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
