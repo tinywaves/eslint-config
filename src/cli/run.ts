@@ -7,7 +7,7 @@ import { updateVscodeSettings } from './stages/update-vscode-settings';
 import type { ICliOptions } from '../types';
 
 export async function run(options: ICliOptions) {
-  await updatePackageJson();
+  await updatePackageJson(options);
   await updateEslintConfig(options);
   await updateNpmignore();
   await updateVscodeSettings();

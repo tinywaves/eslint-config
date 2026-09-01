@@ -57,6 +57,14 @@ Run the wizard from the project root:
 pnpm dlx @dhzh/eslint-config@latest
 ```
 
+The wizard can also run non-interactively by passing answers as flags:
+
+```shell
+pnpm dlx @dhzh/eslint-config@latest --nest=false --replace-lint=true --replace-lint-fix=true
+```
+
+Boolean flags without a value mean `true`; use `--flag=false` or `--no-flag` for `false`. If a flag is omitted, its corresponding prompt remains interactive.
+
 The wizard:
 
 - Adds the required development dependencies and lint scripts to `package.json`.

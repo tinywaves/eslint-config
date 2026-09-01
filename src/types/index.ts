@@ -120,6 +120,8 @@ export interface Options {
 
 export interface ICliOptions {
   hasNest: boolean;
+  replaceLintFix?: boolean;
+  replaceLint?: boolean;
 }
 
 export type RuleLevel = 'off' | 'warn' | 'error' | 0 | 1 | 2;
