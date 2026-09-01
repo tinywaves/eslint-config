@@ -64,11 +64,9 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
         '@eslint-react/no-unnecessary-use-prefix': 'warn',
         '@eslint-react/naming-convention-context-name': 'warn',
         ...(
-          language === 'typescript'
-            ? {
-                '@eslint-react/no-leaked-conditional-rendering': 'warn',
-              }
-            : {}
+          (language === 'typescript') && {
+            '@eslint-react/no-leaked-conditional-rendering': 'warn',
+          }
         ),
         ...overrides.core,
       },
@@ -123,6 +121,8 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
                         'generateSitemaps',
                         // https://nextjs.org/docs/app/api-reference/functions/generate-static-params
                         'generateStaticParams',
+                        'contentType',
+                        'size',
                       ]
                     : []
                 ),
