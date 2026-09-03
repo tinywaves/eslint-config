@@ -66,12 +66,21 @@ export function isPackageAvailable(name: string, cwd: string = process.cwd()): b
   }
 
   try {
-    return getPackagesSync(cwd).packages.some((pkg) => (
-      name in (pkg.packageJson.dependencies || {})
-      || name in (pkg.packageJson.devDependencies || {})
-      || name in (pkg.packageJson.peerDependencies || {})
-      || name in (pkg.packageJson.optionalDependencies || {})
-    ));
+    return getPackagesSync(cwd).packages.some((pkg) => {
+      const {
+        dependencies = {},
+        devDependencies = {},
+        peerDependencies = {},
+        optionalDependencies = {},
+      } = pkg.packageJson;
+
+      return (
+        Object.hasOwn(dependencies, name)
+        || Object.hasOwn(devDependencies, name)
+        || Object.hasOwn(peerDependencies, name)
+        || Object.hasOwn(optionalDependencies, name)
+      );
+    });
   } catch {
     return false;
   }

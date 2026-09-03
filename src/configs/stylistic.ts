@@ -163,7 +163,7 @@ export function stylistic(options: IStylisticConfigsOptions = {}): LinterConfig[
           'error',
           'single',
           {
-            allowTemplateLiterals: true,
+            allowTemplateLiterals: 'never',
             avoidEscape: true,
           },
         ],

@@ -88,20 +88,16 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
             ignoreArrowShorthand: true,
           },
         ],
-        ...(typeSafe
-          ? {}
-          : {
-              '@typescript-eslint/no-unsafe-assignment': 'off',
-              '@typescript-eslint/no-unsafe-member-access': 'off',
-              '@typescript-eslint/no-unsafe-call': 'off',
-              '@typescript-eslint/no-unsafe-return': 'off',
-              '@typescript-eslint/no-unsafe-argument': 'off',
-            }),
-        ...(strict
-          ? {}
-          : {
-              '@typescript-eslint/no-extraneous-class': 'off',
-            }),
+        ...(!typeSafe && {
+          '@typescript-eslint/no-unsafe-assignment': 'off',
+          '@typescript-eslint/no-unsafe-member-access': 'off',
+          '@typescript-eslint/no-unsafe-call': 'off',
+          '@typescript-eslint/no-unsafe-return': 'off',
+          '@typescript-eslint/no-unsafe-argument': 'off',
+        }),
+        ...(!strict && {
+          '@typescript-eslint/no-extraneous-class': 'off',
+        }),
         ...overrides,
       },
     },
