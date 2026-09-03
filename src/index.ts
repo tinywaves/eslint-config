@@ -23,7 +23,12 @@ import type { Linter } from 'eslint';
 import type { Options } from './types';
 
 export function defineConfig(options: Options = {}): Linter.Config[] {
-  const { configs = {}, ignorePatterns = [], sourceType = 'module' } = options;
+  const {
+    configs = {},
+    ignorePatterns = [],
+    sourceType = 'module',
+    customLinterConfigs = [],
+  } = options;
 
   return [
     ...react(configs.react),
@@ -52,5 +57,6 @@ export function defineConfig(options: Options = {}): Linter.Config[] {
         },
       },
     },
+    ...customLinterConfigs,
   ];
 }

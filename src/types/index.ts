@@ -116,6 +116,7 @@ export interface Options {
   };
   ignorePatterns?: string[];
   sourceType?: 'module' | 'commonjs';
+  customLinterConfigs?: LinterConfig[];
 }
 
 export interface ICliOptions {

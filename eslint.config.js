@@ -1,3 +1,5 @@
 import { bundleRequire } from 'bundle-require';
 
-export default bundleRequire({ filepath: './eslint.config.ts' }).then((r) => r.mod.default);
+const config = await bundleRequire({ filepath: './eslint.config.ts' });
+
+export default config.mod.default;
