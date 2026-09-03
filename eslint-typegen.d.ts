@@ -11125,12 +11125,12 @@ type TypescriptEslintNoMeaninglessVoidOperator = []|[{
 }]
 // ----- @typescript-eslint/no-misused-promises -----
 type TypescriptEslintNoMisusedPromises = []|[{
-
+  
   checksConditionals?: (boolean | {
-
+    
     flagUnions?: ("all" | "strict" | "none")
   })
-
+  
   checksSpreads?: boolean
   
   checksVoidReturn?: (boolean | {
@@ -18866,9 +18866,9 @@ type PackageJsonOrderProperties = []|[{
 }]
 // ----- package-json/prefer-rolling-workspace-spec -----
 type PackageJsonPreferRollingWorkspaceSpec = []|[{
-
+  
   ignoreDependencies?: string[]
-
+  
   ignorePatterns?: string[]
 }]
 // ----- package-json/repository-shorthand -----
