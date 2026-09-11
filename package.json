@@ -27,7 +27,7 @@
       "import": "./dist/index.mjs"
     }
   },
-  "packageManager": "pnpm@11.25.0",
+  "packageManager": "pnpm@12.4.1",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
