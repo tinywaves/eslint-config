@@ -36,10 +36,11 @@ const cli = defineCommand({
       replaceLintFix: args['replace-lint-fix'],
     };
 
-    const useNest = args.nest ?? await p.confirm({
+    // Remove this assertion after @clack/prompts ships bombshell-dev/clack#601.
+    const useNest = (args.nest ?? await p.confirm({
       message: 'Is NestJS a part of the current project?',
       initialValue: false,
-    });
+    })) as boolean | typeof p.CANCEL_SYMBOL;
     if (p.isCancel(useNest)) {
       p.cancel('Operation cancelled');
       throw new Error('Operation cancelled');
