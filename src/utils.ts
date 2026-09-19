@@ -53,11 +53,7 @@ export const mergeRule = (...rules: RuleConfig[]): RuleConfig => {
     }
   }
 
-  if (Object.keys(finalOptions).length === 0) {
-    return finalLevel!;
-  }
-
-  return [finalLevel!, finalOptions];
+  return Object.keys(finalOptions).length === 0 ? finalLevel! : [finalLevel!, finalOptions];
 };
 
 export function isPackageAvailable(name: string, cwd: string = process.cwd()): boolean {

@@ -9,7 +9,7 @@ import { isPackageAvailable, mergeRule } from '../utils';
 import type { ESLint } from 'eslint';
 import type { IReactConfigsOptions, LinterConfig } from '../types';
 
-const ReactRefreshAllowConstantExportPackages = ['vite'];
+const VitePackages = ['vite'];
 const RemixPackages = [
   '@remix-run/node',
   '@remix-run/react',
@@ -35,7 +35,7 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
     ? pluginReact.configs['recommended-type-checked']
     : pluginReact.configs.recommended;
 
-  const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some((i) => isPackageAvailable(i));
+  const isUsingVite = VitePackages.some((i) => isPackageAvailable(i));
   const isUsingRemix = RemixPackages.some((i) => isPackageAvailable(i));
   const isUsingReactRouter = ReactRouterPackages.some((i) => isPackageAvailable(i));
   const isUsingNext = NextJsPackages.some((i) => isPackageAvailable(i));
@@ -91,7 +91,13 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
       files: GLOB_JSX_SRC,
       rules: {
         'react-refresh/only-export-components': mergeRule(
-          ['warn', { allowConstantExport: isAllowConstantExport }],
+          [
+            'warn',
+            {
+              allowConstantExport: isUsingVite,
+              allowCompoundComponents: isUsingVite,
+            },
+          ],
           [
             'warn',
             {
@@ -121,6 +127,7 @@ export function react(options: IReactConfigsOptions = {}): LinterConfig[] {
                         'generateSitemaps',
                         // https://nextjs.org/docs/app/api-reference/functions/generate-static-params
                         'generateStaticParams',
+                        'instant',
                         'contentType',
                         'size',
                       ]

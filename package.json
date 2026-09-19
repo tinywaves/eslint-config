@@ -27,11 +27,11 @@
       "import": "./dist/index.mjs"
     }
   },
-  "packageManager": "pnpm@12.4.1",
+  "packageManager": "pnpm@12.4.2",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^12.4.1",
+      "version": "^12.4.2",
       "onFail": "download"
     },
     "runtime": {
@@ -67,15 +67,15 @@
     "eslint": "^10.5.0"
   },
   "dependencies": {
-    "@clack/prompts": "^1.8.0",
-    "@eslint-community/eslint-plugin-eslint-comments": "^4.8.0",
-    "@eslint-react/eslint-plugin": "^5.19.0",
+    "@clack/prompts": "^1.8.1",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
+    "@eslint-react/eslint-plugin": "^5.20.0",
     "@eslint/js": "^10.0.1",
     "@manypkg/get-packages": "^3.1.0",
     "@prettier/plugin-xml": "^3.4.2",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@unocss/eslint-config": "66.7.2",
-    "ansis": "^4.3.1",
+    "ansis": "^4.4.0",
     "citty": "^0.2.2",
     "eslint-merge-processors": "^2.0.0",
     "eslint-plugin-antfu": "^3.2.3",
@@ -84,15 +84,15 @@
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-jsonc": "^3.4.2",
     "eslint-plugin-n": "^18.3.0",
-    "eslint-plugin-package-json": "^1.8.0",
+    "eslint-plugin-package-json": "^1.9.0",
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-google-translate": "^1.0.4",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.6",
+    "eslint-plugin-react-refresh": "^0.5.7",
     "eslint-plugin-regexp": "^3.3.0",
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-toml": "^1.5.0",
-    "eslint-plugin-unicorn": "^74.0.0",
+    "eslint-plugin-unicorn": "^76.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
     "eslint-plugin-vue": "^10.11.0",
     "eslint-plugin-yml": "^3.8.1",
@@ -104,13 +104,13 @@
     "vue-eslint-parser": "^10.4.1"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^3.4.1",
-    "@types/node": "^26.5.1",
+    "@eslint/config-inspector": "^3.5.0",
+    "@types/node": "^26.6.2",
     "@typescript-eslint/types": "^8.70.0",
     "bumpp": "^12.3.0",
     "bundle-require": "^5.1.0",
     "changelogithub": "^15.0.5",
-    "eslint": "^10.10.0",
+    "eslint": "^10.11.0",
     "eslint-typegen": "^2.3.1",
     "lint-staged": "^17.5.1",
     "simple-git-hooks": "^2.14.0",
