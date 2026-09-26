@@ -8,7 +8,7 @@ import type { ICliOptions } from '../types';
 
 export async function run(options: ICliOptions) {
   await updatePackageJson(options);
-  await updateEslintConfig(options);
+  await updateEslintConfig();
   await updateNpmignore();
   await updateVscodeSettings();
   p.log.success(c.green`Setup completed`);

@@ -1,6 +1,6 @@
 import process from 'node:process';
 import { getPackagesSync } from '@manypkg/get-packages';
-import { isPackageExists } from 'local-pkg';
+import { getPackageInfoSync, isPackageExists } from 'local-pkg';
 import type { RuleConfig, RuleLevel } from './types';
 
 export const parserPlain = {
@@ -80,4 +80,39 @@ export function isPackageAvailable(name: string, cwd: string = process.cwd()): b
   } catch {
     return false;
   }
+}
+
+export function getPackageVersions(name: string, cwd: string = process.cwd()): string[] {
+  const versions = new Set<string>();
+  const rootVersion = getPackageInfoSync(name, { paths: [cwd] })?.version;
+
+  if (rootVersion != null) {
+    versions.add(rootVersion);
+  }
+
+  try {
+    for (const pkg of getPackagesSync(cwd).packages) {
+      const {
+        dependencies = {},
+        devDependencies = {},
+        peerDependencies = {},
+        optionalDependencies = {},
+      } = pkg.packageJson;
+      const isListed = Object.hasOwn(dependencies, name)
+        || Object.hasOwn(devDependencies, name)
+        || Object.hasOwn(peerDependencies, name)
+        || Object.hasOwn(optionalDependencies, name);
+
+      if (!isListed) {
+        continue;
+      }
+
+      const version = getPackageInfoSync(name, { paths: [pkg.dir] })?.version;
+      if (version != null) {
+        versions.add(version);
+      }
+    }
+  } catch {}
+
+  return [...versions];
 }

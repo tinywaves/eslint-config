@@ -42,7 +42,6 @@ export interface IJsonConfigsOptions {
     core?: Rule;
     packageJson?: Rule;
   };
-  packageJsonRequireType?: boolean;
 }
 
 export interface IUnicornConfigsOptions extends IConfigsOptions {}
@@ -120,7 +119,6 @@ export interface Options {
 }
 
 export interface ICliOptions {
-  hasNest: boolean;
   replaceLintFix?: boolean;
   replaceLint?: boolean;
 }

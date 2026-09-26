@@ -1,5 +1,3 @@
-import type { ICliOptions } from '../types';
-
 export const vscodeSettingsString = `
   // Entry
   "eslint.format.enable": true,
@@ -109,17 +107,9 @@ export const vscodeSettingsString = `
   }
 `;
 
-export const eslintConfigContent = (options: ICliOptions) => `import { defineConfig } from '@dhzh/eslint-config';
+export const eslintConfigContent = `import { defineConfig } from '@dhzh/eslint-config';
 
-export default defineConfig(${options.hasNest
-  ? `{
-  configs: {
-    json: {
-      packageJsonRequireType: false,
-    },
-  },
-}`
-  : ''});
+export default defineConfig();
 `;
 
 export const npmignoreString = `# If these files (ESLint flat config files) are not included in .npmignore,

@@ -60,7 +60,7 @@ pnpm dlx @dhzh/eslint-config@latest
 The wizard can also run non-interactively by passing answers as flags:
 
 ```shell
-pnpm dlx @dhzh/eslint-config@latest --nest=false --replace-lint=true --replace-lint-fix=true
+pnpm dlx @dhzh/eslint-config@latest --replace-lint=true --replace-lint-fix=true
 ```
 
 Boolean flags without a value mean `true`; use `--flag=false` or `--no-flag` for `false`. If a flag is omitted, its corresponding prompt remains interactive.
@@ -71,7 +71,6 @@ The wizard:
 - Creates `eslint.config.js` for ESM packages or `eslint.config.mjs` otherwise.
 - Configures ESLint as the formatter in `.vscode/settings.json`.
 - Adds flat config files to `.npmignore`.
-- Applies the appropriate `package.json` rule when NestJS is selected.
 
 Then install the updated dependencies and lint the project:
 
@@ -127,7 +126,6 @@ export default defineConfig({
     },
     json: {
       indent: 2,
-      packageJsonRequireType: false,
     },
     yml: {
       quotes: 'double',
@@ -161,7 +159,6 @@ export default defineConfig({
 | `typescript.typeSafe` | `false` | Keeps unsafe TypeScript rules disabled unless enabled. |
 | `typescript.strict` | `false` | Keeps selected strict rules disabled unless enabled. |
 | `json.indent` | `2` | Sets JSON, JSONC, and JSON5 indentation. |
-| `json.packageJsonRequireType` | `true` | Requires a `type` field in `package.json`. |
 | `imports.closeOrder` | `true` | Set to `false` to enable `simple-import-sort`. |
 | `format.enable` | All formats enabled | Accepts `false` to disable formatting. When passing an object, explicitly enable each desired format. |
 | `format.customPrettierOptions` | `{}` | Overrides the shared Prettier options. |
@@ -172,6 +169,24 @@ export default defineConfig({
 React, JSON, and disable configs expose grouped overrides for their individual rule sets. See [`src/types/index.ts`](./src/types/index.ts) for the complete option types.
 
 ## Integrations
+
+The `package-json/require-type` rule is enabled by default for non-NestJS projects and NestJS 12 or later. It is disabled automatically for older NestJS projects. In a workspace, the oldest detected `@nestjs/core` or `@nestjs/common` major version determines the behavior for the entire repository.
+
+Override the automatic behavior through the package.json rule overrides when needed:
+
+```ts
+export default defineConfig({
+  configs: {
+    json: {
+      overrides: {
+        packageJson: {
+          'package-json/require-type': 'off',
+        },
+      },
+    },
+  },
+});
+```
 
 Tailwind CSS and UnoCSS rules are enabled automatically when `tailwindcss` or `unocss` is installed in the project.
 

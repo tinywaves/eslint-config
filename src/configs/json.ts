@@ -1,15 +1,24 @@
 import pluginJsonc from 'eslint-plugin-jsonc';
 import pluginPackageJson from 'eslint-plugin-package-json';
 import { RULE_PREFIX, GLOB_JSON, GLOB_JSONC, GLOB_JSON5, GLOB_PACKAGE_JSON } from '../consts';
+import { getPackageVersions, isPackageAvailable } from '../utils';
 import type { Linter } from 'eslint';
 import type { IJsonConfigsOptions, LinterConfig } from '../types';
 
+const NestPackages = ['@nestjs/core', '@nestjs/common'];
+const NestExplicitModuleTypeMajor = 12;
+
 export function json(options: IJsonConfigsOptions = {}): LinterConfig[] {
-  const {
-    overrides = { core: {}, packageJson: {} },
-    indent = 2,
-    packageJsonRequireType = true,
-  } = options;
+  const { overrides = { core: {}, packageJson: {} }, indent = 2 } = options;
+
+  const isUsingNest = NestPackages.some((packageName) => isPackageAvailable(packageName));
+  const nestVersions = isUsingNest
+    ? NestPackages.flatMap((packageName) => getPackageVersions(packageName))
+    : [];
+  const shouldRequirePackageJsonType = !isUsingNest
+    || (nestVersions.length > 0 && nestVersions.every((version) => (
+      Number(version.split('.', 1)[0]) >= NestExplicitModuleTypeMajor
+    )));
 
   return [
     ...pluginJsonc.configs['recommended-with-json'].map((item) => ({
@@ -97,7 +106,7 @@ export function json(options: IJsonConfigsOptions = {}): LinterConfig[] {
       name: `${RULE_PREFIX}/json/customize/package.json`,
       files: [GLOB_PACKAGE_JSON],
       rules: {
-        'package-json/require-type': packageJsonRequireType ? 'error' : 'off',
+        'package-json/require-type': shouldRequirePackageJsonType ? 'error' : 'off',
         'package-json/require-package-json-export': 'error',
         'package-json/require-packageManager': 'warn',
         ...overrides.packageJson,

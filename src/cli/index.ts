@@ -12,11 +12,6 @@ const cli = defineCommand({
     description: 'Run the initialization or migration',
   },
   args: {
-    'nest': {
-      type: 'boolean',
-      alias: 'n',
-      description: 'Whether NestJS is part of the current project',
-    },
     'replace-lint': {
       type: 'boolean',
       description: 'Whether to replace a conflicting lint script',
@@ -31,20 +26,9 @@ const cli = defineCommand({
     p.intro(`${c.green`@dhzh/eslint-config `}${c.dim`v${version}`}`);
 
     const options: ICliOptions = {
-      hasNest: false,
       replaceLint: args['replace-lint'],
       replaceLintFix: args['replace-lint-fix'],
     };
-
-    const useNest = args.nest ?? await p.confirm({
-      message: 'Is NestJS a part of the current project?',
-      initialValue: false,
-    });
-    if (p.isCancel(useNest)) {
-      p.cancel('Operation cancelled');
-      throw new Error('Operation cancelled');
-    }
-    options.hasNest = useNest;
 
     try {
       await run(options);
