@@ -98,6 +98,8 @@ export function json(options: IJsonConfigsOptions = {}): LinterConfig[] {
       files: [GLOB_PACKAGE_JSON],
       rules: {
         'package-json/require-type': packageJsonRequireType ? 'error' : 'off',
+        'package-json/require-package-json-export': 'error',
+        'package-json/require-packageManager': 'warn',
         ...overrides.packageJson,
       },
     },
