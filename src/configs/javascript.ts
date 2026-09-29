@@ -1,7 +1,7 @@
 import js from '@eslint/js';
 import pluginAntfu from 'eslint-plugin-antfu';
 import globals from 'globals';
-import { GLOB_SRC, GLOB_TS_SRC, RULE_PREFIX } from '../consts';
+import { GLOB_SRC, RULE_PREFIX } from '../consts';
 import type { IJavascriptConfigsOptions, LinterConfig } from '../types';
 
 export function javascript(options: IJavascriptConfigsOptions = {}): LinterConfig[] {
@@ -311,16 +311,6 @@ export function javascript(options: IJavascriptConfigsOptions = {}): LinterConfi
         'vars-on-top': 'error',
         'yoda': ['error', 'never'],
         ...overrides,
-      },
-    },
-    {
-      name: `${RULE_PREFIX}/javascript/customize`,
-      files: GLOB_TS_SRC,
-      plugins: {
-        antfu: pluginAntfu,
-      },
-      rules: {
-        'no-undef': 'off',
       },
     },
   ];

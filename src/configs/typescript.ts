@@ -2,10 +2,9 @@ import process from 'node:process';
 import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 import { RULE_PREFIX, GLOB_TS_SRC } from '../consts';
-import type { Linter } from 'eslint';
-import type { ITypescriptConfigsOptions } from '../types';
+import type { ITypescriptConfigsOptions, LinterConfig } from '../types';
 
-export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Config[] {
+export function typescript(options: ITypescriptConfigsOptions = {}): LinterConfig[] {
   const { overrides = {}, typeSafe = false, strict = false } = options;
 
   return [
@@ -88,6 +87,7 @@ export function typescript(options: ITypescriptConfigsOptions = {}): Linter.Conf
             ignoreArrowShorthand: true,
           },
         ],
+        'no-undef': 'off',
         ...(!typeSafe && {
           '@typescript-eslint/no-unsafe-assignment': 'off',
           '@typescript-eslint/no-unsafe-member-access': 'off',
