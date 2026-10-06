@@ -40,6 +40,7 @@ export function unicorn(options: IUnicornConfigsOptions = {}): LinterConfig[] {
         'unicorn/prefer-string-starts-ends-with': 'error',
         'unicorn/prefer-type-error': 'error',
         'unicorn/throw-new-error': 'error',
+        'unicorn/no-asterisk-prefix-in-documentation-comments': 'off',
         ...overrides,
       },
     },

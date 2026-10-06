@@ -1,8 +1,7 @@
 import { GLOB_SRC, GLOB_SRC_EXT, RULE_PREFIX } from '../consts';
-import type { Linter } from 'eslint';
-import type { IDisablesConfigsOptions } from '../types';
+import type { IDisablesConfigsOptions, LinterConfig } from '../types';
 
-export function disables(options: IDisablesConfigsOptions = {}): Linter.Config[] {
+export function disables(options: IDisablesConfigsOptions = {}): LinterConfig[] {
   const { overrides = { scripts: {}, cli: {}, bin: {}, dts: {}, cjs: {}, config: {} } } = options;
 
   return [
@@ -69,6 +68,7 @@ export function disables(options: IDisablesConfigsOptions = {}): Linter.Config[]
         'antfu/no-top-level-await': 'off',
         'no-console': 'off',
         'ts/explicit-function-return-type': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
         ...overrides.config,
       },
     },
