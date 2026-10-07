@@ -121,7 +121,7 @@
     "typescript": "^6.0.3"
   },
   "simple-git-hooks": {
-    "pre-commit": "eval \"$(fnm env)\" && pnpm exec lint-staged"
+    "pre-commit": "pnpm exec lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
