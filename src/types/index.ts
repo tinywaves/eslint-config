@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint';
+import type { Settings } from 'eslint-plugin-better-tailwindcss/api/types';
 import type { VendoredPrettierOptions } from './prettier';
 import type { RuleOptions } from '../../eslint-typegen';
 
@@ -61,7 +62,9 @@ export interface IFormatConfigsOptions {
   customPrettierOptions?: VendoredPrettierOptions;
 }
 
-export interface ITailwindcssConfigsOptions extends IConfigsOptions {}
+export interface ITailwindcssConfigsOptions extends IConfigsOptions {
+  settings?: Settings;
+}
 
 export interface IUnocssConfigsOptions extends IConfigsOptions {}
 

@@ -4,7 +4,7 @@ import { RULE_PREFIX, GLOB_SRC } from '../consts';
 import type { ITailwindcssConfigsOptions, LinterConfig } from '../types';
 
 export function tailwindcss(options: ITailwindcssConfigsOptions = {}): LinterConfig[] {
-  const { overrides = {} } = options;
+  const { overrides = {}, settings = {} } = options;
 
   return isPackageAvailable('tailwindcss')
     ? [
@@ -16,6 +16,9 @@ export function tailwindcss(options: ITailwindcssConfigsOptions = {}): LinterCon
         {
           name: `${RULE_PREFIX}/tailwindcss/customize`,
           files: GLOB_SRC,
+          settings: {
+            'better-tailwindcss': settings,
+          },
           rules: overrides,
         },
       ]

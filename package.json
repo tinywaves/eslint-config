@@ -80,7 +80,7 @@
     "citty": "^0.2.2",
     "eslint-merge-processors": "^2.0.0",
     "eslint-plugin-antfu": "^3.2.3",
-    "eslint-plugin-better-tailwindcss": "^4.9.0",
+    "eslint-plugin-better-tailwindcss": "npm:@dhzh/eslint-plugin-better-tailwindcss@4.9.0-patch",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-jsonc": "^3.4.2",
