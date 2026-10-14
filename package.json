@@ -28,16 +28,16 @@
     },
     "./package.json": "./package.json"
   },
-  "packageManager": "pnpm@12.10.1",
+  "packageManager": "pnpm@12.11.2",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^12.10.1",
+      "version": "^12.11.2",
       "onFail": "download"
     },
     "runtime": {
       "name": "node",
-      "version": "^24.21.0",
+      "version": "^24.22.0",
       "onFail": "download"
     }
   },
@@ -70,7 +70,7 @@
   "dependencies": {
     "@clack/prompts": "^1.8.1",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
-    "@eslint-react/eslint-plugin": "^5.24.10",
+    "@eslint-react/eslint-plugin": "^5.26.6",
     "@eslint/js": "^10.0.1",
     "@manypkg/get-packages": "^3.1.0",
     "@prettier/plugin-xml": "^3.4.2",
@@ -80,7 +80,7 @@
     "citty": "^0.2.2",
     "eslint-merge-processors": "^2.0.0",
     "eslint-plugin-antfu": "^3.2.3",
-    "eslint-plugin-better-tailwindcss": "npm:@dhzh/eslint-plugin-better-tailwindcss@4.9.0-patch",
+    "eslint-plugin-better-tailwindcss": "4.9.1",
     "eslint-plugin-format": "^2.0.1",
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-jsonc": "^3.4.2",
@@ -93,7 +93,7 @@
     "eslint-plugin-regexp": "^3.3.1",
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-toml": "^1.5.0",
-    "eslint-plugin-unicorn": "^77.0.0",
+    "eslint-plugin-unicorn": "^78.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
     "eslint-plugin-vue": "^10.11.1",
     "eslint-plugin-yml": "^3.9.0",
@@ -101,13 +101,13 @@
     "globals": "^17.13.0",
     "local-pkg": "^1.2.1",
     "toml-eslint-parser": "^1.0.3",
-    "typescript-eslint": "^8.71.1",
+    "typescript-eslint": "^8.71.2",
     "vue-eslint-parser": "^10.4.1"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^3.5.0",
-    "@types/node": "^26.6.4",
-    "@typescript-eslint/types": "^8.71.1",
+    "@types/node": "^26.6.5",
+    "@typescript-eslint/types": "^8.71.2",
     "bumpp": "^12.3.0",
     "bundle-require": "^5.1.0",
     "changelogithub": "^15.0.5",
@@ -116,7 +116,7 @@
     "lint-staged": "^17.6.0",
     "simple-git-hooks": "^2.14.0",
     "tailwindcss": "^4.3.3",
-    "tsdown": "^0.23.0",
+    "tsdown": "^0.23.1",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },
