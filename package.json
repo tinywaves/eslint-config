@@ -37,7 +37,7 @@
     },
     "runtime": {
       "name": "node",
-      "version": "^24.22.0",
+      "version": "^24.22.1",
       "onFail": "download"
     }
   },
@@ -116,7 +116,7 @@
     "lint-staged": "^17.6.0",
     "simple-git-hooks": "^2.14.0",
     "tailwindcss": "^4.3.3",
-    "tsdown": "^0.23.1",
+    "tsdown": "^0.23.2",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },
