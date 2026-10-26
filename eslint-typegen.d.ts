@@ -115,7 +115,7 @@ export interface RuleOptions {
    */
   '@eslint-react/dom-no-unsafe-iframe-sandbox'?: Linter.RuleEntry<[]>
   /**
-   * Disallows 'target="_blank"' without 'rel="noreferrer noopener"'.
+   * Disallows 'target="_blank"' without 'rel="noreferrer"'.
    * @see https://eslint-react.xyz/docs/rules/dom-no-unsafe-target-blank
    */
   '@eslint-react/dom-no-unsafe-target-blank'?: Linter.RuleEntry<EslintReactDomNoUnsafeTargetBlank>
@@ -136,7 +136,7 @@ export interface RuleOptions {
   '@eslint-react/error-boundaries'?: Linter.RuleEntry<[]>
   /**
    * Verifies the list of dependencies for Hooks like 'useEffect' and similar.
-   * @see https://github.com/facebook/react/issues/14920
+   * @see https://github.com/react/react/issues/14920
    */
   '@eslint-react/exhaustive-deps'?: Linter.RuleEntry<EslintReactExhaustiveDeps>
   /**
@@ -310,7 +310,7 @@ export interface RuleOptions {
    */
   '@eslint-react/no-leaked-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
-   * Enforces that all components have a 'displayName' that can be used in DevTools.
+   * Enforces that anonymous components wrapped in 'memo' or 'forwardRef' have a 'displayName' that can be used in DevTools.
    * @see https://eslint-react.xyz/docs/rules/no-missing-component-display-name
    */
   '@eslint-react/no-missing-component-display-name'?: Linter.RuleEntry<[]>
@@ -335,7 +335,7 @@ export interface RuleOptions {
    */
   '@eslint-react/no-nested-component-definitions'?: Linter.RuleEntry<[]>
   /**
-   * Disallows nesting lazy component declarations inside other components or hooks.
+   * Disallows declaring lazy components that wrap dynamic imports inside other components or hooks.
    * @see https://eslint-react.xyz/docs/rules/no-nested-lazy-component-declarations
    */
   '@eslint-react/no-nested-lazy-component-declarations'?: Linter.RuleEntry<[]>
@@ -375,7 +375,7 @@ export interface RuleOptions {
    */
   '@eslint-react/no-unsafe-component-will-update'?: Linter.RuleEntry<[]>
   /**
-   * Prevents non-stable values (i.e., object literals) from being used as a value for 'Context.Provider'.
+   * Prevents non-stable values (i.e., object literals) from being used as a value for 'Context.Provider' or the '<Context>' shorthand in React 19 and above.
    * @see https://eslint-react.xyz/docs/rules/no-unstable-context-value
    */
   '@eslint-react/no-unstable-context-value'?: Linter.RuleEntry<[]>
@@ -405,7 +405,7 @@ export interface RuleOptions {
    */
   '@eslint-react/no-use-context'?: Linter.RuleEntry<[]>
   /**
-   * Validates that components and hooks are pure by checking that they do not call known-impure functions during render.
+   * Validates that components and hooks are pure by checking that they do not call known-impure functions or construct known-impure objects during render.
    * @see https://eslint-react.xyz/docs/rules/purity
    */
   '@eslint-react/purity'?: Linter.RuleEntry<[]>
@@ -445,7 +445,7 @@ export interface RuleOptions {
    */
   '@eslint-react/unsupported-syntax'?: Linter.RuleEntry<[]>
   /**
-   * Validates that 'useMemo' is called with a callback that returns a value.
+   * Validates 'useMemo' usage: the result must be used and the callback must take no parameters, not be async or a generator, not reassign outer variables, and return a value.
    * @see https://eslint-react.xyz/docs/rules/use-memo
    */
   '@eslint-react/use-memo'?: Linter.RuleEntry<[]>
@@ -491,7 +491,7 @@ export interface RuleOptions {
   '@eslint-react/x-error-boundaries'?: Linter.RuleEntry<[]>
   /**
    * Verifies the list of dependencies for Hooks like 'useEffect' and similar.
-   * @see https://github.com/facebook/react/issues/14920
+   * @see https://github.com/react/react/issues/14920
    */
   '@eslint-react/x-exhaustive-deps'?: Linter.RuleEntry<EslintReactXExhaustiveDeps>
   /**
@@ -610,7 +610,7 @@ export interface RuleOptions {
    */
   '@eslint-react/x-no-leaked-conditional-rendering'?: Linter.RuleEntry<[]>
   /**
-   * Enforces that all components have a 'displayName' that can be used in DevTools.
+   * Enforces that anonymous components wrapped in 'memo' or 'forwardRef' have a 'displayName' that can be used in DevTools.
    * @see https://eslint-react.xyz/docs/rules/no-missing-component-display-name
    */
   '@eslint-react/x-no-missing-component-display-name'?: Linter.RuleEntry<[]>
@@ -635,7 +635,7 @@ export interface RuleOptions {
    */
   '@eslint-react/x-no-nested-component-definitions'?: Linter.RuleEntry<[]>
   /**
-   * Disallows nesting lazy component declarations inside other components or hooks.
+   * Disallows declaring lazy components that wrap dynamic imports inside other components or hooks.
    * @see https://eslint-react.xyz/docs/rules/no-nested-lazy-component-declarations
    */
   '@eslint-react/x-no-nested-lazy-component-declarations'?: Linter.RuleEntry<[]>
@@ -675,7 +675,7 @@ export interface RuleOptions {
    */
   '@eslint-react/x-no-unsafe-component-will-update'?: Linter.RuleEntry<[]>
   /**
-   * Prevents non-stable values (i.e., object literals) from being used as a value for 'Context.Provider'.
+   * Prevents non-stable values (i.e., object literals) from being used as a value for 'Context.Provider' or the '<Context>' shorthand in React 19 and above.
    * @see https://eslint-react.xyz/docs/rules/no-unstable-context-value
    */
   '@eslint-react/x-no-unstable-context-value'?: Linter.RuleEntry<[]>
@@ -705,7 +705,7 @@ export interface RuleOptions {
    */
   '@eslint-react/x-no-use-context'?: Linter.RuleEntry<[]>
   /**
-   * Validates that components and hooks are pure by checking that they do not call known-impure functions during render.
+   * Validates that components and hooks are pure by checking that they do not call known-impure functions or construct known-impure objects during render.
    * @see https://eslint-react.xyz/docs/rules/purity
    */
   '@eslint-react/x-purity'?: Linter.RuleEntry<[]>
@@ -740,7 +740,7 @@ export interface RuleOptions {
    */
   '@eslint-react/x-unsupported-syntax'?: Linter.RuleEntry<[]>
   /**
-   * Validates that 'useMemo' is called with a callback that returns a value.
+   * Validates 'useMemo' usage: the result must be used and the callback must take no parameters, not be async or a generator, not reassign outer variables, and return a value.
    * @see https://eslint-react.xyz/docs/rules/use-memo
    */
   '@eslint-react/x-use-memo'?: Linter.RuleEntry<[]>
@@ -1251,7 +1251,7 @@ export interface RuleOptions {
    * Disallow awaiting a value that is not a Thenable
    * @see https://typescript-eslint.io/rules/await-thenable
    */
-  '@typescript-eslint/await-thenable'?: Linter.RuleEntry<[]>
+  '@typescript-eslint/await-thenable'?: Linter.RuleEntry<TypescriptEslintAwaitThenable>
   /**
    * Disallow `@ts-<directive>` comments or require descriptions after directives
    * @see https://typescript-eslint.io/rules/ban-ts-comment
@@ -1981,6 +1981,11 @@ export interface RuleOptions {
    * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/no-ts-export-equal.md
    */
   'antfu/no-ts-export-equal'?: Linter.RuleEntry<[]>
+  /**
+   * Enforce multiline objects, arrays and ternaries when they are complex
+   * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/reasonable-newline.md
+   */
+  'antfu/reasonable-newline'?: Linter.RuleEntry<AntfuReasonableNewline>
   /**
    * Enforce top-level functions to be declared with function keyword
    * @see https://github.com/antfu/eslint-plugin-antfu/blob/main/src/rules/top-level-function.md
@@ -4039,6 +4044,16 @@ export interface RuleOptions {
    */
   'package-json/bin-name-casing'?: Linter.RuleEntry<[]>
   /**
+   * Enforce that the package manager is declared in either `packageManager` or `devEngines.packageManager`.
+   * @see https://eslint-plugin-package-json.dev/rules/consistent-package-manager-declaration
+   */
+  'package-json/consistent-package-manager-declaration'?: Linter.RuleEntry<PackageJsonConsistentPackageManagerDeclaration>
+  /**
+   * Enforce a consistent spelling for properties that have a well-known alias.
+   * @see https://eslint-plugin-package-json.dev/rules/consistent-property-aliases
+   */
+  'package-json/consistent-property-aliases'?: Linter.RuleEntry<PackageJsonConsistentPropertyAliases>
+  /**
    * Enforce consistent format for the exports field (implicit or explicit subpaths).
    * @see https://eslint-plugin-package-json.dev/rules/exports-subpaths-style
    */
@@ -4104,7 +4119,7 @@ export interface RuleOptions {
    */
   'package-json/require-bugs'?: Linter.RuleEntry<PackageJsonRequireBugs>
   /**
-   * Requires the `bundleDependencies` property to be present.
+   * Requires the `bundleDependencies` property (or its alias `bundledDependencies`) to be present.
    * @see https://eslint-plugin-package-json.dev/rules/require-properties/require-bundleDependencies
    */
   'package-json/require-bundleDependencies'?: Linter.RuleEntry<PackageJsonRequireBundleDependencies>
@@ -4189,7 +4204,7 @@ export interface RuleOptions {
    */
   'package-json/require-libc'?: Linter.RuleEntry<PackageJsonRequireLibc>
   /**
-   * Requires the `license` property to be present.
+   * Requires the `license` property (or its alias `licence`) to be present.
    * @see https://eslint-plugin-package-json.dev/rules/require-properties/require-license
    */
   'package-json/require-license'?: Linter.RuleEntry<PackageJsonRequireLicense>
@@ -4344,7 +4359,7 @@ export interface RuleOptions {
    */
   'package-json/valid-bugs'?: Linter.RuleEntry<[]>
   /**
-   * Enforce that the `bundleDependencies` (also `bundledDependencies`) property is valid.
+   * Enforce that the `bundleDependencies` property (or its alias `bundledDependencies`) is valid.
    * @see https://eslint-plugin-package-json.dev/rules/valid-properties/valid-bundleDependencies
    */
   'package-json/valid-bundleDependencies'?: Linter.RuleEntry<[]>
@@ -4429,7 +4444,7 @@ export interface RuleOptions {
    */
   'package-json/valid-libc'?: Linter.RuleEntry<[]>
   /**
-   * Enforce that the `license` property is valid.
+   * Enforce that the `license` property (or its alias `licence`) is valid.
    * @see https://eslint-plugin-package-json.dev/rules/valid-properties/valid-license
    */
   'package-json/valid-license'?: Linter.RuleEntry<[]>
@@ -5952,2002 +5967,2002 @@ export interface RuleOptions {
   'unicode-bom'?: Linter.RuleEntry<UnicodeBom>
   /**
    * Prefer better DOM traversal APIs.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/better-dom-traversing.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/better-dom-traversing.md
    */
   'unicorn/better-dom-traversing'?: Linter.RuleEntry<[]>
   /**
    * Removed. Prefer `eslint-plugin-regexp`
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#better-regex
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#better-regex
    * @deprecated
    */
   'unicorn/better-regex'?: Linter.RuleEntry<[]>
   /**
    * Enforce a specific parameter name in catch clauses.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/catch-error-name.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/catch-error-name.md
    */
   'unicorn/catch-error-name'?: Linter.RuleEntry<UnicornCatchErrorName>
   /**
    * Enforce consistent class references in static methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/class-reference-in-static-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/class-reference-in-static-methods.md
    */
   'unicorn/class-reference-in-static-methods'?: Linter.RuleEntry<UnicornClassReferenceInStaticMethods>
   /**
    * Enforce consistent spacing before and after commas in JSON and SOML.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/comma-spacing.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/comma-spacing.md
    */
   'unicorn/comma-spacing'?: Linter.RuleEntry<[]>
   /**
    * Enforce better comment content.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/comment-content.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/comment-content.md
    */
   'unicorn/comment-content'?: Linter.RuleEntry<UnicornCommentContent>
   /**
    * Enforce a consistent return style for multiline arrow function bodies.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-arrow-return-style.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-arrow-return-style.md
    */
   'unicorn/consistent-arrow-return-style'?: Linter.RuleEntry<[]>
   /**
    * Enforce consistent assertion style with `node:assert`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-assert.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-assert.md
    */
   'unicorn/consistent-assert'?: Linter.RuleEntry<[]>
   /**
    * Enforce consistent naming for boolean names.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-boolean-name.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-boolean-name.md
    */
   'unicorn/consistent-boolean-name'?: Linter.RuleEntry<UnicornConsistentBooleanName>
   /**
    * Enforce consistent class member order.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-class-member-order.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-class-member-order.md
    */
   'unicorn/consistent-class-member-order'?: Linter.RuleEntry<UnicornConsistentClassMemberOrder>
   /**
    * Enforce consistent spelling of compound words in identifiers.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-compound-words.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-compound-words.md
    */
   'unicorn/consistent-compound-words'?: Linter.RuleEntry<UnicornConsistentCompoundWords>
   /**
    * Enforce consistent conditional object spread style.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-conditional-object-spread.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-conditional-object-spread.md
    */
   'unicorn/consistent-conditional-object-spread'?: Linter.RuleEntry<UnicornConsistentConditionalObjectSpread>
   /**
    * Prefer passing `Date` directly to the constructor when cloning.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-date-clone.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-date-clone.md
    */
   'unicorn/consistent-date-clone'?: Linter.RuleEntry<[]>
   /**
    * Use destructured variables over properties.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-destructuring.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-destructuring.md
    */
   'unicorn/consistent-destructuring'?: Linter.RuleEntry<[]>
   /**
    * Prefer consistent types when spreading a ternary in an array literal.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-empty-array-spread.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-empty-array-spread.md
    */
   'unicorn/consistent-empty-array-spread'?: Linter.RuleEntry<[]>
   /**
    * Enforce consistent style for element existence checks with `indexOf()`, `lastIndexOf()`, `findIndex()`, and `findLastIndex()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-existence-index-check.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-existence-index-check.md
    */
   'unicorn/consistent-existence-index-check'?: Linter.RuleEntry<[]>
   /**
    * Enforce consistent decorator position on exported classes.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-export-decorator-position.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-export-decorator-position.md
    */
   'unicorn/consistent-export-decorator-position'?: Linter.RuleEntry<UnicornConsistentExportDecoratorPosition>
   /**
    * Move function definitions to the highest possible scope.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-function-scoping.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-function-scoping.md
    */
   'unicorn/consistent-function-scoping'?: Linter.RuleEntry<UnicornConsistentFunctionScoping>
   /**
    * Enforce function syntax by role.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-function-style.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-function-style.md
    */
   'unicorn/consistent-function-style'?: Linter.RuleEntry<UnicornConsistentFunctionStyle>
   /**
    * Enforce consistent JSON file reads before `JSON.parse()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-json-file-read.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-json-file-read.md
    */
   'unicorn/consistent-json-file-read'?: Linter.RuleEntry<UnicornConsistentJsonFileRead>
   /**
    * Enforce consistent optional chaining for same-base member access.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-optional-chaining.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-optional-chaining.md
    */
   'unicorn/consistent-optional-chaining'?: Linter.RuleEntry<[]>
   /**
    * Enforce consistent style for escaping `${` in template literals.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-template-literal-escape.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-template-literal-escape.md
    */
   'unicorn/consistent-template-literal-escape'?: Linter.RuleEntry<[]>
   /**
    * Enforce consistent labels on tuple type elements.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/consistent-tuple-labels.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/consistent-tuple-labels.md
    */
   'unicorn/consistent-tuple-labels'?: Linter.RuleEntry<[]>
   /**
    * Enforce correct `Error` subclassing.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/custom-error-definition.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/custom-error-definition.md
    */
   'unicorn/custom-error-definition'?: Linter.RuleEntry<[]>
   /**
    * Enforce consistent default export declarations.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/default-export-style.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/default-export-style.md
    */
   'unicorn/default-export-style'?: Linter.RuleEntry<UnicornDefaultExportStyle>
   /**
    * Enforce consistent style for DOM element dataset access.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/dom-node-dataset.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/dom-node-dataset.md
    */
   'unicorn/dom-node-dataset'?: Linter.RuleEntry<UnicornDomNodeDataset>
   /**
    * Enforce no spaces between braces.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/empty-brace-spaces.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/empty-brace-spaces.md
    */
   'unicorn/empty-brace-spaces'?: Linter.RuleEntry<[]>
   /**
    * Enforce passing a `message` value when creating a built-in error.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/error-message.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/error-message.md
    */
   'unicorn/error-message'?: Linter.RuleEntry<[]>
   /**
    * Require escape sequences to use uppercase or lowercase values.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/escape-case.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/escape-case.md
    */
   'unicorn/escape-case'?: Linter.RuleEntry<UnicornEscapeCase>
   /**
    * Add expiration conditions to TODO comments.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/expiring-todo-comments.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/expiring-todo-comments.md
    */
   'unicorn/expiring-todo-comments'?: Linter.RuleEntry<UnicornExpiringTodoComments>
   /**
    * Enforce explicitly comparing the `length` or `size` property of a value.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/explicit-length-check.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/explicit-length-check.md
    */
   'unicorn/explicit-length-check'?: Linter.RuleEntry<UnicornExplicitLengthCheck>
   /**
    * Enforce or disallow explicit `delay` argument for `setTimeout()` and `setInterval()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/explicit-timer-delay.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/explicit-timer-delay.md
    */
   'unicorn/explicit-timer-delay'?: Linter.RuleEntry<UnicornExplicitTimerDelay>
   /**
    * Enforce a case style for filenames and directory names.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/filename-case.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/filename-case.md
    */
   'unicorn/filename-case'?: Linter.RuleEntry<UnicornFilenameCase>
   /**
    * Require identifiers to match a specified regular expression.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/id-match.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/id-match.md
    */
   'unicorn/id-match'?: Linter.RuleEntry<UnicornIdMatch>
   /**
    * Enforce specific import styles per module.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/import-style.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/import-style.md
    */
   'unicorn/import-style'?: Linter.RuleEntry<UnicornImportStyle>
   /**
    * Enforce consistent indentation in JSON and CSS.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/indent.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/indent.md
    */
   'unicorn/indent'?: Linter.RuleEntry<UnicornIndent>
   /**
    * Prevent usage of variables from outside the scope of isolated functions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/isolated-functions.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/isolated-functions.md
    */
   'unicorn/isolated-functions'?: Linter.RuleEntry<UnicornIsolatedFunctions>
   /**
    * Enforce a consistent style for optional loop sources.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/iteration-fallback-style.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/iteration-fallback-style.md
    */
   'unicorn/iteration-fallback-style'?: Linter.RuleEntry<UnicornIterationFallbackStyle>
   /**
    * Enforce a case style for data keys.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/key-name-casing.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/key-name-casing.md
    */
   'unicorn/key-name-casing'?: Linter.RuleEntry<UnicornKeyNameCasing>
   /**
    * Require or disallow logical assignment operator shorthand
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/logical-assignment-operators.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/logical-assignment-operators.md
    */
   'unicorn/logical-assignment-operators'?: Linter.RuleEntry<UnicornLogicalAssignmentOperators>
   /**
    * Limit the depth of nested calls.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/max-nested-calls.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/max-nested-calls.md
    */
   'unicorn/max-nested-calls'?: Linter.RuleEntry<UnicornMaxNestedCalls>
   /**
    * Enforce replacements for variable, property, and filenames.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/name-replacements.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/name-replacements.md
    */
   'unicorn/name-replacements'?: Linter.RuleEntry<UnicornNameReplacements>
   /**
    * Enforce correct use of `new` for builtin constructors.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/new-for-builtins.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/new-for-builtins.md
    */
   'unicorn/new-for-builtins'?: Linter.RuleEntry<[]>
   /**
    * Enforce specifying rules to disable in `eslint-disable` comments.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-abusive-eslint-disable.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-abusive-eslint-disable.md
    */
   'unicorn/no-abusive-eslint-disable'?: Linter.RuleEntry<[]>
   /**
    * Disallow recursive access to `this` within getters and setters.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-accessor-recursion.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-accessor-recursion.md
    */
   'unicorn/no-accessor-recursion'?: Linter.RuleEntry<[]>
   /**
    * Disallow bitwise operators where a logical operator was likely intended.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-accidental-bitwise-operator.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-accidental-bitwise-operator.md
    */
   'unicorn/no-accidental-bitwise-operator'?: Linter.RuleEntry<[]>
   /**
    * Disallow anonymous functions and classes as the default export.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-anonymous-default-export.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-anonymous-default-export.md
    */
   'unicorn/no-anonymous-default-export'?: Linter.RuleEntry<[]>
   /**
    * Prevent passing a function reference directly to iterator methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-callback-reference.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-callback-reference.md
    */
   'unicorn/no-array-callback-reference'?: Linter.RuleEntry<UnicornNoArrayCallbackReference>
   /**
    * Disallow array accumulation with `Array#concat()` in loops.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-concat-in-loop.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-concat-in-loop.md
    */
   'unicorn/no-array-concat-in-loop'?: Linter.RuleEntry<[]>
   /**
    * Disallow using reference values as `Array#fill()` values.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-fill-with-reference-type.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-fill-with-reference-type.md
    */
   'unicorn/no-array-fill-with-reference-type'?: Linter.RuleEntry<[]>
   /**
    * Disallow `.fill()` after `Array.from({length: …})`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-from-fill.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-from-fill.md
    */
   'unicorn/no-array-from-fill'?: Linter.RuleEntry<[]>
   /**
    * Disallow front-of-array mutation.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-front-mutation.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-front-mutation.md
    */
   'unicorn/no-array-front-mutation'?: Linter.RuleEntry<[]>
   /**
    * Disallow using the `this` argument in array methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-method-this-argument.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-method-this-argument.md
    */
   'unicorn/no-array-method-this-argument'?: Linter.RuleEntry<[]>
   /**
    * Replaced by `unicorn/prefer-single-call` which covers more cases.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-array-push-push
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-array-push-push
    * @deprecated
    */
   'unicorn/no-array-push-push'?: Linter.RuleEntry<[]>
   /**
    * Disallow `Array#reduce()` and `Array#reduceRight()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-reduce.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-reduce.md
    */
   'unicorn/no-array-reduce'?: Linter.RuleEntry<UnicornNoArrayReduce>
   /**
    * Prefer `Array#toReversed()` over `Array#reverse()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-reverse.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-reverse.md
    */
   'unicorn/no-array-reverse'?: Linter.RuleEntry<UnicornNoArrayReverse>
   /**
    * Prefer `Array#toSorted()` over `Array#sort()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-sort.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-sort.md
    */
   'unicorn/no-array-sort'?: Linter.RuleEntry<UnicornNoArraySort>
   /**
    * Disallow sorting arrays to get the minimum or maximum value.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-sort-for-min-max.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-sort-for-min-max.md
    */
   'unicorn/no-array-sort-for-min-max'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Array#toSpliced()` over `Array#splice()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-array-splice.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-array-splice.md
    */
   'unicorn/no-array-splice'?: Linter.RuleEntry<[]>
   /**
    * Disallow asterisk prefixes and shared indentation in multiline comments.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-asterisk-prefix-in-documentation-comments.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-asterisk-prefix-in-documentation-comments.md
    */
   'unicorn/no-asterisk-prefix-in-documentation-comments'?: Linter.RuleEntry<[]>
   /**
    * Disallow asynchronous callbacks in synchronous iterator helpers.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-async-iterator-callback.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-async-iterator-callback.md
    */
   'unicorn/no-async-iterator-callback'?: Linter.RuleEntry<[]>
   /**
    * Disallow async functions as `Promise#finally()` callbacks.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-async-promise-finally.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-async-promise-finally.md
    */
   'unicorn/no-async-promise-finally'?: Linter.RuleEntry<[]>
   /**
    * Disallow member access from await expression.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-await-expression-member.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-await-expression-member.md
    */
   'unicorn/no-await-expression-member'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `await` in `Promise` method parameters.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-await-in-promise-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-await-in-promise-methods.md
    */
   'unicorn/no-await-in-promise-methods'?: Linter.RuleEntry<[]>
   /**
    * Disallow barrel files.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-barrel-files.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-barrel-files.md
    */
   'unicorn/no-barrel-files'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary `Blob` to `File` conversion.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-blob-to-file.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-blob-to-file.md
    */
   'unicorn/no-blob-to-file'?: Linter.RuleEntry<[]>
   /**
    * Disallow boolean-returning sort comparators.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-boolean-sort-comparator.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-boolean-sort-comparator.md
    */
   'unicorn/no-boolean-sort-comparator'?: Linter.RuleEntry<[]>
   /**
    * Disallow `break` and optionally `continue` in nested loops and switches inside loops.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-break-in-nested-loop.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-break-in-nested-loop.md
    */
   'unicorn/no-break-in-nested-loop'?: Linter.RuleEntry<UnicornNoBreakInNestedLoop>
   /**
    * Prefer drawing canvases directly instead of converting them to images.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-canvas-to-image.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-canvas-to-image.md
    */
   'unicorn/no-canvas-to-image'?: Linter.RuleEntry<[]>
   /**
    * Disallow chained comparisons such as `a < b < c`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-chained-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-chained-comparison.md
    */
   'unicorn/no-chained-comparison'?: Linter.RuleEntry<[]>
   /**
    * Disallow accessing `Map`, `Set`, `WeakMap`, and `WeakSet` entries with bracket notation.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-collection-bracket-access.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-collection-bracket-access.md
    */
   'unicorn/no-collection-bracket-access'?: Linter.RuleEntry<[]>
   /**
    * Disallow dynamic object property existence checks.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-computed-property-existence-check.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-computed-property-existence-check.md
    */
   'unicorn/no-computed-property-existence-check'?: Linter.RuleEntry<[]>
   /**
    * Disallow conflicting CSS query and HTML form constraints.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-conflicting-constraints.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-conflicting-constraints.md
    */
   'unicorn/no-conflicting-constraints'?: Linter.RuleEntry<[]>
   /**
    * Disallow confusing uses of `Array#{splice,toSpliced}()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-confusing-array-splice.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-confusing-array-splice.md
    */
   'unicorn/no-confusing-array-splice'?: Linter.RuleEntry<[]>
   /**
    * Disallow confusing uses of `Array#with()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-confusing-array-with.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-confusing-array-with.md
    */
   'unicorn/no-confusing-array-with'?: Linter.RuleEntry<[]>
   /**
    * Do not use leading/trailing space between `console.log` parameters.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-console-spaces.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-console-spaces.md
    */
   'unicorn/no-console-spaces'?: Linter.RuleEntry<[]>
   /**
    * Disallow arithmetic and bitwise operations that always evaluate to `0`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-constant-zero-expression.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-constant-zero-expression.md
    */
   'unicorn/no-constant-zero-expression'?: Linter.RuleEntry<[]>
   /**
    * Disallow declarations before conditional early exits when they are only used after the exit.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-declarations-before-early-exit.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-declarations-before-early-exit.md
    */
   'unicorn/no-declarations-before-early-exit'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-deprecated-features`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-deprecated-css-features
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-deprecated-css-features
    * @deprecated
    */
   'unicorn/no-deprecated-css-features'?: Linter.RuleEntry<[]>
   /**
    * Do not use `document.cookie` directly.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-document-cookie.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-document-cookie.md
    */
   'unicorn/no-document-cookie'?: Linter.RuleEntry<[]>
   /**
    * Disallow two comparisons of the same operands that can be combined into one.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-double-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-double-comparison.md
    */
   'unicorn/no-double-comparison'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-duplicate-selectors`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-duplicate-css-selectors
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-duplicate-css-selectors
    * @deprecated
    */
   'unicorn/no-duplicate-css-selectors'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-duplicate-font-family-names`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-duplicate-font-family-names
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-duplicate-font-family-names
    * @deprecated
    */
   'unicorn/no-duplicate-font-family-names'?: Linter.RuleEntry<[]>
   /**
    * Disallow duplicate adjacent branches in if chains.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-duplicate-if-branches.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-duplicate-if-branches.md
    */
   'unicorn/no-duplicate-if-branches'?: Linter.RuleEntry<[]>
   /**
    * Disallow adjacent duplicate operands in logical expressions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-duplicate-logical-operands.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-duplicate-logical-operands.md
    */
   'unicorn/no-duplicate-logical-operands'?: Linter.RuleEntry<[]>
   /**
    * Disallow `.map()` and `.filter()` in `for…of` and `for await…of` loop headers.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-duplicate-loops.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-duplicate-loops.md
    */
   'unicorn/no-duplicate-loops'?: Linter.RuleEntry<[]>
   /**
    * Disallow duplicate values in `Set` constructor array literals.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-duplicate-set-values.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-duplicate-set-values.md
    */
   'unicorn/no-duplicate-set-values'?: Linter.RuleEntry<[]>
   /**
    * Disallow empty files.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-empty-file.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-empty-file.md
    */
   'unicorn/no-empty-file'?: Linter.RuleEntry<UnicornNoEmptyFile>
   /**
    * Disallow empty link text in Markdown.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-empty-link-text.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-empty-link-text.md
    */
   'unicorn/no-empty-link-text'?: Linter.RuleEntry<[]>
   /**
    * Disallow assigning to built-in error properties.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-error-property-assignment.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-error-property-assignment.md
    */
   'unicorn/no-error-property-assignment'?: Linter.RuleEntry<[]>
   /**
    * Disallow exports in scripts.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-exports-in-scripts.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-exports-in-scripts.md
    */
   'unicorn/no-exports-in-scripts'?: Linter.RuleEntry<[]>
   /**
    * Prefer `for…of` over the `forEach` method.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-for-each.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-for-each.md
    */
   'unicorn/no-for-each'?: Linter.RuleEntry<[]>
   /**
    * Do not use a `for` loop that can be replaced with a `for-of` loop.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-for-loop.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-for-loop.md
    */
   'unicorn/no-for-loop'?: Linter.RuleEntry<[]>
   /**
    * Disallow assigning properties on the global object.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-global-object-property-assignment.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-global-object-property-assignment.md
    */
   'unicorn/no-global-object-property-assignment'?: Linter.RuleEntry<[]>
   /**
    * Replaced by `unicorn/prefer-literal-ascii` and `unicorn/prefer-unicode-code-point-escapes`, which cover more cases.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-hex-escape
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-hex-escape
    * @deprecated
    */
   'unicorn/no-hex-escape'?: Linter.RuleEntry<[]>
   /**
    * Disallow immediate mutation after assignment and initialization immediately after declaration.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-immediate-mutation.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-immediate-mutation.md
    */
   'unicorn/no-immediate-mutation'?: Linter.RuleEntry<UnicornNoImmediateMutation>
   /**
    * Disallow impossible comparisons against `.length` or `.size`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-impossible-length-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-impossible-length-comparison.md
    */
   'unicorn/no-impossible-length-comparison'?: Linter.RuleEntry<[]>
   /**
    * Disallow class accessors that hide an inherited getter or setter.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-incomplete-accessor-override.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-incomplete-accessor-override.md
    */
   'unicorn/no-incomplete-accessor-override'?: Linter.RuleEntry<[]>
   /**
    * Disallow incorrect `querySelector()` and `querySelectorAll()` usage.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-incorrect-query-selector.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-incorrect-query-selector.md
    */
   'unicorn/no-incorrect-query-selector'?: Linter.RuleEntry<[]>
   /**
    * Disallow incorrect template literal interpolation syntax.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-incorrect-template-string-interpolation.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-incorrect-template-string-interpolation.md
    */
   'unicorn/no-incorrect-template-string-interpolation'?: Linter.RuleEntry<[]>
   /**
    * Disallow ineffective CSP directives in `<meta>` elements.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-ineffective-csp-directives.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-ineffective-csp-directives.md
    */
   'unicorn/no-ineffective-csp-directives'?: Linter.RuleEntry<[]>
   /**
    * Replaced by `unicorn/no-instanceof-builtins` which covers more cases.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-instanceof-array
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-instanceof-array
    * @deprecated
    */
   'unicorn/no-instanceof-array'?: Linter.RuleEntry<[]>
   /**
    * Disallow `instanceof` with built-in objects
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-instanceof-builtins.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-instanceof-builtins.md
    */
   'unicorn/no-instanceof-builtins'?: Linter.RuleEntry<UnicornNoInstanceofBuiltins>
   /**
    * Disallow calling functions and constructors with an invalid number of arguments.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-argument-count.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-argument-count.md
    */
   'unicorn/no-invalid-argument-count'?: Linter.RuleEntry<UnicornNoInvalidArgumentCount>
   /**
    * Disallow invalid values for HTML boolean attributes.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-boolean-attribute-value.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-boolean-attribute-value.md
    */
   'unicorn/no-invalid-boolean-attribute-value'?: Linter.RuleEntry<[]>
   /**
    * Disallow comparing a single character from a string to a multi-character string.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-character-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-character-comparison.md
    */
   'unicorn/no-invalid-character-comparison'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid DOM tokens.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-dom-token.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-dom-token.md
    */
   'unicorn/no-invalid-dom-token'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid options in `fetch()` and `new Request()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-fetch-options.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-fetch-options.md
    */
   'unicorn/no-invalid-fetch-options'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid `accept` values on file inputs.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-file-input-accept.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-file-input-accept.md
    */
   'unicorn/no-invalid-file-input-accept'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid subresource integrity metadata.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-integrity.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-integrity.md
    */
   'unicorn/no-invalid-integrity'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid or ignored Intl options.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-intl-options.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-intl-options.md
    */
   'unicorn/no-invalid-intl-options'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-invalid-media-features`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-invalid-media-features
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-invalid-media-features
    * @deprecated
    */
   'unicorn/no-invalid-media-features'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid property descriptors.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-property-descriptor.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-property-descriptor.md
    */
   'unicorn/no-invalid-property-descriptor'?: Linter.RuleEntry<[]>
   /**
    * Prevent calling `EventTarget#removeEventListener()` with the result of an expression.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-remove-event-listener.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-remove-event-listener.md
    */
   'unicorn/no-invalid-remove-event-listener'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid options in `new Response()`, `Response.json()`, and `Response.redirect()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-response-options.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-response-options.md
    */
   'unicorn/no-invalid-response-options'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid arguments to `CSSStyleDeclaration#setProperty()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-style-set-property.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-style-set-property.md
    */
   'unicorn/no-invalid-style-set-property'?: Linter.RuleEntry<[]>
   /**
    * Disallow statically known invalid Temporal arithmetic.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-temporal-arithmetic.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-temporal-arithmetic.md
    */
   'unicorn/no-invalid-temporal-arithmetic'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid protocol strings in comparisons with `URL#protocol`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-url-protocol-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-url-protocol-comparison.md
    */
   'unicorn/no-invalid-url-protocol-comparison'?: Linter.RuleEntry<[]>
   /**
    * Disallow invalid implementations of well-known symbol methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-invalid-well-known-symbol-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-invalid-well-known-symbol-methods.md
    */
   'unicorn/no-invalid-well-known-symbol-methods'?: Linter.RuleEntry<[]>
   /**
    * Disallow `javascript:` URLs in Markdown.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-javascript-url.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-javascript-url.md
    */
   'unicorn/no-javascript-url'?: Linter.RuleEntry<[]>
   /**
    * Disallow identifiers starting with `new` or `class`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-keyword-prefix.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-keyword-prefix.md
    */
   'unicorn/no-keyword-prefix'?: Linter.RuleEntry<UnicornNoKeywordPrefix>
   /**
    * Disallow accessing `event.currentTarget` after the synchronous event dispatch has finished.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-late-current-target-access.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-late-current-target-access.md
    */
   'unicorn/no-late-current-target-access'?: Linter.RuleEntry<[]>
   /**
    * Disallow event-control method calls after the synchronous event dispatch has finished.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-late-event-control.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-late-event-control.md
    */
   'unicorn/no-late-event-control'?: Linter.RuleEntry<[]>
   /**
    * Disallow empty lines at the beginning of a file.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-leading-empty-lines.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-leading-empty-lines.md
    */
   'unicorn/no-leading-empty-lines'?: Linter.RuleEntry<[]>
   /**
    * Replaced by `unicorn/no-unnecessary-slice-end` which covers more cases.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-length-as-slice-end
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-length-as-slice-end
    * @deprecated
    */
   'unicorn/no-length-as-slice-end'?: Linter.RuleEntry<[]>
   /**
    * Disallow `if` statements as the only statement in `if` blocks without `else`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-lonely-if.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-lonely-if.md
    */
   'unicorn/no-lonely-if'?: Linter.RuleEntry<[]>
   /**
    * Disallow mutating a loop iterable during iteration.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-loop-iterable-mutation.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-loop-iterable-mutation.md
    */
   'unicorn/no-loop-iterable-mutation'?: Linter.RuleEntry<[]>
   /**
    * Disallow numeric literals that lose precision when represented as IEEE 754 binary64 values.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-loss-of-precision.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-loss-of-precision.md
    */
   'unicorn/no-loss-of-precision'?: Linter.RuleEntry<[]>
   /**
    * Disallow a magic number as the `depth` argument in `Array#flat(…).`
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-magic-array-flat-depth.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-magic-array-flat-depth.md
    */
   'unicorn/no-magic-array-flat-depth'?: Linter.RuleEntry<[]>
   /**
    * Disallow manually wrapped comments.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-manually-wrapped-comments.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-manually-wrapped-comments.md
    */
   'unicorn/no-manually-wrapped-comments'?: Linter.RuleEntry<[]>
   /**
    * Disallow checking a Map key before accessing a different key.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-mismatched-map-key.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-mismatched-map-key.md
    */
   'unicorn/no-mismatched-map-key'?: Linter.RuleEntry<[]>
   /**
    * Disallow misrefactored compound assignments where the target is duplicated in the right-hand side.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-misrefactored-assignment.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-misrefactored-assignment.md
    */
   'unicorn/no-misrefactored-assignment'?: Linter.RuleEntry<[]>
   /**
    * Disallow references to missing local resources.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-missing-local-resource.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-missing-local-resource.md
    */
   'unicorn/no-missing-local-resource'?: Linter.RuleEntry<[]>
   /**
    * Disallow calling Promise executor resolver functions more than once on the same execution path.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-multiple-promise-resolver-calls.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-multiple-promise-resolver-calls.md
    */
   'unicorn/no-multiple-promise-resolver-calls'?: Linter.RuleEntry<[]>
   /**
    * Disallow named usage of default import and export.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-named-default.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-named-default.md
    */
   'unicorn/no-named-default'?: Linter.RuleEntry<[]>
   /**
    * Disallow negated array predicate calls.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-negated-array-predicate.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-negated-array-predicate.md
    */
   'unicorn/no-negated-array-predicate'?: Linter.RuleEntry<[]>
   /**
    * Disallow negated comparisons.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-negated-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-negated-comparison.md
    */
   'unicorn/no-negated-comparison'?: Linter.RuleEntry<UnicornNoNegatedComparison>
   /**
    * Disallow negated conditions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-negated-condition.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-negated-condition.md
    */
   'unicorn/no-negated-condition'?: Linter.RuleEntry<[]>
   /**
    * Disallow negated expression in equality check.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-negation-in-equality-check.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-negation-in-equality-check.md
    */
   'unicorn/no-negation-in-equality-check'?: Linter.RuleEntry<[]>
   /**
    * Disallow nested ternary expressions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-nested-ternary.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-nested-ternary.md
    */
   'unicorn/no-nested-ternary'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-nesting-with-mixed-specificity`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-nesting-with-mixed-specificity
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-nesting-with-mixed-specificity
    * @deprecated
    */
   'unicorn/no-nesting-with-mixed-specificity'?: Linter.RuleEntry<[]>
   /**
    * Disallow `new Array()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-new-array.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-new-array.md
    */
   'unicorn/no-new-array'?: Linter.RuleEntry<[]>
   /**
    * Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-new-buffer.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-new-buffer.md
    */
   'unicorn/no-new-buffer'?: Linter.RuleEntry<[]>
   /**
    * Disallow non-function values with function-style verb prefixes.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-non-function-verb-prefix.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-non-function-verb-prefix.md
    */
   'unicorn/no-non-function-verb-prefix'?: Linter.RuleEntry<UnicornNoNonFunctionVerbPrefix>
   /**
    * Disallow non-standard properties on built-in objects.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-nonstandard-builtin-properties.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-nonstandard-builtin-properties.md
    */
   'unicorn/no-nonstandard-builtin-properties'?: Linter.RuleEntry<[]>
   /**
    * Disallow the use of the `null` literal.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-null.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-null.md
    */
   'unicorn/no-null'?: Linter.RuleEntry<UnicornNoNull>
   /**
    * Disallow the use of objects as default parameters.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-object-as-default-parameter.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-object-as-default-parameter.md
    */
   'unicorn/no-object-as-default-parameter'?: Linter.RuleEntry<[]>
   /**
    * Disallow `Object` methods with `Map` or `Set`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-object-methods-with-collections.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-object-methods-with-collections.md
    */
   'unicorn/no-object-methods-with-collections'?: Linter.RuleEntry<[]>
   /**
    * Disallow optional chaining on undeclared variables.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-optional-chaining-on-undeclared-variable.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-optional-chaining-on-undeclared-variable.md
    */
   'unicorn/no-optional-chaining-on-undeclared-variable'?: Linter.RuleEntry<[]>
   /**
    * Disallow ineffective `preventDefault()` calls in passive event listeners.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-prevent-default-in-passive-listener.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-prevent-default-in-passive-listener.md
    */
   'unicorn/no-prevent-default-in-passive-listener'?: Linter.RuleEntry<[]>
   /**
    * Disallow `process.exit()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-process-exit.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-process-exit.md
    */
   'unicorn/no-process-exit'?: Linter.RuleEntry<[]>
   /**
    * Disallow comparisons made redundant by an equality check in the same logical AND.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-redundant-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-redundant-comparison.md
    */
   'unicorn/no-redundant-comparison'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-redundant-nested-style-rules`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-redundant-nested-style-rules
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-redundant-nested-style-rules
    * @deprecated
    */
   'unicorn/no-redundant-nested-style-rules'?: Linter.RuleEntry<[]>
   /**
    * Disallow repeating the same wrapper at every call to a function.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-repeated-call-wrappers.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-repeated-call-wrappers.md
    */
   'unicorn/no-repeated-call-wrappers'?: Linter.RuleEntry<[]>
   /**
    * Disallow using the return value of `Array#push()` and `Array#unshift()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-return-array-push.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-return-array-push.md
    */
   'unicorn/no-return-array-push'?: Linter.RuleEntry<[]>
   /**
    * Disallow selector syntax in DOM names.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-selector-as-dom-name.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-selector-as-dom-name.md
    */
   'unicorn/no-selector-as-dom-name'?: Linter.RuleEntry<[]>
   /**
    * Disallow shorthand properties that override related longhand properties.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-shorthand-property-overrides.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-shorthand-property-overrides.md
    */
   'unicorn/no-shorthand-property-overrides'?: Linter.RuleEntry<[]>
   /**
    * Disallow passing single-element arrays to `Promise` methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-single-promise-in-promise-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-single-promise-in-promise-methods.md
    */
   'unicorn/no-single-promise-in-promise-methods'?: Linter.RuleEntry<[]>
   /**
    * Disallow classes that only have static members.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-static-only-class.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-static-only-class.md
    */
   'unicorn/no-static-only-class'?: Linter.RuleEntry<[]>
   /**
    * Prefer comparing values directly over subtracting and comparing to `0`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-subtraction-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-subtraction-comparison.md
    */
   'unicorn/no-subtraction-comparison'?: Linter.RuleEntry<[]>
   /**
    * Disallow `then` property.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-thenable.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-thenable.md
    */
   'unicorn/no-thenable'?: Linter.RuleEntry<[]>
   /**
    * Disallow assigning `this` to a variable.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-this-assignment.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-this-assignment.md
    */
   'unicorn/no-this-assignment'?: Linter.RuleEntry<[]>
   /**
    * Disallow `this` outside of classes.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-this-outside-of-class.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-this-outside-of-class.md
    */
   'unicorn/no-this-outside-of-class'?: Linter.RuleEntry<[]>
   /**
    * Disallow assigning to top-level variables from inside functions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-top-level-assignment-in-function.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-top-level-assignment-in-function.md
    */
   'unicorn/no-top-level-assignment-in-function'?: Linter.RuleEntry<[]>
   /**
    * Disallow top-level side effects in exported modules.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-top-level-side-effects.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-top-level-side-effects.md
    */
   'unicorn/no-top-level-side-effects'?: Linter.RuleEntry<UnicornNoTopLevelSideEffects>
   /**
    * Disallow `all` as a transition property.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-transition-all.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-transition-all.md
    */
   'unicorn/no-transition-all'?: Linter.RuleEntry<[]>
   /**
    * Disallow comparing `undefined` using `typeof`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-typeof-undefined.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-typeof-undefined.md
    */
   'unicorn/no-typeof-undefined'?: Linter.RuleEntry<UnicornNoTypeofUndefined>
   /**
    * Disallow referencing methods without calling them.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-uncalled-method.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-uncalled-method.md
    */
   'unicorn/no-uncalled-method'?: Linter.RuleEntry<[]>
   /**
    * Require class members to be declared.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-undeclared-class-members.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-undeclared-class-members.md
    */
   'unicorn/no-undeclared-class-members'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-unknown-annotations`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-unknown-css-annotations
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-unknown-css-annotations
    * @deprecated
    */
   'unicorn/no-unknown-css-annotations'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-unknown-pseudo-selectors`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-unknown-pseudo-selectors
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-unknown-pseudo-selectors
    * @deprecated
    */
   'unicorn/no-unknown-pseudo-selectors'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `1` as the `depth` argument of `Array#flat()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-array-flat-depth.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-array-flat-depth.md
    */
   'unicorn/no-unnecessary-array-flat-depth'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary use of `Array#flatMap()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-array-flat-map.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-array-flat-map.md
    */
   'unicorn/no-unnecessary-array-flat-map'?: Linter.RuleEntry<[]>
   /**
    * Disallow using `.length` or `Infinity` as the `deleteCount` or `skipCount` argument of `Array#{splice,toSpliced}()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-array-splice-count.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-array-splice-count.md
    */
   'unicorn/no-unnecessary-array-splice-count'?: Linter.RuleEntry<[]>
   /**
    * Disallow awaiting non-promise values.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-await.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-await.md
    */
   'unicorn/no-unnecessary-await'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary comparisons against boolean literals.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-boolean-comparison.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-boolean-comparison.md
    */
   'unicorn/no-unnecessary-boolean-comparison'?: Linter.RuleEntry<[]>
   /**
    * Disallow arguments that match their parameter defaults.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-default-arguments.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-default-arguments.md
    */
   'unicorn/no-unnecessary-default-arguments'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary options in `fetch()` and `new Request()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-fetch-options.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-fetch-options.md
    */
   'unicorn/no-unnecessary-fetch-options'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary `globalThis` references.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-global-this.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-global-this.md
    */
   'unicorn/no-unnecessary-global-this'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary nested ternary expressions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-nested-ternary.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-nested-ternary.md
    */
   'unicorn/no-unnecessary-nested-ternary'?: Linter.RuleEntry<[]>
   /**
    * Disallow parameters that receive the same value at every call.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-parameters.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-parameters.md
    */
   'unicorn/no-unnecessary-parameters'?: Linter.RuleEntry<UnicornNoUnnecessaryParameters>
   /**
    * Enforce the use of built-in methods instead of unnecessary polyfills.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-polyfills.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-polyfills.md
    */
   'unicorn/no-unnecessary-polyfills'?: Linter.RuleEntry<UnicornNoUnnecessaryPolyfills>
   /**
    * Disallow using `.length` or `Infinity` as the `end` argument of `{Array,String,TypedArray}#slice()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-slice-end.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-slice-end.md
    */
   'unicorn/no-unnecessary-slice-end'?: Linter.RuleEntry<[]>
   /**
    * Disallow `Array#splice()` when simpler alternatives exist.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-splice.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-splice.md
    */
   'unicorn/no-unnecessary-splice'?: Linter.RuleEntry<[]>
   /**
    * Disallow `String#trim()` before `String#startsWith()` or `String#endsWith()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unnecessary-string-trim.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unnecessary-string-trim.md
    */
   'unicorn/no-unnecessary-string-trim'?: Linter.RuleEntry<[]>
   /**
    * Disallow unreadable array destructuring.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unreadable-array-destructuring.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unreadable-array-destructuring.md
    */
   'unicorn/no-unreadable-array-destructuring'?: Linter.RuleEntry<UnicornNoUnreadableArrayDestructuring>
   /**
    * Disallow unreadable iterable expressions in `for…of` and `for await…of` loop headers.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unreadable-for-of-expression.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unreadable-for-of-expression.md
    */
   'unicorn/no-unreadable-for-of-expression'?: Linter.RuleEntry<[]>
   /**
    * Disallow unreadable IIFEs.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unreadable-iife.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unreadable-iife.md
    */
   'unicorn/no-unreadable-iife'?: Linter.RuleEntry<[]>
   /**
    * Disallow unreadable `new` expressions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unreadable-new-expression.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unreadable-new-expression.md
    */
   'unicorn/no-unreadable-new-expression'?: Linter.RuleEntry<[]>
   /**
    * Disallow unreadable object destructuring.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unreadable-object-destructuring.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unreadable-object-destructuring.md
    */
   'unicorn/no-unreadable-object-destructuring'?: Linter.RuleEntry<[]>
   /**
    * Prevent unsafe use of ArrayBuffer view `.buffer`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unsafe-buffer-conversion.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unsafe-buffer-conversion.md
    */
   'unicorn/no-unsafe-buffer-conversion'?: Linter.RuleEntry<[]>
   /**
    * Disallow unsafe DOM HTML APIs.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unsafe-dom-html.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unsafe-dom-html.md
    */
   'unicorn/no-unsafe-dom-html'?: Linter.RuleEntry<[]>
   /**
    * Disallow known values that JSON serialization cannot represent faithfully.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unsafe-json-serialization.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unsafe-json-serialization.md
    */
   'unicorn/no-unsafe-json-serialization'?: Linter.RuleEntry<[]>
   /**
    * Disallow reading `.value` from `Promise.allSettled()` results without a fulfilled status guard.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unsafe-promise-all-settled-values.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unsafe-promise-all-settled-values.md
    */
   'unicorn/no-unsafe-promise-all-settled-values'?: Linter.RuleEntry<[]>
   /**
    * Disallow unsafe values as property keys.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unsafe-property-key.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unsafe-property-key.md
    */
   'unicorn/no-unsafe-property-key'?: Linter.RuleEntry<[]>
   /**
    * Disallow interpolation into SQL strings passed to Node’s `node:sqlite` APIs.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unsafe-sqlite-interpolation.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unsafe-sqlite-interpolation.md
    */
   'unicorn/no-unsafe-sqlite-interpolation'?: Linter.RuleEntry<[]>
   /**
    * Disallow non-literal replacement values in `String#replace()` and `String#replaceAll()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unsafe-string-replacement.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unsafe-string-replacement.md
    */
   'unicorn/no-unsafe-string-replacement'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/no-unscoped-nesting-selector`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-unscoped-css-nesting-selector
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-unscoped-css-nesting-selector
    * @deprecated
    */
   'unicorn/no-unscoped-css-nesting-selector'?: Linter.RuleEntry<[]>
   /**
    * Replaced by `unicorn/no-unused-builtin-method-return` which covers more cases.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#no-unused-array-method-return
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#no-unused-array-method-return
    * @deprecated
    */
   'unicorn/no-unused-array-method-return'?: Linter.RuleEntry<[]>
   /**
    * Disallow ignoring the return value of selected built-in methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unused-builtin-method-return.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unused-builtin-method-return.md
    */
   'unicorn/no-unused-builtin-method-return'?: Linter.RuleEntry<[]>
   /**
    * Disallow discarding lazy iterator helpers.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unused-iterator-helper.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unused-iterator-helper.md
    */
   'unicorn/no-unused-iterator-helper'?: Linter.RuleEntry<[]>
   /**
    * Disallow unused object properties.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-unused-properties.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-unused-properties.md
    */
   'unicorn/no-unused-properties'?: Linter.RuleEntry<[]>
   /**
    * Disallow passing full URLs to `URLSearchParams`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-url-in-search-params.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-url-in-search-params.md
    */
   'unicorn/no-url-in-search-params'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary `Boolean()` casts in array predicate callbacks.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-boolean-cast.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-boolean-cast.md
    */
   'unicorn/no-useless-boolean-cast'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless type coercions of values that are already of the target type.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-coercion.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-coercion.md
    */
   'unicorn/no-useless-coercion'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless values or fallbacks in `Set`, `Map`, `WeakSet`, or `WeakMap`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-collection-argument.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-collection-argument.md
    */
   'unicorn/no-useless-collection-argument'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless compound assignments such as `x += 0`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-compound-assignment.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-compound-assignment.md
    */
   'unicorn/no-useless-compound-assignment'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless concatenation of literals.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-concat.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-concat.md
    */
   'unicorn/no-useless-concat'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless `continue` statements.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-continue.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-continue.md
    */
   'unicorn/no-useless-continue'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary existence checks before deletion.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-delete-check.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-delete-check.md
    */
   'unicorn/no-useless-delete-check'?: Linter.RuleEntry<[]>
   /**
    * Disallow `else` after a statement that exits.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-else.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-else.md
    */
   'unicorn/no-useless-else'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary `Error.captureStackTrace(…)`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-error-capture-stack-trace.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-error-capture-stack-trace.md
    */
   'unicorn/no-useless-error-capture-stack-trace'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless fallback when spreading in object literals.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-fallback-in-spread.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-fallback-in-spread.md
    */
   'unicorn/no-useless-fallback-in-spread'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary `.toArray()` on iterators.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-iterator-to-array.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-iterator-to-array.md
    */
   'unicorn/no-useless-iterator-to-array'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless array length check.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-length-check.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-length-check.md
    */
   'unicorn/no-useless-length-check'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary operands in logical expressions involving boolean literals.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-logical-operand.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-logical-operand.md
    */
   'unicorn/no-useless-logical-operand'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless overrides of class methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-override.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-override.md
    */
   'unicorn/no-useless-override'?: Linter.RuleEntry<[]>
   /**
    * Disallow returning/yielding `Promise.resolve/reject()` in async functions or promise callbacks
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-promise-resolve-reject.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-promise-resolve-reject.md
    */
   'unicorn/no-useless-promise-resolve-reject'?: Linter.RuleEntry<[]>
   /**
    * Disallow redundant re-exports.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-re-export.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-re-export.md
    */
   'unicorn/no-useless-re-export'?: Linter.RuleEntry<[]>
   /**
    * Disallow simple recursive function calls that can be replaced with a loop.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-recursion.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-recursion.md
    */
   'unicorn/no-useless-recursion'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary `Set` construction around `Set` methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-set-construction.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-set-construction.md
    */
   'unicorn/no-useless-set-construction'?: Linter.RuleEntry<[]>
   /**
    * Disallow unnecessary spread.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-spread.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-spread.md
    */
   'unicorn/no-useless-spread'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless case in switch statements.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-switch-case.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-switch-case.md
    */
   'unicorn/no-useless-switch-case'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless template literal expressions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-template-literals.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-template-literals.md
    */
   'unicorn/no-useless-template-literals'?: Linter.RuleEntry<[]>
   /**
    * Disallow useless `undefined`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-useless-undefined.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-useless-undefined.md
    */
   'unicorn/no-useless-undefined'?: Linter.RuleEntry<UnicornNoUselessUndefined>
   /**
    * Disallow returning or exporting resources declared with `using`, including through capturing functions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-using-resource-escape.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-using-resource-escape.md
    */
   'unicorn/no-using-resource-escape'?: Linter.RuleEntry<[]>
   /**
    * Disallow the bitwise XOR operator where exponentiation was likely intended.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-xor-as-exponentiation.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-xor-as-exponentiation.md
    */
   'unicorn/no-xor-as-exponentiation'?: Linter.RuleEntry<[]>
   /**
    * Require consistent decimal numbers without redundant zeros.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/no-zero-fractions.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/no-zero-fractions.md
    */
   'unicorn/no-zero-fractions'?: Linter.RuleEntry<[]>
   /**
    * Enforce proper case for numeric literals.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/number-literal-case.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/number-literal-case.md
    */
   'unicorn/number-literal-case'?: Linter.RuleEntry<UnicornNumberLiteralCase>
   /**
    * Enforce the style of numeric separators by correctly grouping digits.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/numeric-separators-style.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/numeric-separators-style.md
    */
   'unicorn/numeric-separators-style'?: Linter.RuleEntry<UnicornNumericSeparatorsStyle>
   /**
    * Require assignment operator shorthand where possible.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/operator-assignment.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/operator-assignment.md
    */
   'unicorn/operator-assignment'?: Linter.RuleEntry<UnicornOperatorAssignment>
   /**
    * Prefer `AbortSignal.any()` over manually forwarding abort events between signals.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-abort-signal-any.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-abort-signal-any.md
    */
   'unicorn/prefer-abort-signal-any'?: Linter.RuleEntry<[]>
   /**
    * Prefer `AbortSignal.timeout()` over manually aborting an `AbortController` with `setTimeout()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-abort-signal-timeout.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-abort-signal-timeout.md
    */
   'unicorn/prefer-abort-signal-timeout'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.addEventListener()` and `.removeEventListener()` over `on`-functions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-add-event-listener.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-add-event-listener.md
    */
   'unicorn/prefer-add-event-listener'?: Linter.RuleEntry<UnicornPreferAddEventListener>
   /**
    * Prefer an options object over a boolean in `.addEventListener()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-add-event-listener-options.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-add-event-listener-options.md
    */
   'unicorn/prefer-add-event-listener-options'?: Linter.RuleEntry<[]>
   /**
    * Prefer `AggregateError` when throwing collected errors.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-aggregate-error.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-aggregate-error.md
    */
   'unicorn/prefer-aggregate-error'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.find(…)` and `.findLast(…)` over the first or last element from `.filter(…)`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-find.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-find.md
    */
   'unicorn/prefer-array-find'?: Linter.RuleEntry<UnicornPreferArrayFind>
   /**
    * Prefer `Array#flat()` over legacy techniques to flatten arrays.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-flat.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-flat.md
    */
   'unicorn/prefer-array-flat'?: Linter.RuleEntry<UnicornPreferArrayFlat>
   /**
    * Prefer `.flatMap(…)` over `.map(…).flat()` and `.filter(…).flatMap(…)`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-flat-map.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-flat-map.md
    */
   'unicorn/prefer-array-flat-map'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Array.fromAsync()` over array accumulation loops.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-from-async.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-from-async.md
    */
   'unicorn/prefer-array-from-async'?: Linter.RuleEntry<[]>
   /**
    * Prefer using the `Array.from()` mapping function argument.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-from-map.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-from-map.md
    */
   'unicorn/prefer-array-from-map'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Array.from({length}, …)` when creating range arrays.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-from-range.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-from-range.md
    */
   'unicorn/prefer-array-from-range'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-index-of.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-index-of.md
    */
   'unicorn/prefer-array-index-of'?: Linter.RuleEntry<[]>
   /**
    * Prefer iterating an array directly or with `Array#keys()` over `Array#entries()` when the index or value is unused.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-iterable-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-iterable-methods.md
    */
   'unicorn/prefer-array-iterable-methods'?: Linter.RuleEntry<[]>
   /**
    * Prefer last-oriented array methods over `Array#reverse()` or `Array#toReversed()` followed by a method.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-last-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-last-methods.md
    */
   'unicorn/prefer-array-last-methods'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Array#slice()` over `Array#splice()` when reading from the returned array.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-slice.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-slice.md
    */
   'unicorn/prefer-array-slice'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.some(…)` over `.filter(…).length` check and `.{find,findLast,findIndex,findLastIndex}(…)`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-array-some.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-array-some.md
    */
   'unicorn/prefer-array-some'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.at()` method for index access and `String#charAt()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-at.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-at.md
    */
   'unicorn/prefer-at'?: Linter.RuleEntry<UnicornPreferAt>
   /**
    * Prefer `await` over promise chaining.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-await.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-await.md
    */
   'unicorn/prefer-await'?: Linter.RuleEntry<[]>
   /**
    * Prefer `BigInt` literals over the constructor.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-bigint-literals.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-bigint-literals.md
    */
   'unicorn/prefer-bigint-literals'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Blob#arrayBuffer()` over `FileReader#readAsArrayBuffer(…)` and `Blob#text()` over `FileReader#readAsText(…)`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-blob-reading-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-blob-reading-methods.md
    */
   'unicorn/prefer-blob-reading-methods'?: Linter.RuleEntry<[]>
   /**
    * Prefer block statements over IIFEs used only for scoping.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-block-statement-over-iife.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-block-statement-over-iife.md
    */
   'unicorn/prefer-block-statement-over-iife'?: Linter.RuleEntry<[]>
   /**
    * Prefer directly returning boolean expressions over `if` statements.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-boolean-return.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-boolean-return.md
    */
   'unicorn/prefer-boolean-return'?: Linter.RuleEntry<[]>
   /**
    * Prefer class field declarations over `this` assignments in constructors.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-class-fields.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-class-fields.md
    */
   'unicorn/prefer-class-fields'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `Element#classList.toggle()` to toggle class names.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-classlist-toggle.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-classlist-toggle.md
    */
   'unicorn/prefer-classlist-toggle'?: Linter.RuleEntry<[]>
   /**
    * Prefer `String#codePointAt(…)` over `String#charCodeAt(…)` and `String.fromCodePoint(…)` over `String.fromCharCode(…)`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-code-point.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-code-point.md
    */
   'unicorn/prefer-code-point'?: Linter.RuleEntry<[]>
   /**
    * Prefer combining consecutive guards with identical exit statements.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-combined-guards.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-combined-guards.md
    */
   'unicorn/prefer-combined-guards'?: Linter.RuleEntry<UnicornPreferCombinedGuards>
   /**
    * Prefer early continues over conditionals wrapping the remainder of the loop body.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-continue.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-continue.md
    */
   'unicorn/prefer-continue'?: Linter.RuleEntry<UnicornPreferContinue>
   /**
    * Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-date-now.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-date-now.md
    */
   'unicorn/prefer-date-now'?: Linter.RuleEntry<[]>
   /**
    * Prefer default parameters and destructuring defaults over reassignment and fallback expressions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-default-parameters.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-default-parameters.md
    */
   'unicorn/prefer-default-parameters'?: Linter.RuleEntry<UnicornPreferDefaultParameters>
   /**
    * Prefer direct iteration over default iterator method calls.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-direct-iteration.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-direct-iteration.md
    */
   'unicorn/prefer-direct-iteration'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `using`/`await using` over manual `try`/`finally` resource disposal.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-dispose.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-dispose.md
    */
   'unicorn/prefer-dispose'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Element#append()` over `Node#appendChild()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-dom-node-append.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-dom-node-append.md
    */
   'unicorn/prefer-dom-node-append'?: Linter.RuleEntry<[]>
   /**
    * Renamed to `unicorn/dom-node-dataset`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#prefer-dom-node-dataset
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#prefer-dom-node-dataset
    * @deprecated
    */
   'unicorn/prefer-dom-node-dataset'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.getHTML()` and `.setHTML()` over `.innerHTML`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-dom-node-html-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-dom-node-html-methods.md
    */
   'unicorn/prefer-dom-node-html-methods'?: Linter.RuleEntry<UnicornPreferDomNodeHtmlMethods>
   /**
    * Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-dom-node-remove.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-dom-node-remove.md
    */
   'unicorn/prefer-dom-node-remove'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.replaceChildren()` when replacing DOM children.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-dom-node-replace-children.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-dom-node-replace-children.md
    */
   'unicorn/prefer-dom-node-replace-children'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.textContent` over `.innerText`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-dom-node-text-content.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-dom-node-text-content.md
    */
   'unicorn/prefer-dom-node-text-content'?: Linter.RuleEntry<[]>
   /**
    * Prefer early returns over conditionals wrapping the remainder of the function body.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-early-return.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-early-return.md
    */
   'unicorn/prefer-early-return'?: Linter.RuleEntry<UnicornPreferEarlyReturn>
   /**
    * Prefer `else if` over adjacent `if` statements with related conditions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-else-if.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-else-if.md
    */
   'unicorn/prefer-else-if'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Error.isError()` when checking for errors.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-error-is-error.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-error-is-error.md
    */
   'unicorn/prefer-error-is-error'?: Linter.RuleEntry<[]>
   /**
    * Prefer escape sequences for irregular whitespace characters.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-escaped-irregular-whitespace.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-escaped-irregular-whitespace.md
    */
   'unicorn/prefer-escaped-irregular-whitespace'?: Linter.RuleEntry<[]>
   /**
    * Prefer `EventTarget` over `EventEmitter`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-event-target.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-event-target.md
    */
   'unicorn/prefer-event-target'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/prefer-explicit-viewport-units`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#prefer-explicit-viewport-units
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#prefer-explicit-viewport-units
    * @deprecated
    */
   'unicorn/prefer-explicit-viewport-units'?: Linter.RuleEntry<[]>
   /**
    * Prefer `export…from` when re-exporting.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-export-from.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-export-from.md
    */
   'unicorn/prefer-export-from'?: Linter.RuleEntry<UnicornPreferExportFrom>
   /**
    * Prefer flat `Math.min()` and `Math.max()` calls over nested calls.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-flat-math-min-max.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-flat-math-min-max.md
    */
   'unicorn/prefer-flat-math-min-max'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.getOrInsertComputed()` when the default value has side effects.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-get-or-insert-computed.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-get-or-insert-computed.md
    */
   'unicorn/prefer-get-or-insert-computed'?: Linter.RuleEntry<[]>
   /**
    * Prefer global numeric constants over `Number` static properties.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-global-number-constants.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-global-number-constants.md
    */
   'unicorn/prefer-global-number-constants'?: Linter.RuleEntry<[]>
   /**
    * Prefer `globalThis` over `window`, `self`, and `global`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-global-this.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-global-this.md
    */
   'unicorn/prefer-global-this'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Object.groupBy()` or `Map.groupBy()` over manual grouping.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-group-by.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-group-by.md
    */
   'unicorn/prefer-group-by'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.has()` when checking existence.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-has-check.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-has-check.md
    */
   'unicorn/prefer-has-check'?: Linter.RuleEntry<[]>
   /**
    * Prefer moving code shared by all branches of an `if` statement out of the branches.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-hoisting-branch-code.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-hoisting-branch-code.md
    */
   'unicorn/prefer-hoisting-branch-code'?: Linter.RuleEntry<[]>
   /**
    * Prefer HTTPS over HTTP.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-https.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-https.md
    */
   'unicorn/prefer-https'?: Linter.RuleEntry<UnicornPreferHttps>
   /**
    * Prefer identifiers over string literals in import and export specifiers.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-identifier-import-export-specifiers.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-identifier-import-export-specifiers.md
    */
   'unicorn/prefer-identifier-import-export-specifiers'?: Linter.RuleEntry<[]>
   /**
    * Prefer `import.meta.{dirname,filename}` over legacy techniques for getting file paths.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-import-meta-properties.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-import-meta-properties.md
    */
   'unicorn/prefer-import-meta-properties'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.includes()` over `.indexOf()`, `.lastIndexOf()`, and `Array#some()` when checking for existence or non-existence.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-includes.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-includes.md
    */
   'unicorn/prefer-includes'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.includes()` over repeated equality comparisons.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-includes-over-repeated-comparisons.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-includes-over-repeated-comparisons.md
    */
   'unicorn/prefer-includes-over-repeated-comparisons'?: Linter.RuleEntry<UnicornPreferIncludesOverRepeatedComparisons>
   /**
    * Prefer passing iterables directly to constructors instead of filling empty collections.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-iterable-in-constructor.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-iterable-in-constructor.md
    */
   'unicorn/prefer-iterable-in-constructor'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Iterator.concat(…)` over temporary spread arrays.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-iterator-concat.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-iterator-concat.md
    */
   'unicorn/prefer-iterator-concat'?: Linter.RuleEntry<[]>
   /**
    * Prefer iterator helpers over temporary arrays from iterators.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-iterator-helpers.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-iterator-helpers.md
    */
   'unicorn/prefer-iterator-helpers'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Iterator#toArray()` over temporary arrays from iterator spreads.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-iterator-to-array.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-iterator-to-array.md
    */
   'unicorn/prefer-iterator-to-array'?: Linter.RuleEntry<[]>
   /**
    * Prefer moving `.toArray()` to the end of iterator helper chains.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-iterator-to-array-at-end.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-iterator-to-array-at-end.md
    */
   'unicorn/prefer-iterator-to-array-at-end'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Iterator.zip()` over parallel-array indexing.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-iterator-zip.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-iterator-zip.md
    */
   'unicorn/prefer-iterator-zip'?: Linter.RuleEntry<[]>
   /**
    * Prefer JSON imports over reading and parsing JSON files.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-json-import.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-json-import.md
    */
   'unicorn/prefer-json-import'?: Linter.RuleEntry<[]>
   /**
    * Renamed to `unicorn/consistent-json-file-read`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#prefer-json-parse-buffer
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#prefer-json-parse-buffer
    * @deprecated
    */
   'unicorn/prefer-json-parse-buffer'?: Linter.RuleEntry<[]>
   /**
    * Prefer `KeyboardEvent#key` over deprecated keyboard event properties.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-keyboard-event-key.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-keyboard-event-key.md
    */
   'unicorn/prefer-keyboard-event-key'?: Linter.RuleEntry<[]>
   /**
    * Prefer literal printable ASCII characters over escape sequences.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-literal-ascii.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-literal-ascii.md
    */
   'unicorn/prefer-literal-ascii'?: Linter.RuleEntry<[]>
   /**
    * Prefer `location.assign()` over assigning to `location.href`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-location-assign.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-location-assign.md
    */
   'unicorn/prefer-location-assign'?: Linter.RuleEntry<[]>
   /**
    * Prefer using a logical operator over a ternary.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-logical-operator-over-ternary.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-logical-operator-over-ternary.md
    */
   'unicorn/prefer-logical-operator-over-ternary'?: Linter.RuleEntry<[]>
   /**
    * Prefer `new Map()` over `Object.fromEntries()` when using the result as a map.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-map-from-entries.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-map-from-entries.md
    */
   'unicorn/prefer-map-from-entries'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Math.abs()` over manual absolute value expressions and symmetric range checks.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-math-abs.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-math-abs.md
    */
   'unicorn/prefer-math-abs'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Math` constants over their approximate numeric values.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-math-constants.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-math-constants.md
    */
   'unicorn/prefer-math-constants'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Math.min()` and `Math.max()` over ternaries for simple comparisons.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-math-min-max.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-math-min-max.md
    */
   'unicorn/prefer-math-min-max'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Math.trunc()` for truncating numbers.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-math-trunc.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-math-trunc.md
    */
   'unicorn/prefer-math-trunc'?: Linter.RuleEntry<[]>
   /**
    * Moved to `eslint-cssicorn` as `cssicorn/prefer-media-feature-range-syntax`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#prefer-media-feature-range-syntax
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#prefer-media-feature-range-syntax
    * @deprecated
    */
   'unicorn/prefer-media-feature-range-syntax'?: Linter.RuleEntry<[]>
   /**
    * Prefer moving ternaries into the minimal varying part of an expression.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-minimal-ternary.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-minimal-ternary.md
    */
   'unicorn/prefer-minimal-ternary'?: Linter.RuleEntry<UnicornPreferMinimalTernary>
   /**
    * Prefer modern DOM APIs.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-modern-dom-apis.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-modern-dom-apis.md
    */
   'unicorn/prefer-modern-dom-apis'?: Linter.RuleEntry<[]>
   /**
    * Prefer modern `Math` APIs over legacy patterns.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-modern-math-apis.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-modern-math-apis.md
    */
   'unicorn/prefer-modern-math-apis'?: Linter.RuleEntry<[]>
   /**
    * Prefer JavaScript modules (ESM) over CommonJS.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-module.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-module.md
    */
   'unicorn/prefer-module'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-native-coercion-functions.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-native-coercion-functions.md
    */
   'unicorn/prefer-native-coercion-functions'?: Linter.RuleEntry<[]>
   /**
    * Prefer negative index over `.length - index` when possible.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-negative-index.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-negative-index.md
    */
   'unicorn/prefer-negative-index'?: Linter.RuleEntry<[]>
   /**
    * Prefer using the `node:` protocol when importing Node.js builtin modules.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-node-protocol.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-node-protocol.md
    */
   'unicorn/prefer-node-protocol'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Number()` over `parseFloat()` and base-10 `parseInt()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-number-coercion.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-number-coercion.md
    */
   'unicorn/prefer-number-coercion'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Number.isSafeInteger()` over integer checks.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-number-is-safe-integer.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-number-is-safe-integer.md
    */
   'unicorn/prefer-number-is-safe-integer'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Number` static methods over global functions and optionally static properties over global constants.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-number-properties.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-number-properties.md
    */
   'unicorn/prefer-number-properties'?: Linter.RuleEntry<UnicornPreferNumberProperties>
   /**
    * Prefer `Object.defineProperties()` over multiple `Object.defineProperty()` calls.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-object-define-properties.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-object-define-properties.md
    */
   'unicorn/prefer-object-define-properties'?: Linter.RuleEntry<[]>
   /**
    * Prefer object destructuring defaults over default object literals with spread.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-object-destructuring-defaults.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-object-destructuring-defaults.md
    */
   'unicorn/prefer-object-destructuring-defaults'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `Object.fromEntries(…)` to transform a list of key-value pairs into an object.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-object-from-entries.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-object-from-entries.md
    */
   'unicorn/prefer-object-from-entries'?: Linter.RuleEntry<UnicornPreferObjectFromEntries>
   /**
    * Prefer the most specific `Object` iterable method.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-object-iterable-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-object-iterable-methods.md
    */
   'unicorn/prefer-object-iterable-methods'?: Linter.RuleEntry<[]>
   /**
    * Prefer observer APIs over resize and scroll listeners with layout reads.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-observer-apis.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-observer-apis.md
    */
   'unicorn/prefer-observer-apis'?: Linter.RuleEntry<[]>
   /**
    * Prefer omitting the `catch` binding parameter.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-optional-catch-binding.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-optional-catch-binding.md
    */
   'unicorn/prefer-optional-catch-binding'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Path2D` for repeatedly drawn canvas paths.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-path2d.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-path2d.md
    */
   'unicorn/prefer-path2d'?: Linter.RuleEntry<[]>
   /**
    * Prefer private class fields over the underscore-prefix convention.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-private-class-fields.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-private-class-fields.md
    */
   'unicorn/prefer-private-class-fields'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Promise.resolve()` and `Promise.reject()` over trivial `new Promise()` calls.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-promise-static-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-promise-static-methods.md
    */
   'unicorn/prefer-promise-static-methods'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Promise.try()` over promise-wrapping boilerplate.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-promise-try.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-promise-try.md
    */
   'unicorn/prefer-promise-try'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Promise.withResolvers()` when extracting resolver functions from `new Promise()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-promise-with-resolvers.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-promise-with-resolvers.md
    */
   'unicorn/prefer-promise-with-resolvers'?: Linter.RuleEntry<[]>
   /**
    * Prefer borrowing methods from the prototype instead of the instance.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-prototype-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-prototype-methods.md
    */
   'unicorn/prefer-prototype-methods'?: Linter.RuleEntry<[]>
   /**
    * Prefer `.querySelector()` and `.querySelectorAll()` over older DOM query methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-query-selector.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-query-selector.md
    */
   'unicorn/prefer-query-selector'?: Linter.RuleEntry<UnicornPreferQuerySelector>
   /**
    * Prefer `queueMicrotask()` over `process.nextTick()`, `setImmediate()`, and `setTimeout(…, 0)`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-queue-microtask.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-queue-microtask.md
    */
   'unicorn/prefer-queue-microtask'?: Linter.RuleEntry<UnicornPreferQueueMicrotask>
   /**
    * Prefer `Reflect.apply()` over `Function#apply()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-reflect-apply.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-reflect-apply.md
    */
   'unicorn/prefer-reflect-apply'?: Linter.RuleEntry<[]>
   /**
    * Prefer `RegExp.escape()` for escaping strings to use in regular expressions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-regexp-escape.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-regexp-escape.md
    */
   'unicorn/prefer-regexp-escape'?: Linter.RuleEntry<[]>
   /**
    * Prefer `RegExp#test()` over `String#match()`, `String#search()`, and `RegExp#exec()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-regexp-test.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-regexp-test.md
    */
   'unicorn/prefer-regexp-test'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Response.json()` over `new Response(JSON.stringify())`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-response-static-json.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-response-static-json.md
    */
   'unicorn/prefer-response-static-json'?: Linter.RuleEntry<[]>
   /**
    * Prefer `:scope` when using element query selector methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-scoped-selector.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-scoped-selector.md
    */
   'unicorn/prefer-scoped-selector'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-set-has.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-set-has.md
    */
   'unicorn/prefer-set-has'?: Linter.RuleEntry<UnicornPreferSetHas>
   /**
    * Prefer `Set` methods for Set operations.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-set-methods.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-set-methods.md
    */
   'unicorn/prefer-set-methods'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `Set#size` instead of `Array#length`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-set-size.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-set-size.md
    */
   'unicorn/prefer-set-size'?: Linter.RuleEntry<[]>
   /**
    * Prefer arrow function properties over methods with a single return.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-short-arrow-method.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-short-arrow-method.md
    */
   'unicorn/prefer-short-arrow-method'?: Linter.RuleEntry<UnicornPreferShortArrowMethod>
   /**
    * Prefer shorter alternatives to Unicode escape sequences.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-short-escape-sequences.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-short-escape-sequences.md
    */
   'unicorn/prefer-short-escape-sequences'?: Linter.RuleEntry<[]>
   /**
    * Prefer simple conditions first in logical expressions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-simple-condition-first.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-simple-condition-first.md
    */
   'unicorn/prefer-simple-condition-first'?: Linter.RuleEntry<[]>
   /**
    * Prefer a simple comparison function for `Array#sort()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-simple-sort-comparator.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-simple-sort-comparator.md
    */
   'unicorn/prefer-simple-sort-comparator'?: Linter.RuleEntry<[]>
   /**
    * Prefer simplified conditions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-simplified-conditions.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-simplified-conditions.md
    */
   'unicorn/prefer-simplified-conditions'?: Linter.RuleEntry<UnicornPreferSimplifiedConditions>
   /**
    * Prefer a single `Array#some()` or `Array#every()` with a combined predicate.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-single-array-predicate.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-single-array-predicate.md
    */
   'unicorn/prefer-single-array-predicate'?: Linter.RuleEntry<[]>
   /**
    * Enforce combining multiple `Array#{push,unshift}()`, `Element#classList.{add,remove}()`, and `importScripts()` into one call.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-single-call.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-single-call.md
    */
   'unicorn/prefer-single-call'?: Linter.RuleEntry<UnicornPreferSingleCall>
   /**
    * Prefer a single object destructuring declaration per local const source.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-single-object-destructuring.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-single-object-destructuring.md
    */
   'unicorn/prefer-single-object-destructuring'?: Linter.RuleEntry<[]>
   /**
    * Enforce combining multiple single-character replacements into a single `String#replaceAll()` with a regular expression.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-single-replace.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-single-replace.md
    */
   'unicorn/prefer-single-replace'?: Linter.RuleEntry<[]>
   /**
-   * Prefer declaring variables in the smallest possible scope.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-smaller-scope.md
+   * Prefer declaring variables and type aliases in the smallest possible scope.
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-smaller-scope.md
    */
   'unicorn/prefer-smaller-scope'?: Linter.RuleEntry<[]>
   /**
    * Prefer `String#split()` with a limit.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-split-limit.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-split-limit.md
    */
   'unicorn/prefer-split-limit'?: Linter.RuleEntry<[]>
   /**
    * Prefer the spread operator over `Array.from(…)`, `Array#concat(…)`, `Array#{slice,toSpliced}()`, and trivial `for…of` copies.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-spread.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-spread.md
    */
   'unicorn/prefer-spread'?: Linter.RuleEntry<[]>
   /**
    * Prefer `String#matchAll()` over `RegExp#exec()` loops.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-string-match-all.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-string-match-all.md
    */
   'unicorn/prefer-string-match-all'?: Linter.RuleEntry<[]>
   /**
    * Prefer `String#padStart()` and `String#padEnd()` over manual string padding.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-string-pad-start-end.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-string-pad-start-end.md
    */
   'unicorn/prefer-string-pad-start-end'?: Linter.RuleEntry<[]>
   /**
    * Prefer using the `String.raw` tag to avoid escaping `\`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-string-raw.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-string-raw.md
    */
   'unicorn/prefer-string-raw'?: Linter.RuleEntry<[]>
   /**
    * Prefer `String#repeat()` for repeated whitespace.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-string-repeat.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-string-repeat.md
    */
   'unicorn/prefer-string-repeat'?: Linter.RuleEntry<UnicornPreferStringRepeat>
   /**
    * Prefer `String#replaceAll()` over regex searches with the global flag and `String#split().join()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-string-replace-all.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-string-replace-all.md
    */
   'unicorn/prefer-string-replace-all'?: Linter.RuleEntry<[]>
   /**
    * Prefer `String#slice()` over `String#substr()` and `String#substring()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-string-slice.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-string-slice.md
    */
   'unicorn/prefer-string-slice'?: Linter.RuleEntry<[]>
   /**
    * Prefer `String#startsWith()` & `String#endsWith()` over regexes, `String#indexOf() === 0`, and slice checks.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-string-starts-ends-with.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-string-starts-ends-with.md
    */
   'unicorn/prefer-string-starts-ends-with'?: Linter.RuleEntry<[]>
   /**
    * Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-string-trim-start-end.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-string-trim-start-end.md
    */
   'unicorn/prefer-string-trim-start-end'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `structuredClone` to create a deep clone.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-structured-clone.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-structured-clone.md
    */
   'unicorn/prefer-structured-clone'?: Linter.RuleEntry<UnicornPreferStructuredClone>
   /**
    * Prefer `switch` over multiple `else-if`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-switch.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-switch.md
    */
   'unicorn/prefer-switch'?: Linter.RuleEntry<UnicornPreferSwitch>
   /**
    * Prefer `Temporal` over `Date`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-temporal.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-temporal.md
    */
   'unicorn/prefer-temporal'?: Linter.RuleEntry<UnicornPreferTemporal>
   /**
    * Prefer direct Temporal conversion methods.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-temporal-conversion.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-temporal-conversion.md
    */
   'unicorn/prefer-temporal-conversion'?: Linter.RuleEntry<[]>
   /**
    * Prefer ternary expressions over simple `if` statements.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-ternary.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-ternary.md
    */
   'unicorn/prefer-ternary'?: Linter.RuleEntry<UnicornPreferTernary>
   /**
    * Prefer `.then().catch()` over `.then(…, …)` for error handling.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-then-catch.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-then-catch.md
    */
   'unicorn/prefer-then-catch'?: Linter.RuleEntry<[]>
   /**
    * Prefer using `Element#toggleAttribute()` to toggle attributes.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-toggle-attribute.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-toggle-attribute.md
    */
   'unicorn/prefer-toggle-attribute'?: Linter.RuleEntry<[]>
   /**
    * Prefer top-level await over top-level promises and async function calls.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-top-level-await.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-top-level-await.md
    */
   'unicorn/prefer-top-level-await'?: Linter.RuleEntry<[]>
   /**
    * Enforce throwing `TypeError` in type checking conditions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-type-error.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-type-error.md
    */
   'unicorn/prefer-type-error'?: Linter.RuleEntry<[]>
   /**
    * Require type literals to be last in union types.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-type-literal-last.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-type-literal-last.md
    */
   'unicorn/prefer-type-literal-last'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Uint8Array#toBase64()` and `Uint8Array.fromBase64()` over legacy base64 conversions and manual postprocessing.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-uint8array-base64.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-uint8array-base64.md
    */
   'unicorn/prefer-uint8array-base64'?: Linter.RuleEntry<[]>
   /**
    * Prefer `Uint8Array#toHex()` and `Uint8Array.fromHex()` over manual and Buffer hex conversions.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-uint8array-hex.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-uint8array-hex.md
    */
   'unicorn/prefer-uint8array-hex'?: Linter.RuleEntry<[]>
   /**
    * Prefer the unary minus operator over multiplying or dividing by `-1`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-unary-minus.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-unary-minus.md
    */
   'unicorn/prefer-unary-minus'?: Linter.RuleEntry<[]>
   /**
    * Prefer Unicode code point escapes over legacy escape sequences.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-unicode-code-point-escapes.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-unicode-code-point-escapes.md
    */
   'unicorn/prefer-unicode-code-point-escapes'?: Linter.RuleEntry<[]>
   /**
    * Prefer `URL.canParse()` over constructing a `URL` in a try/catch for validation.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-url-can-parse.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-url-can-parse.md
    */
   'unicorn/prefer-url-can-parse'?: Linter.RuleEntry<[]>
   /**
    * Prefer `URL#href` over stringifying a `URL`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-url-href.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-url-href.md
    */
   'unicorn/prefer-url-href'?: Linter.RuleEntry<[]>
   /**
    * Prefer `URLSearchParams` over manually splitting query strings.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-url-search-parameters.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-url-search-parameters.md
    */
   'unicorn/prefer-url-search-parameters'?: Linter.RuleEntry<[]>
   /**
    * Prefer putting the condition in the while statement.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/prefer-while-loop-condition.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/prefer-while-loop-condition.md
    */
   'unicorn/prefer-while-loop-condition'?: Linter.RuleEntry<[]>
   /**
    * Renamed to `unicorn/name-replacements`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/deleted-and-deprecated-rules.md#prevent-abbreviations
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/deleted-and-deprecated-rules.md#prevent-abbreviations
    * @deprecated
    */
   'unicorn/prevent-abbreviations'?: Linter.RuleEntry<[]>
   /**
    * Enforce consistent relative URL style.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/relative-url-style.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/relative-url-style.md
    */
   'unicorn/relative-url-style'?: Linter.RuleEntry<UnicornRelativeUrlStyle>
   /**
    * Enforce using the separator argument with `Array#join()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-array-join-separator.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-array-join-separator.md
    */
   'unicorn/require-array-join-separator'?: Linter.RuleEntry<[]>
   /**
    * Require a compare function when calling `Array#sort()` or `Array#toSorted()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-array-sort-compare.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-array-sort-compare.md
    */
   'unicorn/require-array-sort-compare'?: Linter.RuleEntry<[]>
   /**
    * Require `CSS.escape()` for interpolated values in CSS selectors.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-css-escape.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-css-escape.md
    */
   'unicorn/require-css-escape'?: Linter.RuleEntry<UnicornRequireCssEscape>
   /**
    * Require configured YAML frontmatter fields.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-frontmatter-fields.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-frontmatter-fields.md
    */
   'unicorn/require-frontmatter-fields'?: Linter.RuleEntry<UnicornRequireFrontmatterFields>
   /**
    * Require non-empty module attributes for imports and exports
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-module-attributes.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-module-attributes.md
    */
   'unicorn/require-module-attributes'?: Linter.RuleEntry<[]>
   /**
    * Require non-empty specifier list in import and export statements.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-module-specifiers.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-module-specifiers.md
    */
   'unicorn/require-module-specifiers'?: Linter.RuleEntry<[]>
   /**
    * Enforce using the digits argument with `Number#toFixed()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-number-to-fixed-digits-argument.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-number-to-fixed-digits-argument.md
    */
   'unicorn/require-number-to-fixed-digits-argument'?: Linter.RuleEntry<[]>
   /**
    * Require passive event listeners for high-frequency events.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-passive-events.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-passive-events.md
    */
   'unicorn/require-passive-events'?: Linter.RuleEntry<[]>
   /**
    * Enforce using the `targetOrigin` argument with `window.postMessage()`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-post-message-target-origin.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-post-message-target-origin.md
    */
   'unicorn/require-post-message-target-origin'?: Linter.RuleEntry<[]>
   /**
    * Require boolean-returning Proxy traps to return booleans.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-proxy-trap-boolean-return.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-proxy-trap-boolean-return.md
    */
   'unicorn/require-proxy-trap-boolean-return'?: Linter.RuleEntry<[]>
   /**
    * Require streaming decoding of fetch-body chunks with `TextDecoder`.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/require-text-decoder-streaming.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/require-text-decoder-streaming.md
    */
   'unicorn/require-text-decoder-streaming'?: Linter.RuleEntry<[]>
   /**
    * Enforce a consistent style for single-line block comments.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/single-line-block-comment-style.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/single-line-block-comment-style.md
    */
   'unicorn/single-line-block-comment-style'?: Linter.RuleEntry<UnicornSingleLineBlockCommentStyle>
   /**
    * Enforce better string content.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/string-content.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/string-content.md
    */
   'unicorn/string-content'?: Linter.RuleEntry<UnicornStringContent>
   /**
    * Enforce consistent brace style for `case` clauses.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/switch-case-braces.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/switch-case-braces.md
    */
   'unicorn/switch-case-braces'?: Linter.RuleEntry<UnicornSwitchCaseBraces>
   /**
    * Enforce consistent `break`/`return`/`continue`/`throw` position in `case` clauses.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/switch-case-break-position.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/switch-case-break-position.md
    */
   'unicorn/switch-case-break-position'?: Linter.RuleEntry<[]>
   /**
    * Fix whitespace-insensitive template indentation.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/template-indent.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/template-indent.md
    */
   'unicorn/template-indent'?: Linter.RuleEntry<UnicornTemplateIndent>
   /**
    * Enforce consistent case for text encoding identifiers.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/text-encoding-identifier-case.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/text-encoding-identifier-case.md
    */
   'unicorn/text-encoding-identifier-case'?: Linter.RuleEntry<UnicornTextEncodingIdentifierCase>
   /**
    * Require `new` when creating an error.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/throw-new-error.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/throw-new-error.md
    */
   'unicorn/throw-new-error'?: Linter.RuleEntry<[]>
   /**
    * Limit the complexity of `try` blocks.
-   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v78.0.0/docs/rules/try-complexity.md
+   * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v79.0.0/docs/rules/try-complexity.md
    */
   'unicorn/try-complexity'?: Linter.RuleEntry<UnicornTryComplexity>
   /**
@@ -8301,10 +8316,20 @@ export interface RuleOptions {
    */
   'vue/no-constant-condition'?: Linter.RuleEntry<VueNoConstantCondition>
   /**
+   * disallow content outside of the top-level blocks
+   * @see https://eslint.vuejs.org/rules/no-content-outside-block.html
+   */
+  'vue/no-content-outside-block'?: Linter.RuleEntry<[]>
+  /**
    * disallow custom modifiers on v-model used on the component
    * @see https://eslint.vuejs.org/rules/no-custom-modifiers-on-v-model.html
    */
   'vue/no-custom-modifiers-on-v-model'?: Linter.RuleEntry<[]>
+  /**
+   * disallow default values in `defineModel`
+   * @see https://eslint.vuejs.org/rules/no-define-model-default.html
+   */
+  'vue/no-define-model-default'?: Linter.RuleEntry<[]>
   /**
    * disallow using deprecated object declaration on data (in Vue.js 3.0.0+)
    * @see https://eslint.vuejs.org/rules/no-deprecated-data-object-declaration.html
@@ -8540,6 +8565,11 @@ export interface RuleOptions {
    * @see https://eslint.vuejs.org/rules/no-potential-component-option-typo.html
    */
   'vue/no-potential-component-option-typo'?: Linter.RuleEntry<VueNoPotentialComponentOptionTypo>
+  /**
+   * disallow declarations that shadow props in `<script setup>`
+   * @see https://eslint.vuejs.org/rules/no-props-shadow.html
+   */
+  'vue/no-props-shadow'?: Linter.RuleEntry<[]>
   /**
    * disallow use of value wrapped by `ref()` (Composition API) as an operand
    * @see https://eslint.vuejs.org/rules/no-ref-as-operand.html
@@ -10764,6 +10794,11 @@ type TypescriptEslintArrayType = []|[{
   
   readonly?: ("array" | "generic" | "array-simple")
 }]
+// ----- @typescript-eslint/await-thenable -----
+type TypescriptEslintAwaitThenable = []|[{
+  
+  allowMixedPromiseArrays?: boolean
+}]
 // ----- @typescript-eslint/ban-ts-comment -----
 type TypescriptEslintBanTsComment = []|[{
   
@@ -12023,6 +12058,13 @@ type AntfuConsistentListNewline = []|[{
 type AntfuIndentUnindent = []|[{
   indent?: number
   tags?: string[]
+}]
+// ----- antfu/reasonable-newline -----
+type AntfuReasonableNewline = []|[{
+  minObjectProperties?: number
+  objectLineLength?: number
+  minArrayItems?: number
+  arrayLineLength?: number
 }]
 // ----- array-bracket-newline -----
 type ArrayBracketNewline = []|[(("always" | "never" | "consistent") | {
@@ -18596,7 +18638,7 @@ type NNoUnsupportedFeaturesEsSyntax = []|[{
 type NNoUnsupportedFeaturesNodeBuiltins = []|[{
   version?: string
   allowExperimental?: boolean
-  ignores?: ("__filename" | "__dirname" | "require" | "require.cache" | "require.extensions" | "require.main" | "require.resolve" | "require.resolve.paths" | "module" | "module.children" | "module.exports" | "module.filename" | "module.id" | "module.isPreloading" | "module.loaded" | "module.parent" | "module.path" | "module.paths" | "module.require" | "exports" | "AbortController" | "AbortSignal" | "AbortSignal.abort" | "AbortSignal.timeout" | "AbortSignal.any" | "DOMException" | "FormData" | "Headers" | "MessageEvent" | "Navigator" | "Request" | "Response" | "WebAssembly" | "WebSocket" | "fetch" | "global" | "queueMicrotask" | "navigator" | "navigator.hardwareConcurrency" | "navigator.language" | "navigator.languages" | "navigator.locks" | "navigator.locks.request" | "navigator.locks.query" | "navigator.platform" | "navigator.userAgent" | "structuredClone" | "localStorage" | "sessionStorage" | "Storage" | "Blob" | "new Buffer()" | "Buffer" | "Buffer.alloc" | "Buffer.allocUnsafe" | "Buffer.allocUnsafeSlow" | "Buffer.byteLength" | "Buffer.compare" | "Buffer.concat" | "Buffer.copyBytesFrom" | "Buffer.from" | "Buffer.isBuffer" | "Buffer.isEncoding" | "File" | "atob" | "btoa" | "console" | "console.profile" | "console.profileEnd" | "console.timeStamp" | "console.Console" | "console.assert" | "console.clear" | "console.count" | "console.countReset" | "console.debug" | "console.dir" | "console.dirxml" | "console.error" | "console.group" | "console.groupCollapsed" | "console.groupEnd" | "console.info" | "console.log" | "console.table" | "console.time" | "console.timeEnd" | "console.timeLog" | "console.trace" | "console.warn" | "crypto" | "crypto.subtle" | "crypto.subtle.decapsulateBits" | "crypto.subtle.decapsulateKey" | "crypto.subtle.decrypt" | "crypto.subtle.deriveBits" | "crypto.subtle.deriveKey" | "crypto.subtle.digest" | "crypto.subtle.encapsulateBits" | "crypto.subtle.encapsulateKey" | "crypto.subtle.encrypt" | "crypto.subtle.exportKey" | "crypto.subtle.generateKey" | "crypto.subtle.getPublicKey" | "crypto.subtle.importKey" | "crypto.subtle.sign" | "crypto.subtle.unwrapKey" | "crypto.subtle.verify" | "crypto.subtle.wrapKey" | "crypto.getRandomValues" | "crypto.randomUUID" | "Crypto" | "CryptoKey" | "SubtleCrypto" | "SubtleCrypto.supports" | "CloseEvent" | "CustomEvent" | "Event" | "EventSource" | "EventTarget" | "PerformanceEntry" | "PerformanceMark" | "PerformanceMeasure" | "PerformanceObserver" | "PerformanceObserverEntryList" | "PerformanceResourceTiming" | "performance" | "performance.clearMarks" | "performance.clearMeasures" | "performance.clearResourceTimings" | "performance.eventLoopUtilization" | "performance.getEntries" | "performance.getEntriesByName" | "performance.getEntriesByType" | "performance.mark" | "performance.markResourceTiming" | "performance.measure" | "performance.nodeTiming" | "performance.nodeTiming.bootstrapComplete" | "performance.nodeTiming.environment" | "performance.nodeTiming.idleTime" | "performance.nodeTiming.loopExit" | "performance.nodeTiming.loopStart" | "performance.nodeTiming.nodeStart" | "performance.nodeTiming.uvMetricsInfo" | "performance.nodeTiming.v8Start" | "performance.now" | "performance.onresourcetimingbufferfull" | "performance.setResourceTimingBufferSize" | "performance.timeOrigin" | "performance.timerify" | "performance.toJSON" | "process" | "process.allowedNodeEnvironmentFlags" | "process.availableMemory" | "process.arch" | "process.argv" | "process.argv0" | "process.channel" | "process.config" | "process.connected" | "process.debugPort" | "process.env" | "process.execArgv" | "process.execPath" | "process.execve" | "process.exitCode" | "process.features.cached_builtins" | "process.features.debug" | "process.features.inspector" | "process.features.ipv6" | "process.features.require_module" | "process.features.tls" | "process.features.tls_alpn" | "process.features.tls_ocsp" | "process.features.tls_sni" | "process.features.typescript" | "process.features.uv" | "process.finalization.register" | "process.finalization.registerBeforeExit" | "process.finalization.unregister" | "process.getBuiltinModule" | "process.mainModule" | "process.noDeprecation" | "process.permission" | "process.pid" | "process.platform" | "process.ppid" | "process.ref" | "process.release" | "process.report" | "process.report.excludeEnv" | "process.sourceMapsEnabled" | "process.stdin" | "process.stdin.isRaw" | "process.stdin.isTTY" | "process.stdin.setRawMode" | "process.stdout" | "process.stdout.clearLine" | "process.stdout.clearScreenDown" | "process.stdout.columns" | "process.stdout.cursorTo" | "process.stdout.getColorDepth" | "process.stdout.getWindowSize" | "process.stdout.hasColors" | "process.stdout.isTTY" | "process.stdout.moveCursor" | "process.stdout.rows" | "process.stderr" | "process.stderr.clearLine" | "process.stderr.clearScreenDown" | "process.stderr.columns" | "process.stderr.cursorTo" | "process.stderr.getColorDepth" | "process.stderr.getWindowSize" | "process.stderr.hasColors" | "process.stderr.isTTY" | "process.stderr.moveCursor" | "process.stderr.rows" | "process.threadCpuUsage" | "process.throwDeprecation" | "process.title" | "process.traceDeprecation" | "process.version" | "process.versions" | "process.abort" | "process.chdir" | "process.constrainedMemory" | "process.cpuUsage" | "process.cwd" | "process.disconnect" | "process.dlopen" | "process.emitWarning" | "process.exit" | "process.getActiveResourcesInfo" | "process.getegid" | "process.geteuid" | "process.getgid" | "process.getgroups" | "process.getuid" | "process.hasUncaughtExceptionCaptureCallback" | "process.hrtime" | "process.hrtime.bigint" | "process.initgroups" | "process.kill" | "process.loadEnvFile" | "process.memoryUsage" | "process.rss" | "process.nextTick" | "process.resourceUsage" | "process.send" | "process.setegid" | "process.seteuid" | "process.setgid" | "process.setgroups" | "process.setuid" | "process.setSourceMapsEnabled" | "process.setUncaughtExceptionCaptureCallback" | "process.umask" | "process.unref" | "process.uptime" | "ReadableStream" | "ReadableStream.from" | "ReadableStreamDefaultReader" | "ReadableStreamBYOBReader" | "ReadableStreamDefaultController" | "ReadableByteStreamController" | "ReadableStreamBYOBRequest" | "WritableStream" | "WritableStreamDefaultWriter" | "WritableStreamDefaultController" | "TransformStream" | "TransformStreamDefaultController" | "ByteLengthQueuingStrategy" | "CountQueuingStrategy" | "TextEncoderStream" | "TextDecoderStream" | "CompressionStream" | "DecompressionStream" | "setInterval" | "clearInterval" | "setTimeout" | "clearTimeout" | "setImmediate" | "clearImmediate" | "URL" | "URL.canParse" | "URL.createObjectURL" | "URL.revokeObjectURL" | "URLSearchParams" | "TextDecoder" | "TextEncoder" | "BroadcastChannel" | "MessageChannel" | "MessagePort" | "assert" | "assert.Assert" | "assert.assert" | "assert.deepEqual" | "assert.deepStrictEqual" | "assert.doesNotMatch" | "assert.doesNotReject" | "assert.doesNotThrow" | "assert.equal" | "assert.fail" | "assert.ifError" | "assert.match" | "assert.notDeepEqual" | "assert.notDeepStrictEqual" | "assert.notEqual" | "assert.notStrictEqual" | "assert.ok" | "assert.partialDeepStrictEqual" | "assert.rejects" | "assert.strictEqual" | "assert.throws" | "assert.CallTracker" | "assert.strict" | "assert.strict.Assert" | "assert.strict.assert" | "assert.strict.deepEqual" | "assert.strict.deepStrictEqual" | "assert.strict.doesNotMatch" | "assert.strict.doesNotReject" | "assert.strict.doesNotThrow" | "assert.strict.equal" | "assert.strict.fail" | "assert.strict.ifError" | "assert.strict.match" | "assert.strict.notDeepEqual" | "assert.strict.notDeepStrictEqual" | "assert.strict.notEqual" | "assert.strict.notStrictEqual" | "assert.strict.ok" | "assert.strict.partialDeepStrictEqual" | "assert.strict.rejects" | "assert.strict.strictEqual" | "assert.strict.throws" | "assert.strict.CallTracker" | "assert/strict" | "assert/strict.Assert" | "assert/strict.assert" | "assert/strict.deepEqual" | "assert/strict.deepStrictEqual" | "assert/strict.doesNotMatch" | "assert/strict.doesNotReject" | "assert/strict.doesNotThrow" | "assert/strict.equal" | "assert/strict.fail" | "assert/strict.ifError" | "assert/strict.match" | "assert/strict.notDeepEqual" | "assert/strict.notDeepStrictEqual" | "assert/strict.notEqual" | "assert/strict.notStrictEqual" | "assert/strict.ok" | "assert/strict.partialDeepStrictEqual" | "assert/strict.rejects" | "assert/strict.strictEqual" | "assert/strict.throws" | "assert/strict.CallTracker" | "async_hooks" | "async_hooks.createHook" | "async_hooks.executionAsyncResource" | "async_hooks.executionAsyncId" | "async_hooks.triggerAsyncId" | "async_hooks.AsyncLocalStorage" | "async_hooks.AsyncLocalStorage.bind" | "async_hooks.AsyncLocalStorage.snapshot" | "async_hooks.AsyncResource" | "async_hooks.AsyncResource.bind" | "buffer" | "buffer.constants" | "buffer.INSPECT_MAX_BYTES" | "buffer.kMaxLength" | "buffer.kStringMaxLength" | "buffer.atob" | "buffer.btoa" | "buffer.isAscii" | "buffer.isUtf8" | "buffer.resolveObjectURL" | "buffer.transcode" | "buffer.SlowBuffer" | "buffer.Blob" | "new buffer.Buffer()" | "buffer.Buffer" | "buffer.Buffer.alloc" | "buffer.Buffer.allocUnsafe" | "buffer.Buffer.allocUnsafeSlow" | "buffer.Buffer.byteLength" | "buffer.Buffer.compare" | "buffer.Buffer.concat" | "buffer.Buffer.copyBytesFrom" | "buffer.Buffer.from" | "buffer.Buffer.isBuffer" | "buffer.Buffer.isEncoding" | "buffer.File" | "child_process" | "child_process.exec" | "child_process.execFile" | "child_process.fork" | "child_process.spawn" | "child_process.execFileSync" | "child_process.execSync" | "child_process.spawnSync" | "child_process.ChildProcess" | "cluster" | "cluster.isMaster" | "cluster.isPrimary" | "cluster.isWorker" | "cluster.schedulingPolicy" | "cluster.settings" | "cluster.worker" | "cluster.workers" | "cluster.disconnect" | "cluster.fork" | "cluster.setupMaster" | "cluster.setupPrimary" | "cluster.Worker" | "crypto.constants" | "crypto.fips" | "crypto.webcrypto" | "crypto.webcrypto.subtle" | "crypto.webcrypto.subtle.decapsulateBits" | "crypto.webcrypto.subtle.decapsulateKey" | "crypto.webcrypto.subtle.decrypt" | "crypto.webcrypto.subtle.deriveBits" | "crypto.webcrypto.subtle.deriveKey" | "crypto.webcrypto.subtle.digest" | "crypto.webcrypto.subtle.encapsulateBits" | "crypto.webcrypto.subtle.encapsulateKey" | "crypto.webcrypto.subtle.encrypt" | "crypto.webcrypto.subtle.exportKey" | "crypto.webcrypto.subtle.generateKey" | "crypto.webcrypto.subtle.getPublicKey" | "crypto.webcrypto.subtle.importKey" | "crypto.webcrypto.subtle.sign" | "crypto.webcrypto.subtle.unwrapKey" | "crypto.webcrypto.subtle.verify" | "crypto.webcrypto.subtle.wrapKey" | "crypto.webcrypto.getRandomValues" | "crypto.webcrypto.randomUUID" | "crypto.argon2" | "crypto.argon2Sync" | "crypto.checkPrime" | "crypto.checkPrimeSync" | "crypto.createCipher" | "crypto.createCipheriv" | "crypto.createDecipher" | "crypto.createDecipheriv" | "crypto.createDiffieHellman" | "crypto.createDiffieHellmanGroup" | "crypto.createECDH" | "crypto.createHash" | "crypto.createHmac" | "crypto.createPrivateKey" | "crypto.createPublicKey" | "crypto.createSecretKey" | "crypto.createSign" | "crypto.createVerify" | "crypto.decapsulate" | "crypto.diffieHellman" | "crypto.encapsulate" | "crypto.generateKey" | "crypto.generateKeyPair" | "crypto.generateKeyPairSync" | "crypto.generateKeySync" | "crypto.generatePrime" | "crypto.generatePrimeSync" | "crypto.getCipherInfo" | "crypto.getCiphers" | "crypto.getCurves" | "crypto.getDiffieHellman" | "crypto.getFips" | "crypto.getHashes" | "crypto.hash" | "crypto.hkdf" | "crypto.hkdfSync" | "crypto.pbkdf2" | "crypto.pbkdf2Sync" | "crypto.privateDecrypt" | "crypto.privateEncrypt" | "crypto.publicDecrypt" | "crypto.publicEncrypt" | "crypto.randomBytes" | "crypto.randomFillSync" | "crypto.randomFill" | "crypto.randomInt" | "crypto.scrypt" | "crypto.scryptSync" | "crypto.secureHeapUsed" | "crypto.setEngine" | "crypto.setFips" | "crypto.sign" | "crypto.timingSafeEqual" | "crypto.verify" | "crypto.Certificate" | "crypto.Certificate.exportChallenge" | "crypto.Certificate.exportPublicKey" | "crypto.Certificate.verifySpkac" | "crypto.Cipher" | "crypto.Decipher" | "crypto.DiffieHellman" | "crypto.DiffieHellmanGroup" | "crypto.ECDH" | "crypto.ECDH.convertKey" | "crypto.Hash()" | "new crypto.Hash()" | "crypto.Hash" | "crypto.Hmac()" | "new crypto.Hmac()" | "crypto.Hmac" | "crypto.KeyObject" | "crypto.KeyObject.from" | "crypto.Sign" | "crypto.Verify" | "crypto.X509Certificate" | "dgram" | "dgram.createSocket" | "dgram.Socket" | "diagnostics_channel" | "diagnostics_channel.hasSubscribers" | "diagnostics_channel.channel" | "diagnostics_channel.subscribe" | "diagnostics_channel.unsubscribe" | "diagnostics_channel.tracingChannel" | "diagnostics_channel.Channel" | "diagnostics_channel.TracingChannel" | "dns" | "dns.Resolver" | "dns.getServers" | "dns.lookup" | "dns.lookupService" | "dns.resolve" | "dns.resolve4" | "dns.resolve6" | "dns.resolveAny" | "dns.resolveCname" | "dns.resolveCaa" | "dns.resolveMx" | "dns.resolveNaptr" | "dns.resolveNs" | "dns.resolvePtr" | "dns.resolveSoa" | "dns.resolveSrv" | "dns.resolveTlsa" | "dns.resolveTxt" | "dns.reverse" | "dns.setDefaultResultOrder" | "dns.getDefaultResultOrder" | "dns.setServers" | "dns.promises" | "dns.promises.Resolver" | "dns.promises.cancel" | "dns.promises.getServers" | "dns.promises.lookup" | "dns.promises.lookupService" | "dns.promises.resolve" | "dns.promises.resolve4" | "dns.promises.resolve6" | "dns.promises.resolveAny" | "dns.promises.resolveCaa" | "dns.promises.resolveCname" | "dns.promises.resolveMx" | "dns.promises.resolveNaptr" | "dns.promises.resolveNs" | "dns.promises.resolvePtr" | "dns.promises.resolveSoa" | "dns.promises.resolveSrv" | "dns.promises.resolveTlsa" | "dns.promises.resolveTxt" | "dns.promises.reverse" | "dns.promises.setDefaultResultOrder" | "dns.promises.getDefaultResultOrder" | "dns.promises.setServers" | "dns/promises" | "dns/promises.Resolver" | "dns/promises.cancel" | "dns/promises.getServers" | "dns/promises.lookup" | "dns/promises.lookupService" | "dns/promises.resolve" | "dns/promises.resolve4" | "dns/promises.resolve6" | "dns/promises.resolveAny" | "dns/promises.resolveCaa" | "dns/promises.resolveCname" | "dns/promises.resolveMx" | "dns/promises.resolveNaptr" | "dns/promises.resolveNs" | "dns/promises.resolvePtr" | "dns/promises.resolveSoa" | "dns/promises.resolveSrv" | "dns/promises.resolveTlsa" | "dns/promises.resolveTxt" | "dns/promises.reverse" | "dns/promises.setDefaultResultOrder" | "dns/promises.getDefaultResultOrder" | "dns/promises.setServers" | "domain" | "domain.create" | "domain.Domain" | "events" | "events.Event" | "events.EventTarget" | "events.CustomEvent" | "events.NodeEventTarget" | "events.EventEmitter" | "events.EventEmitter.defaultMaxListeners" | "events.EventEmitter.errorMonitor" | "events.EventEmitter.captureRejections" | "events.EventEmitter.captureRejectionSymbol" | "events.EventEmitter.getEventListeners" | "events.EventEmitter.getMaxListeners" | "events.EventEmitter.once" | "events.EventEmitter.listenerCount" | "events.EventEmitter.on" | "events.EventEmitter.setMaxListeners" | "events.EventEmitter.addAbortListener" | "events.EventEmitterAsyncResource" | "events.EventEmitterAsyncResource.defaultMaxListeners" | "events.EventEmitterAsyncResource.errorMonitor" | "events.EventEmitterAsyncResource.captureRejections" | "events.EventEmitterAsyncResource.captureRejectionSymbol" | "events.EventEmitterAsyncResource.getEventListeners" | "events.EventEmitterAsyncResource.getMaxListeners" | "events.EventEmitterAsyncResource.once" | "events.EventEmitterAsyncResource.listenerCount" | "events.EventEmitterAsyncResource.on" | "events.EventEmitterAsyncResource.setMaxListeners" | "events.EventEmitterAsyncResource.addAbortListener" | "events.defaultMaxListeners" | "events.errorMonitor" | "events.captureRejections" | "events.captureRejectionSymbol" | "events.getEventListeners" | "events.getMaxListeners" | "events.once" | "events.listenerCount" | "events.on" | "events.setMaxListeners" | "events.addAbortListener" | "fs" | "fs.promises" | "fs.promises.FileHandle" | "fs.promises.access" | "fs.promises.appendFile" | "fs.promises.chmod" | "fs.promises.chown" | "fs.promises.constants" | "fs.promises.copyFile" | "fs.promises.cp" | "fs.promises.glob" | "fs.promises.lchmod" | "fs.promises.lchown" | "fs.promises.link" | "fs.promises.lstat" | "fs.promises.lutimes" | "fs.promises.mkdir" | "fs.promises.mkdtemp" | "fs.promises.mkdtempDisposable" | "fs.promises.open" | "fs.promises.opendir" | "fs.promises.readFile" | "fs.promises.readdir" | "fs.promises.readlink" | "fs.promises.realpath" | "fs.promises.rename" | "fs.promises.rm" | "fs.promises.rmdir" | "fs.promises.stat" | "fs.promises.statfs" | "fs.promises.symlink" | "fs.promises.truncate" | "fs.promises.unlink" | "fs.promises.utimes" | "fs.promises.watch" | "fs.promises.writeFile" | "fs.access" | "fs.appendFile" | "fs.chmod" | "fs.chown" | "fs.close" | "fs.copyFile" | "fs.cp" | "fs.createReadStream" | "fs.createWriteStream" | "fs.exists" | "fs.fchmod" | "fs.fchown" | "fs.fdatasync" | "fs.fstat" | "fs.fsync" | "fs.ftruncate" | "fs.futimes" | "fs.glob" | "fs.lchmod" | "fs.lchown" | "fs.link" | "fs.lstat" | "fs.lutimes" | "fs.mkdir" | "fs.mkdtemp" | "fs.native" | "fs.open" | "fs.openAsBlob" | "fs.opendir" | "fs.read" | "fs.readdir" | "fs.readFile" | "fs.readlink" | "fs.readv" | "fs.realpath" | "fs.realpath.native" | "fs.rename" | "fs.rm" | "fs.rmdir" | "fs.stat" | "fs.statfs" | "fs.symlink" | "fs.truncate" | "fs.unlink" | "fs.unwatchFile" | "fs.utimes" | "fs.watch" | "fs.watchFile" | "fs.write" | "fs.writeFile" | "fs.writev" | "fs.accessSync" | "fs.appendFileSync" | "fs.chmodSync" | "fs.chownSync" | "fs.closeSync" | "fs.copyFileSync" | "fs.cpSync" | "fs.existsSync" | "fs.fchmodSync" | "fs.fchownSync" | "fs.fdatasyncSync" | "fs.fstatSync" | "fs.fsyncSync" | "fs.ftruncateSync" | "fs.futimesSync" | "fs.globSync" | "fs.lchmodSync" | "fs.lchownSync" | "fs.linkSync" | "fs.lstatSync" | "fs.lutimesSync" | "fs.mkdirSync" | "fs.mkdtempSync" | "fs.mkdtempDisposableSync" | "fs.opendirSync" | "fs.openSync" | "fs.readdirSync" | "fs.readFileSync" | "fs.readlinkSync" | "fs.readSync" | "fs.readvSync" | "fs.realpathSync" | "fs.realpathSync.native" | "fs.renameSync" | "fs.rmdirSync" | "fs.rmSync" | "fs.statfsSync" | "fs.statSync" | "fs.symlinkSync" | "fs.truncateSync" | "fs.unlinkSync" | "fs.utimesSync" | "fs.writeFileSync" | "fs.writeSync" | "fs.writevSync" | "fs.constants" | "fs.Dir" | "fs.Dirent" | "fs.FSWatcher" | "fs.StatWatcher" | "fs.ReadStream" | "fs.Stats()" | "new fs.Stats()" | "fs.Stats" | "fs.StatFs" | "fs.WriteStream" | "fs.Utf8Stream" | "fs.common_objects" | "fs/promises" | "fs/promises.FileHandle" | "fs/promises.access" | "fs/promises.appendFile" | "fs/promises.chmod" | "fs/promises.chown" | "fs/promises.constants" | "fs/promises.copyFile" | "fs/promises.cp" | "fs/promises.glob" | "fs/promises.lchmod" | "fs/promises.lchown" | "fs/promises.link" | "fs/promises.lstat" | "fs/promises.lutimes" | "fs/promises.mkdir" | "fs/promises.mkdtemp" | "fs/promises.mkdtempDisposable" | "fs/promises.open" | "fs/promises.opendir" | "fs/promises.readFile" | "fs/promises.readdir" | "fs/promises.readlink" | "fs/promises.realpath" | "fs/promises.rename" | "fs/promises.rm" | "fs/promises.rmdir" | "fs/promises.stat" | "fs/promises.statfs" | "fs/promises.symlink" | "fs/promises.truncate" | "fs/promises.unlink" | "fs/promises.utimes" | "fs/promises.watch" | "fs/promises.writeFile" | "http2" | "http2.constants" | "http2.sensitiveHeaders" | "http2.createServer" | "http2.createSecureServer" | "http2.connect" | "http2.getDefaultSettings" | "http2.getPackedSettings" | "http2.getUnpackedSettings" | "http2.performServerHandshake" | "http2.Http2Session" | "http2.ServerHttp2Session" | "http2.ClientHttp2Session" | "http2.Http2Stream" | "http2.ClientHttp2Stream" | "http2.ServerHttp2Stream" | "http2.Http2Server" | "http2.Http2SecureServer" | "http2.Http2ServerRequest" | "http2.Http2ServerResponse" | "http" | "http.METHODS" | "http.STATUS_CODES" | "http.globalAgent" | "http.maxHeaderSize" | "http.createServer" | "http.get" | "http.request" | "http.validateHeaderName" | "http.validateHeaderValue" | "http.setMaxIdleHTTPParsers" | "http.Agent()" | "http.Agent" | "http.ClientRequest()" | "http.ClientRequest" | "http.Server()" | "http.Server" | "http.ServerResponse()" | "http.ServerResponse" | "http.IncomingMessage()" | "http.IncomingMessage" | "http.OutgoingMessage()" | "http.OutgoingMessage" | "http.WebSocket()" | "http.WebSocket" | "_http_agent" | "_http_client" | "_http_common" | "_http_incoming" | "_http_outgoing" | "_http_server" | "https" | "https.globalAgent" | "https.createServer" | "https.get" | "https.request" | "https.Agent" | "https.Server" | "inspector" | "inspector.Session" | "inspector.Network.dataReceived" | "inspector.Network.dataSent" | "inspector.Network.loadingFailed" | "inspector.Network.loadingFinished" | "inspector.Network.requestWillBeSent" | "inspector.Network.responseReceived" | "inspector.Network.webSocketCreated" | "inspector.Network.webSocketHandshakeResponseReceived" | "inspector.Network.webSocketClosed" | "inspector.NetworkResources.put" | "inspector.console" | "inspector.close" | "inspector.open" | "inspector.url" | "inspector.waitForDebugger" | "inspector/promises" | "inspector/promises.Session" | "inspector/promises.Network.dataReceived" | "inspector/promises.Network.dataSent" | "inspector/promises.Network.loadingFailed" | "inspector/promises.Network.loadingFinished" | "inspector/promises.Network.requestWillBeSent" | "inspector/promises.Network.responseReceived" | "inspector/promises.Network.webSocketCreated" | "inspector/promises.Network.webSocketHandshakeResponseReceived" | "inspector/promises.Network.webSocketClosed" | "inspector/promises.NetworkResources.put" | "inspector/promises.console" | "inspector/promises.close" | "inspector/promises.open" | "inspector/promises.url" | "inspector/promises.waitForDebugger" | "module.builtinModules" | "module.constants.compileCacheStatus" | "module.createRequire" | "module.createRequireFromPath" | "module.enableCompileCache" | "module.findPackageJSON" | "module.flushCompileCache" | "module.getCompileCacheDir" | "module.getSourceMapsSupport" | "module.isBuiltin" | "module.registerHooks" | "module.register" | "module.setSourceMapsSupport" | "module.stripTypeScriptTypes" | "module.syncBuiltinESMExports" | "module.findSourceMap" | "module.SourceMap" | "module.Module.builtinModules" | "module.Module.createRequire" | "module.Module.createRequireFromPath" | "module.Module.enableCompileCache" | "module.Module.findPackageJSON" | "module.Module.flushCompileCache" | "module.Module.getCompileCacheDir" | "module.Module.getSourceMapsSupport" | "module.Module.isBuiltin" | "module.Module.registerHooks" | "module.Module.register" | "module.Module.setSourceMapsSupport" | "module.Module.stripTypeScriptTypes" | "module.Module.syncBuiltinESMExports" | "module.Module.findSourceMap" | "module.Module.SourceMap" | "net" | "net.connect" | "net.createConnection" | "net.createServer" | "net.getDefaultAutoSelectFamily" | "net.setDefaultAutoSelectFamily" | "net.getDefaultAutoSelectFamilyAttemptTimeout" | "net.setDefaultAutoSelectFamilyAttemptTimeout" | "net.isIP" | "net.isIPv4" | "net.isIPv6" | "net.BlockList" | "net.BlockList.isBlockList" | "net.SocketAddress" | "net.SocketAddress.parse" | "net.Server" | "net.Socket" | "os" | "os.EOL" | "os.constants" | "os.constants.priority" | "os.devNull" | "os.availableParallelism" | "os.arch" | "os.cpus" | "os.endianness" | "os.freemem" | "os.getPriority" | "os.homedir" | "os.hostname" | "os.loadavg" | "os.machine" | "os.networkInterfaces" | "os.platform" | "os.release" | "os.setPriority" | "os.tmpdir" | "os.totalmem" | "os.type" | "os.uptime" | "os.userInfo" | "os.version" | "path" | "path.posix" | "path.posix.delimiter" | "path.posix.sep" | "path.posix.basename" | "path.posix.dirname" | "path.posix.extname" | "path.posix.format" | "path.posix.matchesGlob" | "path.posix.isAbsolute" | "path.posix.join" | "path.posix.normalize" | "path.posix.parse" | "path.posix.relative" | "path.posix.resolve" | "path.posix.toNamespacedPath" | "path.win32" | "path.win32.delimiter" | "path.win32.sep" | "path.win32.basename" | "path.win32.dirname" | "path.win32.extname" | "path.win32.format" | "path.win32.matchesGlob" | "path.win32.isAbsolute" | "path.win32.join" | "path.win32.normalize" | "path.win32.parse" | "path.win32.relative" | "path.win32.resolve" | "path.win32.toNamespacedPath" | "path.delimiter" | "path.sep" | "path.basename" | "path.dirname" | "path.extname" | "path.format" | "path.matchesGlob" | "path.isAbsolute" | "path.join" | "path.normalize" | "path.parse" | "path.relative" | "path.resolve" | "path.toNamespacedPath" | "path/posix" | "path/posix.delimiter" | "path/posix.sep" | "path/posix.basename" | "path/posix.dirname" | "path/posix.extname" | "path/posix.format" | "path/posix.matchesGlob" | "path/posix.isAbsolute" | "path/posix.join" | "path/posix.normalize" | "path/posix.parse" | "path/posix.relative" | "path/posix.resolve" | "path/posix.toNamespacedPath" | "path/win32" | "path/win32.delimiter" | "path/win32.sep" | "path/win32.basename" | "path/win32.dirname" | "path/win32.extname" | "path/win32.format" | "path/win32.matchesGlob" | "path/win32.isAbsolute" | "path/win32.join" | "path/win32.normalize" | "path/win32.parse" | "path/win32.relative" | "path/win32.resolve" | "path/win32.toNamespacedPath" | "perf_hooks" | "perf_hooks.performance" | "perf_hooks.performance.clearMarks" | "perf_hooks.performance.clearMeasures" | "perf_hooks.performance.clearResourceTimings" | "perf_hooks.performance.eventLoopUtilization" | "perf_hooks.performance.getEntries" | "perf_hooks.performance.getEntriesByName" | "perf_hooks.performance.getEntriesByType" | "perf_hooks.performance.mark" | "perf_hooks.performance.markResourceTiming" | "perf_hooks.performance.measure" | "perf_hooks.performance.nodeTiming" | "perf_hooks.performance.nodeTiming.bootstrapComplete" | "perf_hooks.performance.nodeTiming.environment" | "perf_hooks.performance.nodeTiming.idleTime" | "perf_hooks.performance.nodeTiming.loopExit" | "perf_hooks.performance.nodeTiming.loopStart" | "perf_hooks.performance.nodeTiming.nodeStart" | "perf_hooks.performance.nodeTiming.uvMetricsInfo" | "perf_hooks.performance.nodeTiming.v8Start" | "perf_hooks.performance.now" | "perf_hooks.performance.onresourcetimingbufferfull" | "perf_hooks.performance.setResourceTimingBufferSize" | "perf_hooks.performance.timeOrigin" | "perf_hooks.performance.timerify" | "perf_hooks.performance.toJSON" | "perf_hooks.createHistogram" | "perf_hooks.eventLoopUtilization" | "perf_hooks.timerify" | "perf_hooks.monitorEventLoopDelay" | "perf_hooks.PerformanceEntry" | "perf_hooks.PerformanceMark" | "perf_hooks.PerformanceMeasure" | "perf_hooks.PerformanceNodeEntry" | "perf_hooks.PerformanceNodeTiming" | "perf_hooks.PerformanceResourceTiming" | "perf_hooks.PerformanceObserver" | "perf_hooks.PerformanceObserverEntryList" | "perf_hooks.Histogram" | "perf_hooks.IntervalHistogram" | "perf_hooks.RecordableHistogram" | "punycode" | "punycode.ucs2" | "punycode.version" | "punycode.decode" | "punycode.encode" | "punycode.toASCII" | "punycode.toUnicode" | "querystring" | "querystring.decode" | "querystring.encode" | "querystring.escape" | "querystring.parse" | "querystring.stringify" | "querystring.unescape" | "readline" | "readline.promises" | "readline.promises.createInterface" | "readline.promises.Interface" | "readline.promises.Readline" | "readline.clearLine" | "readline.clearScreenDown" | "readline.createInterface" | "readline.cursorTo" | "readline.moveCursor" | "readline.Interface" | "readline.emitKeypressEvents" | "readline.InterfaceConstructor" | "readline/promises" | "readline/promises.createInterface" | "readline/promises.Interface" | "readline/promises.Readline" | "repl" | "repl.start" | "repl.writer" | "repl.REPLServer()" | "repl.REPLServer" | "repl.REPL_MODE_MAGIC" | "repl.REPL_MODE_SLOPPY" | "repl.REPL_MODE_STRICT" | "repl.Recoverable()" | "repl.Recoverable" | "repl.builtinModules" | "sea" | "sea.isSea" | "sea.getAsset" | "sea.getAssetAsBlob" | "sea.getAssetKeys" | "sea.getRawAsset" | "sea.sea.isSea" | "sea.sea.getAsset" | "sea.sea.getAssetAsBlob" | "sea.sea.getAssetKeys" | "sea.sea.getRawAsset" | "stream" | "stream.promises" | "stream.promises.pipeline" | "stream.promises.finished" | "stream.finished" | "stream.pipeline" | "stream.compose" | "stream.duplexPair" | "stream.Readable" | "stream.Readable.from" | "stream.Readable.isDisturbed" | "stream.Readable.fromWeb" | "stream.Readable.toWeb" | "stream.Writable" | "stream.Writable.fromWeb" | "stream.Writable.toWeb" | "stream.Duplex" | "stream.Duplex.from" | "stream.Duplex.fromWeb" | "stream.Duplex.toWeb" | "stream.Transform" | "stream.isErrored" | "stream.isReadable" | "stream.addAbortSignal" | "stream.getDefaultHighWaterMark" | "stream.setDefaultHighWaterMark" | "stream/promises.pipeline" | "stream/promises.finished" | "stream/web" | "stream/web.ReadableStream" | "stream/web.ReadableStream.from" | "stream/web.ReadableStreamDefaultReader" | "stream/web.ReadableStreamBYOBReader" | "stream/web.ReadableStreamDefaultController" | "stream/web.ReadableByteStreamController" | "stream/web.ReadableStreamBYOBRequest" | "stream/web.WritableStream" | "stream/web.WritableStreamDefaultWriter" | "stream/web.WritableStreamDefaultController" | "stream/web.TransformStream" | "stream/web.TransformStreamDefaultController" | "stream/web.ByteLengthQueuingStrategy" | "stream/web.CountQueuingStrategy" | "stream/web.TextEncoderStream" | "stream/web.TextDecoderStream" | "stream/web.CompressionStream" | "stream/web.DecompressionStream" | "stream/consumers" | "stream/consumers.arrayBuffer" | "stream/consumers.blob" | "stream/consumers.buffer" | "stream/consumers.json" | "stream/consumers.text" | "_stream_duplex" | "_stream_passthrough" | "_stream_readable" | "_stream_transform" | "_stream_wrap" | "_stream_writable" | "string_decoder" | "string_decoder.StringDecoder" | "sqlite" | "sqlite.constants" | "sqlite.constants.SQLITE_CHANGESET_OMIT" | "sqlite.constants.SQLITE_CHANGESET_REPLACE" | "sqlite.constants.SQLITE_CHANGESET_ABORT" | "sqlite.backup" | "sqlite.DatabaseSync" | "sqlite.Session" | "sqlite.StatementSync" | "sqlite.SQLITE_CHANGESET_OMIT" | "sqlite.SQLITE_CHANGESET_REPLACE" | "sqlite.SQLITE_CHANGESET_ABORT" | "test" | "test.after" | "test.afterEach" | "test.assert" | "test.assert.register" | "test.before" | "test.beforeEach" | "test.describe" | "test.describe.only" | "test.describe.skip" | "test.describe.todo" | "test.it" | "test.it.only" | "test.it.skip" | "test.it.todo" | "test.mock" | "test.mock.fn" | "test.mock.getter" | "test.mock.method" | "test.mock.module" | "test.mock.property" | "test.mock.reset" | "test.mock.restoreAll" | "test.mock.setter" | "test.mock.timers" | "test.mock.timers.enable" | "test.mock.timers.reset" | "test.mock.timers.tick" | "test.only" | "test.run" | "test.snapshot" | "test.snapshot.setDefaultSnapshotSerializers" | "test.snapshot.setResolveSnapshotPath" | "test.skip" | "test.suite" | "test.test" | "test.test.only" | "test.test.skip" | "test.test.todo" | "test.todo" | "timers" | "timers.Immediate" | "timers.Timeout" | "timers.setImmediate" | "timers.clearImmediate" | "timers.setInterval" | "timers.clearInterval" | "timers.setTimeout" | "timers.clearTimeout" | "timers.promises" | "timers.promises.setTimeout" | "timers.promises.setImmediate" | "timers.promises.setInterval" | "timers.promises.scheduler.wait" | "timers.promises.scheduler.yield" | "timers/promises" | "timers/promises.setTimeout" | "timers/promises.setImmediate" | "timers/promises.setInterval" | "timers/promises.scheduler.wait" | "timers/promises.scheduler.yield" | "tls" | "tls.checkServerIdentity" | "tls.connect" | "tls.createSecureContext" | "tls.createSecurePair" | "tls.createServer" | "tls.CryptoStream" | "tls.DEFAULT_CIPHERS" | "tls.DEFAULT_ECDH_CURVE" | "tls.DEFAULT_MAX_VERSION" | "tls.DEFAULT_MIN_VERSION" | "tls.getCACertificates" | "tls.getCiphers" | "tls.rootCertificates" | "tls.SecureContext" | "tls.SecurePair" | "tls.Server" | "tls.setDefaultCACertificates" | "tls.TLSSocket" | "_tls_common" | "_tls_wrap" | "trace_events" | "trace_events.createTracing" | "trace_events.getEnabledCategories" | "tty" | "tty.isatty" | "tty.ReadStream" | "tty.WriteStream" | "url" | "url.domainToASCII" | "url.domainToUnicode" | "url.fileURLToPath" | "url.format" | "url.pathToFileURL" | "url.urlToHttpOptions" | "url.URL" | "url.URL.canParse" | "url.URL.createObjectURL" | "url.URL.revokeObjectURL" | "url.URLPattern" | "url.URLSearchParams" | "url.Url" | "util.promisify" | "util.promisify.custom" | "util.callbackify" | "util.debuglog" | "util.debug" | "util.deprecate" | "util.diff" | "util.format" | "util.formatWithOptions" | "util.getCallSite" | "util.getCallSites" | "util.getSystemErrorName" | "util.getSystemErrorMap" | "util.getSystemErrorMessage" | "util.inherits" | "util.inspect" | "util.inspect.custom" | "util.inspect.defaultOptions" | "util.inspect.replDefaults" | "util.isDeepStrictEqual" | "util.parseArgs" | "util.parseEnv" | "util.setTraceSigInt" | "util.stripVTControlCharacters" | "util.styleText" | "util.toUSVString" | "util.transferableAbortController" | "util.transferableAbortSignal" | "util.aborted" | "util.MIMEType" | "util.MIMEParams" | "util.TextDecoder" | "util.TextEncoder" | "util.types" | "util.types.isExternal" | "util.types.isDate" | "util.types.isArgumentsObject" | "util.types.isBigIntObject" | "util.types.isBooleanObject" | "util.types.isNumberObject" | "util.types.isStringObject" | "util.types.isSymbolObject" | "util.types.isNativeError" | "util.types.isRegExp" | "util.types.isAsyncFunction" | "util.types.isGeneratorFunction" | "util.types.isGeneratorObject" | "util.types.isPromise" | "util.types.isMap" | "util.types.isSet" | "util.types.isMapIterator" | "util.types.isSetIterator" | "util.types.isWeakMap" | "util.types.isWeakSet" | "util.types.isArrayBuffer" | "util.types.isDataView" | "util.types.isSharedArrayBuffer" | "util.types.isProxy" | "util.types.isModuleNamespaceObject" | "util.types.isAnyArrayBuffer" | "util.types.isBoxedPrimitive" | "util.types.isArrayBufferView" | "util.types.isTypedArray" | "util.types.isUint8Array" | "util.types.isUint8ClampedArray" | "util.types.isUint16Array" | "util.types.isUint32Array" | "util.types.isInt8Array" | "util.types.isInt16Array" | "util.types.isInt32Array" | "util.types.isFloat16Array" | "util.types.isFloat32Array" | "util.types.isFloat64Array" | "util.types.isBigInt64Array" | "util.types.isBigUint64Array" | "util.types.isKeyObject" | "util.types.isCryptoKey" | "util.types.isWebAssemblyCompiledModule" | "util._extend" | "util.isArray" | "util.isBoolean" | "util.isBuffer" | "util.isDate" | "util.isError" | "util.isFunction" | "util.isNull" | "util.isNullOrUndefined" | "util.isNumber" | "util.isObject" | "util.isPrimitive" | "util.isRegExp" | "util.isString" | "util.isSymbol" | "util.isUndefined" | "util.log" | "util" | "util/types" | "util/types.isExternal" | "util/types.isDate" | "util/types.isArgumentsObject" | "util/types.isBigIntObject" | "util/types.isBooleanObject" | "util/types.isNumberObject" | "util/types.isStringObject" | "util/types.isSymbolObject" | "util/types.isNativeError" | "util/types.isRegExp" | "util/types.isAsyncFunction" | "util/types.isGeneratorFunction" | "util/types.isGeneratorObject" | "util/types.isPromise" | "util/types.isMap" | "util/types.isSet" | "util/types.isMapIterator" | "util/types.isSetIterator" | "util/types.isWeakMap" | "util/types.isWeakSet" | "util/types.isArrayBuffer" | "util/types.isDataView" | "util/types.isSharedArrayBuffer" | "util/types.isProxy" | "util/types.isModuleNamespaceObject" | "util/types.isAnyArrayBuffer" | "util/types.isBoxedPrimitive" | "util/types.isArrayBufferView" | "util/types.isTypedArray" | "util/types.isUint8Array" | "util/types.isUint8ClampedArray" | "util/types.isUint16Array" | "util/types.isUint32Array" | "util/types.isInt8Array" | "util/types.isInt16Array" | "util/types.isInt32Array" | "util/types.isFloat16Array" | "util/types.isFloat32Array" | "util/types.isFloat64Array" | "util/types.isBigInt64Array" | "util/types.isBigUint64Array" | "util/types.isKeyObject" | "util/types.isCryptoKey" | "util/types.isWebAssemblyCompiledModule" | "v8" | "v8.serialize" | "v8.deserialize" | "v8.Serializer" | "v8.Deserializer" | "v8.DefaultSerializer" | "v8.DefaultDeserializer" | "v8.promiseHooks" | "v8.promiseHooks.onInit" | "v8.promiseHooks.onSettled" | "v8.promiseHooks.onBefore" | "v8.promiseHooks.onAfter" | "v8.promiseHooks.createHook" | "v8.startupSnapshot" | "v8.startupSnapshot.addSerializeCallback" | "v8.startupSnapshot.addDeserializeCallback" | "v8.startupSnapshot.setDeserializeMainFunction" | "v8.startupSnapshot.isBuildingSnapshot" | "v8.cachedDataVersionTag" | "v8.getHeapCodeStatistics" | "v8.getHeapSnapshot" | "v8.getHeapSpaceStatistics" | "v8.getHeapStatistics" | "v8.isStringOneByteRepresentation" | "v8.queryObjects" | "v8.setFlagsFromString" | "v8.stopCoverage" | "v8.takeCoverage" | "v8.writeHeapSnapshot" | "v8.setHeapSnapshotNearHeapLimit" | "v8.GCProfiler" | "v8.startCpuProfile" | "vm.constants" | "vm.compileFunction" | "vm.createContext" | "vm.isContext" | "vm.measureMemory" | "vm.runInContext" | "vm.runInNewContext" | "vm.runInThisContext" | "vm.Script" | "vm.Module" | "vm.SourceTextModule" | "vm.SyntheticModule" | "vm" | "wasi.WASI" | "wasi" | "worker_threads" | "worker_threads.parentPort" | "worker_threads.resourceLimits" | "worker_threads.SHARE_ENV" | "worker_threads.threadId" | "worker_threads.threadName" | "worker_threads.workerData" | "worker_threads.getEnvironmentData" | "worker_threads.getHeapStatistics" | "worker_threads.markAsUncloneable" | "worker_threads.markAsUntransferable" | "worker_threads.isInternalThread" | "worker_threads.isMainThread" | "worker_threads.isMarkedAsUntransferable" | "worker_threads.locks" | "worker_threads.locks.request" | "worker_threads.locks.query" | "worker_threads.moveMessagePortToContext" | "worker_threads.postMessageToThread" | "worker_threads.receiveMessageOnPort" | "worker_threads.setEnvironmentData" | "worker_threads.BroadcastChannel" | "worker_threads.MessageChannel" | "worker_threads.MessagePort" | "worker_threads.Worker" | "zlib.brotliCompress" | "zlib.brotliCompressSync" | "zlib.brotliDecompress" | "zlib.brotliDecompressSync" | "zlib.constants" | "zlib.constants.ZSTD_e_continue" | "zlib.constants.ZSTD_e_flush" | "zlib.constants.ZSTD_e_end" | "zlib.constants.ZSTD_fast" | "zlib.constants.ZSTD_dfast" | "zlib.constants.ZSTD_greedy" | "zlib.constants.ZSTD_lazy" | "zlib.constants.ZSTD_lazy2" | "zlib.constants.ZSTD_btlazy2" | "zlib.constants.ZSTD_btopt" | "zlib.constants.ZSTD_btultra" | "zlib.constants.ZSTD_btultra2" | "zlib.constants.ZSTD_c_compressionLevel" | "zlib.constants.ZSTD_c_windowLog" | "zlib.constants.ZSTD_c_hashLog" | "zlib.constants.ZSTD_c_chainLog" | "zlib.constants.ZSTD_c_searchLog" | "zlib.constants.ZSTD_c_minMatch" | "zlib.constants.ZSTD_c_targetLength" | "zlib.constants.ZSTD_c_strategy" | "zlib.constants.ZSTD_c_enableLongDistanceMatching" | "zlib.constants.ZSTD_c_ldmHashLog" | "zlib.constants.ZSTD_c_ldmMinMatch" | "zlib.constants.ZSTD_c_ldmBucketSizeLog" | "zlib.constants.ZSTD_c_ldmHashRateLog" | "zlib.constants.ZSTD_c_contentSizeFlag" | "zlib.constants.ZSTD_c_checksumFlag" | "zlib.constants.ZSTD_c_dictIDFlag" | "zlib.constants.ZSTD_c_nbWorkers" | "zlib.constants.ZSTD_c_jobSize" | "zlib.constants.ZSTD_c_overlapLog" | "zlib.constants.ZSTD_d_windowLogMax" | "zlib.constants.ZSTD_CLEVEL_DEFAULT" | "zlib.constants.ZSTD_error_no_error" | "zlib.constants.ZSTD_error_GENERIC" | "zlib.constants.ZSTD_error_prefix_unknown" | "zlib.constants.ZSTD_error_version_unsupported" | "zlib.constants.ZSTD_error_frameParameter_unsupported" | "zlib.constants.ZSTD_error_frameParameter_windowTooLarge" | "zlib.constants.ZSTD_error_corruption_detected" | "zlib.constants.ZSTD_error_checksum_wrong" | "zlib.constants.ZSTD_error_literals_headerWrong" | "zlib.constants.ZSTD_error_dictionary_corrupted" | "zlib.constants.ZSTD_error_dictionary_wrong" | "zlib.constants.ZSTD_error_dictionaryCreation_failed" | "zlib.constants.ZSTD_error_parameter_unsupported" | "zlib.constants.ZSTD_error_parameter_combination_unsupported" | "zlib.constants.ZSTD_error_parameter_outOfBound" | "zlib.constants.ZSTD_error_tableLog_tooLarge" | "zlib.constants.ZSTD_error_maxSymbolValue_tooLarge" | "zlib.constants.ZSTD_error_maxSymbolValue_tooSmall" | "zlib.constants.ZSTD_error_stabilityCondition_notRespected" | "zlib.constants.ZSTD_error_stage_wrong" | "zlib.constants.ZSTD_error_init_missing" | "zlib.constants.ZSTD_error_memory_allocation" | "zlib.constants.ZSTD_error_workSpace_tooSmall" | "zlib.constants.ZSTD_error_dstSize_tooSmall" | "zlib.constants.ZSTD_error_srcSize_wrong" | "zlib.constants.ZSTD_error_dstBuffer_null" | "zlib.constants.ZSTD_error_noForwardProgress_destFull" | "zlib.constants.ZSTD_error_noForwardProgress_inputEmpty" | "zlib.crc32" | "zlib.createBrotliCompress" | "zlib.createBrotliDecompress" | "zlib.createDeflate" | "zlib.createDeflateRaw" | "zlib.createGunzip" | "zlib.createGzip" | "zlib.createInflate" | "zlib.createInflateRaw" | "zlib.createUnzip" | "zlib.createZstdCompress" | "zlib.createZstdDecompress" | "zlib.deflate" | "zlib.deflateRaw" | "zlib.deflateRawSync" | "zlib.deflateSync" | "zlib.gunzip" | "zlib.gunzipSync" | "zlib.gzip" | "zlib.gzipSync" | "zlib.inflate" | "zlib.inflateRaw" | "zlib.inflateRawSync" | "zlib.inflateSync" | "zlib.unzip" | "zlib.unzipSync" | "zlib.zstdCompress" | "zlib.zstdCompressSync" | "zlib.zstdDecompress" | "zlib.zstdDecompressSync" | "zlib.BrotliCompress()" | "zlib.BrotliCompress" | "zlib.BrotliDecompress()" | "zlib.BrotliDecompress" | "zlib.Deflate()" | "zlib.Deflate" | "zlib.DeflateRaw()" | "zlib.DeflateRaw" | "zlib.Gunzip()" | "zlib.Gunzip" | "zlib.Gzip()" | "zlib.Gzip" | "zlib.Inflate()" | "zlib.Inflate" | "zlib.InflateRaw()" | "zlib.InflateRaw" | "zlib.Unzip()" | "zlib.Unzip" | "zlib.ZstdCompress" | "zlib.ZstdDecompress" | "zlib.ZstdOptions" | "zlib" | "import.meta.resolve" | "import.meta.dirname" | "import.meta.filename" | "import.meta.main")[]
+  ignores?: ("__filename" | "__dirname" | "require" | "require.cache" | "require.extensions" | "require.main" | "require.resolve" | "require.resolve.paths" | "module" | "module.children" | "module.exports" | "module.filename" | "module.id" | "module.isPreloading" | "module.loaded" | "module.parent" | "module.path" | "module.paths" | "module.require" | "exports" | "AbortController" | "AbortSignal" | "AbortSignal.abort" | "AbortSignal.timeout" | "AbortSignal.any" | "DOMException" | "QuotaExceededError" | "FormData" | "Headers" | "MessageEvent" | "Navigator" | "Request" | "Response" | "WebAssembly" | "Worker" | "WebSocket" | "fetch" | "global" | "queueMicrotask" | "navigator" | "navigator.hardwareConcurrency" | "navigator.language" | "navigator.languages" | "navigator.locks" | "navigator.locks.request" | "navigator.locks.query" | "navigator.platform" | "navigator.userAgent" | "structuredClone" | "localStorage" | "sessionStorage" | "Storage" | "Blob" | "new Buffer()" | "Buffer" | "Buffer.alloc" | "Buffer.allocUnsafe" | "Buffer.allocUnsafeSlow" | "Buffer.byteLength" | "Buffer.compare" | "Buffer.concat" | "Buffer.copyBytesFrom" | "Buffer.from" | "Buffer.isBuffer" | "Buffer.isEncoding" | "Buffer.stringLength" | "File" | "atob" | "btoa" | "console" | "console.profile" | "console.profileEnd" | "console.timeStamp" | "console.Console" | "console.assert" | "console.clear" | "console.count" | "console.countReset" | "console.debug" | "console.dir" | "console.dirxml" | "console.error" | "console.group" | "console.groupCollapsed" | "console.groupEnd" | "console.info" | "console.log" | "console.table" | "console.time" | "console.timeEnd" | "console.timeLog" | "console.trace" | "console.warn" | "crypto" | "crypto.subtle" | "crypto.subtle.decapsulateBits" | "crypto.subtle.decapsulateKey" | "crypto.subtle.decrypt" | "crypto.subtle.deriveBits" | "crypto.subtle.deriveKey" | "crypto.subtle.digest" | "crypto.subtle.encapsulateBits" | "crypto.subtle.encapsulateKey" | "crypto.subtle.encrypt" | "crypto.subtle.exportKey" | "crypto.subtle.generateKey" | "crypto.subtle.getPublicKey" | "crypto.subtle.importKey" | "crypto.subtle.sign" | "crypto.subtle.unwrapKey" | "crypto.subtle.verify" | "crypto.subtle.wrapKey" | "crypto.getRandomValues" | "crypto.randomUUID" | "Crypto" | "CryptoKey" | "SubtleCrypto" | "SubtleCrypto.supports" | "CloseEvent" | "CustomEvent" | "ErrorEvent" | "Event" | "EventSource" | "EventTarget" | "PerformanceEntry" | "PerformanceMark" | "PerformanceMeasure" | "PerformanceObserver" | "PerformanceObserverEntryList" | "PerformanceResourceTiming" | "performance" | "performance.clearMarks" | "performance.clearMeasures" | "performance.clearResourceTimings" | "performance.eventLoopUtilization" | "performance.getEntries" | "performance.getEntriesByName" | "performance.getEntriesByType" | "performance.mark" | "performance.markResourceTiming" | "performance.measure" | "performance.nodeTiming" | "performance.nodeTiming.bootstrapComplete" | "performance.nodeTiming.environment" | "performance.nodeTiming.idleTime" | "performance.nodeTiming.loopExit" | "performance.nodeTiming.loopStart" | "performance.nodeTiming.nodeStart" | "performance.nodeTiming.uvMetricsInfo" | "performance.nodeTiming.v8Start" | "performance.now" | "performance.onresourcetimingbufferfull" | "performance.setResourceTimingBufferSize" | "performance.timeOrigin" | "performance.timerify" | "performance.toJSON" | "process" | "process.allowedNodeEnvironmentFlags" | "process.availableMemory" | "process.arch" | "process.argv" | "process.argv0" | "process.channel" | "process.config" | "process.connected" | "process.debugPort" | "process.env" | "process.execArgv" | "process.execPath" | "process.execve" | "process.exitCode" | "process.features.cached_builtins" | "process.features.debug" | "process.features.inspector" | "process.features.ipv6" | "process.features.require_module" | "process.features.tls" | "process.features.tls_alpn" | "process.features.tls_ocsp" | "process.features.tls_sni" | "process.features.typescript" | "process.features.uv" | "process.finalization.register" | "process.finalization.registerBeforeExit" | "process.finalization.unregister" | "process.getBuiltinModule" | "process.mainModule" | "process.noDeprecation" | "process.permission" | "process.permission.drop" | "process.pid" | "process.platform" | "process.ppid" | "process.ref" | "process.release" | "process.report" | "process.report.excludeEnv" | "process.sourceMapsEnabled" | "process.stdin" | "process.stdin.isRaw" | "process.stdin.isTTY" | "process.stdin.setRawMode" | "process.stdout" | "process.stdout.clearLine" | "process.stdout.clearScreenDown" | "process.stdout.columns" | "process.stdout.cursorTo" | "process.stdout.getColorDepth" | "process.stdout.getWindowSize" | "process.stdout.hasColors" | "process.stdout.isTTY" | "process.stdout.moveCursor" | "process.stdout.rows" | "process.stderr" | "process.stderr.clearLine" | "process.stderr.clearScreenDown" | "process.stderr.columns" | "process.stderr.cursorTo" | "process.stderr.getColorDepth" | "process.stderr.getWindowSize" | "process.stderr.hasColors" | "process.stderr.isTTY" | "process.stderr.moveCursor" | "process.stderr.rows" | "process.threadCpuUsage" | "process.throwDeprecation" | "process.title" | "process.traceDeprecation" | "process.version" | "process.versions" | "process.abort" | "process.addUncaughtExceptionCaptureCallback" | "process.chdir" | "process.constrainedMemory" | "process.cpuUsage" | "process.cwd" | "process.disconnect" | "process.dlopen" | "process.emitWarning" | "process.exit" | "process.getActiveResourcesInfo" | "process.getegid" | "process.geteuid" | "process.getgid" | "process.getgroups" | "process.getuid" | "process.hasUncaughtExceptionCaptureCallback" | "process.hrtime" | "process.hrtime.bigint" | "process.initgroups" | "process.kill" | "process.loadEnvFile" | "process.memoryUsage" | "process.rss" | "process.nextTick" | "process.resourceUsage" | "process.send" | "process.setegid" | "process.seteuid" | "process.setgid" | "process.setgroups" | "process.setuid" | "process.setSourceMapsEnabled" | "process.setUncaughtExceptionCaptureCallback" | "process.umask" | "process.unref" | "process.uptime" | "ReadableStream" | "ReadableStream.from" | "ReadableStreamDefaultReader" | "ReadableStreamBYOBReader" | "ReadableStreamDefaultController" | "ReadableByteStreamController" | "ReadableStreamBYOBRequest" | "WritableStream" | "WritableStreamDefaultWriter" | "WritableStreamDefaultController" | "TransformStream" | "TransformStreamDefaultController" | "ByteLengthQueuingStrategy" | "CountQueuingStrategy" | "TextEncoderStream" | "TextDecoderStream" | "CompressionStream" | "DecompressionStream" | "setInterval" | "clearInterval" | "setTimeout" | "clearTimeout" | "setImmediate" | "clearImmediate" | "URL" | "URL.canParse" | "URL.createObjectURL" | "URL.revokeObjectURL" | "URLSearchParams" | "TextDecoder" | "TextEncoder" | "BroadcastChannel" | "MessageChannel" | "MessagePort" | "assert" | "assert.Assert" | "assert.assert" | "assert.deepEqual" | "assert.deepStrictEqual" | "assert.doesNotMatch" | "assert.doesNotReject" | "assert.doesNotThrow" | "assert.equal" | "assert.fail" | "assert.ifError" | "assert.match" | "assert.notDeepEqual" | "assert.notDeepStrictEqual" | "assert.notEqual" | "assert.notStrictEqual" | "assert.ok" | "assert.partialDeepStrictEqual" | "assert.rejects" | "assert.strictEqual" | "assert.throws" | "assert.CallTracker" | "assert.strict" | "assert.strict.Assert" | "assert.strict.assert" | "assert.strict.deepEqual" | "assert.strict.deepStrictEqual" | "assert.strict.doesNotMatch" | "assert.strict.doesNotReject" | "assert.strict.doesNotThrow" | "assert.strict.equal" | "assert.strict.fail" | "assert.strict.ifError" | "assert.strict.match" | "assert.strict.notDeepEqual" | "assert.strict.notDeepStrictEqual" | "assert.strict.notEqual" | "assert.strict.notStrictEqual" | "assert.strict.ok" | "assert.strict.partialDeepStrictEqual" | "assert.strict.rejects" | "assert.strict.strictEqual" | "assert.strict.throws" | "assert.strict.CallTracker" | "assert/strict" | "assert/strict.Assert" | "assert/strict.assert" | "assert/strict.deepEqual" | "assert/strict.deepStrictEqual" | "assert/strict.doesNotMatch" | "assert/strict.doesNotReject" | "assert/strict.doesNotThrow" | "assert/strict.equal" | "assert/strict.fail" | "assert/strict.ifError" | "assert/strict.match" | "assert/strict.notDeepEqual" | "assert/strict.notDeepStrictEqual" | "assert/strict.notEqual" | "assert/strict.notStrictEqual" | "assert/strict.ok" | "assert/strict.partialDeepStrictEqual" | "assert/strict.rejects" | "assert/strict.strictEqual" | "assert/strict.throws" | "assert/strict.CallTracker" | "async_hooks" | "async_hooks.createHook" | "async_hooks.executionAsyncResource" | "async_hooks.executionAsyncId" | "async_hooks.triggerAsyncId" | "async_hooks.AsyncLocalStorage" | "async_hooks.AsyncLocalStorage.bind" | "async_hooks.AsyncLocalStorage.snapshot" | "async_hooks.AsyncResource" | "async_hooks.AsyncResource.bind" | "bench" | "bench.after" | "bench.afterEach" | "bench.before" | "bench.beforeEach" | "bench.bench" | "bench.bench.only" | "bench.bench.skip" | "bench.createRunner" | "bench.describe" | "bench.only" | "bench.run" | "bench.runFile" | "bench.skip" | "bench.suite" | "bench/reporters" | "bench/reporters.json" | "bench/reporters.spec" | "buffer" | "buffer.constants" | "buffer.INSPECT_MAX_BYTES" | "buffer.kMaxLength" | "buffer.kStringMaxLength" | "buffer.atob" | "buffer.btoa" | "buffer.isAscii" | "buffer.isLatin1" | "buffer.isUtf8" | "buffer.resolveObjectURL" | "buffer.transcode" | "buffer.SlowBuffer" | "buffer.Blob" | "new buffer.Buffer()" | "buffer.Buffer" | "buffer.Buffer.alloc" | "buffer.Buffer.allocUnsafe" | "buffer.Buffer.allocUnsafeSlow" | "buffer.Buffer.byteLength" | "buffer.Buffer.compare" | "buffer.Buffer.concat" | "buffer.Buffer.copyBytesFrom" | "buffer.Buffer.from" | "buffer.Buffer.isBuffer" | "buffer.Buffer.isEncoding" | "buffer.Buffer.stringLength" | "buffer.File" | "child_process" | "child_process.exec" | "child_process.execFile" | "child_process.fork" | "child_process.spawn" | "child_process.execFileSync" | "child_process.execSync" | "child_process.spawnSync" | "child_process.ChildProcess" | "cluster" | "cluster.isMaster" | "cluster.isPrimary" | "cluster.isWorker" | "cluster.schedulingPolicy" | "cluster.settings" | "cluster.worker" | "cluster.workers" | "cluster.disconnect" | "cluster.fork" | "cluster.setupMaster" | "cluster.setupPrimary" | "cluster.Worker" | "crypto.constants" | "crypto.fips" | "crypto.webcrypto" | "crypto.webcrypto.subtle" | "crypto.webcrypto.subtle.decapsulateBits" | "crypto.webcrypto.subtle.decapsulateKey" | "crypto.webcrypto.subtle.decrypt" | "crypto.webcrypto.subtle.deriveBits" | "crypto.webcrypto.subtle.deriveKey" | "crypto.webcrypto.subtle.digest" | "crypto.webcrypto.subtle.encapsulateBits" | "crypto.webcrypto.subtle.encapsulateKey" | "crypto.webcrypto.subtle.encrypt" | "crypto.webcrypto.subtle.exportKey" | "crypto.webcrypto.subtle.generateKey" | "crypto.webcrypto.subtle.getPublicKey" | "crypto.webcrypto.subtle.importKey" | "crypto.webcrypto.subtle.sign" | "crypto.webcrypto.subtle.unwrapKey" | "crypto.webcrypto.subtle.verify" | "crypto.webcrypto.subtle.wrapKey" | "crypto.webcrypto.getRandomValues" | "crypto.webcrypto.randomUUID" | "crypto.argon2" | "crypto.argon2Sync" | "crypto.checkPrime" | "crypto.checkPrimeSync" | "crypto.createCipher" | "crypto.createCipheriv" | "crypto.createDecipher" | "crypto.createDecipheriv" | "crypto.createDiffieHellman" | "crypto.createDiffieHellmanGroup" | "crypto.createECDH" | "crypto.createHash" | "crypto.createHmac" | "crypto.createMac" | "crypto.createPrivateKey" | "crypto.createPublicKey" | "crypto.createSecretKey" | "crypto.createSign" | "crypto.createVerify" | "crypto.decapsulate" | "crypto.diffieHellman" | "crypto.encapsulate" | "crypto.generateKey" | "crypto.generateKeyPair" | "crypto.generateKeyPairSync" | "crypto.generateKeySync" | "crypto.generatePrime" | "crypto.generatePrimeSync" | "crypto.getCipherInfo" | "crypto.getCiphers" | "crypto.getCurves" | "crypto.getDiffieHellman" | "crypto.getFips" | "crypto.getHashes" | "crypto.getMacs" | "crypto.hash" | "crypto.hkdf" | "crypto.hkdfSync" | "crypto.parsePKCS12" | "crypto.pbkdf2" | "crypto.pbkdf2Sync" | "crypto.privateDecrypt" | "crypto.privateEncrypt" | "crypto.publicDecrypt" | "crypto.publicEncrypt" | "crypto.randomBytes" | "crypto.randomFillSync" | "crypto.randomFill" | "crypto.randomInt" | "crypto.randomUUIDv7" | "crypto.scrypt" | "crypto.scryptSync" | "crypto.secureHeapUsed" | "crypto.setEngine" | "crypto.setFips" | "crypto.sign" | "crypto.timingSafeEqual" | "crypto.verify" | "crypto.Certificate" | "crypto.Certificate.exportChallenge" | "crypto.Certificate.exportPublicKey" | "crypto.Certificate.verifySpkac" | "crypto.Cipher" | "crypto.Decipher" | "crypto.DiffieHellman" | "crypto.DiffieHellmanGroup" | "crypto.ECDH" | "crypto.ECDH.convertKey" | "crypto.Hash()" | "new crypto.Hash()" | "crypto.Hash" | "crypto.Hmac()" | "new crypto.Hmac()" | "crypto.Hmac" | "crypto.KeyObject" | "crypto.KeyObject.from" | "crypto.Sign" | "crypto.Verify" | "crypto.X509Certificate" | "dgram" | "dgram.createSocket" | "dgram.Socket" | "diagnostics_channel" | "diagnostics_channel.hasSubscribers" | "diagnostics_channel.channel" | "diagnostics_channel.subscribe" | "diagnostics_channel.unsubscribe" | "diagnostics_channel.tracingChannel" | "diagnostics_channel.boundedChannel" | "diagnostics_channel.Channel" | "diagnostics_channel.TracingChannel" | "diagnostics_channel.BoundedChannel" | "dns" | "dns.Resolver" | "dns.getServers" | "dns.lookup" | "dns.lookupService" | "dns.resolve" | "dns.resolve4" | "dns.resolve6" | "dns.resolveAny" | "dns.resolveCname" | "dns.resolveCaa" | "dns.resolveMx" | "dns.resolveNaptr" | "dns.resolveNs" | "dns.resolvePtr" | "dns.resolveSoa" | "dns.resolveSrv" | "dns.resolveTlsa" | "dns.resolveTxt" | "dns.reverse" | "dns.setDefaultResultOrder" | "dns.getDefaultResultOrder" | "dns.setServers" | "dns.promises" | "dns.promises.Resolver" | "dns.promises.cancel" | "dns.promises.getServers" | "dns.promises.lookup" | "dns.promises.lookupService" | "dns.promises.resolve" | "dns.promises.resolve4" | "dns.promises.resolve6" | "dns.promises.resolveAny" | "dns.promises.resolveCaa" | "dns.promises.resolveCname" | "dns.promises.resolveMx" | "dns.promises.resolveNaptr" | "dns.promises.resolveNs" | "dns.promises.resolvePtr" | "dns.promises.resolveSoa" | "dns.promises.resolveSrv" | "dns.promises.resolveTlsa" | "dns.promises.resolveTxt" | "dns.promises.reverse" | "dns.promises.setDefaultResultOrder" | "dns.promises.getDefaultResultOrder" | "dns.promises.setServers" | "dns/promises" | "dns/promises.Resolver" | "dns/promises.cancel" | "dns/promises.getServers" | "dns/promises.lookup" | "dns/promises.lookupService" | "dns/promises.resolve" | "dns/promises.resolve4" | "dns/promises.resolve6" | "dns/promises.resolveAny" | "dns/promises.resolveCaa" | "dns/promises.resolveCname" | "dns/promises.resolveMx" | "dns/promises.resolveNaptr" | "dns/promises.resolveNs" | "dns/promises.resolvePtr" | "dns/promises.resolveSoa" | "dns/promises.resolveSrv" | "dns/promises.resolveTlsa" | "dns/promises.resolveTxt" | "dns/promises.reverse" | "dns/promises.setDefaultResultOrder" | "dns/promises.getDefaultResultOrder" | "dns/promises.setServers" | "dtls" | "dtls.connect" | "dtls.createSecureContext" | "dtls.listen" | "domain" | "domain.create" | "domain.Domain" | "events" | "events.Event" | "events.EventTarget" | "events.CustomEvent" | "events.NodeEventTarget" | "events.EventEmitter" | "events.EventEmitter.defaultMaxListeners" | "events.EventEmitter.errorMonitor" | "events.EventEmitter.captureRejections" | "events.EventEmitter.captureRejectionSymbol" | "events.EventEmitter.getEventListeners" | "events.EventEmitter.getMaxListeners" | "events.EventEmitter.once" | "events.EventEmitter.listenerCount" | "events.EventEmitter.on" | "events.EventEmitter.setMaxListeners" | "events.EventEmitter.addAbortListener" | "events.EventEmitterAsyncResource" | "events.EventEmitterAsyncResource.defaultMaxListeners" | "events.EventEmitterAsyncResource.errorMonitor" | "events.EventEmitterAsyncResource.captureRejections" | "events.EventEmitterAsyncResource.captureRejectionSymbol" | "events.EventEmitterAsyncResource.getEventListeners" | "events.EventEmitterAsyncResource.getMaxListeners" | "events.EventEmitterAsyncResource.once" | "events.EventEmitterAsyncResource.listenerCount" | "events.EventEmitterAsyncResource.on" | "events.EventEmitterAsyncResource.setMaxListeners" | "events.EventEmitterAsyncResource.addAbortListener" | "events.defaultMaxListeners" | "events.errorMonitor" | "events.captureRejections" | "events.captureRejectionSymbol" | "events.getEventListeners" | "events.getMaxListeners" | "events.once" | "events.listenerCount" | "events.on" | "events.setMaxListeners" | "events.addAbortListener" | "ffi" | "ffi.DynamicLibrary" | "ffi.dlclose" | "ffi.dlopen" | "ffi.dlsym" | "ffi.exportArrayBuffer" | "ffi.exportArrayBufferView" | "ffi.exportBuffer" | "ffi.exportString" | "ffi.getCurrentEventLoop" | "ffi.getFloat32" | "ffi.getFloat64" | "ffi.getInt16" | "ffi.getInt32" | "ffi.getInt64" | "ffi.getInt8" | "ffi.getRawPointer" | "ffi.getUint16" | "ffi.getUint32" | "ffi.getUint64" | "ffi.getUint8" | "ffi.setFloat32" | "ffi.setFloat64" | "ffi.setInt16" | "ffi.setInt32" | "ffi.setInt64" | "ffi.setInt8" | "ffi.setUint16" | "ffi.setUint32" | "ffi.setUint64" | "ffi.setUint8" | "ffi.suffix" | "ffi.toArrayBuffer" | "ffi.toBuffer" | "ffi.toString" | "ffi.types" | "fs" | "fs.promises" | "fs.promises.FileHandle" | "fs.promises.access" | "fs.promises.appendFile" | "fs.promises.chmod" | "fs.promises.chown" | "fs.promises.constants" | "fs.promises.copyFile" | "fs.promises.cp" | "fs.promises.glob" | "fs.promises.lchmod" | "fs.promises.lchown" | "fs.promises.link" | "fs.promises.lstat" | "fs.promises.lutimes" | "fs.promises.mkdir" | "fs.promises.mkdtemp" | "fs.promises.mkdtempDisposable" | "fs.promises.open" | "fs.promises.opendir" | "fs.promises.readFile" | "fs.promises.readdir" | "fs.promises.readlink" | "fs.promises.realpath" | "fs.promises.rename" | "fs.promises.rm" | "fs.promises.rmdir" | "fs.promises.stat" | "fs.promises.statfs" | "fs.promises.symlink" | "fs.promises.truncate" | "fs.promises.unlink" | "fs.promises.utimes" | "fs.promises.watch" | "fs.promises.writeFile" | "fs.access" | "fs.appendFile" | "fs.chmod" | "fs.chown" | "fs.close" | "fs.copyFile" | "fs.cp" | "fs.createReadStream" | "fs.createWriteStream" | "fs.exists" | "fs.fchmod" | "fs.fchown" | "fs.fdatasync" | "fs.fstat" | "fs.fsync" | "fs.ftruncate" | "fs.futimes" | "fs.glob" | "fs.lchmod" | "fs.lchown" | "fs.link" | "fs.lstat" | "fs.lutimes" | "fs.mkdir" | "fs.mkdtemp" | "fs.native" | "fs.open" | "fs.openAsBlob" | "fs.opendir" | "fs.read" | "fs.readdir" | "fs.readFile" | "fs.readlink" | "fs.readv" | "fs.realpath" | "fs.realpath.native" | "fs.rename" | "fs.rm" | "fs.rmdir" | "fs.stat" | "fs.statfs" | "fs.symlink" | "fs.truncate" | "fs.unlink" | "fs.unwatchFile" | "fs.utimes" | "fs.watch" | "fs.watchFile" | "fs.write" | "fs.writeFile" | "fs.writev" | "fs.accessSync" | "fs.appendFileSync" | "fs.chmodSync" | "fs.chownSync" | "fs.closeSync" | "fs.copyFileSync" | "fs.cpSync" | "fs.existsSync" | "fs.fchmodSync" | "fs.fchownSync" | "fs.fdatasyncSync" | "fs.fstatSync" | "fs.fsyncSync" | "fs.ftruncateSync" | "fs.futimesSync" | "fs.globSync" | "fs.lchmodSync" | "fs.lchownSync" | "fs.linkSync" | "fs.lstatSync" | "fs.lutimesSync" | "fs.mkdirSync" | "fs.mkdtempSync" | "fs.mkdtempDisposableSync" | "fs.opendirSync" | "fs.openSync" | "fs.openAsBlobSync" | "fs.readdirSync" | "fs.readFileSync" | "fs.readlinkSync" | "fs.readSync" | "fs.readvSync" | "fs.realpathSync" | "fs.realpathSync.native" | "fs.renameSync" | "fs.rmdirSync" | "fs.rmSync" | "fs.statfsSync" | "fs.statSync" | "fs.symlinkSync" | "fs.truncateSync" | "fs.unlinkSync" | "fs.utimesSync" | "fs.writeFileSync" | "fs.writeSync" | "fs.writevSync" | "fs.constants" | "fs.F_OK" | "fs.R_OK" | "fs.W_OK" | "fs.X_OK" | "fs.Dir" | "fs.Dirent" | "fs.FSWatcher" | "fs.StatWatcher" | "fs.ReadStream" | "fs.Stats()" | "new fs.Stats()" | "fs.Stats" | "fs.StatFs" | "fs.WriteStream" | "fs.Utf8Stream" | "fs.common_objects" | "fs/promises" | "fs/promises.FileHandle" | "fs/promises.access" | "fs/promises.appendFile" | "fs/promises.chmod" | "fs/promises.chown" | "fs/promises.constants" | "fs/promises.copyFile" | "fs/promises.cp" | "fs/promises.glob" | "fs/promises.lchmod" | "fs/promises.lchown" | "fs/promises.link" | "fs/promises.lstat" | "fs/promises.lutimes" | "fs/promises.mkdir" | "fs/promises.mkdtemp" | "fs/promises.mkdtempDisposable" | "fs/promises.open" | "fs/promises.opendir" | "fs/promises.readFile" | "fs/promises.readdir" | "fs/promises.readlink" | "fs/promises.realpath" | "fs/promises.rename" | "fs/promises.rm" | "fs/promises.rmdir" | "fs/promises.stat" | "fs/promises.statfs" | "fs/promises.symlink" | "fs/promises.truncate" | "fs/promises.unlink" | "fs/promises.utimes" | "fs/promises.watch" | "fs/promises.writeFile" | "http2" | "http2.constants" | "http2.sensitiveHeaders" | "http2.createServer" | "http2.createSecureServer" | "http2.connect" | "http2.getDefaultSettings" | "http2.getPackedSettings" | "http2.getUnpackedSettings" | "http2.performServerHandshake" | "http2.Http2Session" | "http2.ServerHttp2Session" | "http2.ClientHttp2Session" | "http2.Http2Stream" | "http2.ClientHttp2Stream" | "http2.ServerHttp2Stream" | "http2.Http2Server" | "http2.Http2SecureServer" | "http2.Http2ServerRequest" | "http2.Http2ServerResponse" | "http" | "http.METHODS" | "http.STATUS_CODES" | "http.globalAgent" | "http.maxHeaderSize" | "http.createServer" | "http.get" | "http.request" | "http.validateHeaderName" | "http.validateHeaderValue" | "http.isValidHeaderName" | "http.isValidHeaderValue" | "http.websocketMask" | "http.websocketUnmask" | "http.setMaxIdleHTTPParsers" | "http.setGlobalProxyFromEnv" | "http.Agent()" | "http.Agent" | "http.ClientRequest()" | "http.ClientRequest" | "http.Server()" | "http.Server" | "http.ServerResponse()" | "http.ServerResponse" | "http.IncomingMessage()" | "http.IncomingMessage" | "http.OutgoingMessage()" | "http.OutgoingMessage" | "http.WebSocket()" | "http.WebSocket" | "_http_agent" | "_http_client" | "_http_common" | "_http_incoming" | "_http_outgoing" | "_http_server" | "https" | "https.globalAgent" | "https.createServer" | "https.get" | "https.request" | "https.Agent" | "https.Server" | "inspector" | "inspector.Session" | "inspector.DOMStorage.domStorageItemAdded" | "inspector.DOMStorage.domStorageItemRemoved" | "inspector.DOMStorage.domStorageItemUpdated" | "inspector.DOMStorage.domStorageItemsCleared" | "inspector.DOMStorage.registerStorage" | "inspector.Network.dataReceived" | "inspector.Network.dataSent" | "inspector.Network.loadingFailed" | "inspector.Network.loadingFinished" | "inspector.Network.requestWillBeSent" | "inspector.Network.responseReceived" | "inspector.Network.webSocketCreated" | "inspector.Network.webSocketHandshakeResponseReceived" | "inspector.Network.webSocketClosed" | "inspector.NetworkResources.put" | "inspector.console" | "inspector.close" | "inspector.open" | "inspector.url" | "inspector.waitForDebugger" | "inspector/promises" | "inspector/promises.Session" | "inspector/promises.DOMStorage.domStorageItemAdded" | "inspector/promises.DOMStorage.domStorageItemRemoved" | "inspector/promises.DOMStorage.domStorageItemUpdated" | "inspector/promises.DOMStorage.domStorageItemsCleared" | "inspector/promises.DOMStorage.registerStorage" | "inspector/promises.Network.dataReceived" | "inspector/promises.Network.dataSent" | "inspector/promises.Network.loadingFailed" | "inspector/promises.Network.loadingFinished" | "inspector/promises.Network.requestWillBeSent" | "inspector/promises.Network.responseReceived" | "inspector/promises.Network.webSocketCreated" | "inspector/promises.Network.webSocketHandshakeResponseReceived" | "inspector/promises.Network.webSocketClosed" | "inspector/promises.NetworkResources.put" | "inspector/promises.console" | "inspector/promises.close" | "inspector/promises.open" | "inspector/promises.url" | "inspector/promises.waitForDebugger" | "module._debug" | "module.builtinModules" | "module.constants.compileCacheStatus" | "module.createRequire" | "module.createRequireFromPath" | "module.enableCompileCache" | "module.findPackageJSON" | "module.flushCompileCache" | "module.getCompileCacheDir" | "module.getSourceMapsSupport" | "module.isBuiltin" | "module.registerHooks" | "module.register" | "module.setSourceMapsSupport" | "module.stripTypeScriptTypes" | "module.syncBuiltinESMExports" | "module.findSourceMap" | "module.SourceMap" | "module.Module._debug" | "module.Module.builtinModules" | "module.Module.createRequire" | "module.Module.createRequireFromPath" | "module.Module.enableCompileCache" | "module.Module.findPackageJSON" | "module.Module.flushCompileCache" | "module.Module.getCompileCacheDir" | "module.Module.getSourceMapsSupport" | "module.Module.isBuiltin" | "module.Module.registerHooks" | "module.Module.register" | "module.Module.setSourceMapsSupport" | "module.Module.stripTypeScriptTypes" | "module.Module.syncBuiltinESMExports" | "module.Module.findSourceMap" | "module.Module.SourceMap" | "net" | "net.connect" | "net.createConnection" | "net.createServer" | "net.getDefaultAutoSelectFamily" | "net.setDefaultAutoSelectFamily" | "net.getDefaultAutoSelectFamilyAttemptTimeout" | "net.setDefaultAutoSelectFamilyAttemptTimeout" | "net.isIP" | "net.isIPv4" | "net.isIPv6" | "net.BoundSocket" | "net.BlockList" | "net.BlockList.isBlockList" | "net.BlockList.PRIVATE_RANGES" | "net.SocketAddress" | "net.SocketAddress.parse" | "net.Server" | "net.Socket" | "os" | "os.EOL" | "os.constants" | "os.constants.priority" | "os.devNull" | "os.availableParallelism" | "os.arch" | "os.cpus" | "os.endianness" | "os.freemem" | "os.getPriority" | "os.homedir" | "os.hostname" | "os.loadavg" | "os.machine" | "os.networkInterfaces" | "os.platform" | "os.release" | "os.setPriority" | "os.tmpdir" | "os.totalmem" | "os.type" | "os.uptime" | "os.userInfo" | "os.version" | "path" | "path.posix" | "path.posix.delimiter" | "path.posix.sep" | "path.posix.basename" | "path.posix.dirname" | "path.posix.extname" | "path.posix.format" | "path.posix.matchesGlob" | "path.posix.isAbsolute" | "path.posix.join" | "path.posix.normalize" | "path.posix.parse" | "path.posix.relative" | "path.posix.resolve" | "path.posix.toNamespacedPath" | "path.win32" | "path.win32.delimiter" | "path.win32.sep" | "path.win32.basename" | "path.win32.dirname" | "path.win32.extname" | "path.win32.format" | "path.win32.matchesGlob" | "path.win32.isAbsolute" | "path.win32.join" | "path.win32.normalize" | "path.win32.parse" | "path.win32.relative" | "path.win32.resolve" | "path.win32.toNamespacedPath" | "path.delimiter" | "path.sep" | "path.basename" | "path.dirname" | "path.extname" | "path.format" | "path.matchesGlob" | "path.isAbsolute" | "path.join" | "path.normalize" | "path.parse" | "path.relative" | "path.resolve" | "path.toNamespacedPath" | "path/posix" | "path/posix.delimiter" | "path/posix.sep" | "path/posix.basename" | "path/posix.dirname" | "path/posix.extname" | "path/posix.format" | "path/posix.matchesGlob" | "path/posix.isAbsolute" | "path/posix.join" | "path/posix.normalize" | "path/posix.parse" | "path/posix.relative" | "path/posix.resolve" | "path/posix.toNamespacedPath" | "path/win32" | "path/win32.delimiter" | "path/win32.sep" | "path/win32.basename" | "path/win32.dirname" | "path/win32.extname" | "path/win32.format" | "path/win32.matchesGlob" | "path/win32.isAbsolute" | "path/win32.join" | "path/win32.normalize" | "path/win32.parse" | "path/win32.relative" | "path/win32.resolve" | "path/win32.toNamespacedPath" | "perf_hooks" | "perf_hooks.performance" | "perf_hooks.performance.clearMarks" | "perf_hooks.performance.clearMeasures" | "perf_hooks.performance.clearResourceTimings" | "perf_hooks.performance.eventLoopUtilization" | "perf_hooks.performance.getEntries" | "perf_hooks.performance.getEntriesByName" | "perf_hooks.performance.getEntriesByType" | "perf_hooks.performance.mark" | "perf_hooks.performance.markResourceTiming" | "perf_hooks.performance.measure" | "perf_hooks.performance.nodeTiming" | "perf_hooks.performance.nodeTiming.bootstrapComplete" | "perf_hooks.performance.nodeTiming.environment" | "perf_hooks.performance.nodeTiming.idleTime" | "perf_hooks.performance.nodeTiming.loopExit" | "perf_hooks.performance.nodeTiming.loopStart" | "perf_hooks.performance.nodeTiming.nodeStart" | "perf_hooks.performance.nodeTiming.uvMetricsInfo" | "perf_hooks.performance.nodeTiming.v8Start" | "perf_hooks.performance.now" | "perf_hooks.performance.onresourcetimingbufferfull" | "perf_hooks.performance.setResourceTimingBufferSize" | "perf_hooks.performance.timeOrigin" | "perf_hooks.performance.timerify" | "perf_hooks.performance.toJSON" | "perf_hooks.createHistogram" | "perf_hooks.createSlidingWindowHistogram" | "perf_hooks.eventLoopUtilization" | "perf_hooks.importHistogram" | "perf_hooks.timerify" | "perf_hooks.monitorEventLoopDelay" | "perf_hooks.PerformanceEntry" | "perf_hooks.PerformanceMark" | "perf_hooks.PerformanceMeasure" | "perf_hooks.PerformanceNodeEntry" | "perf_hooks.PerformanceNodeTiming" | "perf_hooks.PerformanceResourceTiming" | "perf_hooks.PerformanceObserver" | "perf_hooks.PerformanceObserverEntryList" | "perf_hooks.Histogram" | "perf_hooks.IntervalHistogram" | "perf_hooks.RecordableHistogram" | "punycode" | "punycode.ucs2" | "punycode.version" | "punycode.decode" | "punycode.encode" | "punycode.toASCII" | "punycode.toUnicode" | "querystring" | "querystring.decode" | "querystring.encode" | "querystring.escape" | "querystring.parse" | "querystring.stringify" | "querystring.unescape" | "readline" | "readline.promises" | "readline.promises.createInterface" | "readline.promises.Interface" | "readline.promises.Readline" | "readline.clearLine" | "readline.clearScreenDown" | "readline.createInterface" | "readline.cursorTo" | "readline.moveCursor" | "readline.Interface" | "readline.emitKeypressEvents" | "readline.InterfaceConstructor" | "readline/promises" | "readline/promises.createInterface" | "readline/promises.Interface" | "readline/promises.Readline" | "repl" | "repl.start" | "repl.writer" | "repl.REPLServer()" | "repl.REPLServer" | "repl.REPL_MODE_MAGIC" | "repl.REPL_MODE_SLOPPY" | "repl.REPL_MODE_STRICT" | "repl.Recoverable()" | "repl.Recoverable" | "repl.builtinModules" | "sea" | "sea.isSea" | "sea.getAsset" | "sea.getAssetAsBlob" | "sea.getAssetKeys" | "sea.getRawAsset" | "sea.sea.isSea" | "sea.sea.getAsset" | "sea.sea.getAssetAsBlob" | "sea.sea.getAssetKeys" | "sea.sea.getRawAsset" | "stream" | "stream.promises" | "stream.promises.pipeline" | "stream.promises.finished" | "stream.finished" | "stream.pipeline" | "stream.compose" | "stream.duplexPair" | "stream.Readable" | "stream.Readable.from" | "stream.Readable.isDisturbed" | "stream.Readable.fromWeb" | "stream.Readable.toWeb" | "stream.Writable" | "stream.Writable.fromWeb" | "stream.Writable.toWeb" | "stream.Duplex" | "stream.Duplex.from" | "stream.Duplex.fromWeb" | "stream.Duplex.toWeb" | "stream.Transform" | "stream.isErrored" | "stream.isReadable" | "stream.addAbortSignal" | "stream.getDefaultHighWaterMark" | "stream.setDefaultHighWaterMark" | "stream/promises.pipeline" | "stream/promises.finished" | "stream/web" | "stream/web.ReadableStream" | "stream/web.ReadableStream.from" | "stream/web.ReadableStreamDefaultReader" | "stream/web.ReadableStreamBYOBReader" | "stream/web.ReadableStreamDefaultController" | "stream/web.ReadableByteStreamController" | "stream/web.ReadableStreamBYOBRequest" | "stream/web.ReadableStreamTee" | "stream/web.WritableStream" | "stream/web.WritableStreamDefaultWriter" | "stream/web.WritableStreamDefaultController" | "stream/web.TransformStream" | "stream/web.TransformStreamDefaultController" | "stream/web.ByteLengthQueuingStrategy" | "stream/web.CountQueuingStrategy" | "stream/web.TextEncoderStream" | "stream/web.TextDecoderStream" | "stream/web.CompressionStream" | "stream/web.DecompressionStream" | "stream/consumers" | "stream/consumers.arrayBuffer" | "stream/consumers.blob" | "stream/consumers.buffer" | "stream/consumers.bytes" | "stream/consumers.json" | "stream/consumers.text" | "stream/iter" | "stream/iter.array" | "stream/iter.arrayBuffer" | "stream/iter.arrayBufferSync" | "stream/iter.arraySync" | "stream/iter.broadcast" | "stream/iter.broadcastProtocol" | "stream/iter.bytes" | "stream/iter.bytesSync" | "stream/iter.drainableProtocol" | "stream/iter.dump" | "stream/iter.dumpSync" | "stream/iter.duplex" | "stream/iter.from" | "stream/iter.fromSync" | "stream/iter.merge" | "stream/iter.ondrain" | "stream/iter.pipeTo" | "stream/iter.pipeToSync" | "stream/iter.pull" | "stream/iter.pullSync" | "stream/iter.push" | "stream/iter.share" | "stream/iter.shareProtocol" | "stream/iter.shareSync" | "stream/iter.shareSyncProtocol" | "stream/iter.tap" | "stream/iter.tapSync" | "stream/iter.text" | "stream/iter.textSync" | "stream/iter.toAsyncStreamable" | "stream/iter.toStreamable" | "stream/iter.fromReadable" | "stream/iter.fromWritable" | "stream/iter.toReadable" | "stream/iter.toReadableSync" | "stream/iter.toWritable" | "stream/iter.Broadcast" | "stream/iter.Broadcast.from" | "stream/iter.Share" | "stream/iter.Share.from" | "stream/iter.Stream" | "stream/iter.Stream.array" | "stream/iter.Stream.arrayBuffer" | "stream/iter.Stream.arrayBufferSync" | "stream/iter.Stream.arraySync" | "stream/iter.Stream.broadcast" | "stream/iter.Stream.broadcastProtocol" | "stream/iter.Stream.bytes" | "stream/iter.Stream.bytesSync" | "stream/iter.Stream.drainableProtocol" | "stream/iter.Stream.dump" | "stream/iter.Stream.dumpSync" | "stream/iter.Stream.duplex" | "stream/iter.Stream.from" | "stream/iter.Stream.fromSync" | "stream/iter.Stream.merge" | "stream/iter.Stream.ondrain" | "stream/iter.Stream.pipeTo" | "stream/iter.Stream.pipeToSync" | "stream/iter.Stream.pull" | "stream/iter.Stream.pullSync" | "stream/iter.Stream.push" | "stream/iter.Stream.share" | "stream/iter.Stream.shareProtocol" | "stream/iter.Stream.shareSync" | "stream/iter.Stream.shareSyncProtocol" | "stream/iter.Stream.tap" | "stream/iter.Stream.tapSync" | "stream/iter.Stream.text" | "stream/iter.Stream.textSync" | "stream/iter.Stream.toAsyncStreamable" | "stream/iter.Stream.toStreamable" | "stream/iter.SyncShare" | "stream/iter.SyncShare.fromSync" | "_stream_duplex" | "_stream_passthrough" | "_stream_readable" | "_stream_transform" | "_stream_wrap" | "_stream_writable" | "string_decoder" | "string_decoder.StringDecoder" | "sqlite" | "sqlite.constants" | "sqlite.constants.SQLITE_CHANGESET_OMIT" | "sqlite.constants.SQLITE_CHANGESET_REPLACE" | "sqlite.constants.SQLITE_CHANGESET_ABORT" | "sqlite.backup" | "sqlite.Database" | "sqlite.DatabaseSync" | "sqlite.Session" | "sqlite.Statement" | "sqlite.StatementSync" | "sqlite.SQLITE_CHANGESET_OMIT" | "sqlite.SQLITE_CHANGESET_REPLACE" | "sqlite.SQLITE_CHANGESET_ABORT" | "test" | "test.after" | "test.afterEach" | "test.assert" | "test.assert.register" | "test.before" | "test.beforeEach" | "test.describe" | "test.describe.only" | "test.describe.skip" | "test.describe.todo" | "test.getTestContext" | "test.it" | "test.it.only" | "test.it.skip" | "test.it.todo" | "test.mock" | "test.mock.fn" | "test.mock.getter" | "test.mock.method" | "test.mock.module" | "test.mock.property" | "test.mock.reset" | "test.mock.restoreAll" | "test.mock.setter" | "test.mock.timers" | "test.mock.timers.enable" | "test.mock.timers.reset" | "test.mock.timers.tick" | "test.only" | "test.run" | "test.snapshot" | "test.snapshot.setDefaultSnapshotSerializers" | "test.snapshot.setResolveSnapshotPath" | "test.skip" | "test.suite" | "test.test" | "test.test.only" | "test.test.skip" | "test.test.todo" | "test.todo" | "timers" | "timers.Immediate" | "timers.Timeout" | "timers.setImmediate" | "timers.clearImmediate" | "timers.setInterval" | "timers.clearInterval" | "timers.setTimeout" | "timers.clearTimeout" | "timers.promises" | "timers.promises.setTimeout" | "timers.promises.setImmediate" | "timers.promises.setInterval" | "timers.promises.scheduler.wait" | "timers.promises.scheduler.yield" | "timers/promises" | "timers/promises.setTimeout" | "timers/promises.setImmediate" | "timers/promises.setInterval" | "timers/promises.scheduler.wait" | "timers/promises.scheduler.yield" | "tls" | "tls.checkServerIdentity" | "tls.connect" | "tls.createSecureContext" | "tls.createSecurePair" | "tls.createServer" | "tls.CryptoStream" | "tls.DEFAULT_CIPHERS" | "tls.DEFAULT_ECDH_CURVE" | "tls.DEFAULT_MAX_VERSION" | "tls.DEFAULT_MIN_VERSION" | "tls.getCertificateCompressionAlgorithms" | "tls.getCACertificates" | "tls.getCiphers" | "tls.rootCertificates" | "tls.SecureContext" | "tls.SecurePair" | "tls.Server" | "tls.setDefaultCACertificates" | "tls.TLSSocket" | "_tls_common" | "_tls_wrap" | "trace_events" | "trace_events.createTracing" | "trace_events.getEnabledCategories" | "tty" | "tty.isatty" | "tty.ReadStream" | "tty.WriteStream" | "url" | "url.domainToASCII" | "url.domainToUnicode" | "url.fileURLToPath" | "url.format" | "url.pathToFileURL" | "url.urlToHttpOptions" | "url.URL" | "url.URL.canParse" | "url.URL.createObjectURL" | "url.URL.revokeObjectURL" | "url.URLPattern" | "url.URLSearchParams" | "url.Url" | "util.promisify" | "util.promisify.custom" | "util.callbackify" | "util.convertProcessSignalToExitCode" | "util.debounce" | "util.debuglog" | "util.debug" | "util.deprecate" | "util.diff" | "util.format" | "util.formatWithOptions" | "util.getCallSite" | "util.getCallSites" | "util.getSystemErrorName" | "util.getSystemErrorMap" | "util.getSystemErrorMessage" | "util.inherits" | "util.inspect" | "util.inspect.custom" | "util.inspect.defaultOptions" | "util.inspect.replDefaults" | "util.isDeepStrictEqual" | "util.isPartialDeepStrictEqual" | "util.markPromiseAsHandled" | "util.parseArgs" | "util.parseEnv" | "util.setTraceSigInt" | "util.stripVTControlCharacters" | "util.styleText" | "util.throttle" | "util.toUSVString" | "util.transferableAbortController" | "util.transferableAbortSignal" | "util.aborted" | "util.MIMEType" | "util.MIMEType.parse" | "util.MIMEParams" | "util.TextDecoder" | "util.TextEncoder" | "util.types" | "util.types.isExternal" | "util.types.isDate" | "util.types.isArgumentsObject" | "util.types.isBigIntObject" | "util.types.isBooleanObject" | "util.types.isNumberObject" | "util.types.isStringObject" | "util.types.isSymbolObject" | "util.types.isNativeError" | "util.types.isRegExp" | "util.types.isAsyncFunction" | "util.types.isGeneratorFunction" | "util.types.isGeneratorObject" | "util.types.isPromise" | "util.types.isMap" | "util.types.isSet" | "util.types.isMapIterator" | "util.types.isSetIterator" | "util.types.isWeakMap" | "util.types.isWeakSet" | "util.types.isArrayBuffer" | "util.types.isDataView" | "util.types.isSharedArrayBuffer" | "util.types.isProxy" | "util.types.isModuleNamespaceObject" | "util.types.isAnyArrayBuffer" | "util.types.isBoxedPrimitive" | "util.types.isArrayBufferView" | "util.types.isTypedArray" | "util.types.isUint8Array" | "util.types.isUint8ClampedArray" | "util.types.isUint16Array" | "util.types.isUint32Array" | "util.types.isInt8Array" | "util.types.isInt16Array" | "util.types.isInt32Array" | "util.types.isFloat16Array" | "util.types.isFloat32Array" | "util.types.isFloat64Array" | "util.types.isBigInt64Array" | "util.types.isBigUint64Array" | "util.types.isKeyObject" | "util.types.isCryptoKey" | "util.types.isWebAssemblyCompiledModule" | "util._extend" | "util.isArray" | "util.isBoolean" | "util.isBuffer" | "util.isDate" | "util.isError" | "util.isFunction" | "util.isNull" | "util.isNullOrUndefined" | "util.isNumber" | "util.isObject" | "util.isPrimitive" | "util.isRegExp" | "util.isString" | "util.isSymbol" | "util.isUndefined" | "util.log" | "util" | "util/types" | "util/types.isExternal" | "util/types.isDate" | "util/types.isArgumentsObject" | "util/types.isBigIntObject" | "util/types.isBooleanObject" | "util/types.isNumberObject" | "util/types.isStringObject" | "util/types.isSymbolObject" | "util/types.isNativeError" | "util/types.isRegExp" | "util/types.isAsyncFunction" | "util/types.isGeneratorFunction" | "util/types.isGeneratorObject" | "util/types.isPromise" | "util/types.isMap" | "util/types.isSet" | "util/types.isMapIterator" | "util/types.isSetIterator" | "util/types.isWeakMap" | "util/types.isWeakSet" | "util/types.isArrayBuffer" | "util/types.isDataView" | "util/types.isSharedArrayBuffer" | "util/types.isProxy" | "util/types.isModuleNamespaceObject" | "util/types.isAnyArrayBuffer" | "util/types.isBoxedPrimitive" | "util/types.isArrayBufferView" | "util/types.isTypedArray" | "util/types.isUint8Array" | "util/types.isUint8ClampedArray" | "util/types.isUint16Array" | "util/types.isUint32Array" | "util/types.isInt8Array" | "util/types.isInt16Array" | "util/types.isInt32Array" | "util/types.isFloat16Array" | "util/types.isFloat32Array" | "util/types.isFloat64Array" | "util/types.isBigInt64Array" | "util/types.isBigUint64Array" | "util/types.isKeyObject" | "util/types.isCryptoKey" | "util/types.isWebAssemblyCompiledModule" | "v8" | "v8.serialize" | "v8.deserialize" | "v8.Serializer" | "v8.Deserializer" | "v8.DefaultSerializer" | "v8.DefaultDeserializer" | "v8.promiseHooks" | "v8.promiseHooks.onInit" | "v8.promiseHooks.onSettled" | "v8.promiseHooks.onBefore" | "v8.promiseHooks.onAfter" | "v8.promiseHooks.createHook" | "v8.startupSnapshot" | "v8.startupSnapshot.addSerializeCallback" | "v8.startupSnapshot.addDeserializeCallback" | "v8.startupSnapshot.setDeserializeMainFunction" | "v8.startupSnapshot.isBuildingSnapshot" | "v8.cachedDataVersionTag" | "v8.getHeapCodeStatistics" | "v8.getHeapSnapshot" | "v8.getHeapSpaceStatistics" | "v8.getHeapStatistics" | "v8.isStringOneByteRepresentation" | "v8.queryObjects" | "v8.setFlagsFromString" | "v8.stopCoverage" | "v8.takeCoverage" | "v8.writeHeapSnapshot" | "v8.setHeapSnapshotNearHeapLimit" | "v8.setHeapProfileNearHeapLimit" | "v8.GCProfiler" | "v8.startCpuProfile" | "v8.startHeapProfile" | "vfs" | "vfs.ComposableProvider" | "vfs.create" | "vfs.MemoryProvider" | "vfs.registerProvider" | "vfs.RealFSProvider" | "vfs.vfsBase" | "vfs.VirtualFileSystem" | "vfs.VirtualProvider" | "vfs.ZipProvider" | "vm.constants" | "vm.compileFunction" | "vm.createContext" | "vm.isContext" | "vm.measureMemory" | "vm.runInContext" | "vm.runInNewContext" | "vm.runInThisContext" | "vm.Script" | "vm.Module" | "vm.SourceTextModule" | "vm.SyntheticModule" | "vm" | "wasi.WASI" | "wasi" | "worker_threads" | "worker_threads.parentPort" | "worker_threads.resourceLimits" | "worker_threads.SHARE_ENV" | "worker_threads.threadId" | "worker_threads.threadName" | "worker_threads.workerData" | "worker_threads.getEnvironmentData" | "worker_threads.getHeapStatistics" | "worker_threads.markAsUncloneable" | "worker_threads.markAsUntransferable" | "worker_threads.isInternalThread" | "worker_threads.isMainThread" | "worker_threads.isMarkedAsUntransferable" | "worker_threads.locks" | "worker_threads.locks.request" | "worker_threads.locks.query" | "worker_threads.moveMessagePortToContext" | "worker_threads.postMessageToThread" | "worker_threads.receiveMessageOnPort" | "worker_threads.setEnvironmentData" | "worker_threads.BroadcastChannel" | "worker_threads.MessageChannel" | "worker_threads.MessagePort" | "worker_threads.Worker" | "zlib.brotliCompress" | "zlib.brotliCompressSync" | "zlib.brotliDecompress" | "zlib.brotliDecompressSync" | "zlib.constants" | "zlib.constants.ZSTD_e_continue" | "zlib.constants.ZSTD_e_flush" | "zlib.constants.ZSTD_e_end" | "zlib.constants.ZSTD_fast" | "zlib.constants.ZSTD_dfast" | "zlib.constants.ZSTD_greedy" | "zlib.constants.ZSTD_lazy" | "zlib.constants.ZSTD_lazy2" | "zlib.constants.ZSTD_btlazy2" | "zlib.constants.ZSTD_btopt" | "zlib.constants.ZSTD_btultra" | "zlib.constants.ZSTD_btultra2" | "zlib.constants.ZSTD_c_compressionLevel" | "zlib.constants.ZSTD_c_windowLog" | "zlib.constants.ZSTD_c_hashLog" | "zlib.constants.ZSTD_c_chainLog" | "zlib.constants.ZSTD_c_searchLog" | "zlib.constants.ZSTD_c_minMatch" | "zlib.constants.ZSTD_c_targetLength" | "zlib.constants.ZSTD_c_strategy" | "zlib.constants.ZSTD_c_enableLongDistanceMatching" | "zlib.constants.ZSTD_c_ldmHashLog" | "zlib.constants.ZSTD_c_ldmMinMatch" | "zlib.constants.ZSTD_c_ldmBucketSizeLog" | "zlib.constants.ZSTD_c_ldmHashRateLog" | "zlib.constants.ZSTD_c_contentSizeFlag" | "zlib.constants.ZSTD_c_checksumFlag" | "zlib.constants.ZSTD_c_dictIDFlag" | "zlib.constants.ZSTD_c_nbWorkers" | "zlib.constants.ZSTD_c_jobSize" | "zlib.constants.ZSTD_c_overlapLog" | "zlib.constants.ZSTD_d_windowLogMax" | "zlib.constants.ZSTD_CLEVEL_DEFAULT" | "zlib.constants.ZSTD_error_no_error" | "zlib.constants.ZSTD_error_GENERIC" | "zlib.constants.ZSTD_error_prefix_unknown" | "zlib.constants.ZSTD_error_version_unsupported" | "zlib.constants.ZSTD_error_frameParameter_unsupported" | "zlib.constants.ZSTD_error_frameParameter_windowTooLarge" | "zlib.constants.ZSTD_error_corruption_detected" | "zlib.constants.ZSTD_error_checksum_wrong" | "zlib.constants.ZSTD_error_literals_headerWrong" | "zlib.constants.ZSTD_error_dictionary_corrupted" | "zlib.constants.ZSTD_error_dictionary_wrong" | "zlib.constants.ZSTD_error_dictionaryCreation_failed" | "zlib.constants.ZSTD_error_parameter_unsupported" | "zlib.constants.ZSTD_error_parameter_combination_unsupported" | "zlib.constants.ZSTD_error_parameter_outOfBound" | "zlib.constants.ZSTD_error_tableLog_tooLarge" | "zlib.constants.ZSTD_error_maxSymbolValue_tooLarge" | "zlib.constants.ZSTD_error_maxSymbolValue_tooSmall" | "zlib.constants.ZSTD_error_stabilityCondition_notRespected" | "zlib.constants.ZSTD_error_stage_wrong" | "zlib.constants.ZSTD_error_init_missing" | "zlib.constants.ZSTD_error_memory_allocation" | "zlib.constants.ZSTD_error_workSpace_tooSmall" | "zlib.constants.ZSTD_error_dstSize_tooSmall" | "zlib.constants.ZSTD_error_srcSize_wrong" | "zlib.constants.ZSTD_error_dstBuffer_null" | "zlib.constants.ZSTD_error_noForwardProgress_destFull" | "zlib.constants.ZSTD_error_noForwardProgress_inputEmpty" | "zlib.crc32" | "zlib.createBrotliCompress" | "zlib.createBrotliDecompress" | "zlib.createDeflate" | "zlib.createDeflateRaw" | "zlib.createGunzip" | "zlib.createGzip" | "zlib.createInflate" | "zlib.createInflateRaw" | "zlib.createUnzip" | "zlib.createZstdCompress" | "zlib.createZstdDecompress" | "zlib.deflate" | "zlib.deflateRaw" | "zlib.deflateRawSync" | "zlib.deflateSync" | "zlib.gunzip" | "zlib.gunzipSync" | "zlib.gzip" | "zlib.gzipSync" | "zlib.inflate" | "zlib.inflateRaw" | "zlib.inflateRawSync" | "zlib.inflateSync" | "zlib.unzip" | "zlib.unzipSync" | "zlib.zstdCompress" | "zlib.zstdCompressSync" | "zlib.zstdDecompress" | "zlib.zstdDecompressSync" | "zlib.createZipArchive" | "zlib.createZipArchiveSync" | "zlib.getMaxZipContentSize" | "zlib.setMaxZipContentSize" | "zlib.zipFiles" | "zlib.BrotliCompress()" | "zlib.BrotliCompress" | "zlib.BrotliDecompress()" | "zlib.BrotliDecompress" | "zlib.Deflate()" | "zlib.Deflate" | "zlib.DeflateRaw()" | "zlib.DeflateRaw" | "zlib.Gunzip()" | "zlib.Gunzip" | "zlib.Gzip()" | "zlib.Gzip" | "zlib.Inflate()" | "zlib.Inflate" | "zlib.InflateRaw()" | "zlib.InflateRaw" | "zlib.Unzip()" | "zlib.Unzip" | "zlib.ZstdCompress" | "zlib.ZstdDecompress" | "zlib.ZstdOptions" | "zlib.ZipBuffer" | "zlib.ZipEntry" | "zlib.ZipEntry.create" | "zlib.ZipEntry.createStream" | "zlib.ZipEntry.createSymlink" | "zlib.ZipEntry.createSync" | "zlib.ZipEntry.read" | "zlib.ZipFile" | "zlib.ZipFile.open" | "zlib.ZipFile.openSync" | "zlib" | "zlib/iter" | "zlib/iter.compressBrotli" | "zlib/iter.compressBrotliSync" | "zlib/iter.compressDeflate" | "zlib/iter.compressDeflateSync" | "zlib/iter.compressGzip" | "zlib/iter.compressGzipSync" | "zlib/iter.compressZstd" | "zlib/iter.compressZstdSync" | "zlib/iter.decompressBrotli" | "zlib/iter.decompressBrotliSync" | "zlib/iter.decompressDeflate" | "zlib/iter.decompressDeflateSync" | "zlib/iter.decompressGzip" | "zlib/iter.decompressGzipSync" | "zlib/iter.decompressZstd" | "zlib/iter.decompressZstdSync" | "import.meta.resolve" | "import.meta.dirname" | "import.meta.filename" | "import.meta.main")[]
 }]
 // ----- n/prefer-global/buffer -----
 type NPreferGlobalBuffer = []|[("always" | "never")]
@@ -19138,6 +19180,21 @@ type OperatorAssignment = []|[("always" | "never")]
 type OperatorLinebreak = []|[("after" | "before" | "none" | null)]|[("after" | "before" | "none" | null), {
   overrides?: {
     [k: string]: ("after" | "before" | "none" | "ignore") | undefined
+  }
+}]
+// ----- package-json/consistent-package-manager-declaration -----
+type PackageJsonConsistentPackageManagerDeclaration = []|[{
+  
+  prefer?: ("devEngines" | "packageManager")
+}]
+// ----- package-json/consistent-property-aliases -----
+type PackageJsonConsistentPropertyAliases = []|[{
+  
+  prefer?: {
+    
+    bundleDependencies?: (boolean | ("bundleDependencies" | "bundledDependencies"))
+    
+    license?: (boolean | ("license" | "licence"))
   }
 }]
 // ----- package-json/exports-subpaths-style -----
@@ -21285,6 +21342,10 @@ type UnicornClassReferenceInStaticMethods = []|[{
 // ----- unicorn/comment-content -----
 type UnicornCommentContent = []|[{
   
+  ignore?: (string | {
+    [k: string]: unknown | undefined
+  })[]
+  
   checkUniformCase?: boolean
   
   extendDefaultReplacements?: boolean
@@ -21640,6 +21701,8 @@ type UnicornNoNull = []|[{
 }]
 // ----- unicorn/no-top-level-side-effects -----
 type UnicornNoTopLevelSideEffects = []|[{
+  
+  checkUnknownCalls?: boolean
   
   allow?: {
     [k: string]: string[] | undefined
@@ -22046,6 +22109,7 @@ type VueBlockLang = []|[{
   [k: string]: {
     lang?: (string | string[])
     allowNoLang?: boolean
+    required?: boolean
   }
 }]
 // ----- vue/block-order -----
@@ -23166,6 +23230,7 @@ type VueRequireDirectExport = []|[{
 // ----- vue/require-explicit-emits -----
 type VueRequireExplicitEmits = []|[{
   allowProps?: boolean
+  ignoreMixins?: boolean
 }]
 // ----- vue/require-macro-variable-name -----
 type VueRequireMacroVariableName = []|[{
