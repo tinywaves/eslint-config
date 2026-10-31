@@ -28,16 +28,16 @@
     },
     "./package.json": "./package.json"
   },
-  "packageManager": "pnpm@12.15.0",
+  "packageManager": "pnpm@12.16.1",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^12.15.0",
+      "version": "^12.16.1",
       "onFail": "download"
     },
     "runtime": {
       "name": "node",
-      "version": "^24.22.1",
+      "version": "^24.22.2",
       "onFail": "download"
     }
   },
@@ -85,12 +85,12 @@
     "eslint-plugin-import-x": "^4.17.1",
     "eslint-plugin-jsonc": "^3.4.2",
     "eslint-plugin-n": "^18.5.0",
-    "eslint-plugin-package-json": "^1.11.0",
+    "eslint-plugin-package-json": "^1.12.0",
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-google-translate": "^1.1.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.7",
-    "eslint-plugin-regexp": "^3.3.1",
+    "eslint-plugin-regexp": "^3.3.2",
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-toml": "^1.5.0",
     "eslint-plugin-unicorn": "^79.0.0",
@@ -106,17 +106,17 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^3.5.0",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@typescript-eslint/types": "^8.72.1",
     "bumpp": "^12.3.0",
     "bundle-require": "^5.1.0",
     "changelogithub": "^15.0.5",
-    "eslint": "^10.13.0",
-    "eslint-typegen": "^2.3.1",
+    "eslint": "^10.14.0",
+    "eslint-typegen": "^2.3.2",
     "lint-staged": "^17.6.0",
     "simple-git-hooks": "^2.14.0",
     "tailwindcss": "^4.3.3",
-    "tsdown": "^0.23.2",
+    "tsdown": "^0.23.4",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },
