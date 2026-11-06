@@ -4089,6 +4089,11 @@ export interface RuleOptions {
    */
   'package-json/prefer-rolling-workspace-spec'?: Linter.RuleEntry<PackageJsonPreferRollingWorkspaceSpec>
   /**
+   * Enforce that package names use a specific scope or set of scopes.
+   * @see https://eslint-plugin-package-json.dev/rules/prefer-scoped-name
+   */
+  'package-json/prefer-scoped-name'?: Linter.RuleEntry<PackageJsonPreferScopedName>
+  /**
    * Enforce either object or shorthand declaration for repository.
    * @see https://eslint-plugin-package-json.dev/rules/repository-shorthand
    */
@@ -4238,6 +4243,11 @@ export interface RuleOptions {
    * @see https://eslint-plugin-package-json.dev/rules/require-properties/require-os
    */
   'package-json/require-os'?: Linter.RuleEntry<PackageJsonRequireOs>
+  /**
+   * Reports unrestricted npm override selectors that can affect multiple dependency versions.
+   * @see https://eslint-plugin-package-json.dev/rules/require-override-restrictions
+   */
+  'package-json/require-override-restrictions'?: Linter.RuleEntry<[]>
   /**
    * Ensures that if a package specifies `exports` (or `publishConfig.exports`), an explicit `package.json` export is included.
    * @see https://eslint-plugin-package-json.dev/rules/require-package-json-export
@@ -9357,6 +9367,11 @@ export interface RuleOptions {
    * @see https://ota-meshi.github.io/eslint-plugin-yml/rules/key-spacing.html
    */
   'yml/key-spacing'?: Linter.RuleEntry<YmlKeySpacing>
+  /**
+   * enforce a maximum line length
+   * @see https://ota-meshi.github.io/eslint-plugin-yml/rules/max-len.html
+   */
+  'yml/max-len'?: Linter.RuleEntry<YmlMaxLen>
   /**
    * disallow boolean mapping keys
    * @see https://ota-meshi.github.io/eslint-plugin-yml/rules/no-boolean-key.html
@@ -19224,6 +19239,13 @@ type PackageJsonPreferRollingWorkspaceSpec = []|[{
   
   ignorePatterns?: string[]
 }]
+// ----- package-json/prefer-scoped-name -----
+type PackageJsonPreferScopedName = []|[{
+  
+  allowed?: string[]
+  
+  preferred?: string
+}]
 // ----- package-json/repository-shorthand -----
 type PackageJsonRepositoryShorthand = []|[{
   
@@ -23462,6 +23484,17 @@ type YmlKeySpacing = []|[({
     afterColon?: boolean
   }
 })]
+// ----- yml/max-len -----
+type YmlMaxLen = []|[{
+  code?: number
+  comments?: number
+  tabWidth?: number
+  ignorePattern?: string
+  ignoreComments?: boolean
+  ignoreTrailingComments?: boolean
+  ignoreUrls?: boolean
+  ignoreStrings?: boolean
+}]
 // ----- yml/no-irregular-whitespace -----
 type YmlNoIrregularWhitespace = []|[{
   skipComments?: boolean
