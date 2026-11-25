@@ -81,13 +81,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): LinterConfig[
           },
         ],
         'prefer-template': 'error',
-        'stylistic/array-bracket-newline': [
-          'error',
-          {
-            multiline: true,
-          },
-        ],
-        'stylistic/array-element-newline': ['error', 'consistent'],
         'stylistic/brace-style': [
           'error',
           '1tbs',
@@ -96,7 +89,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): LinterConfig[
           },
         ],
         'stylistic/function-call-spacing': ['error', 'never'],
-        'stylistic/function-paren-newline': 'off',
         'stylistic/indent': [
           'error',
           2,
@@ -126,6 +118,17 @@ export function stylistic(options: IStylisticConfigsOptions = {}): LinterConfig[
         'stylistic/line-comment-position': 'off',
         'stylistic/linebreak-style': ['error', 'unix'],
         'stylistic/lines-around-comment': 'off',
+        '@stylistic/list-style': [
+          'error',
+          {
+            overrides: {
+              '()': 'off',
+              '[]': {
+                empty: 'never',
+              },
+            },
+          },
+        ],
         'stylistic/new-parens': ['error', 'always'],
         'stylistic/no-confusing-arrow': [
           'error',
@@ -135,12 +138,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): LinterConfig[
           },
         ],
         'stylistic/no-extra-semi': 'error',
-        'stylistic/object-property-newline': [
-          'error',
-          {
-            allowAllPropertiesOnSameLine: true,
-          },
-        ],
         'stylistic/space-before-function-paren': [
           'error',
           {
@@ -240,7 +237,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): LinterConfig[
             allowNamespace: true,
           },
         ],
-        'stylistic/jsx-props-no-multi-spaces': 'error',
         'stylistic/jsx-quotes': ['error', 'prefer-double'],
         'stylistic/jsx-self-closing-comp': [
           'error',
@@ -249,7 +245,6 @@ export function stylistic(options: IStylisticConfigsOptions = {}): LinterConfig[
             html: true,
           },
         ],
-        'stylistic/jsx-sort-props': 'off',
         'stylistic/jsx-indent-props': 'off',
         ...overrides,
       },
