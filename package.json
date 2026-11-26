@@ -106,7 +106,7 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^3.5.0",
-    "@types/node": "^26.6.10",
+    "@types/node": "^26.6.11",
     "@typescript-eslint/types": "^8.74.0",
     "bumpp": "^12.3.0",
     "bundle-require": "^5.1.0",
